@@ -24,7 +24,7 @@ Verwenden Sie diese Option, um einzelne Bilddateien oder eine kleine Auswahl von
 
 1. Klicken Sie oben im Dateibrowser-Fenster auf die Schaltfläche **„Dateien hinzufügen”**.
 2. Navigieren Sie zu dem Ordner, der Ihre Bilder enthält.
-3. Wählen Sie eine oder mehrere Bilddateien aus (halten Sie **Strg** gedrückt, um mehrere Dateien auszuwählen).
+3. Wählen Sie eine oder mehrere Bilddateien aus (halten Sie die **Strg-Taste** gedrückt, um mehrere Dateien auszuwählen).
 4. Klicken Sie auf **„Öffnen”**, um die ausgewählten Dateien zu importieren.
 
 ### Methode 2: Ordner hinzufügen
@@ -93,7 +93,7 @@ So entfernen Sie unerwünschte Bilder aus Ihrem Projekt:
 
 ### Vollbild anzeigen
 
-Klicken Sie auf eine beliebige Bildminiaturansicht im Dateibrowser, um sie im Hauptvorschau-Bereich anzuzeigen:
+Klicken Sie auf eine beliebige Bildminiatur im Dateibrowser, um sie im Hauptvorschau-Bereich anzuzeigen:
 
 1. Das Bild wird im mittleren Vorschaufenster angezeigt.
 2. Verwenden Sie die Zoomsteuerung, um Bilddetails zu überprüfen.
@@ -103,7 +103,7 @@ Klicken Sie auf eine beliebige Bildminiaturansicht im Dateibrowser, um sie im Ha
 
 * **Vorheriges Bild**: Klicken Sie auf den Pfeil nach links oder drücken Sie die Taste ←.
 * **Nächstes Bild**: Klicken Sie auf den Pfeil nach rechts oder drücken Sie die Taste →.
-* **Vergrößern/Verkleinern**: Verwenden Sie das Mausrad oder die Zoomtasten.
+* **Vergrößern/Verkleinern**: Verwenden Sie das Mausrad oder die Zoom-Schaltflächen.
 * **Schwenken**: Klicken und ziehen Sie bei vergrößertem Bild auf das Bild.
 
 ***
@@ -117,7 +117,7 @@ Chloros erkennt und ignoriert automatisch doppelte Dateien:
 * Bei Erkennung von Duplikaten wird eine Warnmeldung angezeigt.
 
 {% hint style=&quot;warning&quot; %}
-**Wichtig**: Benennen Sie Ihre Originalbilddateien vor dem Import nicht um und nehmen Sie keine Änderungen daran vor. Chloros benötigt die Originaldateinamen und Metadaten für die korrekte Verarbeitung.
+**Wichtig**: Benennen Sie Ihre Originalbilddateien vor dem Import nicht um und nehmen Sie keine Änderungen daran vor. Chloros benötigt die Originaldateinamen und Metadaten für eine ordnungsgemäße Verarbeitung.
 {% endhint %}
 
 ***
@@ -154,7 +154,7 @@ Wenn Ihr Projekt Bilder von mehreren MAPIR-Kameras enthält:
 * Fügen Sie immer 1–2 Kalibrierungszielbilder pro Sitzung hinzu.
 * Nehmen Sie die Ziele vor und nach der Aufnahmesitzung auf.
 * Platzieren Sie die Ziele unter den gleichen Lichtbedingungen wie im Aufnahmebereich.
-* Markieren Sie die Zielbilder mit dem Kontrollkästchen „Ziel“, um die Verarbeitung zu beschleunigen.
+* Markieren Sie Zielbilder mit dem Kontrollkästchen „Ziel“, um die Verarbeitung zu beschleunigen.
 
 ***
 
@@ -199,6 +199,6 @@ Sobald Ihre Dateien importiert sind:
 2. **Überprüfen Sie die Kameramodelle** – Überprüfen Sie die korrekte Kameraerkennung.
 3. **Markieren Sie die Zielbilder** – siehe [Auswählen von Zielbildern](choosing-target-images.md).
 4. **Passen Sie die Einstellungen an** – konfigurieren Sie die Verarbeitungsoptionen in den [Projekteinstellungen](adjusting-project-settings.md).
-5. **Verarbeitung starten** – Siehe [Starten der Verarbeitung](starting-the-processing.md)
+5. **Verarbeitung starten** – Siehe [Verarbeitung starten](starting-the-processing.md)
 
-Ausführliche Informationen zur Projektkonfiguration finden Sie unter [Anpassen der Projekteinstellungen](adjusting-project-settings.md).
+Ausführliche Informationen zur Projektkonfiguration finden Sie unter [Projekteinstellungen anpassen](adjusting-project-settings.md).

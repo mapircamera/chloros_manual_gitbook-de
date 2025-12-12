@@ -2,12 +2,12 @@
 
 Sobald Chloros die Verarbeitung abgeschlossen hat, ist es an der Zeit, Ihre Ergebnisse zu überprüfen, die Ausgabequalität zu verifizieren und Ihre verarbeiteten Bilder für die Verwendung in Ihrem Workflow vorzubereiten. Diese Seite führt Sie durch die letzten Schritte und die nächsten Aktionen.
 
-## Anzeige „Verarbeitung abgeschlossen“
+## Anzeige „Verarbeitung abgeschlossen”
 
-Wenn die Verarbeitung erfolgreich abgeschlossen ist, werden mehrere Anzeigen angezeigt:
+Wenn die Verarbeitung erfolgreich abgeschlossen wurde, werden mehrere Anzeigen angezeigt:
 
 * ✅ **Fortschrittsbalken**: Erreicht 100 % Fertigstellung
-* ✅ **Debug-Protokoll**: Zeigt die Meldung „Verarbeitung abgeschlossen“ an
+* ✅ **Debug-Protokoll**: Zeigt die Meldung „Verarbeitung abgeschlossen” an
 * ✅ **Start-Schaltfläche**: Wird wieder aktiviert (bereit für den nächsten Verarbeitungslauf)
 * ✅ **Ausgabedateien**: Alle verarbeiteten Bilder werden im Unterordner des Kameramodells gespeichert
 
@@ -39,9 +39,9 @@ Wenn die Verarbeitung erfolgreich abgeschlossen ist, werden mehrere Anzeigen ang
 
 **Empfohlene Bildbetrachter:**
 
-* **QGIS** – Kostenlose GIS-Software (am besten geeignet für georeferenzierte Multispektralanalysen)
+* **QGIS** – Kostenlose GIS-Software (am besten geeignet für georeferenzierte Multispektralanalyse)
 * **IrfanView** – Schneller, schlanker Bildbetrachter (unterstützt TIFF)
-* **Adobe Photoshop** – Professionelle Bildbearbeitung (unterstützt TIFF)
+* **Adobe Photoshop** – Professionelle Bearbeitung (unterstützt TIFF)
 * **GIMP** – Kostenlose Alternative zu Photoshop
 * **Windows Photos** – Grundlegende Anzeige (unterstützt möglicherweise kein 16-Bit-TIFF)
 
@@ -73,9 +73,9 @@ Ausführliche Anweisungen finden Sie unter [Bildbetrachter](../image-viewer-gui/
 Um eine Aufzeichnung der Verarbeitung zu speichern oder an den Support von MAPIR zu senden:
 
 1. Klicken Sie auf die Schaltfläche **„Kopieren”** oder **„Herunterladen”**.
-2. Speichern Sie die Datei als Textdatei im Projektordner.
-3. Fügen Sie sie der Projektdokumentation bei.
-4. Senden Sie sie bei Problemen an den MAPIR-Support.
+2. Speichern Sie das Protokoll als Textdatei im Projektordner.
+3. Fügen Sie es der Projektdokumentation bei.
+4. Senden Sie es bei Problemen an den MAPIR-Support.
 
 ***
 
@@ -94,7 +94,7 @@ Um eine Aufzeichnung der Verarbeitung zu speichern oder an den Support von MAPIR
 
 1. Debug-Protokoll auf Überspring-/Fehlermeldungen überprüfen.
 2. Überprüfen, ob ausreichend Speicherplatz auf der Festplatte vorhanden war.
-3. Dateien zählen: Sollte übereinstimmen mit (ursprüngliche Anzahl – Zielanzahl) × (Indizes + 1).
+3. Dateien zählen: Sollte übereinstimmen mit (ursprüngliche Anzahl – Zielanzahl) × (Indizes + 1)
 4. Importieren Sie fehlende Dateien erneut und verarbeiten Sie sie erneut.
 
 ### Problem: Dunkle oder helle Ränder (Vignettierung noch sichtbar)
@@ -103,11 +103,11 @@ Um eine Aufzeichnung der Verarbeitung zu speichern oder an den Support von MAPIR
 
 * Vignettierungskorrektur deaktiviert
 * Kamera/Objektiv nicht in der Chloros-Profildatenbank enthalten
-* Extreme Vignettierung, die die Korrekturkapazität übersteigt
+* Extreme Vignettierung, die über die Korrekturfähigkeit hinausgeht
 
 **Lösungen:**
 
-1. Überprüfen Sie, ob die Vignettierungskorrektur in den Projekteinstellungen aktiviert ist.
+1. Überprüfen Sie, ob die Vignettierungskorrektur in den Projekteinstellungen aktiviert wurde.
 2. Überprüfen Sie, ob das Kameramodell korrekt erkannt wurde.
 3. Wenden Sie sich an den MAPIR-Support, wenn die Vignettierung weiterhin besteht.
 
@@ -170,14 +170,14 @@ Um eine Aufzeichnung der Verarbeitung zu speichern oder an den Support von MAPIR
 2. **Verwenden Sie 16-Bit-TIFF**-Reflexionsbilder für die Multiband-Analyse
 3. **Verwenden Sie Indexbilder** (NDVI, NDRE) als gebrauchsfertige Vegetationsschichten
 4. **Rasterrechner**: Kombinieren Sie Bänder für benutzerdefinierte Analysen
-5. **Exportieren**: Erstellen Sie Klassifizierungskarten, Änderungserkennung und Vegetationszustandskarten
+5. **Exportieren**: Erstellen Sie Klassifizierungskarten, Änderungserkennung und Vegetationsgesundheitskarten.
 
 ### Für direkte Analyse/Berichterstellung
 
 **Empfohlener Arbeitsablauf:**
 
-1. **Verwenden Sie Indexbilder mit LUT-Farben** für visuelle Berichte
-2. **Extrahieren Sie Statistiken**: Mittelwert NDVI pro Feld/Parzelle
+1. **Verwenden Sie Indexbilder mit LUT-Farben** für visuelle Berichte.
+2. **Extrahieren Sie Statistiken**: Mittelwert NDVI pro Feld/Parzelle.
 3. **Zeitreihen**: Indizes über mehrere Sitzungen hinweg vergleichen
 4. **Berichte erstellen**: Karten, Statistiken und Visualisierungen einbeziehen
 
@@ -187,7 +187,7 @@ Um eine Aufzeichnung der Verarbeitung zu speichern oder an den Support von MAPIR
 
 ### Empfohlene Sicherungsstrategie
 
-**Was gespeichert werden sollte:**
+**Was zu speichern ist:**
 
 * ✅ **Original-RAW/JPG-Bilder** – Auf separatem Laufwerk/in der Cloud archivieren
 * ✅ **Verarbeitete Ausgaben** – Kalibrierte Bilder und Indizes aufbewahren
@@ -220,7 +220,7 @@ Für mehrere Sitzungen/Datensätze:
 
 **Option 1: GUI – Mehrere Projekte**
 
-* Erstellen Sie für jede Sitzung ein separates Projekt
+* Erstellen Sie für jede Sitzung ein separates Projekt.
 * Verwenden Sie konsistente Vorlageneinstellungen.
 * Verarbeiten Sie jeweils nur eine Sitzung.
 
@@ -275,13 +275,13 @@ Sie haben nun den gesamten Chloros-Verarbeitungs-Workflow abgeschlossen:
 
 1. ✅ **Projekt erstellt** – Siehe [Projekte](../projects.md)
 2. ✅ **Dateien hinzugefügt** – Siehe [Dateien hinzufügen](adding-files-to-a-project.md)
-3. ✅ **Einstellungen angepasst** – Siehe [Projekteinstellungen anpassen](adjusting-project-settings.md)
-4. ✅ **Ziele markiert** – Siehe [Zielbilder auswählen](choosing-target-images.md)
+3. ✅ **Einstellungen angepasst** – Siehe [Anpassen der Projekteinstellungen](adjusting-project-settings.md)
+4. ✅ **Ziele markiert** – Siehe [Auswählen der Zielbilder](choosing-target-images.md)
 5. ✅ **Verarbeitung gestartet** – Siehe [Verarbeitung starten](starting-the-processing.md)
-6. ✅ **Fortschritt überwacht** – Siehe [Überwachen der Verarbeitung](monitoring-the-processing.md)
+6. ✅ **Fortschritt überwacht** – Siehe [Verarbeitung überwachen](monitoring-the-processing.md)
 7. ✅ **Ergebnisse überprüft** – Diese Seite
 
-**Ihre kalibrierten, reflektionskorrigierten Multispektralbilder sind bereit für die Analyse!**
+**Ihre kalibrierten, reflektionskorrigierten Multispektralbilder sind nun bereit für die Analyse!**
 
 ***
 
@@ -290,7 +290,7 @@ Sie haben nun den gesamten Chloros-Verarbeitungs-Workflow abgeschlossen:
 ### Erweiterte Funktionen
 
 * [**Bildbetrachter**](../image-viewer-gui/opening-an-image-full-screen.md) – Interaktive Visualisierung und Analyse
-* [**Index/LUT-Sandbox**](../image-viewer-gui/index-lut-sandbox.md) – Testen benutzerdefinierter Indizes
+* [**Index/LUT-Sandbox**](../image-viewer-gui/index-lut-sandbox.md) – Benutzerdefinierte Indexprüfung
 * [**Multispektrale Indexformeln**](../project-settings/multispectral-index-formulas.md) – Vollständige Indexreferenz
 
 ### Automatisierung und Integration

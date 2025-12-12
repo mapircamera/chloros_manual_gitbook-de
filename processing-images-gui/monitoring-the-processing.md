@@ -1,6 +1,6 @@
 # Überwachung der Verarbeitung
 
-Sobald die Verarbeitung begonnen hat, bietet Chloros mehrere Möglichkeiten, den Fortschritt zu überwachen, auf Probleme zu überprüfen und zu verstehen, was mit Ihrem Datensatz geschieht. Auf dieser Seite wird erläutert, wie Sie Ihre Verarbeitung verfolgen und die von Chloros bereitgestellten Informationen interpretieren können.
+Sobald die Verarbeitung begonnen hat, bietet Chloros mehrere Möglichkeiten, den Fortschritt zu überwachen, auf Probleme zu prüfen und zu verstehen, was mit Ihrem Datensatz geschieht. Auf dieser Seite wird erläutert, wie Sie Ihre Verarbeitung verfolgen und die von Chloros bereitgestellten Informationen interpretieren können.
 
 ## Übersicht über den Fortschrittsbalken
 
@@ -29,14 +29,14 @@ Für Benutzer mit einer Chloros+-Lizenz:
 
 1. **Erkennen** – Kalibrierungsziele finden
 2. **Analysieren** – Bilder untersuchen und Pipeline vorbereiten
-3. **Kalibrieren** – Vignetten- und Reflektionskorrekturen anwenden
+3. **Kalibrieren** – Vignetten- und Reflexionskorrekturen anwenden
 4. **Exportieren** – Verarbeitete Dateien speichern
 
 **Interaktive Funktionen:**
 
-* **Bewegen Sie den Mauszeiger über** den Fortschrittsbalken, um das erweiterte 4-Stufen-Fenster anzuzeigen
-* **Klicken Sie** auf die Fortschrittsleiste, um das erweiterte Fenster anzuhalten/anzuheften.
-* **Klicken Sie erneut**, um die Anhaltung aufzuheben und das Fenster beim Verlassen mit der Maus automatisch auszublenden.
+* **Bewegen Sie den Mauszeiger über** die Fortschrittsanzeige, um das erweiterte 4-stufige Fenster anzuzeigen
+* **Klicken Sie** auf die Fortschrittsleiste, um das erweiterte Fenster einzufrieren/anzuheften.
+* **Klicken Sie erneut**, um das Einfrieren aufzuheben und das Fenster beim Verlassen mit der Maus automatisch auszublenden.
 * Jede Stufe zeigt den individuellen Fortschritt (0–100 %) an.
 
 ***
@@ -67,7 +67,7 @@ Für Benutzer mit einer Chloros+-Lizenz:
 
 * Sollte schnell abgeschlossen sein, wenn die Ziele ordnungsgemäß markiert sind.
 * Wenn es zu lange dauert, sind die Ziele möglicherweise nicht markiert.
-* Überprüfen Sie das Debug-Protokoll auf Meldungen „Ziel gefunden“.
+* Überprüfen Sie das Debug-Protokoll auf „Ziel gefunden”-Meldungen.
 
 ### Stufe 2: Analyse
 
@@ -83,9 +83,9 @@ Für Benutzer mit einer Chloros+-Lizenz:
 **Fortschrittsanzeige:**
 
 * Analyse: 0 % → 100 %
-* Schnelle Stufe, in der Regel schnell abgeschlossen
+* Schnelle Phase, wird in der Regel schnell abgeschlossen
 
-**Zu beachten:**
+**Was zu beachten ist:**
 
 * Sollte ohne Unterbrechungen stetig voranschreiten
 * Warnungen zu fehlenden Metadaten werden im Debug-Protokoll angezeigt
@@ -117,7 +117,7 @@ Für Benutzer mit einer Chloros+-Lizenz:
 **Was zu beachten ist:**
 
 * Gleichmäßiger Fortschritt durch die Bildanzahl
-* Debug-Protokoll auf Meldungen zur Fertigstellung einzelner Bilder überprüfen
+* Debug-Protokoll auf Meldungen zur Fertigstellung pro Bild überprüfen
 * Warnungen zu Bildqualität oder Kalibrierungsproblemen
 
 ### Phase 4: Exportieren
@@ -197,9 +197,9 @@ Kritische Probleme, die zu einem Fehlschlagen der Verarbeitung führen können:
 
 | Meldung                          | Bedeutung                                | Erforderliche Maßnahme                                         |
 | -------------------------------- | -------------------------------------- | ----------------------------------------------------- |
-| „Ziel in \[Dateiname] erkannt“ | Kalibrierungsziel erfolgreich gefunden  | Keine – normal                                         |
-| „Bild X von Y wird verarbeitet“        | Aktuelle Fortschrittsanzeige                | Keine – normal                                         |
-| „Keine Ziele gefunden“               | Keine Kalibrierungsziele erkannt        | Zielbilder markieren oder Reflektionskalibrierung deaktivieren |
+| „Ziel in \[Dateiname] erkannt” | Kalibrierungsziel erfolgreich gefunden  | Keine – normal                                         |
+| „Bild X von Y wird verarbeitet”        | Aktuelle Fortschrittsanzeige                | Keine – normal                                         |
+| „Keine Ziele gefunden”               | Keine Kalibrierungsziele erkannt        | Zielbilder markieren oder Reflektionskalibrierung deaktivieren |
 | „Nicht genügend Speicherplatz”        | Nicht genügend Speicherplatz für die Ausgabe          | Speicherplatz freigeben                                    |
 | „Beschädigte Datei überspringen”        | Bilddatei ist beschädigt                  | Datei erneut von SD-Karte kopieren                             |
 | „PPK-Daten angewendet”               | GPS-Korrekturen aus .daq-Datei angewendet | Keine – normal                                         |
@@ -264,7 +264,7 @@ Wenn die GPU-Beschleunigung aktiviert ist:
 
 * NVIDIA-Symbol in der Taskleiste
 * Task-Manager → Leistung → GPU
-* GPU-Z oder ähnliches Überwachungstool
+* GPU-Z oder ein ähnliches Überwachungstool
 
 ### Festplatten-E/A
 
@@ -276,13 +276,13 @@ Wenn die GPU-Beschleunigung aktiviert ist:
 
 **Leistungstipp:**
 
-* Verwenden Sie nach Möglichkeit eine SSD für den Projektordner
-* Vermeiden Sie Netzlaufwerke für große Datensätze
-* Stellen Sie sicher, dass die Festplatte nicht fast voll ist (beeinträchtigt die Schreibgeschwindigkeit)
+* Verwenden Sie nach Möglichkeit eine SSD für den Projektordner.
+* Vermeiden Sie Netzlaufwerke für große Datensätze.
+* Stellen Sie sicher, dass die Festplatte nicht fast voll ist (beeinträchtigt die Schreibgeschwindigkeit).
 
 ***
 
-## Probleme während der Verarbeitung erkennen
+## Erkennen von Problemen während der Verarbeitung
 
 ### Warnzeichen
 
@@ -300,9 +300,9 @@ Wenn die GPU-Beschleunigung aktiviert ist:
 
 **Das System reagiert nicht mehr:**
 
-* Chloros+ Parallelmodus verbraucht zu viele Ressourcen.
-* Reduzieren Sie die Anzahl der gleichzeitigen Aufgaben oder rüsten Sie die Hardware auf.
-* Der Freie Modus ist weniger ressourcenintensiv.
+* Chloros+ Parallelmodus verbraucht zu viele Ressourcen
+* Reduzieren Sie die Anzahl der gleichzeitigen Aufgaben oder rüsten Sie die Hardware auf
+* Der Freie Modus ist weniger ressourcenintensiv
 
 ### Wann sollte die Verarbeitung gestoppt werden?
 
@@ -314,7 +314,7 @@ Stoppen Sie die Verarbeitung, wenn Sie Folgendes sehen:
 * ❌ Es wurden falsche Einstellungen konfiguriert
 * ❌ Falsche Bilder wurden importiert
 
-**So stoppen Sie die Verarbeitung:**
+**So stoppen Sie den Vorgang:**
 
 1. Klicken Sie auf die **Schaltfläche „Stopp/Abbrechen“** (ersetzt die Schaltfläche „Start“)
 2. Die Verarbeitung wird angehalten, der Fortschritt geht verloren
@@ -344,7 +344,7 @@ Stoppen Sie die Verarbeitung, wenn Sie Folgendes sehen:
 
 **Lösungen:**
 
-1. Sofort Festplattenspeicher freigeben
+1. Festplattenspeicher sofort freigeben
 2. Projekt auf Laufwerk mit mehr Speicherplatz verschieben
 3. Reduzieren Sie die Anzahl der zu exportierenden Indizes.
 4. Verwenden Sie das JPG-Format anstelle von TIFF (kleinere Dateien).
@@ -364,12 +364,12 @@ Stoppen Sie die Verarbeitung, wenn Sie Folgendes sehen:
 
 1. Sorgen Sie für ausreichende Belüftung.
 2. Entfernen Sie Staub aus den Lüftungsöffnungen des Computers.
-3. Reduzieren Sie die Verarbeitungslast (verwenden Sie den freien Modus anstelle von Chloros+).
+3. Reduzieren Sie die Verarbeitungslast (verwenden Sie den Free-Modus anstelle von Chloros+).
 4. Führen Sie die Verarbeitung zu kühleren Tageszeiten durch.
 
 ***
 
-## Benachrichtigung über abgeschlossene Verarbeitung
+## Benachrichtigung über Abschluss der Verarbeitung
 
 Wenn die Verarbeitung abgeschlossen ist:
 
@@ -385,8 +385,8 @@ Wenn die Verarbeitung abgeschlossen ist:
 Nach Abschluss der Verarbeitung:
 
 1. **Überprüfen Sie die Ergebnisse** – siehe [Abschluss der Verarbeitung](finishing-the-processing.md).
-2. **Überprüfen Sie den Ausgabeordner** – Vergewissern Sie sich, dass alle Dateien korrekt exportiert wurden.
-3. **Überprüfen Sie das Debug-Protokoll** – Achten Sie auf Warnungen oder Fehler.
-4. **Zeigen Sie eine Vorschau der verarbeiteten Bilder an** – Verwenden Sie den Bildbetrachter oder eine externe Software.
+2. **Ausgabeordner überprüfen** – Überprüfen Sie, ob alle Dateien korrekt exportiert wurden.
+3. **Debug-Protokoll überprüfen** – Überprüfen Sie, ob Warnungen oder Fehler vorliegen.
+4. **Vorschau der verarbeiteten Bilder** – Verwenden Sie den Bildbetrachter oder eine externe Software.
 
 Informationen zum Überprüfen und Verwenden Ihrer verarbeiteten Ergebnisse finden Sie unter [Beenden der Verarbeitung](finishing-the-processing.md).

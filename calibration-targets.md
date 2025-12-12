@@ -7,7 +7,7 @@ metaLinks:
 
 # Kalibrierungsziele
 
-MAPIR bietet verschiedene Kalibrierungsziele für eine Vielzahl von Anwendungen. Das unten abgebildete kompakte T4-R50 enthält 4 Platten, deren Lichtreflexion im Bereich von 250 bis 2.500 nm gemessen wurde.
+MAPIR bietet verschiedene Kalibrierungsziele für eine Vielzahl von Anwendungen. Das unten abgebildete kompakte T4-R50 enthält 4 Panels, die für eine Lichtreflexion von 250 bis 2.500 nm gemessen wurden.
 
 <figure><img src=".gitbook/assets/t4-r50_2.jpg" alt=""><figcaption><p>MAPIR T4-R50</p></figcaption></figure>
 
@@ -17,7 +17,7 @@ Die diffusen Referenzziele T4 haben die folgenden Reflexionskurven, [Daten hier 
 
 <figure><img src=".gitbook/assets/MAPIR Diffuse Reflectance Standard Calibration Target Data T4 (400-1000nm).png" alt=""><figcaption><p>MAPIR T4 Reflexion :: 400–1000 nm</p></figcaption></figure>
 
-Aus dem Reflexionsgrad-Diagramm geht hervor, dass die Werte die Wellenlänge (x-Achse) im Verhältnis zum Reflexionsgrad in Prozent (y-Achse) darstellen. Wenn wir ein Bild des Kalibrierungsziels aufnehmen, erstellen wir eine Beziehung zwischen dem Pixelwert und dem Reflexionsgrad in Prozent innerhalb des Spektrums, für das die einzelnen Sensorbereiche der Kamera empfindlich sind.
+Aus dem Reflektionsdiagramm geht hervor, dass die Werte die Wellenlänge (x-Achse) im Verhältnis zur Reflektionsrate (y-Achse) darstellen. Wenn wir ein Bild des Kalibrierungsziels aufnehmen, erstellen wir eine Beziehung zwischen dem Pixelwert und der Reflektionsrate innerhalb des Spektrums, für das die einzelnen Sensorbereiche der Kamera empfindlich sind.
 
 Das bedeutet, dass Sie bei jedem Bild, das Sie mit unseren Kameras aufnehmen, ein Foto unserer Reflektionsziele wie [T4-R50](https://www.mapir.camera/collections/calibration-targets/products/diffuse-reflectance-standard-calibration-target-package-t3-r50) oder [T4-R125](https://www.mapir.camera/collections/multispectral-reflectance-reference-calibration-targets/products/diffuse-reflectance-standard-calibration-target-package-t4-r125) verwenden können, um die Bilder hinsichtlich der Reflektionsfähigkeit zu kalibrieren. Nach der Kalibrierung entspricht jedes Pixel im Bild einem Prozentsatz der Reflexion.
 

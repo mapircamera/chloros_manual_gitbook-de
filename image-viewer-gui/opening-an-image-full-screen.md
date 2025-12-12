@@ -17,7 +17,7 @@ Die gängigste Methode zum Öffnen eines Bildes im Bildbetrachter:
 
 Sobald ein Bild im Vorschau-Bereich geladen ist:
 
-1. Klicken Sie auf das Symbol **„Bildbetrachter“** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> in der linken Seitenleiste.
+1. Klicken Sie auf das Symbol „Bildbetrachter“ <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> in der linken Seitenleiste.
 2. Die Registerkarte „Bildbetrachter“ wird geöffnet und zeigt das ausgewählte Bild im Vollbildmodus an.
 3. In der linken Seitenleiste stehen erweiterte Anzeige- und Analysewerkzeuge zur Verfügung.
 
@@ -70,9 +70,9 @@ Passen Sie die Vergrößerung an, um Bilddetails zu betrachten:
 * Drücken Sie die Taste **0** (Null).
 * Doppelklicken Sie auf das Bild.
 
-#### Schwenken beim Zoomen
+#### Schwenken bei Vergrößerung
 
-Wenn Sie über die Bildschirmgröße hinaus gezoomt haben:
+Bei Vergrößerung über die Bildschirmgröße hinaus:
 
 1. Bewegen Sie den Mauszeiger über das Bild.
 2. Klicken Sie und **halten Sie die linke Maustaste gedrückt**.
@@ -91,7 +91,7 @@ Wenn Sie den Mauszeiger über das Bild bewegen, werden die Pixelwerte in Echtzei
 
 **Anzeigeort des Werts:**
 
-* **Gleitkommazahl und rote Linie in der Index-LUT-Gradientenlegende auf der rechten Seite**
+* **Gleitkommazahl und rote Linie in der Gradientenlegende der Index-LUT auf der rechten Seite**
 * **Bei weiterer Vergrößerung: Gleitkommawert in der Nähe des Cursors und hervorgehobenes Pixel**
 * Zeigt Werte für Pixel **unter dem Cursor oder hervorgehoben** an
 * Wird aktualisiert, wenn Sie die Maus bewegen
@@ -228,7 +228,7 @@ Ausführliche Anweisungen finden Sie unter [Index/LUT-Sandbox](index-lut-sandbox
 
 **Lösungen:**
 
-1. Überprüfen Sie, ob Sie die verarbeitete Ausgabe anzeigen (überprüfen Sie die Dateinamenendung).
+1. Vergewissern Sie sich, dass Sie die verarbeitete Ausgabe anzeigen (überprüfen Sie die Dateinamenerweiterung).
 2. Überprüfen Sie den Status der Prozentmodus-Schaltfläche.
 3. Vergleichen Sie mit bekanntermaßen guten Bildern aus demselben Datensatz.
 

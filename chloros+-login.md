@@ -34,7 +34,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 ### Ablauf des Plans
 
-Der Ablauf des Plans in der GUI zeigt an, wann Ihre Lizenz ungültig wird. Bei monatlichen Abonnements endet die Laufzeit am Ende des Monats. Bei Jahresabonnements endet die Laufzeit ein Jahr nach Beginn des Abonnements. Die Lizenzprüfung erfordert eine monatliche Internetverbindung zur Überprüfung, mit einer 30-tägigen Nachfrist.
+Der Ablauf des Plans in der GUI zeigt an, wann Ihre Lizenz ungültig wird. Bei monatlichen Abonnements endet die Gültigkeit am Ende des Monats. Bei Jahresabonnements endet die Gültigkeit ein Jahr nach Beginn des Abonnements. Die Lizenzprüfung erfordert eine monatliche Internetverbindung zur Überprüfung, mit einer Nachfrist von 30 Tagen.
 
 ### Gerätebeschränkung
 

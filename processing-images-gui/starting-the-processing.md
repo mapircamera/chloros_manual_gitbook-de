@@ -97,7 +97,7 @@ Chloros arbeitet je nach Ihrer Lizenz in zwei verschiedenen Verarbeitungsmodi:
 * GPU-Beschleunigung verbessert die Geschwindigkeit zusätzlich.
 
 {% hint style=&quot;info&quot; %}
-**Chloros+ Geschwindigkeit**: Die parallele Verarbeitung kann bei großen Datensätzen 5-10 Mal schneller sein als der sequenzielle Modus. Ein Projekt mit 500 Bildern, das im kostenlosen Modus 2 Stunden dauert, kann mit Chloros+ in 15-20 Minuten abgeschlossen werden.
+**Chloros+ Geschwindigkeit**: Die parallele Verarbeitung kann bei großen Datensätzen 5-10 Mal schneller sein als der sequentielle Modus. Ein Projekt mit 500 Bildern, das im kostenlosen Modus 2 Stunden dauert, kann mit Chloros+ in 15-20 Minuten abgeschlossen werden.
 {% endhint %}
 
 ***
@@ -129,12 +129,12 @@ Chloros arbeitet je nach Ihrer Lizenz in zwei verschiedenen Verarbeitungsmodi:
 
 **Was Chloros leistet:**
 
-* **Vignettierungskorrektur**: Entfernt die Verdunkelung der Linsen an den Rändern.
-* **Reflexionskalibrierung**: Normalisiert anhand der Zielreflexionswerte.
-* Wendet Korrekturen auf alle Bänder/Kanäle an.
-* Verwendet für jedes Bild das geeignete Kalibrierungsziel basierend auf dem Zeitstempel.
+* **Vignettierungskorrektur**: Entfernt die Verdunkelung des Objektivs an den Rändern
+* **Reflexionskalibrierung**: Normalisiert anhand von Zielreflexionswerten
+* Wendet Korrekturen auf alle Bänder/Kanäle an
+* Verwendet für jedes Bild das geeignete Kalibrierungsziel basierend auf dem Zeitstempel
 
-**Dauer:** Der Großteil der Verarbeitungszeit
+**Dauer:** Großteil der Verarbeitungszeit
 
 ### Stufe 4: Indexberechnung
 
@@ -181,10 +181,10 @@ Nach dem Start läuft die gesamte Pipeline automatisch ab:
 
 * Hohe CPU-Auslastung (Multi-Threaded, bis zu 16 Kerne)
 * Mit GPU-Beschleunigung: Hohe GPU-Auslastung
-* Der Computer reagiert während der Verarbeitung möglicherweise weniger schnell.
-* Vermeiden Sie es, andere CPU-intensive Aufgaben zu starten.
+* Der Computer reagiert während der Verarbeitung möglicherweise weniger schnell
+* Vermeiden Sie es, andere CPU-intensive Aufgaben zu starten
 
-{% Hinweis style=&quot;warning&quot; %}
+{% hint style=&quot;warning&quot; %}
 **Leistungstipp**: Um die beste Leistung von Chloros+ zu erzielen, schließen Sie andere Anwendungen und lassen Sie Chloros die gesamten Systemressourcen nutzen.
 {% endhint %}
 
@@ -197,7 +197,7 @@ Nach dem Start läuft die gesamte Pipeline automatisch ab:
 * Teilweise Ergebnisse werden nicht gespeichert.
 * Bei Abbruch muss von vorne begonnen werden.
 
-**Planungstipp:** Bei sehr großen Projekten sollten Sie eine Verarbeitung in Stapeln oder die Verwendung von CLI in Betracht ziehen, um eine bessere Kontrolle zu haben.
+**Planungstipp:** Bei sehr großen Projekten sollten Sie eine Verarbeitung in Stapeln oder die Verwendung von CLI in Betracht ziehen, um eine bessere Kontrolle zu erzielen.
 
 ***
 
@@ -206,9 +206,9 @@ Nach dem Start läuft die gesamte Pipeline automatisch ab:
 Während der Verarbeitung können Sie:
 
 * **Den Fortschrittsbalken beobachten** – Sehen Sie den Gesamtfortschritt in Prozent.
-* **Die aktuelle Phase anzeigen** – Erkennen, Analysieren, Kalibrieren oder Exportieren.
-* **Die Registerkarte „Protokoll“ überprüfen** – Sehen Sie detaillierte Verarbeitungsmeldungen und Warnungen.
-* **Eine Vorschau der fertigen Bilder anzeigen** – Einige Exportdateien werden möglicherweise während der Verarbeitung angezeigt.
+* **Die aktuelle Phase anzeigen** – Erkennen, Analysieren, Kalibrieren oder Exportieren
+* **Registerkarte „Protokoll“ überprüfen** – Detaillierte Verarbeitungsmeldungen und Warnungen anzeigen
+* **Vorschau der fertigen Bilder** – Einige Exportdateien werden möglicherweise während der Verarbeitung angezeigt
 
 Ausführliche Informationen zur Überwachung finden Sie unter [Überwachen der Verarbeitung](monitoring-the-processing.md).
 
@@ -225,7 +225,7 @@ Wenn Sie die Verarbeitung stoppen müssen:
 3. Die Verarbeitung wird sofort angehalten.
 4. Teilweise Ergebnisse werden verworfen.
 
-### Wann sollte abgebrochen werden?
+### Wann abbrechen
 
 **Gültige Gründe für einen Abbruch:**
 
@@ -234,14 +234,14 @@ Wenn Sie die Verarbeitung stoppen müssen:
 * Es wurden falsche Bilder importiert.
 * Das System läuft zu langsam oder reagiert nicht.
 
-**Nach dem Abbruch:**
+**Nach dem Abbrechen:**
 
 * Überprüfen und beheben Sie alle Probleme.
 * Passen Sie die Einstellungen nach Bedarf an.
 * Starten Sie die Verarbeitung von vorne.
 * Für ein optimales Ergebnis schließen Sie Chloros vollständig und starten Sie es neu.
 
-{% hint style=&quot;warning&quot; %}
+{% Hinweis style=&quot;warning&quot; %}
 **Keine Teilergebnisse**: Durch das Abbrechen werden alle Fortschritte verworfen. Chloros speichert keine teilweise verarbeiteten Bilder.
 {% endhint %}
 
@@ -254,9 +254,9 @@ Die tatsächliche Verarbeitungszeit hängt stark von folgenden Faktoren ab:
 * Anzahl der Bilder
 * Bildauflösung
 * Eingabeformat (RAW oder JPG)
-* Verarbeitungsmodus (Free vs. Chloros+)
+* Verarbeitungsmodus (Free oder Chloros+)
 * CPU-Geschwindigkeit und Anzahl der Kerne
-* Verfügbarkeit der GPU (nur Chloros+)
+* Verfügbarkeit einer GPU (nur Chloros+)
 * Anzahl der zu berechnenden Indizes
 * Komplexität des Exportformats
 
@@ -320,7 +320,7 @@ Die tatsächliche Verarbeitungszeit hängt stark von folgenden Faktoren ab:
 
 **Lösungen:**
 
-1. Überprüfen Sie die [Auswahl der Zielbilder](choosing-target-images.md).
+1. Überprüfen Sie die [Auswahl von Zielbildern](choosing-target-images.md).
 2. Markieren Sie die entsprechenden Bilder in der Spalte „Ziel”.
 3. Überprüfen Sie, ob die Ziele in den markierten Bildern sichtbar sind.
 4. Passen Sie die Einstellungen für die Zielerkennung bei Bedarf an.
@@ -363,4 +363,4 @@ Sobald die Verarbeitung begonnen hat:
 2. **Warten Sie, bis der Vorgang abgeschlossen ist** – Die Verarbeitung läuft automatisch.
 3. **Überprüfen Sie die Ergebnisse** – Siehe [Beenden der Verarbeitung](finishing-the-processing.md).
 
-Informationen dazu, was Sie während der Verarbeitung tun sollten, finden Sie unter [Überwachen der Verarbeitung](monitoring-the-processing.md).
+Informationen dazu, was während der Verarbeitung zu tun ist, finden Sie unter [Überwachen der Verarbeitung](monitoring-the-processing.md).

@@ -1,8 +1,8 @@
 # Anpassen der Projekteinstellungen
 
-Bevor Sie Ihre Bilder bearbeiten, sollten Sie die Projekteinstellungen entsprechend Ihren Arbeitsabläufen konfigurieren. Das Projektfenster <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> bietet umfassende Kontrolle über Kalibrierung, Verarbeitungsoptionen, multispektrale Indizes und Exportformate.
+Bevor Sie Ihre Bilder bearbeiten, ist es wichtig, die Projekteinstellungen entsprechend Ihren Arbeitsabläufen zu konfigurieren. Das Projektfenster <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> bietet umfassende Kontrolle über Kalibrierung, Verarbeitungsoptionen, multispektrale Indizes und Exportformate.
 
-## Auf die Projekteinstellungen zugreifen
+## Zugriff auf die Projekteinstellungen
 
 1. Öffnen Sie Ihr Projekt in Chloros
 2. Klicken Sie auf das Symbol **Projekteinstellungen** <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> in der linken Seitenleiste.
@@ -54,7 +54,7 @@ Wichtigste Bildverarbeitungs- und Kalibrierungsoptionen.
 
 **Wichtige Einstellungen:**
 
-* **Vignettierungskorrektur**: Gleicht die Verdunkelung des Objektivs an den Rändern aus ✅ Empfohlen
+* **Vignettierungskorrektur**: Kompensiert die Verdunkelung des Objektivs an den Rändern ✅ Empfohlen
 * **Reflexionskalibrierung**: Normalisiert Werte mithilfe von Kalibrierungszielen ✅ Empfohlen
 * **Debayer-Verfahren**: Algorithmus zur Konvertierung von RAW in 3-Kanal-Multispektral
 * **Minimales Neukalibrierungsintervall**: Zeit zwischen der Verwendung von Kalibrierungszielen (0 = alle verwenden)
@@ -80,7 +80,7 @@ Konfigurieren Sie, welche Vegetationsindizes berechnet und exportiert werden sol
 
 * **NDVI**: Allgemeiner Gesundheitszustand der Vegetation (am häufigsten)
 * **NDRE**: Früherkennung von Stress mit RedEdge
-* **GNDVI**: Chlorophyllkonzentrationsempfindlich
+* **GNDVI**: Empfindlich gegenüber Chlorophyllkonzentration
 * **OSAVI**: Funktioniert gut bei sichtbarem Boden
 * **EVI**: Regionen mit hohem Blattflächenindex (LAI)
 
@@ -112,7 +112,7 @@ Steuert das Ausgabeformat und die Qualität der Datei.
 Erstellen Sie wiederverwendbare Vorlagen für konsistente Arbeitsabläufe:
 
 1. Konfigurieren Sie alle gewünschten Einstellungen im Bereich „Projekteinstellungen“.
-2. Scrollen Sie zum Abschnitt **„Projektvorlage speichern“** unten.
+2. Scrollen Sie zum Abschnitt „**Projektvorlage speichern**“ unten.
 3. Geben Sie einen aussagekräftigen Namen für die Vorlage ein (z. B. „Survey3N\_RGN\_Agriculture“).
 4. Klicken Sie auf das Speichersymbol.
 
@@ -120,7 +120,7 @@ Erstellen Sie wiederverwendbare Vorlagen für konsistente Arbeitsabläufe:
 
 * Wenden Sie identische Einstellungen auf mehrere Projekte an.
 * Teilen Sie Konfigurationen mit Teammitgliedern.
-* Sorgen Sie für Konsistenz bei wiederholten Umfragen.
+* Sorgen Sie für Konsistenz bei wiederholten Erhebungen.
 
 ### Vorlage in neues Projekt laden
 
@@ -218,7 +218,7 @@ Für Projekte mit vielen Bildern (500+):
 * [ ] Reflektionskalibrierung aktiviert
 * [ ] Mindestens ein Kalibrierungszielbild importiert
 * [ ] Gewünschte multispektrale Indizes hinzugefügt
-* [ ] Für Ihren Workflow geeignetes Exportformat
+* [ ] Für Ihren Arbeitsablauf geeignetes Exportformat
 * [ ] PPK-Einstellungen konfiguriert (bei Verwendung von .daq mit Belichtungsereignissen)
 
 ***

@@ -8,9 +8,9 @@ Die Index/LUT-Sandbox ist ein interaktiver Arbeitsbereich innerhalb des Chloros 
 
 Die Sandbox bietet:
 
-* **Echtzeit-Indexberechnung** – Sofortige Anwendung beliebiger Vegetationsindizes
+* **Echtzeit-Indexberechnung** – Wenden Sie jeden Vegetationsindex sofort an
 * **Interaktive LUT-Anpassung** – Feinabstimmung von Farbverläufen und -bereichen
-* **Workflow-Optimierung** – Ermittlung der besten Einstellungen vor der Stapelverarbeitung
+* **Workflow-Optimierung** – Ermitteln Sie die besten Einstellungen vor der Stapelverarbeitung
 
 ### Sandbox vs. Projektverarbeitung
 
@@ -40,7 +40,7 @@ Die Sandbox bietet:
 
 ### Vorberechnete Indizes verstehen
 
-In Chloros können Indizes während der Projektverarbeitung angewendet werden. Um zu bestimmen, welche Index- und LUT-Einstellungen Sie auf Exporte anwenden möchten, verwenden Sie am besten die Bildbetrachter-Sandbox.
+In Chloros können Indizes während der Projektverarbeitung angewendet werden. Um zu bestimmen, welche Index- und LUT-Einstellungen Sie auf Exporte anwenden möchten, verwenden Sie am besten die Bildbetrachtungs-Sandbox.
 
 Mit der Sandbox können Sie:
 
@@ -51,14 +51,14 @@ Mit der Sandbox können Sie:
 
 ### Öffnen der Sandbox
 
-Die Index-/LUT-Sandbox finden Sie in der **Bildanzeige** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> :
+Die Index-/LUT-Sandbox finden Sie in der **Bildbetrachtung** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> :
 
-1. Klicken Sie auf ein Bild im Bildraster des Dateibrowsers, um es in der Registerkarte **Bildbetrachter** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> .
+1. Klicken Sie auf ein Bild im Bildraster des Dateibrowsers, um es im **Bildbetrachter** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> .
 2. Klicken Sie auf die Registerkarte **„Bildbetrachter“** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> , um die linke Popout-Seitenleiste zu öffnen, falls sie noch nicht geöffnet ist.
 
 ### Auswählen eines Bildes, auf das ein Index/LUT angewendet werden soll
 
-Um mit einem Index in der Sandbox des Bildbetrachters <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> Sandbox zu arbeiten:
+So arbeiten Sie mit einem Index in der Sandbox des Bildbetrachters <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> Sandbox zu arbeiten:
 
 1. **Öffnen Sie ein Bild** aus dem Hauptbildraster, indem Sie darauf klicken.
 2. Die Registerkarte **Bildbetrachter** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> .
@@ -73,7 +73,7 @@ Sobald das Bild im Vollbildmodus angezeigt wird und die Seitenleiste „**Bildbe
 1. Aktivieren Sie das Kontrollkästchen „Index“ oben in der Seitenleiste.
 2. Wählen Sie den Filter Ihrer Kamera aus dem Dropdown-Menü auf der linken Seite aus.
 3. Wählen Sie die gewünschte Indexformel aus dem Dropdown-Menü auf der rechten Seite aus.
-4. Ziehen Sie die Farbcirkel des Filterkanals an die entsprechenden Stellen in der Indexformel darunter.
+4. Ziehen Sie die Farbcirkels des Filterkanals an die entsprechenden Stellen in der Indexformel darunter.
 5. Sobald die Formel gültig ist, wird das Bild aktualisiert und zeigt die Indexwerte an.
 6. Bewegen Sie den Mauszeiger, um die Werte an der Position des Mauszeigers anzuzeigen.
 7. Zoomen Sie hinein, um einzelne Pixel und die zugehörigen Werte anzuzeigen.
@@ -123,10 +123,10 @@ Eine **Look-Up-Tabelle (LUT)** ordnet numerische Indexwerte Farben zur Visualisi
 
 Sobald Sie ein Indexbild haben, das Folgendes anzeigt
 
-1. Klicken Sie auf die Schaltfläche <img src="../.gitbook/assets/image.png" alt="" data-size="line"> Schaltfläche „+LUT hinzufügen“
+1. Klicken Sie auf die <img src="../.gitbook/assets/image.png" alt="" data-size="line"> Schaltfläche „+LUT hinzufügen“
 2. Wählen Sie den Farbverlauf aus
-3. Passen Sie die minimalen/maximalen Endpunkte der Beschneidung an
-4. Passen Sie den Beschneidungsmodus an
+3. Passen Sie die minimalen/maximalen Endpunkte der Begrenzung an
+4. Passen Sie den Begrenzungsmodus an
 5. Aktivieren Sie das Kontrollkästchen „Index“ in der **Bildanzeige** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> , um die LUT anzuwenden.
 
 ### Auswahl eines Farbverlaufs
@@ -136,93 +136,93 @@ Sobald Sie ein Indexbild haben, das Folgendes anzeigt
 1. Suchen Sie im LUT-Bedienfeld die **farbige Verlaufsleiste**.
 2. Bewegen Sie den Mauszeiger darüber, um die verfügbaren Farbverlaufsvoreinstellungen anzuzeigen.
 3. Wählen Sie den gewünschten Farbverlauf aus.
-4. Das Bild wird **sofort mit neuen Farben aktualisiert**, wenn das Kontrollkästchen „Index“ aktiviert ist.
+4. Das Bild wird **sofort** mit neuen Farben aktualisiert, wenn das Kontrollkästchen „Index“ aktiviert ist.
 
 {% Hinweis style=&quot;success&quot; %}
-**Bewährte Vorgehensweise**: Für Vegetationsindizes wie NDVI ist der Farbverlauf Red-Gelb-Green am intuitivsten, da er den natürlichen Farbassoziationen entspricht (grün = gesund, gelb = mäßig, rot = gestresst)..
+**Bewährte Methode**: Für Vegetationsindizes wie NDVI ist der Farbverlauf Red-Gelb-Green am intuitivsten, da er den natürlichen Farbassoziationen entspricht (grün = gesund, gelb = mäßig, rot = gestresst).
 {% endhint %}
 
 ### Anpassen der Farbklassen
 
-Mit der **Steuerung „Klassen”** legen Sie fest, wie viele diskrete Farbstufen in Ihrem Farbverlauf angezeigt werden:
+Die **Klassensteuerung** bestimmt, wie viele diskrete Farbschritte in Ihrem Farbverlauf angezeigt werden:
 
 **Optionen für die Klassenanzahl:**
 
 * **2–5 Klassen**: Sehr breite Kategorien, deutliche Zonen
 * **6–10 Klassen**: Ausgewogen, gut für die Klassifizierung geeignet
 * **11–20 Klassen**: Sanfte Farbverläufe, kontinuierliches Erscheinungsbild
-* **20+ Klassen**: Nahezu kontinuierlich, maximale Sanftheit
+* **20+ Klassen**: Nahezu kontinuierlich, maximale Glätte
 
 **So nehmen Sie die Anpassung vor:**
 
 1. Suchen Sie im LUT-Bedienfeld die **Farbfelder unterhalb der Farbverlaufsleiste**.
 2. Passen Sie die Anzahl der Klassen an, indem Sie mit der Schaltfläche „+“ weitere hinzufügen.
-3. Entfernen Sie die Anzahl der Klassen durch Doppelklick auf ein Farbfeld.
+3. Entfernen Sie Klassen, indem Sie auf ein Farbfeld doppelklicken.
 4. Der Farbverlauf wird **in Echtzeit** auf dem Bild aktualisiert.
 
 **Auswirkung auf die Visualisierung:**
 
-* **Weniger Klassen** (3–5): Erzeugt eindeutige Zonen, vereinfachte Klassifizierung, leichter zu unterscheidende Kategorien
-* **Mittlere Klassen** (6–10): Ausgewogener Ansatz, für die meisten Anwendungen geeignet.
+* **Weniger Klassen** (3–5): Erzeugt deutliche Zonen, vereinfachte Klassifizierung, leichter zu unterscheidende Kategorien.
+* **Mittlere Klassen** (6–10): Ausgewogener Ansatz, gut für die meisten Anwendungen geeignet.
 * **Mehr Klassen** (15–20): Sanfte Übergänge, detaillierte Variationen, fotografisches Erscheinungsbild.
 
 **Wann verwenden:**
 
-* **Wenige Klassen (3–5)**: Präsentationsfolien, Klassifizierungskarten, einfache Berichte.
+* **Wenige Klassen (3–5)**: Präsentationsfolien, Klassifizierungskarten, einfache Berichte
 * **Mittlere Klassen (6–10)**: Allgemeine Analyse, ausgewogene Details, Standardberichte
-* **Viele Klassen (15–20)**: Wissenschaftliche Analyse, detaillierte Überprüfung, Ergebnisse in Publikationsqualität
+* **Viele Klassen (15–20)**: Wissenschaftliche Analyse, detaillierte Inspektion, Ergebnisse in Publikationsqualität
 
 ### Feinabstimmung der Wertebereiche
 
-Mit den **Wertebereichssteuerelementen** legen Sie fest, welche Indexwerte welchen Farben in Ihrem Farbverlauf zugeordnet werden:
+Die **Wertebereichssteuerungen** legen fest, welche Indexwerte welchen Farben in Ihrem Farbverlauf zugeordnet werden:
 
-**Bereichssteuerelemente im LUT-Bedienfeld:**
+**Bereichssteuerungen im LUT-Bedienfeld:**
 
 * **Mindestwert**: Untergrenze der Farbskala
 * **Höchstwert**: Obergrenze der Farbskala
-* **Zwischenwerte**: Werden automatisch zwischen Min und Max verteilt (basierend auf der Klassenanzahl)
+* **Zwischenwerte**: Automatische Verteilung zwischen Min und Max (basierend auf der Klassenanzahl)
 
-#### Anpassen der Min-/Max-Werte
+#### Anpassen der Minimal-/Maximalwerte
 
 **So passen Sie die Wertebereiche an:**
 
-1. Suchen Sie im LUT-Bedienfeld die Eingabefelder **Min-Wert** und **Max-Wert**.
+1. Suchen Sie im LUT-Panel die Eingabefelder **Minimalwert** und **Maximalwert**.
 2. Klicken Sie auf das Feld **Minimalwert**.
 3. Geben Sie den gewünschten Minimalwert ein (z. B. `0.2`).
 4. Drücken Sie die **Eingabetaste** oder klicken Sie außerhalb des Feldes.
 5. Wiederholen Sie den Vorgang für das Feld **Maximalwert** (z. B. `0.9`).
 6. Die Visualisierung **wird sofort aktualisiert**.
 
-{% hint style=&quot;info&quot; %}
-**Automatische Skalierung**: Wenn Sie eine LUT zum ersten Mal anwenden, stellt Chloros automatisch den Minimal-/Maximalwert auf den tatsächlichen Datenbereich im Bild ein. Sie können diesen Bereich dann eingrenzen, um sich auf bestimmte Wertebereiche zu konzentrieren, die für Sie von Interesse sind.
+{% Hinweis style=&quot;info&quot; %}
+**Automatische Skalierung**: Wenn Sie eine LUT zum ersten Mal anwenden, setzt Chloros automatisch den Minimal-/Maximalwert auf den tatsächlichen Datenbereich im Bild. Sie können diesen Bereich dann eingrenzen, um sich auf bestimmte Wertebereiche zu konzentrieren, die für Sie von Interesse sind.
 {% endhint %}
 
 **Beispiel für NDVI-Bereichsanpassungen:**
 
-* **Gesamter Bereich**: `-1.0` bis `1.0` (alle möglichen Werte anzeigen)
-* **Auf Vegetation fokussiert**: `0.2` bis `0.9` (nackten Boden und Wasser ausschließen)
+* **Vollständiger Bereich**: `-1.0` bis `1.0` (alle möglichen Werte anzeigen)
+* **Auf Vegetation fokussiert**: `0.2` bis `0.9` (blanker Boden und Wasser ausschließen)
 * **Nur gesunde Vegetation**: `0.5` bis `0.9` (nur kräftige Pflanzen hervorheben)
 * **Stresserkennung**: `0.2` bis `0.5` (Problembereiche hervorheben)
-* **Benutzerdefinierter Bereich**: Anpassen basierend auf den beobachteten Pixelwerten
+* **Benutzerdefinierter Bereich**: Passen Sie die Werte anhand Ihrer beobachteten Pixelwerte an
 
-**Warum Bereiche anpassen?**
+**Warum sollten Sie die Bereiche anpassen?**
 
-* **Kontrast erhöhen** in Ihrem Interessengebiet
-* **Irrelevante Werte ausschließen** (z. B. Gewässer, kahler Boden)
-* **Visualisierung standardisieren** über mehrere Bilder oder Daten hinweg
-* **Subtile Unterschiede hervorheben** innerhalb eines engen Wertebereichs
+* **Erhöhen Sie den Kontrast** in Ihrem Interessengebiet
+* **Schließen Sie irrelevante Werte aus** (z. B. Gewässer, kahler Boden)
+* **Standardisieren Sie die Visualisierung** über mehrere Bilder oder Daten hinweg
+* **Heben Sie subtile Unterschiede** innerhalb eines engen Wertebereichs hervor
 
-### Werte außerhalb des Bereichs ausschneiden
+### Werte außerhalb des Bereichs abschneiden
 
-Wenn Pixelwerte außerhalb Ihres definierten Min-/Max-Bereichs liegen, können Sie mithilfe von **Ausschnittmodi** steuern, wie sie angezeigt werden.
+Wenn Pixelwerte außerhalb Ihres definierten Mindest-/Höchstbereichs liegen, können Sie mithilfe von **Abschneidemodi** steuern, wie sie angezeigt werden.
 
-#### **Verfügbare Clipping-Modus-Optionen:**
+#### **Verfügbare Optionen für den Abschneidemodus:**
 
 #### 1. Minimum und Maximum
 
 * Pixel **unter dem Minimum** → Anzeige mit der **ersten Farbe** im Farbverlauf (z. B. Rot)
 * Pixel **über dem Maximum** → Anzeige mit der **letzten Farbe** im Farbverlauf (z. B. Grün)
-* **Anwendungsfall**: Hervorhebung von Extremen, Anzeige des gesamten Datenbereichs mit gesättigten Farben an den Grenzen
+* **Anwendungsfall**: Hervorheben von Extremen, Anzeigen des gesamten Datenbereichs mit gesättigten Farben an den Grenzen
 * **Beispiel**: NDVI-Werte unter 0,2 werden alle rot angezeigt, Werte über 0,9 werden alle grün angezeigt
 
 #### 2. Transparenter Hintergrund
@@ -239,13 +239,13 @@ Wenn Pixelwerte außerhalb Ihres definierten Min-/Max-Bereichs liegen, können S
 #### 3. Indexhintergrund
 
 * Pixel **außerhalb des Bereichs** werden in **Graustufen** angezeigt (mit den Rohindexwerten).
-* Pixel **innerhalb des Bereichs** zeigen einen **Farbverlauf**
-* **Anwendungsfall**: Dezente Hervorhebung, Beibehaltung des Kontexts bei gleichzeitiger Hervorhebung von Bereichen von Interesse
+* Pixel **innerhalb des Bereichs** zeigen einen **Farbverlauf**.
+* **Anwendungsfall**: Dezente Hervorhebung, Beibehaltung des Kontexts bei gleichzeitiger Hervorhebung interessanter Bereiche
 * **Beispiel**: Hervorhebung gestresster Vegetation durch Farbe (NDVI 0,3–0,5) bei gleichzeitiger Darstellung gesunder Bereiche in Grau
 
 #### 4. Originalhintergrund
 
-* Pixel **außerhalb des Bereichs** zeigen das **ursprüngliche multispektrale Bild** an
+* Pixel **außerhalb des Bereichs** zeigen das **ursprüngliche multispektrale Bild**
 * Pixel **innerhalb des Bereichs** zeigen einen **Farbverlauf**
 * **Anwendungsfall**: Am intuitivsten – kombiniert den natürlichen Bildkontext mit einer analytischen Farbüberlagerung
 * **Beispiel**: Sehen Sie das tatsächliche Aussehen des Feldes/der Kulturpflanzen mit farbcodierten Stressbereichen als Überlagerung
@@ -255,9 +255,9 @@ Wenn Pixelwerte außerhalb Ihres definierten Min-/Max-Bereichs liegen, können S
 | Clipping-Modus              | Am besten geeignet für                                   | Visualisierungsstil          |
 | -------------------------- | ------------------------------------------ | ---------------------------- |
 | **Minimum und Maximum**    | Vollständige Datenanzeige, wissenschaftliche Analyse     | Alle Pixel farbig           |
-| **Transparenter Hintergrund** | GIS-Überlagerungen, Isolierung bestimmter Bereiche    | Farbe im Bereich, außerhalb leer |
-| **Indexhintergrund**       | Dezente Hervorhebung, Beibehaltung des Datenkontexts  | Farbe im Bereich, außerhalb grau  |
-| **Originalhintergrund**    | Berichte, Präsentationen, intuitive Analyse | Farbe im Bereich, außerhalb Foto |
+| **Transparenter Hintergrund** | GIS-Überlagerungen, Isolierung bestimmter Bereiche    | Farbe im Bereich, außerhalb davon leer |
+| **Indexhintergrund**       | Dezente Hervorhebung, Beibehaltung des Datenkontexts  | Farbe im Bereich, außerhalb davon grau  |
+| **Originalhintergrund**    | Berichte, Präsentationen, intuitive Analyse | Farbe im Bereich, außerhalb davon Foto |
 
 ### Erstellen benutzerdefinierter LUT-Farben
 
@@ -265,7 +265,7 @@ Um die vollständige Kontrolle über Ihre Visualisierung zu haben, können Sie *
 
 **So erstellen Sie einen benutzerdefinierten Farbverlauf:**
 
-1. Suchen Sie im LUT-Bedienfeld die **Vorschauleiste für Farbverläufe**.
+1. Suchen Sie im LUT-Bedienfeld die **Farbverlaufs-Vorschauleiste**.
 2. Suchen Sie unterhalb des Farbverlaufs nach den **Farbfeldern**.
 3. **Klicken Sie auf einen Farbstopp**, um ihn auszuwählen.
 4. Ein **Farbwähler** wird geöffnet.
@@ -278,16 +278,16 @@ Um die vollständige Kontrolle über Ihre Visualisierung zu haben, können Sie *
 
 **Hinzufügen oder Entfernen von Farbstopps:**
 
-* **Stop hinzufügen**: Klicken Sie auf das Symbol „+“, um am Ende ein neues Farbfeld hinzuzufügen.
-* **Stop entfernen**: Doppelklicken Sie auf das Farbfeld, um es zu entfernen.
+* **Halt hinzufügen**: Klicken Sie auf das Symbol „+“, um am Ende ein neues Farbfeld hinzuzufügen.
+* **Halt entfernen**: Doppelklicken Sie auf das Farbfeld, um es zu entfernen.
 
 **Anpassungsstrategien:**
 
 * **Farbverlauf umkehren**: Kehren Sie die Farbreihenfolge um, um die Bedeutung umzukehren (z. B. grün = niedrig, rot = hoch).
 * **Markenfarben**: Passen Sie die Farbpalette Ihrer Organisation für Berichte an.
-* **Farbenblindfreundlich**: Verwenden Sie Orange-Blau- oder Violett-Gelb-Kombinationen.
-* **Druckoptimierung**: Wählen Sie Farben, die sowohl für den Farb- als auch für den Graustufendruck geeignet sind.
-* **Mehrere Schwellenwerte**: Verwenden Sie unterschiedliche Farben für bestimmte Werteschwellen zur Klassifizierung.
+* **Farbenblindfreundlich**: Verwenden Sie Orange-Blau- oder Violett-Gelb-Kombinationen
+* **Druckoptimierung**: Wählen Sie Farben, die sowohl für den Farb- als auch für den Graustufendruck geeignet sind
+* **Mehrere Schwellenwerte**: Verwenden Sie unterschiedliche Farben bei bestimmten Werteschwellen für die Klassifizierung
 
 {% hint style=&quot;info&quot; %}
 **Speichern benutzerdefinierter Farbverläufe**: Benutzerdefinierte Farbverläufe können gespeichert und wiederverwendet werden. Klicken Sie auf das Speichersymbol im LUT-Bedienfeld, um Ihre benutzerdefinierten Farbschemata für die zukünftige Verwendung zu speichern.
@@ -295,20 +295,20 @@ Um die vollständige Kontrolle über Ihre Visualisierung zu haben, können Sie *
 
 ***
 
-## Interaktiver Workflow
+## Interaktiver Arbeitsablauf
 
 ### Echtzeit-Aktualisierungen
 
 Alle LUT-Anpassungen in der Sandbox aktualisieren das Bild **sofort und interaktiv**:
 
 * **Ebene wechseln** → Das Bild ändert sich sofort
-* **Farbverlauf auswählen** → Farben werden sofort aktualisiert
-* **Wertebereich anpassen** → Kontrast ändert sich in Echtzeit
+* **Farbverlauf auswählen** → Die Farben werden sofort aktualisiert
+* **Wertebereich anpassen** → Der Kontrast ändert sich in Echtzeit
 * **Klassen ändern** → Die Glätte des Farbverlaufs wird sofort aktualisiert
-* **Ausschnitt ändern** → Die Hintergrundanzeige ändert sich sofort
-* **Farben bearbeiten** → Benutzerdefinierter Farbverlauf wird sofort angewendet
+* **Clipping ändern** → Die Hintergrundanzeige ändert sich sofort
+* **Farben bearbeiten** → Der benutzerdefinierte Farbverlauf wird sofort angewendet
 
-**Keine „Anwenden“-Schaltfläche erforderlich** – alle Änderungen sind live und interaktiv!
+**Keine „Anwenden”-Schaltfläche erforderlich** – alle Änderungen sind live und interaktiv!
 
 {% hint style=&quot;success&quot; %}
 **Live-Feedback**: Dank des sofortigen visuellen Feedbacks können Sie schnell mit verschiedenen Einstellungen experimentieren, bis Sie die optimale Visualisierung für Ihre Analyseanforderungen gefunden haben.
@@ -329,7 +329,7 @@ Alle LUT-Anpassungen in der Sandbox aktualisieren das Bild **sofort und interakt
 
 ### Überprüfung der Pixelwerte
 
-Das Verständnis der tatsächlichen Pixelwerte ist entscheidend für die Festlegung effektiver LUT-Bereiche:
+Das Verständnis der tatsächlichen Pixelwerte ist entscheidend für die Einstellung effektiver LUT-Bereiche:
 
 **So überprüfen Sie die Werte:**
 
@@ -352,7 +352,7 @@ Passen Sie nach Überprüfung der Pixelwerte die LUT-Min-/Max-Werte entsprechend
 * **Beobachtung**: Bodenwerte = 0,05–0,25, gestresst = 0,25–0,50, gesund = 0,50–0,85
 * **Ziel**: Nur die Pflanzengesundheit visualisieren (Boden ausschließen)
 * **LUT-Einstellungen**: Min = `0.25`, Max = `0.85`
-* **Clipping**: „Original Hintergrund“, um den Boden in seiner natürlichen Farbe zu sehen
+* **Ausschnitt**: „Originalhintergrund“, um den Boden in natürlicher Farbe zu sehen
 * **Ergebnis**: Der Farbverlauf gilt nur für die Vegetation, der Boden wird als Originalbild angezeigt
 
 {% hint style=&quot;info&quot; %}
@@ -398,7 +398,7 @@ Exponential index:
 (NIR / Red) ^ 2
 ```
 
-{% Hinweis style=&quot;warning&quot; %}
+{% hint style=&quot;warning&quot; %}
 **Formelvalidierung**: Stellen Sie sicher, dass Ihre Formel die in Ihrer Kamera verfügbaren Bänder verwendet. Beispielsweise ist RedEdge nur bei Kameras mit einem RedEdge-Filter verfügbar.
 {% endhint %}
 
@@ -409,7 +409,7 @@ Exponential index:
 Nachdem Sie nun die Index-/LUT-Sandbox verstanden haben:
 
 * **Auf die Verarbeitung anwenden**: Verwenden Sie die ermittelten Einstellungen in [Projekteinstellungen](../project-settings/project-settings.md)
-* **Stapelverarbeitung**: Optimierte Indizes auf vollständige Datensätze anwenden
+* **Stapelverarbeitung**: Wenden Sie optimierte Indizes auf vollständige Datensätze an
 * **Weitere Informationen**: Lesen Sie [Multispektrale Indexformeln](../project-settings/multispectral-index-formulas.md)
 
 Verwandte Dokumentation:
