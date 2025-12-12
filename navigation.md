@@ -14,7 +14,9 @@ Von links nach rechts enthält die Kopfzeile oben:
 
 Wenn diese Schaltfläche aktiviert ist, startet die Bildverarbeitungs-Pipeline.
 
-### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Fortschrittsbalken <img src=".gitbook/assets/image (5).png" alt="" data-size="line">Im kostenlosen Modus Chloros, in dem alle Dateien nacheinander verarbeitet werden, zeigt die Fortschrittsanzeige zwei Phasen an: Zielerkennung und Verarbeitung.
+### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Fortschrittsbalken <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
+
+Im kostenlosen Modus Chloros, in dem alle Dateien nacheinander verarbeitet werden, zeigt die Fortschrittsanzeige zwei Phasen an: Zielerkennung und Verarbeitung.
 
 Im kostenpflichtigen Modus Chloros+ mit Lizenz, in dem alle Dateien gleichzeitig verarbeitet werden, zeigt die Fortschrittsanzeige vier Phasen an: Erkennen, Analysieren, Kalibrieren, Exportieren. Wenn Sie den Mauszeiger über die Fortschrittsanzeige von Chloros+ bewegen, wird das erweiterte 4-Fortschrittsanzeigen-Panel angezeigt, sodass Sie den Fortschritt verfolgen können. Durch Klicken auf die obere Fortschrittsanzeige wird das Dropdown-Panel angehalten, durch erneutes Klicken wird es wieder freigegeben.
 
