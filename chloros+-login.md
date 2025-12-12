@@ -1,16 +1,14 @@
-# Chloros+-Anmeldung
+# Chloros+ Anmeldung
 
-## Chloros und Chloros (Browser) Login
+## Chloros und Chloros (Browser) Anmeldung
 
-Über das Benutzermenü in der Seitenleiste <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> können Sie sich bei Ihrem Chloros+-Konto anmelden und zusätzliche Funktionen freischalten.
+Über das Benutzermenü <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> Seitenleistenmenü können Sie sich bei Ihrem Chloros+-Konto anmelden und zusätzliche Funktionen freischalten.
 
-Wenn Sie angemeldet sind, werden Ihre Kontodaten angezeigt:
+Nach der Anmeldung werden Ihre Kontodaten angezeigt:
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>## CLI-Anmeldung
 
-## CLI-Anmeldung
-
-Melden Sie sich mit Ihren Chloros+-Anmeldeinformationen an, um die CLI-Verarbeitung zu aktivieren.
+Melden Sie sich mit Ihren Chloros+-Anmeldedaten an, um die CLI-Verarbeitung zu aktivieren.
 
 **Syntax:**
 
@@ -24,20 +22,18 @@ chloros-cli login <email> <password>
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% hint style="warning" %}
+{% hint style=&quot;warning&quot; %}
 **Sonderzeichen**: Verwenden Sie einfache Anführungszeichen um Passwörter, die Zeichen wie `$`, `!` oder Leerzeichen enthalten.
 {% endhint %}
 
 **Ausgabe:**
 
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>### Ablauf des Plans
 
-### Planablauf
+Der Ablauf des Plans in der GUI zeigt an, wann Ihre Lizenz ungültig wird. Bei monatlichen Abonnements endet die Gültigkeit am Ende des Monats. Bei Jahresabonnements endet die Gültigkeit ein Jahr nach Beginn des Abonnements. Die Lizenzprüfung erfordert eine monatliche Internetverbindung zur Überprüfung, mit einer 30-tägigen Nachfrist.
 
-Der Planablauf in der GUI zeigt an, wann Ihre Lizenz ungültig wird. Bei wiederkehrenden Monatsabonnements endet der Ablauf am Monatsende. Bei Jahresabonnements beträgt der Zeitraum ein Jahr nach Beginn des Abonnements. Für die Lizenzprüfung ist eine monatliche Internetverbindung zur Überprüfung erforderlich, mit einer Nachfrist von 30 Tagen.
+### Gerätebeschränkung
 
-### Gerätelimit
+Jeder Chloros+-Plan bietet eine unterschiedliche Anzahl registrierter Geräte. Jedes Gerät, bei dem Sie sich mit einem Chloros+-Konto anmelden, wird auf Ihre Anzahl registrierter Geräte angerechnet. Sie können ein Gerät auf Ihrer MAPIR Cloud-Kontoseite umbenennen und entfernen.
 
-Jeder Chloros+-Plan bietet eine unterschiedliche Anzahl registrierter Geräte. Jedes Gerät, bei dem Sie sich mit einem Chloros+-Konto anmelden, wird auf die Anzahl Ihrer registrierten Geräte angerechnet. Sie können ein Gerät auf Ihrer MAPIR Cloud-Kontoseite umbenennen und entfernen.
-
-<table><thead><tr><th width="168.5999755859375" align="right">Chloros+ Plan</th><th align="center">KUPFER</th><th align="center">BRONZE</th><th align="center">SILVER</th><th align="center">GOLD</th></tr></thead><tbody><tr><td align="right">Geräte Unterstützt</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>
+<table><thead><tr><th width="168.5999755859375" align="right">Chloros+-Tarif</th><th align="center">KUPFER</th><th align="center">BRONZE</th><th align="center">SILBER</th><th align="center">GOLD</th></tr></thead><tbody><tr><td align="right">Unterstützte Geräte</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>

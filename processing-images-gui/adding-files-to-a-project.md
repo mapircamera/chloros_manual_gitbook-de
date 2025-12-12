@@ -1,204 +1,204 @@
-# Adding Files to a Project
+# Hinzufügen von Dateien zu einem Projekt
 
-Once you've created or opened a project in Chloros, the next step is to add your multispectral images to begin processing. The File Browser<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> tab makes it easy to import images and manage your dataset.
+Nachdem Sie ein Projekt in Chloros erstellt oder geöffnet haben, müssen Sie als Nächstes Ihre Multispektralbilder hinzufügen, um mit der Verarbeitung zu beginnen. Über die Registerkarte „Dateibrowser“<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> erleichtert das Importieren von Bildern und die Verwaltung Ihres Datensatzes.
 
-## Accessing the File Browser
+## Auf den Dateibrowser zugreifen
 
-1. Open or create a project in Chloros
-2. Click the **File Browser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> icon in the left sidebar
-3. The File Browser panel will display your project's file list
+1. Öffnen oder erstellen Sie ein Projekt in Chloros
+2. Klicken Sie auf das Symbol **Dateibrowser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> in der linken Seitenleiste.
+3. Im Dateibrowser-Fenster wird die Dateiliste Ihres Projekts angezeigt.
 
-{% hint style="info" %}
-**Supported File Types**: Chloros supports RAW+JPG and JPG image files from MAPIR Survey3W and Survey3N cameras. Only RAW+JPG are recommended.
+{% Hinweis style=&quot;info&quot; %}
+**Unterstützte Dateitypen**: Chloros unterstützt RAW+JPG- und JPG-Bilddateien von MAPIR Survey3W- und Survey3N-Kameras. Es werden nur RAW+JPG empfohlen.
 {% endhint %}
 
 ***
 
-## Adding Images to Your Project
+## Hinzufügen von Bildern zu Ihrem Projekt
 
-There are two primary ways to add images to your project:
+Es gibt zwei Möglichkeiten, Bilder zu Ihrem Projekt hinzuzufügen:
 
-### Method 1: Add Files
+### Methode 1: Dateien hinzufügen
 
-Use this option to import individual image files or a small selection of files.
+Verwenden Sie diese Option, um einzelne Bilddateien oder eine kleine Auswahl von Dateien zu importieren.
 
-1. Click the **"Add Files"** button at the top of the File Browser panel
-2. Navigate to the folder containing your images
-3. Select one or more image files (hold **Ctrl** to select multiple files)
-4. Click **"Open"** to import the selected files
+1. Klicken Sie oben im Dateibrowser-Fenster auf die Schaltfläche **„Dateien hinzufügen”**.
+2. Navigieren Sie zu dem Ordner, der Ihre Bilder enthält.
+3. Wählen Sie eine oder mehrere Bilddateien aus (halten Sie **Strg** gedrückt, um mehrere Dateien auszuwählen).
+4. Klicken Sie auf **„Öffnen”**, um die ausgewählten Dateien zu importieren.
 
-### Method 2: Add Folder
+### Methode 2: Ordner hinzufügen
 
-Use this option to import all images from a folder at once.
+Verwenden Sie diese Option, um alle Bilder aus einem Ordner auf einmal zu importieren.
 
-1. Click the **"Add Folder"** button at the top of the File Browser panel
-2. Navigate to and select the folder containing your capture session images
-3. Click **"Select Folder"** to import all supported images from that folder
-
-***
-
-## Understanding the File Browser Table
-
-Once images are imported, they appear in a table with the following columns:
-
-### Thumbnail
-
-* Small preview of each image
-* Click thumbnail to view full image in the main preview area
-
-### File Name
-
-* Original filename from the camera
-* Maintains camera naming convention (e.g., IMG\_0001.RAW)
-
-### Timestamp
-
-* Date and time the image was captured
-* Extracted from image EXIF metadata
-* Used for PPK synchronization and calibration target detection
-
-### Camera Model
-
-* Automatically detected camera and filter configuration
-* Examples: Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
-* Used to apply correct processing profiles
-
-### Target Column (Checkbox)
-
-* Check this box for images that contain calibration targets
-* Greatly speeds up target detection during processing
-* See [Choosing Target Images](choosing-target-images.md) for details
+1. Klicken Sie oben im Dateibrowser-Fenster auf die Schaltfläche **„Ordner hinzufügen“**.
+2. Navigieren Sie zu dem Ordner, der Ihre Aufnahmen enthält, und wählen Sie ihn aus.
+3. Klicken Sie auf **„Ordner auswählen“**, um alle unterstützten Bilder aus diesem Ordner zu importieren.
 
 ***
 
-## Managing Files in Your Project
+## Informationen zur Dateibrowser-Tabelle
 
-### Removing Files
+Nach dem Import werden die Bilder in einer Tabelle mit den folgenden Spalten angezeigt:
 
-To remove unwanted images from your project:
+### Miniaturansicht
 
-1. Select one or more images in the File Browser table
-2. Click the **"Remove Selected"** button
-3. Confirm removal (files are not deleted from disk, only removed from the project)
+* Kleine Vorschau jedes Bildes.
+* Klicken Sie auf die Miniaturansicht, um das vollständige Bild im Hauptvorschau-Bereich anzuzeigen.
 
-### Sorting and Filtering
+### Dateiname
 
-* **Sort by column**: Click any column header to sort images
-* **Timestamp sort**: Useful for organizing chronological capture sequences
-* **Camera model filter**: Group images by camera type if using multiple cameras
+* Originaldateiname der Kamera.
+* Behält die Namenskonvention der Kamera bei (z. B. IMG\_0001.RAW).
 
-***
+### Zeitstempel
 
-## Image Preview
+* Datum und Uhrzeit der Aufnahme.
+* Aus den EXIF-Metadaten des Bildes extrahiert.
+* Wird für die PPK-Synchronisation und die Erkennung von Kalibrierungszielen verwendet
 
-### Viewing Full Image
+### Kameramodell
 
-Click any image thumbnail in the File Browser to display it in the main preview area:
+* Automatisch erkannte Kamera- und Filterkonfiguration
+* Beispiele: Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
+* Wird verwendet, um die richtigen Verarbeitungsprofile anzuwenden
 
-1. Image appears in the center preview panel
-2. Use zoom controls to inspect image details
-3. Navigate between images using arrow keys
+### Zielspalte (Kontrollkästchen)
 
-### Quick Navigation
-
-* **Previous Image**: Click left arrow or press ← key
-* **Next Image**: Click right arrow or press → key
-* **Zoom In/Out**: Use mouse wheel or zoom buttons
-* **Pan**: Click and drag on image when zoomed in
+* Aktivieren Sie dieses Kontrollkästchen für Bilder, die Kalibrierungsziele enthalten
+* Beschleunigt die Zielerkennung während der Verarbeitung erheblich
+* Weitere Informationen finden Sie unter [Auswahl von Zielbildern](choosing-target-images.md)
 
 ***
 
-## Duplicate File Handling
+## Verwalten von Dateien in Ihrem Projekt
 
-Chloros automatically detects and ignores duplicate files:
+### Dateien entfernen
 
-* Files with identical filenames are skipped
-* Prevents accidental double-processing
-* Warning message displayed when duplicates are detected
+So entfernen Sie unerwünschte Bilder aus Ihrem Projekt:
 
-{% hint style="warning" %}
-**Important**: Do not rename or modify your original image files before importing. Chloros relies on original filenames and metadata for proper processing.
+1. Wählen Sie ein oder mehrere Bilder in der Dateibrowser-Tabelle aus.
+2. Klicken Sie auf die Schaltfläche **„Ausgewählte entfernen“**.
+3. Bestätigen Sie das Entfernen (die Dateien werden nicht von der Festplatte gelöscht, sondern nur aus dem Projekt entfernt).
+
+### Sortieren und Filtern
+
+* **Nach Spalte sortieren**: Klicken Sie auf eine beliebige Spaltenüberschrift, um die Bilder zu sortieren.
+* **Sortieren nach Zeitstempel**: Nützlich zum Organisieren chronologischer Aufnahmesequenzen.
+* **Filter nach Kameramodell**: Gruppieren Sie Bilder nach Kameratyp, wenn Sie mehrere Kameras verwenden.
+
+***
+
+## Bildvorschau
+
+### Vollbild anzeigen
+
+Klicken Sie auf eine beliebige Bildminiaturansicht im Dateibrowser, um sie im Hauptvorschau-Bereich anzuzeigen:
+
+1. Das Bild wird im mittleren Vorschaufenster angezeigt.
+2. Verwenden Sie die Zoomsteuerung, um Bilddetails zu überprüfen.
+3. Navigieren Sie mit den Pfeiltasten zwischen den Bildern.
+
+### Schnellnavigation
+
+* **Vorheriges Bild**: Klicken Sie auf den Pfeil nach links oder drücken Sie die Taste ←.
+* **Nächstes Bild**: Klicken Sie auf den Pfeil nach rechts oder drücken Sie die Taste →.
+* **Vergrößern/Verkleinern**: Verwenden Sie das Mausrad oder die Zoomtasten.
+* **Schwenken**: Klicken und ziehen Sie bei vergrößertem Bild auf das Bild.
+
+***
+
+## Umgang mit doppelten Dateien
+
+Chloros erkennt und ignoriert automatisch doppelte Dateien:
+
+* Dateien mit identischen Dateinamen werden übersprungen.
+* Verhindert versehentliche Doppelverarbeitung.
+* Bei Erkennung von Duplikaten wird eine Warnmeldung angezeigt.
+
+{% hint style=&quot;warning&quot; %}
+**Wichtig**: Benennen Sie Ihre Originalbilddateien vor dem Import nicht um und ändern Sie sie nicht. Chloros benötigt die Originaldateinamen und Metadaten für die korrekte Verarbeitung.
 {% endhint %}
 
 ***
 
-## Mixed Camera Datasets
+## Gemischte Kameradaten
 
-If your project contains images from multiple MAPIR cameras:
+Wenn Ihr Projekt Bilder von mehreren MAPIR-Kameras enthält:
 
-1. Chloros automatically detects each camera model
-2. Each camera type is processed with its appropriate calibration profile
-3. File Browser displays camera model in the Camera Model column
-4. Processing applies correct settings for each camera type
+1. Chloros erkennt automatisch jedes Kameramodell.
+2. Jeder Kameratyp wird mit dem entsprechenden Kalibrierungsprofil verarbeitet.
+3. Der Dateibrowser zeigt das Kameramodell in der Spalte „Kameramodell” an.
+4. Die Verarbeitung wendet die richtigen Einstellungen für jeden Kameratyp an.
 
-**Example scenario**: Survey3W RGN + Survey3N OCN dual-camera setup
-
-***
-
-## Best Practices
-
-### Organize Before Import
-
-* Keep calibration target images in the same folder as survey images
-* Maintain original folder structure from your camera/SD card
-* Don't mix datasets from different sessions in one project
-
-### File Naming
-
-* Preserve original camera filenames (IMG\_0001.RAW, etc.)
-* Don't rename files before import
-* Original names contain important metadata
-
-### Calibration Target Images
-
-* Always include 1-2 calibration target images per session
-* Capture targets before and after the capture session
-* Place targets in the same lighting conditions as capture area
-* Mark target images using the Target checkbox to speed up processing
+**Beispielszenario**: Survey3W RGN + Survey3N OCN Dual-Kamera-Konfiguration.
 
 ***
 
-## Common Issues and Solutions
+## Bewährte Verfahren
 
-### Images Not Appearing After Import
+### Vor dem Import organisieren
 
-**Possible causes:**
+* Bewahren Sie die Kalibrierungszielbilder im selben Ordner wie die Vermessungsbilder auf.
+* Behalten Sie die ursprüngliche Ordnerstruktur Ihrer Kamera/SD-Karte bei.
+* Mischen Sie keine Datensätze aus verschiedenen Sitzungen in einem Projekt.
 
-* File format not supported (only RAW+JPG and JPG from MAPIR cameras)
-* Images are from non-MAPIR cameras (see [Supported Cameras](../supported-cameras.md))
-* File corruption or incomplete transfer from SD card
+### Dateibenennung
 
-**Solution**: Verify file format and camera model compatibility
+* Behalten Sie die ursprünglichen Dateinamen der Kamera bei (IMG\_0001.RAW usw.).
+* Benennen Sie Dateien vor dem Import nicht um.
+* Die ursprünglichen Namen enthalten wichtige Metadaten.
 
-### Camera Model Not Detected
+### Kalibrierungszielbilder
 
-**Possible causes:**
-
-* Modified EXIF metadata
-* Images edited in external software
-* Incomplete file transfer
-
-**Solution**: Re-import original, unmodified files from camera/SD card
-
-### Missing Timestamps
-
-**Possible causes:**
-
-* Camera clock not set correctly
-* EXIF data stripped by external software
-
-**Solution**: Verify camera time settings were correct during capture
+* Fügen Sie immer 1–2 Kalibrierungszielbilder pro Sitzung hinzu.
+* Nehmen Sie die Ziele vor und nach der Aufnahmesitzung auf.
+* Platzieren Sie die Ziele unter den gleichen Lichtbedingungen wie im Aufnahmebereich.
+* Markieren Sie die Zielbilder mit dem Kontrollkästchen „Ziel“, um die Verarbeitung zu beschleunigen.
 
 ***
 
-## Next Steps
+## Häufige Probleme und Lösungen
 
-Once your files are imported:
+### Bilder werden nach dem Import nicht angezeigt
 
-1. **Review the file list** - Ensure all images loaded correctly
-2. **Check camera models** - Verify correct camera detection
-3. **Mark target images** - See [Choosing Target Images](choosing-target-images.md)
-4. **Adjust settings** - Configure processing options in [Project Settings](adjusting-project-settings.md)
-5. **Start processing** - See [Starting the Processing](starting-the-processing.md)
+**Mögliche Ursachen:**
 
-For detailed information about project configuration, see [Adjusting Project Settings](adjusting-project-settings.md).
+* Dateiformat wird nicht unterstützt (nur RAW+JPG und JPG von MAPIR-Kameras)
+* Bilder stammen von Nicht-MAPIR-Kameras (siehe [Unterstützte Kameras](../supported-cameras.md))
+* Datei beschädigt oder unvollständige Übertragung von der SD-Karte
+
+**Lösung**: Überprüfen Sie das Dateiformat und die Kompatibilität des Kameramodells.
+
+### Kameramodell wird nicht erkannt
+
+**Mögliche Ursachen:**
+
+* Geänderte EXIF-Metadaten
+* Mit externer Software bearbeitete Bilder
+* Unvollständige Dateiübertragung
+
+**Lösung**: Importieren Sie die ursprünglichen, unveränderten Dateien erneut von der Kamera/SD-Karte.
+
+### Fehlende Zeitstempel
+
+**Mögliche Ursachen:**
+
+* Kamera-Uhr nicht richtig eingestellt
+* EXIF-Daten durch externe Software entfernt
+
+**Lösung**: Überprüfen Sie, ob die Zeiteinstellungen der Kamera während der Aufnahme korrekt waren.
+
+***
+
+## Nächste Schritte
+
+Sobald Ihre Dateien importiert sind:
+
+1. **Überprüfen Sie die Dateiliste** – Stellen Sie sicher, dass alle Bilder korrekt geladen wurden.
+2. **Überprüfen Sie die Kameramodelle** – Überprüfen Sie die korrekte Kameraerkennung.
+3. **Markieren Sie die Zielbilder** – siehe [Auswählen von Zielbildern](choosing-target-images.md).
+4. **Passen Sie die Einstellungen an** – konfigurieren Sie die Verarbeitungsoptionen in den [Projekteinstellungen](adjusting-project-settings.md).
+5. **Verarbeitung starten** – Siehe [Verarbeitung starten](starting-the-processing.md)
+
+Ausführliche Informationen zur Projektkonfiguration finden Sie unter [Projekteinstellungen anpassen](adjusting-project-settings.md).

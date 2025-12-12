@@ -1,5 +1,5 @@
 ---
-description: Häufig gestellte Fragen
+description: Frequently Asked Questions
 metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/faq
@@ -9,17 +9,17 @@ metaLinks:
 
 <details>
 
-<summary>Kann ich Bilder von Kameras, die nicht von der Marke MAPIR stammen, mit Chloros verarbeiten?</summary>
+<summary>Kann ich mit Chloros Bilder von Kameras verarbeiten, die nicht von der Marke MAPIR stammen?</summary>
 
-Nein, Chloros unterstützt nur die Verarbeitung von MAPIR-Kamerabildern. Weitere Informationen finden Sie in der Liste von [unterstützte Kameramodelle](supported-cameras.md). Wir bieten die Verarbeitung anderer Kameras in der MAPIR Cloud an, siehe vollständige Liste [Hier](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
+Nein, Chloros unterstützt nur die Verarbeitung von Bildern von Kameras der Marke MAPIR. Weitere Informationen finden Sie in der Liste der [unterstützten Kameramodelle](supported-cameras.md). Wir bieten die Verarbeitung anderer Kameras auf MAPIR Cloud an, die vollständige Liste finden Sie [hier](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
 
 </details>
 
 <details>
 
-<summary>Kann ich meine Bilder ohne Kalibrierungsziel auf Reflexion kalibrieren?</summary>
+<summary>Kann ich meine Bilder ohne Kalibrierungsziel für die Reflexion kalibrieren?</summary>
 
-Nein. Ohne ein Bild des Kalibrierungsziels, das in der Nähe der Nicht-Zielbilder aufgenommen wurde, können Sie die Pixelwerte des Bildes nicht mit einem bekannten Reflexionsprozentsatz in Beziehung setzen. Wenn Sie auch das Protokoll eines MAPIR-Lichtsensors nicht einbeziehen, wird das Umgebungslichtspektrum nicht gemessen und die Reflexionsergebnisse sind nicht genau.
+Nein. Ohne ein Bild des Kalibrierungsziels, das etwa zur gleichen Zeit wie die Nicht-Zielbilder aufgenommen wurde, können Sie die Pixelwerte des Bildes nicht mit einem bekannten Reflexionsprozentsatz in Beziehung setzen. Wenn Sie auch das Protokoll eines MAPIR-Lichtsensors nicht hinzufügen, wird das Umgebungslichtspektrum nicht gemessen und die Reflexionsergebnisse sind nicht genau.
 
 </details>
 
@@ -27,15 +27,15 @@ Nein. Ohne ein Bild des Kalibrierungsziels, das in der Nähe der Nicht-Zielbilde
 
 <summary>Kann ich meine Bilder vor der Verarbeitung in Chloros bearbeiten?</summary>
 
-Nein. Chloros geht davon aus, dass die Eingabedaten nicht geändert wurden. Ändern Sie die Dateinamen nicht.
+Nein. Chloros geht davon aus, dass die Eingabedaten nicht verändert wurden. Ändern Sie die Dateinamen nicht.
 
 </details>
 
 <details>
 
-<summary>Kann ich meine MAPIR Survey3-Kameras auf automatische Belichtung einstellen und die Bilder in Chloros verarbeiten?</summary>
+<summary>Kann ich meine MAPIR- und Survey3-Kameras auf automatische Belichtung einstellen und die Bilder in Chloros verarbeiten?</summary>
 
-Nein. Survey3-Bilddatensätze müssen eine feste/gesperrte Belichtung haben, also keine automatische Verschlusszeit oder automatische ISO-Einstellung. Alle Bilder desselben Kameramodells müssen identische Verschlusszeit und ISO (Belichtung) haben.
+Nein. Survey3-Bilddatensätze müssen eine feste/gesperrte Belichtung haben, also keine automatische Verschlusszeit oder automatische ISO. Alle Bilder desselben Kameramodells müssen identische Verschlusszeiten und ISO-Werte (Belichtung) haben.
 
 </details>
 
@@ -57,16 +57,16 @@ Wenn Sie in der Dateibrowser-Tabelle die Zielbilder in der rechten Spalte vorab 
 
 <details>
 
-<summary>Wenn ich meine Bilder in die <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud</a> hochlade, sollte ich sie vor dem Hochladen in Chloros verarbeiten?</summary>
+<summary>Wenn ich meine Bilder in <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">die MAPIR Cloud</a> hochladen möchte, sollte ich sie dann vor dem Hochladen in Chloros verarbeiten?</summary>
 
-Wenn Sie planen, Bilder auf unsere Online-Verarbeitungsplattform [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription) hochzuladen, bearbeiten Sie die Bilder vor dem Hochladen nicht. Die Cloud führt die gleiche Verarbeitung und noch mehr durch.
+Wenn Sie vorhaben, Ihre Bilder auf unsere Online-Verarbeitungsplattform [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription) hochzuladen, bearbeiten Sie die Bilder vor dem Hochladen nicht. Die Cloud führt dieselben Verarbeitungsschritte und noch weitere durch.
 
 </details>
 
 <details>
 
-<summary>Wird MAPIR jemals die X-Funktion unterstützen? Ich wünschte wirklich, MAPIR würde X.</summary> anbieten
+<summary>Wird MAPIR jemals die Funktion X unterstützen? Ich würde mir wirklich wünschen, dass MAPIR X anbieten würde.</summary>
 
-Wir sind immer daran interessiert, Feedback zu unseren Produkten zu erhalten. Wenn Sie ein Problem mit unseren Produkten feststellen oder einen Vorschlag haben, wie wir unsere Produkte verbessern können, teilen Sie uns bitte [KONTAKTIEREN SIE UNS](https://www.mapir.camera/community/contact) Ihre Meinung mit. Der Großteil unserer Forschung und Entwicklung basiert darauf, auf die größten Bedürfnisse unserer Kunden einzugehen.
+Wir sind immer an Feedback zu unseren Produkten interessiert. Wenn Sie ein Problem mit unseren Produkten feststellen oder einen Vorschlag zur Verbesserung unserer Produkte haben, teilen Sie uns Ihre Meinung bitte über [CONTACT US](https://www.mapir.camera/community/contact) mit. Der Großteil unserer Forschungs- und Entwicklungsarbeit orientiert sich an den wichtigsten Bedürfnissen unserer Kunden.
 
 </details>
