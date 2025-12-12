@@ -1,6 +1,8 @@
 # CLI: Befehlszeile
 
-<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>Die **Chloros CLI** bietet leistungsstarken Befehlszeilenzugriff auf die Bildverarbeitungs-Engine Chloros und ermöglicht so die Automatisierung, Skripterstellung und den Headless-Betrieb für Ihre Bildverarbeitungs-Workflows.
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
+
+Die **Chloros CLI** bietet leistungsstarken Befehlszeilenzugriff auf die Bildverarbeitungs-Engine Chloros und ermöglicht so die Automatisierung, Skripterstellung und den Headless-Betrieb für Ihre Bildverarbeitungs-Workflows.
 
 ### Hauptmerkmale
 
