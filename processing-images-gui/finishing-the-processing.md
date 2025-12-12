@@ -2,12 +2,12 @@
 
 Sobald Chloros die Verarbeitung abgeschlossen hat, ist es an der Zeit, Ihre Ergebnisse zu überprüfen, die Ausgabequalität zu verifizieren und Ihre verarbeiteten Bilder für die Verwendung in Ihrem Workflow vorzubereiten. Diese Seite führt Sie durch die letzten Schritte und die nächsten Aktionen.
 
-## Anzeige „Verarbeitung abgeschlossen”
+## Anzeige „Verarbeitung abgeschlossen“
 
-Wenn die Verarbeitung erfolgreich abgeschlossen wurde, werden mehrere Anzeigen angezeigt:
+Wenn die Verarbeitung erfolgreich abgeschlossen ist, werden mehrere Anzeigen angezeigt:
 
 * ✅ **Fortschrittsbalken**: Erreicht 100 % Fertigstellung
-* ✅ **Debug-Protokoll**: Zeigt die Meldung „Verarbeitung abgeschlossen” an
+* ✅ **Debug-Protokoll**: Zeigt die Meldung „Verarbeitung abgeschlossen“ an
 * ✅ **Start-Schaltfläche**: Wird wieder aktiviert (bereit für den nächsten Verarbeitungslauf)
 * ✅ **Ausgabedateien**: Alle verarbeiteten Bilder werden im Unterordner des Kameramodells gespeichert
 
@@ -49,7 +49,7 @@ Wenn die Verarbeitung erfolgreich abgeschlossen wurde, werden mehrere Anzeigen a
 
 Verwenden Sie den integrierten Bildbetrachter von Chloros für eine erweiterte Visualisierung:
 
-1. Klicken Sie auf eine Bildminiaturansicht im Dateibrowser.
+1. Klicken Sie im Dateibrowser auf eine Bildminiaturansicht.
 2. Das Bild wird im Hauptvorschau-Bereich geöffnet.
 3. Klicken Sie auf die Registerkarte **Bildbetrachter** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> in der linken Seitenleiste.
 4. Verwenden Sie [Index/LUT Sandbox](../image-viewer-gui/index-lut-sandbox.md) für die interaktive Analyse.
@@ -63,7 +63,7 @@ Ausführliche Anweisungen finden Sie unter [Bildbetrachter](../image-viewer-gui/
 ### Auf Warnungen oder Fehler prüfen
 
 1. Öffnen Sie die Registerkarte **Debug-Protokoll** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> .
-2. Blättern Sie durch die Meldungen.
+2. Scrollen Sie durch die Meldungen.
 3. Achten Sie auf gelbe Warnungen oder rote Fehler.
 4. Überprüfen Sie alle aufgeführten Probleme.
 5. Wenden Sie sich an den Support von MAPIR, um Hilfe zu erhalten.
@@ -92,9 +92,9 @@ Um eine Aufzeichnung der Verarbeitung zu speichern oder an den Support von MAPIR
 
 **Lösungen:**
 
-1. Überprüfen Sie das Debug-Protokoll auf Überspring-/Fehlermeldungen.
-2. Vergewissern Sie sich, dass ausreichend Speicherplatz auf der Festplatte vorhanden war.
-3. Zählen Sie die Dateien: Die Anzahl sollte übereinstimmen (ursprüngliche Anzahl – Zielanzahl) × (Indizes + 1)
+1. Debug-Protokoll auf Überspring-/Fehlermeldungen überprüfen.
+2. Überprüfen, ob ausreichend Speicherplatz auf der Festplatte vorhanden war.
+3. Dateien zählen: Sollte übereinstimmen mit (ursprüngliche Anzahl – Zielanzahl) × (Indizes + 1).
 4. Importieren Sie fehlende Dateien erneut und verarbeiten Sie sie erneut.
 
 ### Problem: Dunkle oder helle Ränder (Vignettierung noch sichtbar)
@@ -103,11 +103,11 @@ Um eine Aufzeichnung der Verarbeitung zu speichern oder an den Support von MAPIR
 
 * Vignettierungskorrektur deaktiviert
 * Kamera/Objektiv nicht in der Chloros-Profildatenbank enthalten
-* Extreme Vignettierung, die über die Korrekturfähigkeit hinausgeht
+* Extreme Vignettierung, die die Korrekturkapazität übersteigt
 
 **Lösungen:**
 
-1. Überprüfen Sie, ob die Vignettierungskorrektur in den Projekteinstellungen aktiviert wurde.
+1. Überprüfen Sie, ob die Vignettierungskorrektur in den Projekteinstellungen aktiviert ist.
 2. Überprüfen Sie, ob das Kameramodell korrekt erkannt wurde.
 3. Wenden Sie sich an den MAPIR-Support, wenn die Vignettierung weiterhin besteht.
 
@@ -131,7 +131,7 @@ Um eine Aufzeichnung der Verarbeitung zu speichern oder an den Support von MAPIR
 
 **Erwartete NDVI-Bereiche:**
 
-* **Wasser, Felsen, Boden**: -0,1 bis 0,2
+* **Wasser, Felsen, Erde**: -0,1 bis 0,2
 * **Spärliche/ungesunde Vegetation**: 0,2 bis 0,4
 * **Mäßige Vegetation**: 0,4 bis 0,6
 * **Gesunde, dichte Vegetation**: 0,6 bis 0,9
@@ -148,7 +148,7 @@ Um eine Aufzeichnung der Verarbeitung zu speichern oder an den Support von MAPIR
 
 ## Verwendung Ihrer verarbeiteten Bilder
 
-### Für Photogrammetrie / Orthomosaik-Erstellung
+### Für Photogrammetrie/Orthomosaik-Erstellung
 
 **Empfohlener Arbeitsablauf:**
 
@@ -187,7 +187,7 @@ Um eine Aufzeichnung der Verarbeitung zu speichern oder an den Support von MAPIR
 
 ### Empfohlene Sicherungsstrategie
 
-**Was zu speichern ist:**
+**Was gespeichert werden sollte:**
 
 * ✅ **Original-RAW/JPG-Bilder** – Auf separatem Laufwerk/in der Cloud archivieren
 * ✅ **Verarbeitete Ausgaben** – Kalibrierte Bilder und Indizes aufbewahren
@@ -220,7 +220,7 @@ Für mehrere Sitzungen/Datensätze:
 
 **Option 1: GUI – Mehrere Projekte**
 
-* Erstellen Sie für jede Sitzung ein separates Projekt.
+* Erstellen Sie für jede Sitzung ein separates Projekt
 * Verwenden Sie konsistente Vorlageneinstellungen.
 * Verarbeiten Sie jeweils nur eine Sitzung.
 
@@ -278,8 +278,8 @@ Sie haben nun den gesamten Chloros-Verarbeitungs-Workflow abgeschlossen:
 3. ✅ **Einstellungen angepasst** – Siehe [Projekteinstellungen anpassen](adjusting-project-settings.md)
 4. ✅ **Ziele markiert** – Siehe [Zielbilder auswählen](choosing-target-images.md)
 5. ✅ **Verarbeitung gestartet** – Siehe [Verarbeitung starten](starting-the-processing.md)
-6. ✅ **Überwachter Fortschritt** – Siehe [Überwachen der Verarbeitung](monitoring-the-processing.md)
-7. ✅ **Überprüfte Ergebnisse** – Diese Seite
+6. ✅ **Fortschritt überwacht** – Siehe [Überwachen der Verarbeitung](monitoring-the-processing.md)
+7. ✅ **Ergebnisse überprüft** – Diese Seite
 
 **Ihre kalibrierten, reflektionskorrigierten Multispektralbilder sind bereit für die Analyse!**
 
@@ -295,7 +295,7 @@ Sie haben nun den gesamten Chloros-Verarbeitungs-Workflow abgeschlossen:
 
 ### Automatisierung und Integration
 
-* [**CLI-Dokumentation**](../CLI.md) – Batch-Verarbeitung über die Befehlszeile
+* [**CLI-Dokumentation**](../CLI.md) – Befehlszeilen-Stapelverarbeitung
 * [**Python SDK**](../api-python-sdk.md) – Programmatische Automatisierung
 * [**Chloros+ Funktionen**](../#chloros) – Erweiterte Verarbeitungsfunktionen
 

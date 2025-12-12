@@ -9,7 +9,7 @@ Nachdem Sie ein Projekt in Chloros erstellt oder geöffnet haben, müssen Sie al
 3. Im Dateibrowser-Fenster wird die Dateiliste Ihres Projekts angezeigt.
 
 {% Hinweis style=&quot;info&quot; %}
-**Unterstützte Dateitypen**: Chloros unterstützt RAW+JPG- und JPG-Bilddateien von MAPIR Survey3W- und Survey3N-Kameras. Es werden nur RAW+JPG empfohlen.
+**Unterstützte Dateitypen**: Chloros unterstützt RAW+JPG- und JPG-Bilddateien von MAPIR Survey3W und Survey3N Kameras. Es werden nur RAW+JPG empfohlen.
 {% endhint %}
 
 ***
@@ -67,7 +67,7 @@ Nach dem Import werden die Bilder in einer Tabelle mit den folgenden Spalten ang
 
 * Aktivieren Sie dieses Kontrollkästchen für Bilder, die Kalibrierungsziele enthalten
 * Beschleunigt die Zielerkennung während der Verarbeitung erheblich
-* Weitere Informationen finden Sie unter [Auswahl von Zielbildern](choosing-target-images.md)
+* Weitere Informationen finden Sie unter [Auswählen von Zielbildern](choosing-target-images.md)
 
 ***
 
@@ -117,12 +117,12 @@ Chloros erkennt und ignoriert automatisch doppelte Dateien:
 * Bei Erkennung von Duplikaten wird eine Warnmeldung angezeigt.
 
 {% hint style=&quot;warning&quot; %}
-**Wichtig**: Benennen Sie Ihre Originalbilddateien vor dem Import nicht um und ändern Sie sie nicht. Chloros benötigt die Originaldateinamen und Metadaten für die korrekte Verarbeitung.
+**Wichtig**: Benennen Sie Ihre Originalbilddateien vor dem Import nicht um und nehmen Sie keine Änderungen daran vor. Chloros benötigt die Originaldateinamen und Metadaten für die korrekte Verarbeitung.
 {% endhint %}
 
 ***
 
-## Gemischte Kameradaten
+## Gemischte Kameradatensätze
 
 Wenn Ihr Projekt Bilder von mehreren MAPIR-Kameras enthält:
 
@@ -199,6 +199,6 @@ Sobald Ihre Dateien importiert sind:
 2. **Überprüfen Sie die Kameramodelle** – Überprüfen Sie die korrekte Kameraerkennung.
 3. **Markieren Sie die Zielbilder** – siehe [Auswählen von Zielbildern](choosing-target-images.md).
 4. **Passen Sie die Einstellungen an** – konfigurieren Sie die Verarbeitungsoptionen in den [Projekteinstellungen](adjusting-project-settings.md).
-5. **Verarbeitung starten** – Siehe [Verarbeitung starten](starting-the-processing.md)
+5. **Verarbeitung starten** – Siehe [Starten der Verarbeitung](starting-the-processing.md)
 
-Ausführliche Informationen zur Projektkonfiguration finden Sie unter [Projekteinstellungen anpassen](adjusting-project-settings.md).
+Ausführliche Informationen zur Projektkonfiguration finden Sie unter [Anpassen der Projekteinstellungen](adjusting-project-settings.md).

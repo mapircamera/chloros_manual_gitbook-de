@@ -1,12 +1,12 @@
 # Überwachung der Verarbeitung
 
-Sobald die Verarbeitung begonnen hat, bietet Chloros mehrere Möglichkeiten, den Fortschritt zu überwachen, Probleme zu überprüfen und zu verstehen, was mit Ihrem Datensatz geschieht. Auf dieser Seite wird erläutert, wie Sie Ihre Verarbeitung verfolgen und die von Chloros bereitgestellten Informationen interpretieren können.
+Sobald die Verarbeitung begonnen hat, bietet Chloros mehrere Möglichkeiten, den Fortschritt zu überwachen, auf Probleme zu überprüfen und zu verstehen, was mit Ihrem Datensatz geschieht. Auf dieser Seite wird erläutert, wie Sie Ihre Verarbeitung verfolgen und die von Chloros bereitgestellten Informationen interpretieren können.
 
 ## Übersicht über den Fortschrittsbalken
 
 Der Fortschrittsbalken in der oberen Kopfzeile zeigt den Verarbeitungsstatus und den Prozentsatz der Fertigstellung in Echtzeit an.
 
-### Fortschrittsbalken im kostenlosen Modus
+### Fortschrittsbalken im freien Modus
 
 Für Benutzer ohne Chloros+-Lizenz:
 
@@ -29,12 +29,12 @@ Für Benutzer mit einer Chloros+-Lizenz:
 
 1. **Erkennen** – Kalibrierungsziele finden
 2. **Analysieren** – Bilder untersuchen und Pipeline vorbereiten
-3. **Kalibrieren** – Vignetten- und Reflexionskorrekturen anwenden
+3. **Kalibrieren** – Vignetten- und Reflektionskorrekturen anwenden
 4. **Exportieren** – Verarbeitete Dateien speichern
 
 **Interaktive Funktionen:**
 
-* **Bewegen Sie den Mauszeiger über** die Fortschrittsanzeige, um das erweiterte 4-stufige Fenster anzuzeigen
+* **Bewegen Sie den Mauszeiger über** den Fortschrittsbalken, um das erweiterte 4-Stufen-Fenster anzuzeigen
 * **Klicken Sie** auf die Fortschrittsleiste, um das erweiterte Fenster anzuhalten/anzuheften.
 * **Klicken Sie erneut**, um die Anhaltung aufzuheben und das Fenster beim Verlassen mit der Maus automatisch auszublenden.
 * Jede Stufe zeigt den individuellen Fortschritt (0–100 %) an.
@@ -83,9 +83,9 @@ Für Benutzer mit einer Chloros+-Lizenz:
 **Fortschrittsanzeige:**
 
 * Analyse: 0 % → 100 %
-* Schnelle Stufe, wird in der Regel schnell abgeschlossen
+* Schnelle Stufe, in der Regel schnell abgeschlossen
 
-**Was zu beachten ist:**
+**Zu beachten:**
 
 * Sollte ohne Unterbrechungen stetig voranschreiten
 * Warnungen zu fehlenden Metadaten werden im Debug-Protokoll angezeigt
@@ -106,7 +106,7 @@ Für Benutzer mit einer Chloros+-Lizenz:
 
 * Kalibrierung: 0 % → 100 %
 * Aktuelles Bild wird verarbeitet
-* Fertiggestellte Bilder / Gesamtzahl der Bilder
+* Fertige Bilder / Gesamtzahl der Bilder
 
 **Verarbeitungsverhalten:**
 
@@ -116,7 +116,7 @@ Für Benutzer mit einer Chloros+-Lizenz:
 
 **Was zu beachten ist:**
 
-* Gleichmäßiger Fortschritt anhand der Bildanzahl
+* Gleichmäßiger Fortschritt durch die Bildanzahl
 * Debug-Protokoll auf Meldungen zur Fertigstellung einzelner Bilder überprüfen
 * Warnungen zu Bildqualität oder Kalibrierungsproblemen
 
@@ -183,7 +183,7 @@ Nicht kritische Probleme, die die Verarbeitung nicht unterbrechen:
 
 #### Fehlermeldungen (Red)
 
-Kritische Probleme, die zu einem Ausfall der Verarbeitung führen können:
+Kritische Probleme, die zu einem Fehlschlagen der Verarbeitung führen können:
 
 ```
 [ERROR] Cannot write file - disk full
@@ -270,19 +270,19 @@ Wenn die GPU-Beschleunigung aktiviert ist:
 
 **Was zu erwarten ist:**
 
-* Hohe Festplattenleseaktivität während der Analysephase
-* Hohe Festplattenschreibaktivität während der Exportphase
+* Hohe Festplattenlesevorgänge während der Analysephase
+* Hohe Festplattenschreibvorgänge während der Exportphase
 * SSD deutlich schneller als HDD
 
 **Leistungstipp:**
 
-* Verwenden Sie nach Möglichkeit eine SSD für den Projektordner.
-* Vermeiden Sie Netzlaufwerke für große Datensätze.
-* Stellen Sie sicher, dass die Festplatte nicht fast voll ist (beeinträchtigt die Schreibgeschwindigkeit).
+* Verwenden Sie nach Möglichkeit eine SSD für den Projektordner
+* Vermeiden Sie Netzlaufwerke für große Datensätze
+* Stellen Sie sicher, dass die Festplatte nicht fast voll ist (beeinträchtigt die Schreibgeschwindigkeit)
 
 ***
 
-## Erkennen von Problemen während der Verarbeitung
+## Probleme während der Verarbeitung erkennen
 
 ### Warnzeichen
 
@@ -308,7 +308,7 @@ Wenn die GPU-Beschleunigung aktiviert ist:
 
 Stoppen Sie die Verarbeitung, wenn Sie Folgendes sehen:
 
-* ❌ Fehlermeldungen „Festplatte voll“ oder „Datei kann nicht geschrieben werden“
+* ❌ Fehler „Festplatte voll” oder „Datei kann nicht geschrieben werden”
 * ❌ Wiederholte Fehler aufgrund beschädigter Bilddateien
 * ❌ System ist vollständig eingefroren (reagiert nicht)
 * ❌ Es wurden falsche Einstellungen konfiguriert
@@ -316,7 +316,7 @@ Stoppen Sie die Verarbeitung, wenn Sie Folgendes sehen:
 
 **So stoppen Sie die Verarbeitung:**
 
-1. Klicken Sie auf die Schaltfläche **„Stopp/Abbrechen“** (ersetzt die Schaltfläche „Start“).
+1. Klicken Sie auf die **Schaltfläche „Stopp/Abbrechen“** (ersetzt die Schaltfläche „Start“)
 2. Die Verarbeitung wird angehalten, der Fortschritt geht verloren
 3. Beheben Sie die Probleme und starten Sie von vorne
 
@@ -344,7 +344,7 @@ Stoppen Sie die Verarbeitung, wenn Sie Folgendes sehen:
 
 **Lösungen:**
 
-1. Festplattenspeicher sofort freigeben
+1. Sofort Festplattenspeicher freigeben
 2. Projekt auf Laufwerk mit mehr Speicherplatz verschieben
 3. Reduzieren Sie die Anzahl der zu exportierenden Indizes.
 4. Verwenden Sie das JPG-Format anstelle von TIFF (kleinere Dateien).

@@ -7,7 +7,7 @@ metaLinks:
 
 # Kalibrierungsziele
 
-MAPIR bietet verschiedene Kalibrierungsziele für eine Vielzahl von Anwendungen. Das unten abgebildete kompakte T4-R50 enthält 4 Panels, die für eine Lichtreflexion von 250 bis 2.500 nm gemessen wurden.
+MAPIR bietet verschiedene Kalibrierungsziele für eine Vielzahl von Anwendungen. Das unten abgebildete kompakte T4-R50 enthält 4 Platten, deren Lichtreflexion im Bereich von 250 bis 2.500 nm gemessen wurde.
 
 <figure><img src=".gitbook/assets/t4-r50_2.jpg" alt=""><figcaption><p>MAPIR T4-R50</p></figcaption></figure>
 

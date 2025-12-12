@@ -70,7 +70,7 @@ pip install chloros-sdk
 
 ***
 
-## Was ist enthalten?
+## Lieferumfang
 
 Die Installation von Chloros umfasst:
 

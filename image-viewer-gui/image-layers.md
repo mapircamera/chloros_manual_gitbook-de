@@ -1,10 +1,10 @@
-# Bild-Ebenen
+# Bildlayer
 
-Über das Dropdown-Menü „Bild-Ebenen“ im Chloros-Bildbetrachter können Sie schnell zwischen verschiedenen Versionen desselben Bildes wechseln – von den Originalaufnahmen über die verarbeiteten Reflektionsausgaben bis hin zu den berechneten Indexbildern.
+Über das Dropdown-Menü „Bildlayer“ im Chloros-Bildbetrachter können Sie schnell zwischen verschiedenen Versionen desselben Bildes wechseln – von den Originalaufnahmen über die verarbeiteten Reflektionsausgaben bis hin zu den berechneten Indexbildern.
 
-## Was sind Bild-Ebenen?
+## Was sind Bildlayer?
 
-In Chloros beziehen sich **Ebenen** auf die verschiedenen Bildausgaben, die für ein einzelnes Quellbild verfügbar sind. Wenn Sie Bilder verarbeiten, erstellt Chloros mehrere Versionen:
+In Chloros beziehen sich **Layer** auf die verschiedenen Bildausgaben, die für ein einzelnes Quellbild verfügbar sind. Wenn Sie Bilder verarbeiten, erstellt Chloros mehrere Versionen:
 
 * **Originalbilder** (JPG- und RAW-Dateien von Ihrer Kamera)
 * **Reflexionskalibrierte** Ausgaben (wenn die Reflexionskalibrierung aktiviert war)
@@ -28,7 +28,7 @@ In Chloros beziehen sich **Ebenen** auf die verschiedenen Bildausgaben, die für
 
 * Schnelle Vorschau der Originalaufnahme
 * Überprüfen der Bildkomposition und des Bildausschnitts
-* Überprüfen der Aufnahmequalität vor der Verarbeitung
+* Überprüfen der Aufnahmequalität vor der Bearbeitung
 
 ### RAW (Original)
 
@@ -40,48 +40,48 @@ In Chloros beziehen sich **Ebenen** auf die verschiedenen Bildausgaben, die für
 
 * Überprüfen der Qualität der ursprünglichen Sensordaten
 * Überprüfen auf Sensorprobleme oder Artefakte
-* Vergleichen der Ergebnisse vor und nach der Verarbeitung
+* Vergleichen der Ergebnisse vor und nach der Bearbeitung
 
 ### RAW (Ziel)
 
-* Wird nur für Bilder angezeigt, die als Kalibrierungsziele identifiziert wurden
-* Zeigt das ursprüngliche RAW-Bild mit erkanntem Ziel an
+* Wird nur für Bilder angezeigt, die als kalibrierungszielhaltig identifiziert wurden
+* Zeigt das Original-RAW-Bild mit erkanntem Ziel an
 * Dient zur Überprüfung, ob die Zielerkennung erfolgreich war
 
-**Anzeige:**
+**Anzeigezweck:**
 
-* Bestätigung, dass Kalibrierungsziele korrekt erkannt wurden
-* Überprüfung der Zielbildqualität
+* Bestätigung, dass die Kalibrierungsziele korrekt erkannt wurden
+* Überprüfung der Bildqualität des Ziels
 * Fehlerbehebung bei Kalibrierungsproblemen
 
 {% hint style=&quot;info&quot; %}
-**Zielebene**: Diese Ebene wird nur in der Dropdown-Liste für Bilder angezeigt, die Kalibrierungsziele enthalten. Normale Aufnahmen verfügen nicht über diese Option.
+**Zielebene**: Diese Ebene wird nur im Dropdown-Menü für Bilder angezeigt, die Kalibrierungsziele enthalten. Normale Aufnahmen verfügen nicht über diese Option.
 {% endhint %}
 
 ### RAW (Reflexionsgrad)
 
 * Das kalibrierte Reflexionsgrad-Ausgabebild
-* Vignettenkorrektur (sofern in der Verarbeitung aktiviert)
+* Vignettierung korrigiert (sofern in der Verarbeitung aktiviert)
 * Reflexion anhand von Zieldaten kalibriert (sofern aktiviert)
 * Multiband TIFF mit allen Kamerakanälen
 * Pixelwerte stellen die prozentuale Reflexion dar (bei Verwendung des Prozentmodus)
 * Bereit zur Bearbeitung mit der [Index/LUT-Sandbox](index-lut-sandbox.md)
 
-**Anzeigezeitpunkt:**
+**Anzeigezwecke:**
 
 * Überprüfen der kalibrierten Ergebnisse
 * Überprüfen der Kalibrierungsqualität
 * Überprüfen der Pixelwerte auf wissenschaftliche Genauigkeit
-* Vergleichen mit dem Original, um die Auswirkungen der Kalibrierung zu sehen
+* Vergleich mit dem Original, um die Auswirkungen der Kalibrierung zu sehen
 
 {% hint style=&quot;success&quot; %}
-**Empfohlen**: Verwenden Sie die RAW-Ebene (Reflexionsgrad), wenn Sie Pixelwerte für wissenschaftliche Messungen und Analysen überprüfen.
+**Empfohlen**: Verwenden Sie die RAW (Reflexionsgrad)-Ebene, wenn Sie Pixelwerte für wissenschaftliche Messungen und Analysen überprüfen.
 {% endhint %}
 
-### RAW (NDVI Index)... und ähnliche
+### RAW (NDVI Index)... und Ähnliches
 
 * Berechnetes Vegetationsindexbild (in diesem Beispiel NDVI)
-* Der Name des Index ändert sich je nachdem, welcher Index während der Verarbeitung konfiguriert wurde.
+* Der Name des Index ändert sich je nachdem, welcher Index während der Verarbeitung konfiguriert wurde
 * Beispiele: RAW (NDVI Index), RAW (NDRE Index), RAW (GNDVI Index) usw.
 * Einbandiges Graustufenbild, das die Ergebnisse der Indexberechnung zeigt
 * Für jeden in den Projekteinstellungen konfigurierten Index wird eine Ebene angezeigt
@@ -150,10 +150,10 @@ Nicht alle Ebenen sind für jedes Bild verfügbar:
 
 Wenn Sie zu einem anderen Bild navigieren (mit den Pfeiltasten oder durch Klicken auf Miniaturansichten):
 
-**Die Ebeneneinstellung bleibt erhalten:**
+**Die Layer-Einstellung bleibt erhalten:**
 
-* Wenn Sie „RAW (Reflexionsgrad)“ anzeigen, wird das nächste Bild als „RAW (Reflexionsgrad)“ angezeigt (sofern verfügbar).
-* Wenn Sie „RAW (NDVI Index)“ anzeigen, wird das nächste Bild als „RAW (NDVI Index)“ angezeigt (sofern verfügbar).
+* Bei Anzeige von „RAW (Reflexionsgrad)“ wird das nächste Bild als „RAW (Reflexionsgrad)“ angezeigt (sofern verfügbar).
+* Bei Anzeige von „RAW (NDVI Index)“ wird das nächste Bild als „RAW (NDVI Index)“ angezeigt (sofern verfügbar).
 * Wenn dieselbe Ebene nicht vorhanden ist, wird standardmäßig JPG angezeigt.
 
 **Beispiel-Workflow:**
@@ -161,50 +161,50 @@ Wenn Sie zu einem anderen Bild navigieren (mit den Pfeiltasten oder durch Klicke
 1. Öffnen Sie Bild 1 und wechseln Sie zu RAW (NDVI Index).
 2. Drücken Sie →, um Bild 2 anzuzeigen.
 3. Bild 2 zeigt automatisch die Ebene RAW (NDVI Index) an.
-4. Weiter navigieren – alle Bilder zeigen die Ebene NDVI.
-5. Sehr effizient für die Überprüfung der Indexergebnisse über viele Bilder hinweg.
+4. Fahren Sie mit der Navigation fort – alle Bilder zeigen die Ebene NDVI an.
+5. Sehr effizient für die Überprüfung von Indexergebnissen über viele Bilder hinweg.
 
 ***
 
 ## Häufige Arbeitsabläufe
 
-### Arbeitsablauf 1: Vorher/Nachher-Vergleich
+### Arbeitsablauf 1: Vorher-Nachher-Vergleich
 
 **Ziel**: Vergleichen Sie das Originalbild mit dem kalibrierten Bild.
 
 1. Öffnen Sie das verarbeitete Bild im Bildbetrachter.
-2. Wählen Sie **RAW (Original)** aus der Dropdown-Liste aus.
+2. Wählen Sie **RAW (Original)** aus der Dropdown-Liste.
 3. Beachten Sie die Vignettierung und die unkalibrierten Werte.
 4. Wechseln Sie in der Dropdown-Liste zu **RAW (Reflexionsgrad)**.
-5. Vergleichen Sie – Vignettierung entfernt, Werte kalibriert.
+5. Vergleichen Sie – die Vignettierung wurde entfernt, die Werte wurden kalibriert.
 
 ### Arbeitsablauf 2: Indexüberprüfung
 
-**Ziel**: Schnelle Überprüfung der NDVI-Ergebnisse über den gesamten Datensatz hinweg
+**Ziel**: Schnelle Überprüfung der NDVI-Ergebnisse im gesamten Datensatz
 
 1. Öffnen Sie das erste verarbeitete Bild.
-2. Wählen Sie **RAW (NDVI Index)** aus der Dropdown-Liste.
-3. Navigieren Sie mit der Pfeiltaste → zum nächsten Bild.
+2. Wählen Sie **RAW (NDVI Index)** aus der Dropdown-Liste aus.
+3. Mit der Pfeiltaste → zum nächsten Bild navigieren.
 4. Die Ebene NDVI bleibt automatisch erhalten.
-5. Fahren Sie mit allen Bildern fort und überprüfen Sie die Muster NDVI.
-6. Wechseln Sie zu **RAW (NDRE Index)**, um einen Vergleich durchzuführen.
+5. Alle Bilder durchgehen und die Muster NDVI überprüfen.
+6. Zum Vergleich zu **RAW (NDRE Index)** wechseln.
 
 ### Arbeitsablauf 3: Zielüberprüfung
 
-**Ziel**: Überprüfen Sie, ob alle Zielbilder korrekt erkannt wurden.
+**Ziel**: Überprüfen Sie, ob alle Zielbilder korrekt erkannt wurden
 
-1. Navigieren Sie zu einem Zielbild.
-2. Wählen Sie **RAW (Ziel)** aus der Dropdown-Liste aus.
-3. Überprüfen Sie, ob die Kalibrierungsziele deutlich sichtbar sind und erkannt werden.
-4. Navigieren Sie zum nächsten Zielbild.
-5. Wiederholen Sie die Überprüfung für alle Ziele.
+1. Navigieren Sie zu einem Zielbild
+2. Wählen Sie **RAW (Ziel)** aus dem Dropdown-Menü
+3. Überprüfen Sie, ob die Kalibrierungsziele deutlich sichtbar sind und erkannt werden
+4. Navigieren Sie zum nächsten Zielbild
+5. Wiederholen Sie die Überprüfung für alle Ziele
 
 ### Arbeitsablauf 4: Überprüfung der Pixelwerte
 
 **Ziel**: Überprüfen Sie die Reflexionswerte auf wissenschaftliche Genauigkeit.
 
 1. Öffnen Sie das verarbeitete Bild.
-2. Wählen Sie die Ebene **RAW (Reflexionsgrad)** aus.
+2. Wählen Sie die Ebene **RAW (Reflexion)** aus.
 3. Aktivieren Sie den Modus **Pixelprozent** (Schaltfläche in der Symbolleiste oben rechts).
 4. Bewegen Sie den Cursor über Vegetationsbereiche.
 5. Überprüfen Sie, ob die Pixelwerte im erwarteten Bereich liegen (30–70 % für NIR, 5–15 % für Red).
@@ -253,7 +253,7 @@ Verschiedene Ebenen zeigen unterschiedliche Pixelwertbereiche an:
 
 * **Tastaturkürzel**: Es gibt zwar keine Tastaturkürzel für Ebenen, aber die Navigationspfeile (←/→) funktionieren für alle Ebenen.
 * **Konsistente Arbeitsabläufe**: Wählen Sie eine Ebene aus (z. B. NDVI) und überprüfen Sie den gesamten Datensatz, bevor Sie zu einer anderen wechseln.
-* **Schnelle Vergleiche**: Wechseln Sie zwischen „Original“ und „Reflexionsgrad“, um die Verarbeitungsqualität zu überprüfen.
+* **Schnelle Vergleiche**: Wechseln Sie zwischen „Original“ und „Reflexion“, um die Verarbeitungsqualität zu überprüfen.
 
 ### Leistungsaspekte
 
@@ -264,9 +264,9 @@ Verschiedene Ebenen zeigen unterschiedliche Pixelwertbereiche an:
 
 ### Qualitätsprüfung
 
-* **Überprüfen Sie immer RAW (Original)**: Überprüfen Sie die Qualität der Quelldaten, bevor Sie den verarbeiteten Ergebnissen vertrauen.
-* **Ebenen vergleichen**: Verwenden Sie die Ebenenumschaltung, um zu überprüfen, ob die Verarbeitung korrekt funktioniert hat.
-* **Indexbereiche überprüfen**: Verwenden Sie den Pixelprozentmodus mit Indexebenen, um zu überprüfen, ob die Werte plausibel sind.
+* **Immer RAW (Original) überprüfen**: Überprüfen Sie die Qualität der Quelldaten, bevor Sie den verarbeiteten Ergebnissen vertrauen.
+* **Ebenen vergleichen**: Verwenden Sie den Ebenenwechsel, um zu überprüfen, ob die Verarbeitung korrekt funktioniert hat.
+* **Indexbereiche überprüfen**: Verwenden Sie den Pixelprozentmodus mit Indexebenen, um zu überprüfen, ob die Werte angemessen sind.
 
 ***
 
@@ -274,32 +274,32 @@ Verschiedene Ebenen zeigen unterschiedliche Pixelwertbereiche an:
 
 ### Ebene nicht verfügbar
 
-**Problem**: Die erwartete Ebene wird nicht in der Dropdown-Liste angezeigt.
+**Problem**: Die erwartete Ebene wird nicht in der Dropdown-Liste angezeigt
 
 **Mögliche Ursachen:**
 
-* Das Bild wurde nicht verarbeitet (nur JPG und RAW (Original) verfügbar).
-* Die Reflektionskalibrierung wurde während der Verarbeitung deaktiviert.
-* Der spezifische Index wurde in den Projekteinstellungen nicht konfiguriert.
-* Das Bild ist ein reines Zielbild (es wurden keine Indizes für Ziele generiert).
+* Das Bild wurde nicht verarbeitet (nur JPG und RAW (Original) verfügbar)
+* Die Reflektionskalibrierung wurde während der Verarbeitung deaktiviert
+* Der spezifische Index wurde nicht in den Projekteinstellungen konfiguriert
+* Das Bild ist ein reines Zielbild (es wurden keine Indizes für Ziele generiert)
 
 **Lösungen:**
 
 1. Überprüfen Sie, ob das Bild verarbeitet wurde (überprüfen Sie den Ausgabeordner auf verarbeitete Dateien).
-2. Überprüfen Sie die Projekteinstellungen, um sicherzustellen, dass die Indizes konfiguriert wurden.
-3. Verarbeiten Sie das Bild erneut mit den gewünschten Indizes.
+2. Überprüfen Sie die Projekteinstellungen, um sicherzustellen, dass Indizes konfiguriert wurden.
+3. Führen Sie die Verarbeitung erneut durch und aktivieren Sie die gewünschten Indizes.
 
 ### Falsche Ebene angezeigt
 
 **Problem**: Das Bild wird in einer unerwarteten Ebene geöffnet.
 
-**Ursache**: Die Ebeneneinstellung aus dem vorherigen Bild wurde übernommen, aber diese Ebene existiert im aktuellen Bild nicht.
+**Ursache**: Die Ebeneneinstellung aus dem vorherigen Bild wurde übernommen, aber diese Ebene ist im aktuellen Bild nicht vorhanden.
 
-**Lösung**: Chloros wechselt automatisch zu JPG, wenn die bevorzugte Ebene nicht verfügbar ist – dies ist ein normales Verhalten.
+**Lösung:** Chloros wechselt automatisch zu JPG, wenn die bevorzugte Ebene nicht verfügbar ist – dies ist ein normales Verhalten.
 
-### Kalibrierungsziele werden nicht angezeigt
+### Kalibrierungsziele nicht sichtbar
 
-**Problem**: Die RAW-Ebene (Ziel) zeigt keine Zielerkennung an.
+**Problem:** Die RAW-Ebene (Ziel) zeigt keine Zielerkennung an.
 
 **Mögliche Ursachen:**
 
@@ -309,7 +309,7 @@ Verschiedene Ebenen zeigen unterschiedliche Pixelwertbereiche an:
 
 **Lösungen:**
 
-1. Überprüfen Sie das Debug-Protokoll auf Meldungen „Ziel gefunden“.
+1. Überprüfen Sie das Debug-Protokoll auf Meldungen „Ziel gefunden”.
 2. Vergewissern Sie sich, dass das Bild tatsächlich sichtbare Kalibrierungsziele enthält.
 3. Passen Sie die Einstellungen für die Zielerkennung in den Projekteinstellungen an.
 4. Siehe [Auswahl von Zielbildern](../processing-images-gui/choosing-target-images.md).
@@ -323,7 +323,7 @@ Verschiedene Ebenen zeigen unterschiedliche Pixelwertbereiche an:
 Beim Betrachten einer Ebene können Sie Folgendes verwenden:
 
 * **Zoomsteuerung**: Vergrößern Sie das Bild, um Details zu untersuchen.
-* **Pan**: Klicken und ziehen Sie, um sich im vergrößerten Bild zu bewegen.
+* **Verschieben**: Klicken und ziehen Sie, um sich im vergrößerten Bild zu bewegen.
 * **Pixelwertprüfung**: Zeigen Sie die Werte an der Cursorposition an.
 * **Navigationspfeile**: Wechseln Sie zwischen Bildern, während die Ebene beibehalten wird.
 * **Pixelprozentmodus**: Wechseln Sie zwischen DN- und Prozentanzeige.
@@ -332,11 +332,11 @@ Die vollständige Dokumentation zum Bildbetrachter finden Sie unter [Bild im Vol
 
 ### Index/LUT-Sandbox
 
-Für interaktive Index-Tests und Visualisierung:
+Für interaktive Index-Tests und Visualisierungen:
 
-* **Echtzeit-Indexberechnung**: Testen Sie verschiedene Indexformeln
-* **LUT-Farbzuordnung**: Wenden Sie Farbverläufe auf Graustufenindizes an
-* **Visualisierungen exportieren**: Speichern Sie farbige Indexbilder
+* **Echtzeit-Indexberechnung**: Testen Sie verschiedene Indexformeln.
+* **LUT-Farbzuordnung**: Wenden Sie Farbverläufe auf Graustufenindizes an.
+* **Visualisierungen exportieren**: Speichern Sie farbige Indexbilder.
 
 Weitere Informationen finden Sie unter [Index/LUT-Sandbox](index-lut-sandbox.md).
 
@@ -344,9 +344,9 @@ Weitere Informationen finden Sie unter [Index/LUT-Sandbox](index-lut-sandbox.md)
 
 ## Nächste Schritte
 
-Nachdem Sie nun Bildlayer verstehen:
+Nachdem Sie nun die Bildlayer verstanden haben:
 
 * [**Öffnen eines Bildes im Vollbildmodus**](opening-an-image-full-screen.md) – Vollständige Anleitung zum Bildbetrachter
 * [**Index/LUT-Sandbox**](index-lut-sandbox.md) – Interaktive Indexvisualisierung
-* [**Multispektrale Indexformeln**](../project-settings/multispectral-index-formulas.md) – Referenz der verfügbaren Indizes
-* [**Beenden der Verarbeitung**](../processing-images-gui/finishing-the-processing.md) – Verstehen der verarbeiteten Ergebnisse
+* [**Multispektrale Indexformeln**](../project-settings/multispectral-index-formulas.md) – Referenz zu verfügbaren Indizes
+* [**Abschluss der Verarbeitung**](../processing-images-gui/finishing-the-processing.md) – Verständnis der verarbeiteten Ergebnisse

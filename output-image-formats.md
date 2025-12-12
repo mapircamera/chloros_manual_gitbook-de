@@ -12,7 +12,7 @@ metaLinks:
 
 ### TIFF (32 Bit, Prozent %)
 
-32 Bit (Pixel Float 0,0–1,0) Ausgabe im Format TIFF (.tif). Die Pixelwerte stellen Reflexionsprozentsätze dar, wobei 0,0 = 0 % und 1,0 = 100 % entspricht.
+32 Bit (Pixel Float 0,0–1,0) Ausgabe im Format TIFF (.tif). Die Pixelwerte stehen für Reflexionsprozentsätze, wobei 0,0 = 0 % und 1,0 = 100 % entspricht.
 
 ### **JPG (8 Bit)**
 

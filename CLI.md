@@ -106,12 +106,12 @@ chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 | `--no-reflectance`    | Flag    | -              | Reflektionskalibrierung deaktivieren                                                        |
 | `--ppk`               | Flag    | Deaktiviert       | PPK-Korrekturen aus .daq-Lichtsensordaten anwenden                                      |
 | `--format`            | Auswahl  | TIFF (16-Bit)  | Ausgabeformat: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
-| `--min-target-size`   | Ganzzahl | Auto           | Mindestzielgröße in Pixeln für die Erkennung des Kalibrierungsfelds                          |
-| `--target-clustering` | Ganzzahl | Auto           | Schwellenwert für die Zielclusterung (0–100)                                                    |
+| `--min-target-size`   | Ganzzahl | Auto           | Mindestzielgröße in Pixeln für die Erkennung des Kalibrierungsfeldes                          |
+| `--target-clustering` | Ganzzahl | Auto           | Schwellenwert für die Zielclusterung (0-100)                                                    |
 | `--exposure-pin-1`    | Zeichenfolge  | Keine           | Belichtung für Kameramodell sperren (Pin 1)                                                 |
 | `--exposure-pin-2`    | Zeichenfolge  | Keine           | Belichtung für Kameramodell sperren (Pin 2)                                                 |
 | `--recal-interval`    | Ganzzahl | Auto           | Neukalibrierungsintervall in Sekunden                                                      |
-| `--timezone-offset`   | Ganzzahl | 0              | Zeitzonenverschiebung in Stunden                                                               |
+| `--timezone-offset`   | Ganzzahl | 0              | Zeitzonenversatz in Stunden                                                               |
 
 ***
 
@@ -250,7 +250,7 @@ chloros-cli language ja
 
 #### Unterstützte Sprachen (insgesamt 38)
 
-| Code    | Sprache              | Name in der Originalsprache      |
+| Code    | Sprache              | Name in der Landessprache      |
 | ------- | --------------------- | ---------------- |
 | `en`    | Englisch               | English          |
 | `es`    | Spanisch               | Español          |
@@ -358,7 +358,7 @@ Diese Optionen gelten für alle Befehle:
 | Option          | Typ    | Standard       | Beschreibung                                      |
 | --------------- | ------- | ------------- | ------------------------------------------------ |
 | `--backend-exe` | Pfad    | Automatisch erkannt | Pfad zur ausführbaren Backend-Datei                       |
-| `--port`        | Ganzzahl | 5000          | Backend-Portnummer API                          |
+| `--port`        | Ganzzahl | 5000          | Backend-API-Portnummer                          |
 | `--restart`     | Flag    | -             | Neustart des Backends erzwingen (beendet vorhandene Prozesse) |
 | `--version`     | Flag    | -             | Versionsinformationen anzeigen und beenden                |
 | `--help`        | Flag    | -             | Hilfeinformationen anzeigen und beenden                   |
@@ -375,7 +375,7 @@ chloros-cli --port 5001 process "C:\Datasets\Survey_001"
 
 ### Parallele Verarbeitung
 
-Chloros+ CLI **skaliert automatisch** die parallele Verarbeitung entsprechend der Leistungsfähigkeit Ihres Computers:
+Chloros+ CLI **skaliert automatisch** die parallele Verarbeitung entsprechend den Fähigkeiten Ihres Computers:
 
 **So funktioniert es:**
 
@@ -405,7 +405,7 @@ Der CLI verwendet **High Quality (Faster)** als standardmäßigen und empfohlene
 
 ### Vignettierungskorrektur
 
-**Funktion:** Korrigiert den Lichtabfall an den Bildrändern (dunklere Ecken, die häufig bei Kameraaufnahmen auftreten).
+**Funktion:** Korrigiert den Lichtabfall an den Bildrändern (dunklere Ecken, die häufig in Kameraaufnahmen auftreten).
 
 * **Standardmäßig aktiviert** – Die meisten Benutzer sollten diese Option aktiviert lassen.
 * Verwenden Sie `--no-vignette`, um sie zu deaktivieren.
@@ -636,9 +636,9 @@ dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
 ```
 
 3. Fügen Sie ihn manuell zu PATH hinzu:
-   * Öffnen Sie Systemeinstellungen → Umgebungsvariablen.
+   * Öffnen Sie „Systemeigenschaften“ → „Umgebungsvariablen“.
    * Bearbeiten Sie die Variable PATH.
-   * Fügen Sie hinzu: `C:\Program Files\Chloros\resources\cli`
+   * Fügen Sie Folgendes hinzu: `C:\Program Files\Chloros\resources\cli`
    * Terminal neu starten
 
 ***
@@ -653,8 +653,8 @@ Backend failed to start within 30 seconds
 
 **Lösungen:**
 
-1. Überprüfen Sie, ob das Backend bereits ausgeführt wird (schließen Sie es zuerst).
-2. Überprüfen Sie, ob die Firewall Windows nicht blockiert.
+1. Überprüfen Sie, ob das Backend bereits ausgeführt wird (schließen Sie es zuerst)
+2. Überprüfen Sie, ob die Firewall Windows nicht blockiert
 3. Versuchen Sie es mit einem anderen Port:
 
 ```powershell
@@ -767,7 +767,7 @@ Abonnieren unter: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camer
 
 ### F: Wo werden die verarbeiteten Bilder gespeichert?
 
-**A:** Standardmäßig werden die verarbeiteten Bilder im **gleichen Ordner wie die Eingabe** in Unterordnern für Kameramodelle (z. B. `Survey3N_RGN/`) gespeichert.
+**A:** Standardmäßig werden die verarbeiteten Bilder im **gleichen Ordner wie die Eingabe** in Unterordnern des Kameramodells (z. B. `Survey3N_RGN/`) gespeichert.
 
 Verwenden Sie die Option `-o`, um einen anderen Ausgabeordner anzugeben:
 

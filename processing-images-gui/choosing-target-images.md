@@ -52,10 +52,10 @@ Für jedes Bild, das ein Kalibrierungsziel enthält:
 
 ### Schritt 3: Überprüfen Sie Ihre Auswahl
 
-Überprüfen Sie vor der Verarbeitung Folgendes:
+Überprüfen Sie vor der Verarbeitung noch einmal Folgendes:
 
 * [ ] Alle Bilder mit Kalibrierungszielen sind markiert.
-* [ ] Es sind keine Nicht-Zielbilder versehentlich markiert.
+* [ ] Es sind keine Bilder ohne Ziele versehentlich markiert.
 * [ ] Die Ziele sind in den markierten Bildern deutlich sichtbar.
 
 ***
@@ -86,7 +86,7 @@ Für jedes Bild, das ein Kalibrierungsziel enthält:
 
 * Halten Sie die Zieltafeln sauber und trocken
 * Alle 4 Tafeln sollten gut sichtbar und frei von Hindernissen sein
-* Ziele möglichst senkrecht/nadir zur Lichtquelle
+* Ziele sollten möglichst senkrecht/nadir zur Lichtquelle stehen
 
 ### Wie viele Zielbilder?
 
@@ -133,8 +133,8 @@ Wenn Chloros Ihre Ziele nicht richtig erkennt, passen Sie diese Einstellungen in
 **Mindestkalibrierungsbereich:**
 
 * **Standard**: 25 Pixel
-* **Erhöhen** Sie den Wert, wenn bei kleinen Artefakten Fehlalarme auftreten.
-* **Verringern** Sie den Wert, wenn Ziele nicht erkannt werden.
+* **Erhöhen** Sie diesen Wert, wenn bei kleinen Artefakten Fehlalarme auftreten.
+* **Verringern** Sie diesen Wert, wenn Ziele nicht erkannt werden.
 
 **Mindestzielclusterung:**
 
@@ -185,7 +185,7 @@ Wenn Chloros Ihre Ziele nicht richtig erkennt, passen Sie diese Einstellungen in
 
 * [ ] Mindestens 1 Zielbild pro Sitzung markiert
 * [ ] Die Kontrollkästchen der Zielspalte sind für alle Zielbilder aktiviert
-* [ ] Zielbilder wurden im gleichen Zeitrahmen wie die Vermessung aufgenommen
+* [ ] Zielbilder wurden im gleichen Zeitraum wie die Vermessung aufgenommen
 * [ ] Ziele sind in der Vorschau beim Anklicken deutlich sichtbar
 * [ ] Alle 4 Kalibrierungsfelder sind in jedem Zielbild sichtbar
 * [ ] Keine Schatten oder Hindernisse auf den Zielen
@@ -204,7 +204,7 @@ Obwohl dies für wissenschaftliche Arbeiten nicht empfohlen wird, können Sie di
 3. Die Vignettenkorrektur wird weiterhin angewendet.
 4. Die Ausgabe wird nicht für die absolute Reflexion kalibriert.
 
-{% hint style=&quot;warning&quot; %}
+{% Hinweis style=&quot;warning&quot; %}
 **Nicht empfohlen**: Ohne Reflektionskalibrierung geben die Pixelwerte nur die relative Helligkeit wieder, nicht die wissenschaftlichen Reflektionsmessungen. Verwenden Sie Kalibrierungsziele für genaue, wiederholbare Ergebnisse.
 {% endhint %}
 

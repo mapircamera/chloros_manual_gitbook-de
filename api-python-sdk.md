@@ -152,7 +152,7 @@ print(f"Backend running: {status['running']}")
 
 ***
 
-## API-Referenz
+## API Referenz
 
 ### ChlorosLocal-Klasse
 
@@ -202,7 +202,7 @@ chloros = ChlorosLocal(timeout=60)
 
 #### `create_project(project_name, camera=None)`
 
-Erstellen Sie ein neues Chloros-Projekt.
+Erstellt ein neues Chloros-Projekt.
 
 **Parameter:**
 
@@ -211,7 +211,7 @@ Erstellen Sie ein neues Chloros-Projekt.
 | `project_name` | str  | Ja      | Name für das Projekt                                     |
 | `camera`       | str  | Nein       | Kameravorlage (z. B. „Survey3N\_RGN”, „Survey3W\_OCN”) |
 
-**Rückgabewerte:** `dict` – Antwort zur Projekterstellung
+**Rückgabewert:** `dict` – Antwort zur Projekterstellung
 
 **Beispiel:**
 
@@ -233,7 +233,7 @@ Importiert Bilder aus einem Ordner.
 
 | Parameter     | Typ     | Erforderlich | Beschreibung                        |
 | ------------- | -------- | -------- | ---------------------------------- |
-| `folder_path` | str/Path | Ja      | Pfad zum Ordner mit Bildern         |
+| `folder_path` | str/Pfad | Ja      | Pfad zum Ordner mit Bildern         |
 | `recursive`   | bool     | Nein       | Unterordner durchsuchen (Standard: False) |
 
 **Rückgabewerte:** `dict` – Importergebnisse mit Dateianzahl
@@ -261,8 +261,8 @@ Konfigurieren Sie die Verarbeitungseinstellungen.
 | `debayer`                 | str  | „Hohe Qualität (schneller)“ | Debayer-Verfahren                  |
 | `vignette_correction`     | bool | `True`                  | Vignettenkorrektur aktivieren      |
 | `reflectance_calibration` | bool | `True`                  | Reflektionskalibrierung aktivieren  |
-| `indices`                 | Liste | `None`                  | Zu berechnende Vegetationsindizes |
-| `export_format`           | str  | „TIFF (16-Bit)“         | Ausgabeformat                   |
+| `indices`                 | list | `None`                  | Zu berechnende Vegetationsindizes |
+| `export_format`           | str  | „TIFF (16-Bit)”         | Ausgabeformat                   |
 | `ppk`                     | bool | `False`                 | PPK-Korrekturen aktivieren          |
 | `custom_settings`         | dict | `None`                  | Erweiterte benutzerdefinierte Einstellungen        |
 
@@ -308,15 +308,15 @@ Verarbeiten Sie die Projektbilder.
 
 | Parameter           | Typ     | Standardwert      | Beschreibung                               |
 | ------------------- | -------- | ------------ | ----------------------------------------- |
-| `mode`              | str      | `"parallel"` | Verarbeitungsmodus: „parallel” oder „serial”   |
+| `mode`              | str      | `"parallel"` | Verarbeitungsmodus: „parallel” oder „seriell”   |
 | `wait`              | bool     | `True`       | Auf Abschluss warten                       |
-| `progress_callback` | callable | `None`       | Fortschritts-Callback-Funktion(fortschritt, msg) |
+| `progress_callback` | callable | `None`       | Fortschritts-Callback-Funktion(progress, msg) |
 | `poll_interval`     | float    | `2.0`        | Abfrageintervall für Fortschritt (Sekunden)   |
 
 **Rückgabewerte:** `dict` – Verarbeitungsergebnisse
 
 {% hint style=&quot;warning&quot; %}
-**Parallelmodus**: Erfordert Chloros+-Lizenz. Skaliert automatisch auf Ihre CPU-Kerne (bis zu 16 Worker).
+**Parallelmodus**: Erfordert die Lizenz Chloros+. Skaliert automatisch auf Ihre CPU-Kerne (bis zu 16 Worker).
 {% endhint %}
 
 **Beispiel:**
@@ -394,10 +394,10 @@ Einzeilige Komfortfunktion zur Verarbeitung eines Ordners.
 
 | Parameter                 | Typ     | Standardwert         | Beschreibung                    |
 | ------------------------- | -------- | --------------- | ------------------------------ |
-| `folder_path`             | str/Path | Erforderlich        | Pfad zum Ordner mit Bildern     |
+| `folder_path`             | str/Pfad | Erforderlich        | Pfad zum Ordner mit Bildern     |
 | `project_name`            | str      | Automatisch generiert  | Projektname                   |
 | `camera`                  | str      | `None`          | Kameravorlage                |
-| `indices`                 | list     | `["NDVI"]`      | Indizes zur Berechnung           |
+| `indices`                 | list     | `["NDVI"]`      | Zu berechnende Indizes           |
 | `vignette_correction`     | bool     | `True`          | Vignettenkorrektur aktivieren     |
 | `reflectance_calibration` | bool     | `True`          | Reflektionskalibrierung aktivieren |
 | `export_format`           | str      | „TIFF (16-Bit)“ | Ausgabeformat                  |
@@ -457,7 +457,7 @@ with ChlorosLocal() as chloros:
 
 ### Beispiel 1: Grundlegende Verarbeitung
 
-Verarbeiten Sie einen Ordner mit den Standardeinstellungen:
+Verarbeiten Sie einen Ordner mit Standardeinstellungen:
 
 ```python
 from chloros_sdk import process_folder
@@ -904,7 +904,7 @@ backend_path = r"C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backen
 print(f"Backend exists: {os.path.exists(backend_path)}")
 ```
 
-2. Überprüfen Sie, ob die Firewall Windows blockiert.
+2. Überprüfen Sie, ob die Firewall Windows nicht blockiert.
 3. Versuchen Sie es mit dem manuellen Backend-Pfad:
 
 ```python
@@ -920,7 +920,7 @@ chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
 **Lösungen:**
 
 1. Öffnen Sie Chloros, Chloros (Browser) oder Chloros CLI und melden Sie sich an.
-2. Überprüfen Sie, ob die Lizenz zwischengespeichert ist:
+2. Überprüfen Sie, ob die Lizenz im Cache gespeichert ist:
 
 ```python
 from pathlib import Path
@@ -997,13 +997,13 @@ Get-NetTCPConnection -LocalPort 5000
 
 ### Optimieren Sie die Verarbeitungsgeschwindigkeit
 
-1. **Parallelmodus verwenden** (erfordert Chloros+)
+1. **Verwenden Sie den Parallelmodus** (erfordert Chloros+)
 
 ```python
 chloros.process(mode="parallel")  # Up to 16 workers
 ```
 
-2. **Ausgabeauflösung reduzieren** (sofern akzeptabel)
+2. **Reduzieren Sie die Ausgabeauflösung** (sofern akzeptabel)
 
 ```python
 chloros.configure(export_format="PNG (8-bit)")  # Faster than TIFF
@@ -1153,7 +1153,7 @@ chloros.process(progress_callback=notebook_progress)
 
 **A:** Der SDK-Code kann in Ihre Anwendungen integriert werden, aber:
 
-* Endbenutzer benötigen Chloros
+* Endbenutzer müssen Chloros installiert haben.
 * Endbenutzer benötigen aktive Chloros+-Lizenzen.
 * Für den kommerziellen Vertrieb ist eine OEM-Lizenz erforderlich.
 

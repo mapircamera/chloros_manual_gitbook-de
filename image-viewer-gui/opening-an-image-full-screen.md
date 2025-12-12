@@ -17,7 +17,7 @@ Die gängigste Methode zum Öffnen eines Bildes im Bildbetrachter:
 
 Sobald ein Bild im Vorschau-Bereich geladen ist:
 
-1. Klicken Sie auf das Symbol „**Bildbetrachter**“ <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> in der linken Seitenleiste.
+1. Klicken Sie auf das Symbol **„Bildbetrachter“** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> in der linken Seitenleiste.
 2. Die Registerkarte „Bildbetrachter“ wird geöffnet und zeigt das ausgewählte Bild im Vollbildmodus an.
 3. In der linken Seitenleiste stehen erweiterte Anzeige- und Analysewerkzeuge zur Verfügung.
 
@@ -91,7 +91,7 @@ Wenn Sie den Mauszeiger über das Bild bewegen, werden die Pixelwerte in Echtzei
 
 **Anzeigeort des Werts:**
 
-* **Gleitkommawert und rote Linie in der LUT-Gradientenlegende auf der rechten Seite**
+* **Gleitkommazahl und rote Linie in der Index-LUT-Gradientenlegende auf der rechten Seite**
 * **Bei weiterer Vergrößerung: Gleitkommawert in der Nähe des Cursors und hervorgehobenes Pixel**
 * Zeigt Werte für Pixel **unter dem Cursor oder hervorgehoben** an
 * Wird aktualisiert, wenn Sie die Maus bewegen
@@ -228,7 +228,7 @@ Ausführliche Anweisungen finden Sie unter [Index/LUT-Sandbox](index-lut-sandbox
 
 **Lösungen:**
 
-1. Überprüfen Sie, ob Sie die verarbeitete Ausgabe anzeigen (überprüfen Sie die Dateinamenerweiterung).
+1. Überprüfen Sie, ob Sie die verarbeitete Ausgabe anzeigen (überprüfen Sie die Dateinamenendung).
 2. Überprüfen Sie den Status der Prozentmodus-Schaltfläche.
 3. Vergleichen Sie mit bekanntermaßen guten Bildern aus demselben Datensatz.
 

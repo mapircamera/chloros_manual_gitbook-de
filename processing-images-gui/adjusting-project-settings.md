@@ -1,8 +1,8 @@
 # Anpassen der Projekteinstellungen
 
-Bevor Sie Ihre Bilder verarbeiten, ist es wichtig, die Projekteinstellungen entsprechend Ihren Arbeitsabläufen zu konfigurieren. Das Projektfenster <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> bietet umfassende Kontrolle über Kalibrierung, Verarbeitungsoptionen, multispektrale Indizes und Exportformate.
+Bevor Sie Ihre Bilder bearbeiten, sollten Sie die Projekteinstellungen entsprechend Ihren Arbeitsabläufen konfigurieren. Das Projektfenster <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> bietet umfassende Kontrolle über Kalibrierung, Verarbeitungsoptionen, multispektrale Indizes und Exportformate.
 
-## Zugriff auf die Projekteinstellungen
+## Auf die Projekteinstellungen zugreifen
 
 1. Öffnen Sie Ihr Projekt in Chloros
 2. Klicken Sie auf das Symbol **Projekteinstellungen** <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> in der linken Seitenleiste.
@@ -25,7 +25,7 @@ Für typische MAPIR Survey3 Kamera-Workflows eignen sich die Standardeinstellung
 * ✅ **Debayer-Verfahren**: Hohe Qualität (schneller)
 * ✅ **Exportformat**: TIFF (16 Bit)
 
-Importieren Sie einfach Ihre Bilder und beginnen Sie mit der Verarbeitung mit diesen Standardeinstellungen.
+Importieren Sie einfach Ihre Bilder und starten Sie die Verarbeitung mit diesen Standardeinstellungen.
 
 ***
 
@@ -39,14 +39,14 @@ Steuert, wie Chloros Kalibrierungsziele in Ihren Bildern identifiziert.
 
 **Wichtige Einstellungen:**
 
-* **Mindestgröße des Kalibrierungsbereichs**: Größenschwelle für die Zielerkennung (Standard: 25 Pixel)
-* **Mindestanzahl der Zielcluster**: Ähnlichkeitsschwelle für die Gruppierung von Zielbereichen (Standard: 60)
+* **Minimale Kalibrierungsprobenfläche**: Größenschwelle für die Zielerkennung (Standard: 25 Pixel)
+* **Minimale Zielclusterung**: Ähnlichkeitsschwelle für die Gruppierung von Zielbereichen (Standard: 60)
 
 **Wann anpassen:**
 
-* Vergrößern Sie den Bereich, wenn es zu Fehlerkennungen kommt.
-* Verringern Sie ihn, wenn Ziele nicht erkannt werden.
-* Passen Sie die Clustering-Einstellung an, wenn Ziele in mehrere Erkennungen aufgeteilt werden.
+* Vergrößern Sie die Probenfläche, wenn falsche Erkennungen auftreten.
+* Verringern Sie sie, wenn Ziele nicht erkannt werden.
+* Passen Sie die Clusterung an, wenn Ziele in mehrere Erkennungen aufgeteilt werden.
 
 ### Verarbeitung
 
@@ -54,7 +54,7 @@ Wichtigste Bildverarbeitungs- und Kalibrierungsoptionen.
 
 **Wichtige Einstellungen:**
 
-* **Vignettierungskorrektur**: Kompensiert die Verdunkelung des Objektivs an den Rändern ✅ Empfohlen
+* **Vignettierungskorrektur**: Gleicht die Verdunkelung des Objektivs an den Rändern aus ✅ Empfohlen
 * **Reflexionskalibrierung**: Normalisiert Werte mithilfe von Kalibrierungszielen ✅ Empfohlen
 * **Debayer-Verfahren**: Algorithmus zur Konvertierung von RAW in 3-Kanal-Multispektral
 * **Minimales Neukalibrierungsintervall**: Zeit zwischen der Verwendung von Kalibrierungszielen (0 = alle verwenden)
@@ -63,7 +63,7 @@ Wichtigste Bildverarbeitungs- und Kalibrierungsoptionen.
 
 * **Zeitzonenversatz des Lichtsensors**: Für die PPK-Zeitsynchronisation (Standard: 0)
 * **PPK-Korrekturen anwenden**: Verwendet GPS-/Belichtungs-Pin-Daten aus .daq-Dateien
-* **Belichtungsstift 1/2**: Weist Kameras Belichtungsstiften für Dual-Kamera-Setups zu
+* **Belichtungs-Pin 1/2**: Weist Kameras Belichtungs-Pins für Dual-Kamera-Setups zu
 
 ### Index (Multispektrale Indizes)
 
@@ -135,8 +135,8 @@ Beim Erstellen eines neuen Projekts:
 
 Die Einstellung **„Projektordner speichern”** legt fest, wo neue Projekte standardmäßig erstellt werden:
 
-* **Standardpfad**: `C:\Users\[Username]\Chloros Projects`
-* **Pfad ändern**: Klicken Sie auf das Bearbeitungssymbol und wählen Sie einen neuen Ordner aus.
+* **Standardort**: `C:\Users\[Username]\Chloros Projects`
+* **Ort ändern**: Klicken Sie auf das Bearbeitungssymbol und wählen Sie einen neuen Ordner aus.
 * **Wann ändern**:
   * Netzlaufwerk für die Zusammenarbeit im Team
   * Anderes Laufwerk mit mehr Speicherplatz
@@ -157,8 +157,8 @@ Bei Verwendung von MAPIR DAQ-Rekordern mit GPS für präzise Geolokalisierung:
 ### Konfigurationsschritte
 
 1. Legen Sie die .daq-Protokolldatei in Ihrem Projektordner ab.
-2. Aktivieren Sie in den Projekteinstellungen das Kontrollkästchen **„PPK-Korrekturen anwenden”**.
-3. Stellen Sie bei Bedarf **„Zeitzonenversatz des Lichtsensors”** ein (Standard: 0 für UTC).
+2. Aktivieren Sie in den Projekteinstellungen das Kontrollkästchen **„PPK-Korrekturen anwenden“**.
+3. Stellen Sie bei Bedarf **„Zeitzonenversatz des Lichtsensors“** ein (Standard: 0 für UTC).
 4. Weisen Sie den Belichtungs-Pins Kameras zu:
    * **Einzelne Kamera**: Wird automatisch Pin 1 zugewiesen.
    * **Zwei Kameras**: Weisen Sie jede Kamera manuell dem richtigen Pin zu.
@@ -181,8 +181,8 @@ Bei Verwendung von MAPIR DAQ-Rekordern mit GPS für präzise Geolokalisierung:
 
 Bei der Verarbeitung von Bildern aus mehreren MAPIR-Kameras in einem Projekt:
 
-1. Chloros erkennt automatisch jedes Kameramodell
-2. Jede Kamera erhält ein geeignetes Verarbeitungsprofil
+1. Chloros erkennt automatisch jedes Kameramodell.
+2. Jede Kamera erhält ein geeignetes Verarbeitungsprofil.
 3. PPK: Weisen Sie jeder Kamera manuell den richtigen Belichtungsstift zu.
 4. Alle Kameras verwenden dasselbe Exportformat und dieselben Indizes.
 
@@ -227,8 +227,8 @@ Für Projekte mit vielen Bildern (500+):
 
 Sobald Ihre Einstellungen konfiguriert sind:
 
-1. **Kalibrierungszielbilder markieren** – Siehe [Auswählen von Zielbildern](choosing-target-images.md)
-2. **Verarbeitung starten** – Siehe [Starten der Verarbeitung](starting-the-processing.md)
+1. **Markieren Sie Kalibrierungszielbilder** – Siehe [Auswählen von Zielbildern](choosing-target-images.md)
+2. **Starten Sie die Verarbeitung** – Siehe [Starten der Verarbeitung](starting-the-processing.md)
 3. **Überwachen Sie den Fortschritt** – Siehe [Überwachen der Verarbeitung](monitoring-the-processing.md)
 
 Ausführliche Informationen zu allen verfügbaren Einstellungen finden Sie in der Referenzdokumentation [Projekteinstellungen](../project-settings/project-settings.md).

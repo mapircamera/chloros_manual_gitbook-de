@@ -66,9 +66,9 @@ Chloros arbeitet je nach Ihrer Lizenz in zwei verschiedenen Verarbeitungsmodi:
 * Deutlich langsamer als der parallele Modus von Chloros+
 * Geeignet für kleine bis mittlere Datensätze (&lt; 200 Bilder)
 
-### Chloros+ Modus (Parallelverarbeitung)
+### Chloros+-Modus (parallele Verarbeitung)
 
-**Erfordert eine Chloros+ Lizenz**
+**Erfordert eine Chloros+-Lizenz**
 
 **So funktioniert es:**
 
@@ -121,7 +121,7 @@ Chloros arbeitet je nach Ihrer Lizenz in zwei verschiedenen Verarbeitungsmodi:
 
 * Konvertiert RAW-Bayer-Musterdaten in vollständige RGB-Bilder
 * Wendet einen hochwertigen Demosaicing-Algorithmus an
-* Erhält maximale Bildqualität und Details
+* Erhält maximale Bildqualität und Detailgenauigkeit
 
 **Dauer:** Variiert je nach Bildanzahl und CPU-Geschwindigkeit
 
@@ -129,12 +129,12 @@ Chloros arbeitet je nach Ihrer Lizenz in zwei verschiedenen Verarbeitungsmodi:
 
 **Was Chloros leistet:**
 
-* **Vignettierungskorrektur**: Entfernt die Verdunkelung des Objektivs an den Rändern
-* **Reflexionskalibrierung**: Normalisiert anhand von Zielreflexionswerten
-* Wendet Korrekturen über alle Bänder/Kanäle hinweg an
-* Verwendet für jedes Bild das geeignete Kalibrierungsziel basierend auf dem Zeitstempel
+* **Vignettierungskorrektur**: Entfernt die Verdunkelung der Linsen an den Rändern.
+* **Reflexionskalibrierung**: Normalisiert anhand der Zielreflexionswerte.
+* Wendet Korrekturen auf alle Bänder/Kanäle an.
+* Verwendet für jedes Bild das geeignete Kalibrierungsziel basierend auf dem Zeitstempel.
 
-**Dauer:** Großteil der Verarbeitungszeit
+**Dauer:** Der Großteil der Verarbeitungszeit
 
 ### Stufe 4: Indexberechnung
 
@@ -184,11 +184,11 @@ Nach dem Start läuft die gesamte Pipeline automatisch ab:
 * Der Computer reagiert während der Verarbeitung möglicherweise weniger schnell.
 * Vermeiden Sie es, andere CPU-intensive Aufgaben zu starten.
 
-{% hint style=&quot;warning&quot; %}
+{% Hinweis style=&quot;warning&quot; %}
 **Leistungstipp**: Um die beste Leistung von Chloros+ zu erzielen, schließen Sie andere Anwendungen und lassen Sie Chloros die gesamten Systemressourcen nutzen.
 {% endhint %}
 
-### Die Verarbeitung kann nicht angehalten werden.
+### Die Verarbeitung kann nicht angehalten werden
 
 **Wichtige Einschränkungen:**
 
@@ -197,7 +197,7 @@ Nach dem Start läuft die gesamte Pipeline automatisch ab:
 * Teilweise Ergebnisse werden nicht gespeichert.
 * Bei Abbruch muss von vorne begonnen werden.
 
-**Planungstipp:** Bei sehr großen Projekten sollten Sie eine Verarbeitung in Stapeln oder die Verwendung von CLI in Betracht ziehen, um eine bessere Kontrolle zu erzielen.
+**Planungstipp:** Bei sehr großen Projekten sollten Sie eine Verarbeitung in Stapeln oder die Verwendung von CLI in Betracht ziehen, um eine bessere Kontrolle zu haben.
 
 ***
 
@@ -206,9 +206,9 @@ Nach dem Start läuft die gesamte Pipeline automatisch ab:
 Während der Verarbeitung können Sie:
 
 * **Den Fortschrittsbalken beobachten** – Sehen Sie den Gesamtfortschritt in Prozent.
-* **Die aktuelle Phase anzeigen** – Erkennen, Analysieren, Kalibrieren oder Exportieren
-* **Registerkarte „Protokoll“ überprüfen** – Detaillierte Verarbeitungsmeldungen und Warnungen anzeigen
-* **Vorschau der fertigen Bilder** – Einige Exportdateien werden möglicherweise während der Verarbeitung angezeigt
+* **Die aktuelle Phase anzeigen** – Erkennen, Analysieren, Kalibrieren oder Exportieren.
+* **Die Registerkarte „Protokoll“ überprüfen** – Sehen Sie detaillierte Verarbeitungsmeldungen und Warnungen.
+* **Eine Vorschau der fertigen Bilder anzeigen** – Einige Exportdateien werden möglicherweise während der Verarbeitung angezeigt.
 
 Ausführliche Informationen zur Überwachung finden Sie unter [Überwachen der Verarbeitung](monitoring-the-processing.md).
 
@@ -225,7 +225,7 @@ Wenn Sie die Verarbeitung stoppen müssen:
 3. Die Verarbeitung wird sofort angehalten.
 4. Teilweise Ergebnisse werden verworfen.
 
-### Wann abbrechen
+### Wann sollte abgebrochen werden?
 
 **Gültige Gründe für einen Abbruch:**
 
@@ -234,14 +234,14 @@ Wenn Sie die Verarbeitung stoppen müssen:
 * Es wurden falsche Bilder importiert.
 * Das System läuft zu langsam oder reagiert nicht.
 
-**Nach dem Abbrechen:**
+**Nach dem Abbruch:**
 
 * Überprüfen und beheben Sie alle Probleme.
 * Passen Sie die Einstellungen nach Bedarf an.
 * Starten Sie die Verarbeitung von vorne.
 * Für ein optimales Ergebnis schließen Sie Chloros vollständig und starten Sie es neu.
 
-{% Hinweis style=&quot;warning&quot; %}
+{% hint style=&quot;warning&quot; %}
 **Keine Teilergebnisse**: Durch das Abbrechen werden alle Fortschritte verworfen. Chloros speichert keine teilweise verarbeiteten Bilder.
 {% endhint %}
 
@@ -254,9 +254,9 @@ Die tatsächliche Verarbeitungszeit hängt stark von folgenden Faktoren ab:
 * Anzahl der Bilder
 * Bildauflösung
 * Eingabeformat (RAW oder JPG)
-* Verarbeitungsmodus (Free oder Chloros+)
+* Verarbeitungsmodus (Free vs. Chloros+)
 * CPU-Geschwindigkeit und Anzahl der Kerne
-* Verfügbarkeit einer GPU (nur Chloros+)
+* Verfügbarkeit der GPU (nur Chloros+)
 * Anzahl der zu berechnenden Indizes
 * Komplexität des Exportformats
 
@@ -306,7 +306,7 @@ Die tatsächliche Verarbeitungszeit hängt stark von folgenden Faktoren ab:
 **Lösungen:**
 
 1. Überprüfen Sie das Debug-Protokoll <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> auf Fehlermeldungen
-2. Überprüfen Sie den verfügbaren Speicherplatz
+2. Verfügbaren Speicherplatz überprüfen
 3. Versuchen Sie, eine kleinere Teilmenge von Bildern zu verarbeiten
 4. Überprüfen Sie, ob die Bilder nicht beschädigt sind
 
@@ -314,13 +314,13 @@ Die tatsächliche Verarbeitungszeit hängt stark von folgenden Faktoren ab:
 
 **Mögliche Ursachen:**
 
-* Sie haben vergessen, Zielbilder zu markieren
-* Die Zielbilder enthalten keine sichtbaren Ziele
-* Die Einstellungen für die Zielerkennung sind zu streng
+* Zielbilder wurden nicht markiert
+* Zielbilder enthalten keine sichtbaren Ziele
+* Einstellungen für die Zielerkennung sind zu streng
 
 **Lösungen:**
 
-1. Überprüfen Sie die [Auswahl von Zielbildern](choosing-target-images.md).
+1. Überprüfen Sie die [Auswahl der Zielbilder](choosing-target-images.md).
 2. Markieren Sie die entsprechenden Bilder in der Spalte „Ziel”.
 3. Überprüfen Sie, ob die Ziele in den markierten Bildern sichtbar sind.
 4. Passen Sie die Einstellungen für die Zielerkennung bei Bedarf an.
@@ -340,7 +340,7 @@ Die tatsächliche Verarbeitungszeit hängt stark von folgenden Faktoren ab:
 ### Während der Verarbeitung
 
 1. **Vermeiden Sie den Ruhezustand des Systems** – Deaktivieren Sie Energiesparmodi.
-2. **Behalten Sie Chloros im Vordergrund** – Oder zumindest in der Taskleiste sichtbar.
+2. **Halten Sie Chloros im Vordergrund** – Oder zumindest in der Taskleiste sichtbar.
 3. **Überwachen Sie gelegentlich den Fortschritt** – Achten Sie auf Warnungen oder Fehler.
 4. **Keine anderen ressourcenintensiven Anwendungen laden** – insbesondere im Parallelmodus von Chloros+.
 
@@ -359,8 +359,8 @@ Bei Verwendung der NVIDIA-GPU-Beschleunigung:
 
 Sobald die Verarbeitung begonnen hat:
 
-1. **Überwachen Sie den Fortschritt** – Siehe [Überwachen der Verarbeitung](monitoring-the-processing.md)
+1. **Überwachen Sie den Fortschritt** – siehe [Überwachen der Verarbeitung](monitoring-the-processing.md)
 2. **Warten Sie, bis der Vorgang abgeschlossen ist** – Die Verarbeitung läuft automatisch.
 3. **Überprüfen Sie die Ergebnisse** – Siehe [Beenden der Verarbeitung](finishing-the-processing.md).
 
-Informationen dazu, was während der Verarbeitung zu tun ist, finden Sie unter [Überwachen der Verarbeitung](monitoring-the-processing.md).
+Informationen dazu, was Sie während der Verarbeitung tun sollten, finden Sie unter [Überwachen der Verarbeitung](monitoring-the-processing.md).
