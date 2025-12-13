@@ -1,10 +1,9 @@
 ---
-description: Frequently Asked Questions
+description: Häufig gestellte Fragen
 metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/faq
 ---
-
 # FAQ
 
 <details>
