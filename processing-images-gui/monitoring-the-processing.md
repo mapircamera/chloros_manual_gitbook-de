@@ -1,6 +1,6 @@
 # Überwachung der Verarbeitung
 
-Sobald die Verarbeitung begonnen hat, bietet Chloros mehrere Möglichkeiten, den Fortschritt zu überwachen, auf Probleme zu prüfen und zu verstehen, was mit Ihrem Datensatz geschieht. Auf dieser Seite wird erläutert, wie Sie Ihre Verarbeitung verfolgen und die von Chloros bereitgestellten Informationen interpretieren können.
+Sobald die Verarbeitung begonnen hat, bietet Chloros mehrere Möglichkeiten, den Fortschritt zu überwachen, auf Probleme zu überprüfen und zu verstehen, was mit Ihrem Datensatz geschieht. Auf dieser Seite wird erläutert, wie Sie Ihre Verarbeitung verfolgen und die von Chloros bereitgestellten Informationen interpretieren können.
 
 ## Übersicht über den Fortschrittsbalken
 
@@ -29,12 +29,12 @@ Für Benutzer mit einer Chloros+-Lizenz:
 
 1. **Erkennen** – Kalibrierungsziele finden
 2. **Analysieren** – Bilder untersuchen und Pipeline vorbereiten
-3. **Kalibrieren** – Vignetten- und Reflexionskorrekturen anwenden
+3. **Kalibrieren** – Vignetten- und Reflektionskorrekturen anwenden
 4. **Exportieren** – Verarbeitete Dateien speichern
 
 **Interaktive Funktionen:**
 
-* **Bewegen Sie den Mauszeiger über** die Fortschrittsanzeige, um das erweiterte 4-stufige Fenster anzuzeigen
+* **Bewegen Sie den Mauszeiger über** den Fortschrittsbalken, um das erweiterte 4-stufige Fenster anzuzeigen
 * **Klicken Sie** auf die Fortschrittsleiste, um das erweiterte Fenster einzufrieren/anzuheften.
 * **Klicken Sie erneut**, um das Einfrieren aufzuheben und das Fenster beim Verlassen mit der Maus automatisch auszublenden.
 * Jede Stufe zeigt den individuellen Fortschritt (0–100 %) an.
@@ -49,7 +49,7 @@ Für Benutzer mit einer Chloros+-Lizenz:
 
 * Chloros scannt Bilder, die mit dem Kontrollkästchen „Ziel“ markiert sind
 * Computervisionsalgorithmen identifizieren die 4 Kalibrierungsfelder
-* Aus jedem Feld werden Reflexionswerte extrahiert
+* Reflektionswerte werden aus jedem Feld extrahiert
 * Zielzeitstempel werden für eine ordnungsgemäße Kalibrierungsplanung aufgezeichnet
 
 **Dauer:**
@@ -67,7 +67,7 @@ Für Benutzer mit einer Chloros+-Lizenz:
 
 * Sollte schnell abgeschlossen sein, wenn die Ziele ordnungsgemäß markiert sind.
 * Wenn es zu lange dauert, sind die Ziele möglicherweise nicht markiert.
-* Überprüfen Sie das Debug-Protokoll auf „Ziel gefunden”-Meldungen.
+* Überprüfen Sie das Debug-Protokoll auf Meldungen „Ziel gefunden“.
 
 ### Stufe 2: Analyse
 
@@ -83,9 +83,9 @@ Für Benutzer mit einer Chloros+-Lizenz:
 **Fortschrittsanzeige:**
 
 * Analyse: 0 % → 100 %
-* Schnelle Phase, wird in der Regel schnell abgeschlossen
+* Schnelle Phase, in der Regel schnell abgeschlossen
 
-**Was zu beachten ist:**
+**Zu beachten:**
 
 * Sollte ohne Unterbrechungen stetig voranschreiten
 * Warnungen zu fehlenden Metadaten werden im Debug-Protokoll angezeigt
@@ -106,7 +106,7 @@ Für Benutzer mit einer Chloros+-Lizenz:
 
 * Kalibrierung: 0 % → 100 %
 * Aktuelles Bild wird verarbeitet
-* Fertige Bilder / Gesamtzahl der Bilder
+* Fertiggestellte Bilder / Gesamtzahl der Bilder
 
 **Verarbeitungsverhalten:**
 
@@ -117,7 +117,7 @@ Für Benutzer mit einer Chloros+-Lizenz:
 **Was zu beachten ist:**
 
 * Gleichmäßiger Fortschritt durch die Bildanzahl
-* Debug-Protokoll auf Meldungen zur Fertigstellung pro Bild überprüfen
+* Debug-Protokoll auf Meldungen zur Fertigstellung einzelner Bilder überprüfen
 * Warnungen zu Bildqualität oder Kalibrierungsproblemen
 
 ### Phase 4: Exportieren
@@ -264,7 +264,7 @@ Wenn die GPU-Beschleunigung aktiviert ist:
 
 * NVIDIA-Symbol in der Taskleiste
 * Task-Manager → Leistung → GPU
-* GPU-Z oder ein ähnliches Überwachungstool
+* GPU-Z oder ähnliches Überwachungstool
 
 ### Festplatten-E/A
 
@@ -300,15 +300,15 @@ Wenn die GPU-Beschleunigung aktiviert ist:
 
 **Das System reagiert nicht mehr:**
 
-* Chloros+ Parallelmodus verbraucht zu viele Ressourcen
-* Reduzieren Sie die Anzahl der gleichzeitigen Aufgaben oder rüsten Sie die Hardware auf
-* Der Freie Modus ist weniger ressourcenintensiv
+* Chloros+ Parallelmodus verbraucht zu viele Ressourcen.
+* Reduzieren Sie die Anzahl der gleichzeitigen Aufgaben oder rüsten Sie die Hardware auf.
+* Der Freie Modus ist weniger ressourcenintensiv.
 
 ### Wann sollte die Verarbeitung gestoppt werden?
 
-Stoppen Sie die Verarbeitung, wenn Sie Folgendes sehen:
+Stoppen Sie die Verarbeitung, wenn Folgendes auftritt:
 
-* ❌ Fehler „Festplatte voll” oder „Datei kann nicht geschrieben werden”
+* ❌ Fehlermeldungen „Festplatte voll“ oder „Datei kann nicht geschrieben werden“
 * ❌ Wiederholte Fehler aufgrund beschädigter Bilddateien
 * ❌ System ist vollständig eingefroren (reagiert nicht)
 * ❌ Es wurden falsche Einstellungen konfiguriert
@@ -316,7 +316,7 @@ Stoppen Sie die Verarbeitung, wenn Sie Folgendes sehen:
 
 **So stoppen Sie den Vorgang:**
 
-1. Klicken Sie auf die **Schaltfläche „Stopp/Abbrechen“** (ersetzt die Schaltfläche „Start“)
+1. Klicken Sie auf die **Schaltfläche „Stopp/Abbrechen“** (ersetzt die Schaltfläche „Start“).
 2. Die Verarbeitung wird angehalten, der Fortschritt geht verloren
 3. Beheben Sie die Probleme und starten Sie von vorne
 
@@ -369,7 +369,7 @@ Stoppen Sie die Verarbeitung, wenn Sie Folgendes sehen:
 
 ***
 
-## Benachrichtigung über Abschluss der Verarbeitung
+## Benachrichtigung über abgeschlossene Verarbeitung
 
 Wenn die Verarbeitung abgeschlossen ist:
 
@@ -386,7 +386,7 @@ Nach Abschluss der Verarbeitung:
 
 1. **Überprüfen Sie die Ergebnisse** – siehe [Abschluss der Verarbeitung](finishing-the-processing.md).
 2. **Ausgabeordner überprüfen** – Überprüfen Sie, ob alle Dateien korrekt exportiert wurden.
-3. **Debug-Protokoll überprüfen** – Überprüfen Sie, ob Warnungen oder Fehler vorliegen.
+3. **Debug-Protokoll überprüfen** – Überprüfen Sie das Protokoll auf Warnungen oder Fehler.
 4. **Vorschau der verarbeiteten Bilder** – Verwenden Sie den Bildbetrachter oder eine externe Software.
 
 Informationen zum Überprüfen und Verwenden Ihrer verarbeiteten Ergebnisse finden Sie unter [Beenden der Verarbeitung](finishing-the-processing.md).

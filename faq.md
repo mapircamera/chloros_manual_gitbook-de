@@ -1,5 +1,5 @@
 ---
-description: Häufig gestellte Fragen
+description: Frequently Asked Questions
 metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/faq
@@ -48,7 +48,7 @@ Nein. Es werden nur einzelne MAPIR-Kamerabilder unterstützt, keine zusammengef�
 
 <details>
 
-<summary>Wie kann ich den Zielerkennungsschritt von Chloros beschleunigen?</summary>
+<summary>Wie kann ich den Schritt der Zielerkennung von Chloros beschleunigen?</summary>
 
 Wenn Sie in der Dateibrowser-Tabelle die Zielbilder in der rechten Spalte vorab auswählen, wird Chloros angewiesen, nur in diesen Bildern nach Kalibrierungszielen zu suchen, was die Verarbeitung erheblich beschleunigt.
 

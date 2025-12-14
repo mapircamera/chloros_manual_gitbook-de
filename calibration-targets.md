@@ -1,12 +1,12 @@
 ---
-description: Im Labor gemessene Panels, die zur Kalibrierung der erfassten Daten in der Nachbearbeitung verwendet werden
+description: Lab-measured panels used to calibrate captured data in post-processing
 metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/calibration-targets
 ---
 # Kalibrierungsziele
 
-MAPIR bietet verschiedene Kalibrierungsziele für eine Vielzahl von Anwendungen. Das unten abgebildete kompakte T4-R50 enthält 4 Panels, deren Lichtreflexion im Bereich von 250 bis 2.500 nm gemessen wurde.
+MAPIR bietet verschiedene Kalibrierungsziele für eine Vielzahl von Anwendungen. Das unten abgebildete kompakte T4-R50 enthält 4 Platten, deren Lichtreflexion im Bereich von 250 bis 2.500 nm gemessen wurde.
 
 <figure><img src=".gitbook/assets/t4-r50_2.jpg" alt=""><figcaption><p>MAPIR T4-R50</p></figcaption></figure>
 

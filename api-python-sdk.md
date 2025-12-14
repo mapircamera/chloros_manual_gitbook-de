@@ -4,7 +4,7 @@ Der **Chloros Python SDK** bietet programmatischen Zugriff auf die Bildverarbeit
 
 ### Hauptmerkmale
 
-* 🐍 **Native Python** – Sauberes, Python-ähnliches API für die Bildverarbeitung
+* 🐍 **Native Python** – Sauberes, Python-basiertes API für die Bildverarbeitung
 * 🔧 **Vollständiger API-Zugriff** – Vollständige Kontrolle über die Chloros-Verarbeitung
 * 🚀 **Automatisierung** – Erstellen Sie benutzerdefinierte Workflows für die Stapelverarbeitung
 * 🔗 **Integration** – Chloros in bestehende Python-Anwendungen einbetten
@@ -53,7 +53,7 @@ results = process_folder("C:\\DroneImages\\Flight001")
 
 ### Vollständige Kontrolle
 
-Für fortgeschrittene Arbeitsabläufe:
+Für erweiterte Arbeitsabläufe:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -211,7 +211,7 @@ Erstellen Sie ein neues Chloros-Projekt.
 | `project_name` | str  | Ja      | Name für das Projekt                                     |
 | `camera`       | str  | Nein       | Kameravorlage (z. B. „Survey3N\_RGN”, „Survey3W\_OCN”) |
 
-**Rückgabewerte:** `dict` - Antwort zur Projekterstellung
+**Rückgabewerte:** `dict` - Antwort auf die Projekterstellung
 
 **Beispiel:**
 
@@ -233,10 +233,10 @@ Importiert Bilder aus einem Ordner.
 
 | Parameter     | Typ     | Erforderlich | Beschreibung                        |
 | ------------- | -------- | -------- | ---------------------------------- |
-| `folder_path` | str/Pfad | Ja      | Pfad zum Ordner mit Bildern         |
+| `folder_path` | str/Path | Ja      | Pfad zum Ordner mit Bildern         |
 | `recursive`   | bool     | Nein       | Unterordner durchsuchen (Standard: False) |
 
-**Gibt zurück:** `dict` – Importiert Ergebnisse mit Dateianzahl
+**Rückgabewerte:** `dict` – Importergebnisse mit Dateianzahl
 
 **Beispiel:**
 
@@ -259,9 +259,9 @@ Konfigurieren Sie die Verarbeitungseinstellungen.
 | Parameter                 | Typ | Standardwert                 | Beschreibung                     |
 | ------------------------- | ---- | ----------------------- | ------------------------------- |
 | `debayer`                 | str  | „Hohe Qualität (schneller)“ | Debayer-Verfahren                  |
-| `vignette_correction`     | bool | `True`                  | Vignettierungskorrektur aktivieren      |
+| `vignette_correction`     | bool | `True`                  | Vignettenkorrektur aktivieren      |
 | `reflectance_calibration` | bool | `True`                  | Reflektionskalibrierung aktivieren  |
-| `indices`                 | list | `None`                  | Zu berechnende Vegetationsindizes |
+| `indices`                 | Liste | `None`                  | Zu berechnende Vegetationsindizes |
 | `export_format`           | str  | „TIFF (16-Bit)”         | Ausgabeformat                   |
 | `ppk`                     | bool | `False`                 | PPK-Korrekturen aktivieren          |
 | `custom_settings`         | dict | `None`                  | Erweiterte benutzerdefinierte Einstellungen        |
@@ -313,10 +313,10 @@ Verarbeiten Sie die Projektbilder.
 | `progress_callback` | callable | `None`       | Fortschritts-Callback-Funktion(progress, msg) |
 | `poll_interval`     | float    | `2.0`        | Abfrageintervall für Fortschritt (Sekunden)   |
 
-**Rückgabewerte:** `dict` – Verarbeitungsergebnisse
+**Rückgabewerte:** `dict` - Verarbeitungsergebnisse
 
 {% hint style=&quot;warning&quot; %}
-**Parallelmodus**: Erfordert Chloros+-Lizenz. Skaliert automatisch auf Ihre CPU-Kerne (bis zu 16 Worker).
+**Parallelmodus**: Erfordert die Lizenz Chloros+. Skaliert automatisch auf Ihre CPU-Kerne (bis zu 16 Worker).
 {% endhint %}
 
 **Beispiel:**
@@ -345,7 +345,7 @@ chloros.process(wait=False)
 
 Aktuelle Projektkonfiguration abrufen.
 
-**Gibt zurück:** `dict` – Aktuelle Projektkonfiguration
+**Rückgabewert:** `dict` – Aktuelle Projektkonfiguration
 
 **Beispiel:**
 
@@ -360,7 +360,7 @@ print(config['Project Settings'])
 
 Ruft Backend-Statusinformationen ab.
 
-**Gibt zurück:** `dict` - Backend-Status
+**Rückgabewert:** `dict` – Backend-Status
 
 **Beispiel:**
 
@@ -394,15 +394,15 @@ Einzeilige Komfortfunktion zur Verarbeitung eines Ordners.
 
 | Parameter                 | Typ     | Standardwert         | Beschreibung                    |
 | ------------------------- | -------- | --------------- | ------------------------------ |
-| `folder_path`             | str/Path | Erforderlich        | Pfad zum Ordner mit Bildern     |
+| `folder_path`             | str/Pfad | Erforderlich        | Pfad zum Ordner mit Bildern     |
 | `project_name`            | str      | Automatisch generiert  | Projektname                   |
 | `camera`                  | str      | `None`          | Kameravorlage                |
 | `indices`                 | list     | `["NDVI"]`      | Zu berechnende Indizes           |
 | `vignette_correction`     | bool     | `True`          | Vignettenkorrektur aktivieren     |
 | `reflectance_calibration` | bool     | `True`          | Reflektionskalibrierung aktivieren |
-| `export_format`           | str      | „TIFF (16-Bit)“ | Ausgabeformat                  |
+| `export_format`           | str      | „TIFF (16-Bit)” | Ausgabeformat                  |
 | `mode`                    | str      | `"parallel"`    | Verarbeitungsmodus                |
-| `progress_callback`       | callable | `None`          | Fortschritts-Callback              |
+| `progress_callback`       | aufrufbar | `None`          | Fortschritts-Callback              |
 
 **Rückgabewerte:** `dict` – Verarbeitungsergebnisse
 
@@ -660,7 +660,7 @@ logging.info("Processing complete!")
 
 ### Beispiel 6: Fehlerbehandlung
 
-Robuste Fehlerbehandlung für den produktiven Einsatz:
+Robuste Fehlerbehandlung für den Produktionseinsatz:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -892,7 +892,7 @@ for i in range(0, len(images), batch_size):
 
 ### Backend startet nicht
 
-**Problem:** SDK kann das Backend nicht starten
+**Problem:** SDK kann das Backend nicht starten.
 
 **Lösungen:**
 
@@ -904,7 +904,7 @@ backend_path = r"C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backen
 print(f"Backend exists: {os.path.exists(backend_path)}")
 ```
 
-2. Überprüfen Sie, ob Windows Firewall blockiert
+2. Überprüfen Sie, ob die Firewall Windows nicht blockiert.
 3. Versuchen Sie es mit dem manuellen Backend-Pfad:
 
 ```python
@@ -913,9 +913,9 @@ chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
 
 ***
 
-### Lizenz nicht erkannt
+### Lizenz wird nicht erkannt
 
-**Problem:** SDK warnt vor fehlender Lizenz
+**Problem:** SDK warnt vor fehlender Lizenz.
 
 **Lösungen:**
 
@@ -967,15 +967,15 @@ python -c "import sys; print(sys.path)"
 chloros = ChlorosLocal(timeout=120)  # 2 minutes
 ```
 
-2. Verarbeiten Sie kleinere Stapel.
-3. Überprüfen Sie den verfügbaren Speicherplatz.
-4. Überwachen Sie die Systemressourcen.
+2. Kleinere Stapel verarbeiten
+3. Verfügbaren Speicherplatz überprüfen
+4. Systemressourcen überwachen
 
 ***
 
 ### Port bereits in Verwendung
 
-**Problem:** Backend-Port 5000 belegt.
+**Problem:** Backend-Port 5000 belegt
 
 **Lösungen:**
 
@@ -995,7 +995,7 @@ Get-NetTCPConnection -LocalPort 5000
 
 ## Tipps zur Leistung
 
-### Verarbeitungsgeschwindigkeit optimieren
+### Optimieren Sie die Verarbeitungsgeschwindigkeit
 
 1. **Parallelmodus verwenden** (erfordert Chloros+)
 
@@ -1003,7 +1003,7 @@ Get-NetTCPConnection -LocalPort 5000
 chloros.process(mode="parallel")  # Up to 16 workers
 ```
 
-2. **Ausgabeauflösung reduzieren** (falls akzeptabel)
+2. **Ausgabeauflösung reduzieren** (sofern akzeptabel)
 
 ```python
 chloros.configure(export_format="PNG (8-bit)")  # Faster than TIFF
@@ -1016,7 +1016,7 @@ chloros.configure(export_format="PNG (8-bit)")  # Faster than TIFF
 chloros.configure(indices=["NDVI"])  # Not all indices
 ```
 
-4. **Verarbeiten Sie auf SSD** (nicht auf HDD)
+4. **Verarbeiten Sie auf SSD** (nicht HDD)
 
 ***
 
@@ -1139,7 +1139,7 @@ chloros.process(progress_callback=notebook_progress)
 
 ### F: Was ist der Unterschied zwischen Desktop, CLI und SDK?
 
-| Funktion         | Desktop-GUI | CLI-Befehlszeile | Python SDK  |
+| Funktion         | Desktop-GUI | CLI Befehlszeile | Python SDK  |
 | --------------- | ----------- | ---------------- | ----------- |
 | **Schnittstelle**   | Point-and-Click | Befehl          | Python API  |
 | **Am besten geeignet für**    | Visuelle Arbeit | Skripting        | Integration |
@@ -1153,8 +1153,8 @@ chloros.process(progress_callback=notebook_progress)
 
 **A:** Der SDK-Code kann in Ihre Anwendungen integriert werden, aber:
 
-* Endbenutzer müssen Chloros installiert haben
-* Endbenutzer benötigen aktive Chloros+-Lizenzen
+* Endbenutzer benötigen Chloros.
+* Endbenutzer benötigen aktive Chloros+-Lizenzen.
 * Für den kommerziellen Vertrieb ist eine OEM-Lizenz erforderlich.
 
 Wenden Sie sich bei OEM-Anfragen an info@mapir.camera.
@@ -1169,7 +1169,7 @@ pip install --upgrade chloros-sdk
 
 ***
 
-### F: Wo werden verarbeitete Bilder gespeichert?
+### F: Wo werden die verarbeiteten Bilder gespeichert?
 
 Standardmäßig im Projektpfad:
 

@@ -1,6 +1,6 @@
 # Auswahl der Zielbilder
 
-Das Markieren der Bilder, die Kalibrierungsziele enthalten, ist ein wichtiger Schritt, der die Verarbeitungspipeline von Chloros erheblich beschleunigt. Durch die Vorauswahl der Zielbilder muss Chloros nicht jedes Bild in Ihrem Datensatz nach Kalibrierungszielen durchsuchen.
+Das Markieren der Bilder, die Kalibrierungsziele enthalten, ist ein wichtiger Schritt, der die Verarbeitungs-Pipeline von Chloros erheblich beschleunigt. Durch die Vorauswahl der Zielbilder muss Chloros nicht jedes Bild in Ihrem Datensatz nach Kalibrierungszielen durchsuchen.
 
 ## Warum Zielbilder markieren?
 
@@ -52,7 +52,7 @@ Für jedes Bild, das ein Kalibrierungsziel enthält:
 
 ### Schritt 3: Überprüfen Sie Ihre Auswahl
 
-Überprüfen Sie vor der Verarbeitung Folgendes:
+Überprüfen Sie vor der Verarbeitung noch einmal Folgendes:
 
 * [ ] Alle Bilder mit Kalibrierungszielen sind markiert.
 * [ ] Es sind keine Bilder ohne Ziele versehentlich markiert.
@@ -85,14 +85,14 @@ Für jedes Bild, das ein Kalibrierungsziel enthält:
 **Zielbedingungen:**
 
 * Halten Sie die Zieltafeln sauber und trocken
-* Alle 4 Tafeln sollten gut sichtbar und frei von Hindernissen sein
+* Alle 4 Tafeln sollten gut sichtbar und ungehindert sein
 * Ziele möglichst senkrecht/nadir zur Lichtquelle
 
 ### Wie viele Zielbilder?
 
 **Minimum:** 1 Zielbild pro Sitzung. **Empfohlen:** 3–5 Zielbilder pro Sitzung.
 
-**Empfohlener Zeitplan:**
+**Bewährter Zeitplan:**
 
 * 3–5 Bilder kurz nach Beginn der Aufzeichnung durch den Lichtsensor aufnehmen.
 * Die Kamera zwischen den Aufnahmen drehen, um optimale Ergebnisse zu erzielen.
@@ -201,7 +201,7 @@ Obwohl dies für wissenschaftliche Arbeiten nicht empfohlen wird, können Sie di
 
 1. Lassen Sie alle Kontrollkästchen in der Spalte „Ziel“ deaktiviert.
 2. **Deaktivieren** Sie „Reflexionskalibrierung“ in den Projekteinstellungen.
-3. Die Vignettenkorrektur wird weiterhin angewendet.
+3. Die Vignettierungskorrektur wird weiterhin angewendet.
 4. Die Ausgabe wird nicht für die absolute Reflexion kalibriert.
 
 {% hint style=&quot;warning&quot; %}

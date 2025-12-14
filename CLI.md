@@ -23,7 +23,7 @@ Die **Chloros CLI** bietet leistungsstarken Befehlszeilenzugriff auf die Bildver
 | **Festplattenspeicher**       | Variiert je nach Projektgröße                                              |
 
 {% Hinweis style=&quot;warning&quot; %}
-**Lizenzanforderungen**: Für CLI ist ein kostenpflichtiges Chloros+-Abonnement erforderlich. Standard-Tarife (kostenlos) haben keinen Zugriff auf CLI. Besuchen Sie [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing), um ein Upgrade durchzuführen.
+**Lizenzanforderungen**: Für CLI ist ein kostenpflichtiges Abonnement für Chloros+ erforderlich. Standard-Tarife (kostenlos) haben keinen Zugriff auf CLI. Besuchen Sie [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing), um ein Upgrade durchzuführen.
 {% endhint %}
 
 ## Schnellstart
@@ -106,12 +106,12 @@ chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 | `--no-reflectance`    | Flag    | -              | Reflektionskalibrierung deaktivieren                                                        |
 | `--ppk`               | Flag    | Deaktiviert       | PPK-Korrekturen aus .daq-Lichtsensordaten anwenden                                      |
 | `--format`            | Auswahl  | TIFF (16-Bit)  | Ausgabeformat: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
-| `--min-target-size`   | Ganzzahl | Auto           | Mindestzielgröße in Pixeln für die Erkennung des Kalibrierungsfelds                          |
-| `--target-clustering` | Ganzzahl | Auto           | Schwellenwert für die Zielclusterung (0–100)                                                    |
+| `--min-target-size`   | Ganzzahl | Auto           | Mindestzielgröße in Pixeln für die Erkennung des Kalibrierungsfeldes                          |
+| `--target-clustering` | Ganzzahl | Auto           | Schwellenwert für die Zielclusterung (0-100)                                                    |
 | `--exposure-pin-1`    | Zeichenfolge  | Keine           | Belichtung für Kameramodell sperren (Pin 1)                                                 |
 | `--exposure-pin-2`    | Zeichenfolge  | Keine           | Belichtung für Kameramodell sperren (Pin 2)                                                 |
 | `--recal-interval`    | Ganzzahl | Auto           | Neukalibrierungsintervall in Sekunden                                                      |
-| `--timezone-offset`   | Ganzzahl | 0              | Zeitzonenversatz in Stunden                                                               |
+| `--timezone-offset`   | Ganzzahl | 0              | Zeitzonenverschiebung in Stunden                                                               |
 
 ***
 
@@ -292,7 +292,7 @@ chloros-cli language ja
 | `sl`    | Slowenisch             | Slovenščina      |
 
 {% hint style=&quot;success&quot; %}
-**Automatische Speicherung**: Ihre Spracheinstellung wird unter `~/.chloros/cli_language.json` gespeichert und bleibt über alle Sitzungen hinweg erhalten.
+**Automatische Beibehaltung**: Ihre Spracheinstellung wird unter `~/.chloros/cli_language.json` gespeichert und bleibt über alle Sitzungen hinweg erhalten.
 {% endhint %}
 
 ***
@@ -380,7 +380,7 @@ Chloros+ CLI **skaliert automatisch** die parallele Verarbeitung entsprechend de
 **So funktioniert es:**
 
 * Erkennt Ihre CPU-Kerne und Ihren Arbeitsspeicher
-* Weist Worker zu: **2× CPU-Kerne** (nutzt Hyperthreading)
+* Weist Worker zu: **2× CPU-Kerne** (verwendet Hyperthreading)
 * **Maximal: 16 parallele Worker** (für Stabilität)
 
 **Systemstufen:**
@@ -416,11 +416,11 @@ Der CLI verwendet **High Quality (Faster)** als standardmäßigen und empfohlene
 
 ### Reflektionskalibrierung
 
-Konvertiert rohe Sensorwerte mithilfe von Kalibrierungsfeldern in standardisierte Reflektionsprozentsätze.
+Konvertiert die Rohwerte des Sensors mithilfe von Kalibrierungsfeldern in standardisierte Reflektionsprozentsätze.
 
 * **Standardmäßig aktiviert** – Unverzichtbar für die Vegetationsanalyse.
 * Erfordert Kalibrierungszieltafeln in Bildern.
-* Verwenden Sie `--no-reflectance`, um diese Funktion zu deaktivieren.
+* Verwenden Sie `--no-reflectance`, um die Funktion zu deaktivieren.
 
 {% hint style=&quot;info&quot; %}
 **Anforderungen**: Stellen Sie sicher, dass die Kalibrierungsfelder in Ihren Bildern richtig belichtet und sichtbar sind, um eine genaue Reflektionsumwandlung zu gewährleisten.
@@ -636,9 +636,9 @@ dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
 ```
 
 3. Fügen Sie ihn manuell zu PATH hinzu:
-   * Öffnen Sie Systemeinstellungen → Umgebungsvariablen.
+   * Öffnen Sie „Systemeigenschaften“ → „Umgebungsvariablen“.
    * Bearbeiten Sie die Variable PATH.
-   * Fügen Sie hinzu: `C:\Program Files\Chloros\resources\cli`
+   * Fügen Sie Folgendes hinzu: `C:\Program Files\Chloros\resources\cli`
    * Terminal neu starten
 
 ***

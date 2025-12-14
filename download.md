@@ -3,7 +3,6 @@ metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/download
 ---
-
 # Download
 
 Laden Sie die neueste Version von Chloros für Windows herunter, um mit der multispektralen Bildverarbeitung zu beginnen.
@@ -58,7 +57,7 @@ Das Installationsprogramm fügt `chloros-cli` automatisch zu Ihrem System-PATH h
 
 ### Python SDK
 
-Für Entwickler und Automatisierungsworkflows installieren Sie Chloros Python SDK:
+Für Entwickler und Automatisierungs-Workflows installieren Sie Chloros Python SDK:
 
 ```bash
 pip install chloros-sdk
@@ -91,7 +90,7 @@ Schalten Sie mit einem Chloros+-Abonnement erweiterte Funktionen frei:
 * 💻 **CLI-Zugriff** – Automatisieren Sie mit Befehlszeilentools
 * 🐍 **Python SDK** – Programmatischer API-Zugriff
 * 📱 **Mehrere Geräte** – Verwendung auf 2 bis 10+ Geräten (je nach Tarif)
-* 🧮 **Benutzerdefinierte Formeln** – Erstellen Sie benutzerdefinierte Multispektralindizes
+* 🧮 **Benutzerdefinierte Formeln** – Erstellen Sie benutzerdefinierte multispektrale Indizes
 
 <p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Chloros+ Pläne und Preise anzeigen</a></p>***
 
@@ -118,7 +117,7 @@ Schalten Sie mit einem Chloros+-Abonnement erweiterte Funktionen frei:
 * Stellen Sie sicher, dass die Internetverbindung aktiv ist.
 * Überprüfen Sie die Anmeldedaten unter [https://cloud.mapir.camera](https://cloud.mapir.camera).
 * Überprüfen Sie, ob die Firewall Chloros nicht blockiert.
-* Ausführliche Anweisungen finden Sie unter [Chloros+ Login](chloros+-login.md)
+* Ausführliche Anweisungen finden Sie unter [Chloros+ Anmeldung](chloros+-login.md)
 
 ### Support erhalten
 
@@ -166,3 +165,5 @@ Die unbefugte Nutzung, Verbreitung oder Änderung ist untersagt.
 **Kostenlose Version**: Verfügbar für den privaten und gewerblichen Gebrauch mit eingeschränkten Funktionen.
 
 **Chloros+**: Abonnementbasierte Lizenz für erweiterte Funktionen und gewerbliche Nutzung.
+
+<figure><img src=".gitbook/assets/t3-125_2.jpg" alt=""><figcaption></figcaption></figure>

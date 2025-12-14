@@ -66,9 +66,9 @@ Chloros arbeitet je nach Ihrer Lizenz in zwei verschiedenen Verarbeitungsmodi:
 * Deutlich langsamer als der parallele Modus von Chloros+
 * Geeignet für kleine bis mittlere Datensätze (&lt; 200 Bilder)
 
-### Chloros+-Modus (parallele Verarbeitung)
+### Modus Chloros+ (Parallelverarbeitung)
 
-**Erfordert eine Chloros+-Lizenz**
+**Erfordert eine Lizenz für Chloros+**
 
 **So funktioniert es:**
 
@@ -129,7 +129,7 @@ Chloros arbeitet je nach Ihrer Lizenz in zwei verschiedenen Verarbeitungsmodi:
 
 **Was Chloros leistet:**
 
-* **Vignettierungskorrektur**: Entfernt die Verdunkelung des Objektivs an den Rändern
+* **Vignettierungskorrektur**: Entfernt die Verdunkelung der Linsen an den Rändern
 * **Reflexionskalibrierung**: Normalisiert anhand von Zielreflexionswerten
 * Wendet Korrekturen auf alle Bänder/Kanäle an
 * Verwendet für jedes Bild das geeignete Kalibrierungsziel basierend auf dem Zeitstempel
@@ -181,10 +181,10 @@ Nach dem Start läuft die gesamte Pipeline automatisch ab:
 
 * Hohe CPU-Auslastung (Multi-Threaded, bis zu 16 Kerne)
 * Mit GPU-Beschleunigung: Hohe GPU-Auslastung
-* Der Computer reagiert während der Verarbeitung möglicherweise weniger schnell
-* Vermeiden Sie es, andere CPU-intensive Aufgaben zu starten
+* Der Computer reagiert während der Verarbeitung möglicherweise weniger schnell.
+* Vermeiden Sie es, andere CPU-intensive Aufgaben zu starten.
 
-{% hint style=&quot;warning&quot; %}
+{% Hinweis style=&quot;warning&quot; %}
 **Leistungstipp**: Um die beste Leistung von Chloros+ zu erzielen, schließen Sie andere Anwendungen und lassen Sie Chloros die gesamten Systemressourcen nutzen.
 {% endhint %}
 
@@ -206,9 +206,9 @@ Nach dem Start läuft die gesamte Pipeline automatisch ab:
 Während der Verarbeitung können Sie:
 
 * **Den Fortschrittsbalken beobachten** – Sehen Sie den Gesamtfortschritt in Prozent.
-* **Die aktuelle Phase anzeigen** – Erkennen, Analysieren, Kalibrieren oder Exportieren
-* **Registerkarte „Protokoll“ überprüfen** – Detaillierte Verarbeitungsmeldungen und Warnungen anzeigen
-* **Vorschau der fertigen Bilder** – Einige Exportdateien werden möglicherweise während der Verarbeitung angezeigt
+* **Die aktuelle Phase anzeigen** – Erkennen, Analysieren, Kalibrieren oder Exportieren.
+* **Die Registerkarte „Protokoll“ überprüfen** – Sehen Sie detaillierte Verarbeitungsmeldungen und Warnungen.
+* **Eine Vorschau der fertigen Bilder anzeigen** – Einige Exportdateien werden möglicherweise während der Verarbeitung angezeigt.
 
 Ausführliche Informationen zur Überwachung finden Sie unter [Überwachen der Verarbeitung](monitoring-the-processing.md).
 
@@ -225,7 +225,7 @@ Wenn Sie die Verarbeitung stoppen müssen:
 3. Die Verarbeitung wird sofort angehalten.
 4. Teilweise Ergebnisse werden verworfen.
 
-### Wann abbrechen
+### Wann sollte abgebrochen werden?
 
 **Gültige Gründe für einen Abbruch:**
 
@@ -234,14 +234,14 @@ Wenn Sie die Verarbeitung stoppen müssen:
 * Es wurden falsche Bilder importiert.
 * Das System läuft zu langsam oder reagiert nicht.
 
-**Nach dem Abbrechen:**
+**Nach dem Abbruch:**
 
 * Überprüfen und beheben Sie alle Probleme.
 * Passen Sie die Einstellungen nach Bedarf an.
 * Starten Sie die Verarbeitung von vorne.
-* Für ein optimales Ergebnis schließen Sie Chloros vollständig und starten Sie es neu.
+* Für ein optimales Erlebnis schließen Sie Chloros vollständig und starten Sie es neu.
 
-{% Hinweis style=&quot;warning&quot; %}
+{% hint style=&quot;warning&quot; %}
 **Keine Teilergebnisse**: Durch das Abbrechen werden alle Fortschritte verworfen. Chloros speichert keine teilweise verarbeiteten Bilder.
 {% endhint %}
 
@@ -256,13 +256,13 @@ Die tatsächliche Verarbeitungszeit hängt stark von folgenden Faktoren ab:
 * Eingabeformat (RAW oder JPG)
 * Verarbeitungsmodus (Free oder Chloros+)
 * CPU-Geschwindigkeit und Anzahl der Kerne
-* Verfügbarkeit einer GPU (nur Chloros+)
+* Verfügbarkeit der GPU (nur Chloros+)
 * Anzahl der zu berechnenden Indizes
 * Komplexität des Exportformats
 
 ### Grobe Schätzungen (Chloros+, 12-MP-Bilder, moderne CPU)
 
-| Bildanzahl | Kostenloser Modus | Chloros+ (CPU) | Chloros+ (GPU) |
+| Anzahl der Bilder | Kostenloser Modus | Chloros+ (CPU) | Chloros+ (GPU) |
 | ----------- | --------- | -------------- | -------------- |
 | 50 Bilder   | 15–20 Min. | 5–8 Min.        | 3–5 Min.        |
 | 100 Bilder  | 30–40 Min. | 10–15 Min.      | 5–8 Min.        |

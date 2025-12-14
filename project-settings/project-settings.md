@@ -1,6 +1,6 @@
 # Projekteinstellungen
 
-Die Projekteinstellungen <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> in Chloros können Sie alle Aspekte der Bildverarbeitung, Kalibrierungszielerkennung, Multispektralindexberechnungen und Exportoptionen für Ihr Projekt konfigurieren. Diese Einstellungen werden mit Ihrem Projekt gespeichert und können als Vorlagen für die Wiederverwendung in mehreren Projekten gespeichert werden.
+Die Projekteinstellungen <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> in Chloros können Sie alle Aspekte der Bildverarbeitung, der Erkennung von Kalibrierungszielen, der Berechnung multispektraler Indizes und der Exportoptionen für Ihr Projekt konfigurieren. Diese Einstellungen werden mit Ihrem Projekt gespeichert und können als Vorlagen für die Wiederverwendung in mehreren Projekten gespeichert werden.
 
 ## Zugriff auf die Projekteinstellungen
 
@@ -31,7 +31,7 @@ Mit diesen Einstellungen legen Sie fest, wie Chloros Kalibrierungsziele in Ihren
 * **Typ**: Zahl
 * **Bereich**: 0 bis 100
 * **Standard**: 60
-* **Beschreibung**: Steuert den Clustering-Schwellenwert für die Gruppierung ähnlich gefärbter Bereiche bei der Erkennung von Kalibrierungszielen. Höhere Werte erfordern, dass ähnlichere Farben zusammen gruppiert werden, was zu einer konservativeren Zielerkennung führt. Niedrigere Werte erlauben mehr Farbvariationen innerhalb einer Zielgruppe.
+* **Beschreibung**: Steuert den Clustering-Schwellenwert für die Gruppierung ähnlich gefärbter Bereiche bei der Erkennung von Kalibrierungszielen. Höhere Werte erfordern, dass ähnlichere Farben gruppiert werden, was zu einer konservativeren Zielerkennung führt. Niedrigere Werte erlauben mehr Farbvariationen innerhalb einer Zielgruppe.
 * **Wann anpassen**:
   * Erhöhen Sie den Wert, wenn Kalibrierungsziele in mehrere Erkennungen aufgeteilt werden.
   * Verringern Sie den Wert, wenn Kalibrierungsziele mit Farbvariationen nicht vollständig erkannt werden.
@@ -62,7 +62,7 @@ Diese Einstellungen steuern, wie Chloros Ihre Bilder verarbeitet und kalibriert.
 * **Optionen**:
   * Hohe Qualität (schneller) – Derzeit die einzige verfügbare Option
 * **Standard**: Hohe Qualität (schneller)
-* **Beschreibung**: Wählt den Demosaicing-Algorithmus aus, der zur Konvertierung von rohen Bayer-Muster-Sensordaten in Vollfarbbilder verwendet wird. Die Methode „Hohe Qualität (schneller)“ bietet ein optimales Gleichgewicht zwischen Verarbeitungsgeschwindigkeit und Bildqualität.
+* **Beschreibung**: Wählt den Demosaicing-Algorithmus aus, der zur Konvertierung von rohen Bayer-Muster-Sensordaten in Vollfarbbilder verwendet wird. Die Methode „Hohe Qualität (schneller)” bietet ein optimales Gleichgewicht zwischen Verarbeitungsgeschwindigkeit und Bildqualität.
 * **Hinweis**: In zukünftigen Versionen von Chloros können weitere Debayer-Methoden hinzugefügt werden.
 
 ### Mindestintervall für die Neukalibrierung
@@ -70,10 +70,10 @@ Diese Einstellungen steuern, wie Chloros Ihre Bilder verarbeitet und kalibriert.
 * **Typ**: Zahl
 * **Bereich**: 0 bis 3.600 Sekunden
 * **Standard**: 0 Sekunden
-* **Beschreibung**: Legt das Mindestzeitintervall (in Sekunden) zwischen der Verwendung von Kalibrierungszielen fest. Bei einer Einstellung von 0 verwendet Chloros jedes erkannte Kalibrierungsziel. Bei einer höheren Einstellung verwendet Chloros nur Kalibrierungsziele, die mindestens diesen Zeitabstand voneinander haben, wodurch die Verarbeitungszeit für Datensätze mit häufigen Kalibrierungszielerfassungen reduziert wird.
+* **Beschreibung**: Legt das Mindestzeitintervall (in Sekunden) zwischen der Verwendung von Kalibrierungszielen fest. Bei einer Einstellung von 0 verwendet Chloros jedes erkannte Kalibrierungsziel. Bei einer höheren Einstellung verwendet Chloros nur Kalibrierungsziele, die mindestens diesen Zeitabstand voneinander haben, wodurch die Verarbeitungszeit für Datensätze mit häufigen Kalibrierungszielaufnahmen reduziert wird.
 * **Wann anpassen**:
-  * Stellen Sie den Wert auf 0 ein, um eine maximale Kalibrierungsgenauigkeit bei wechselnden Lichtverhältnissen zu erzielen.
-  * Erhöhen Sie den Wert (z. B. auf 60–300 Sekunden), um eine schnellere Verarbeitung zu erzielen, wenn die Lichtverhältnisse konstant sind und Sie häufig Kalibrierungszielbilder haben.
+  * Stellen Sie den Wert auf 0 ein, um bei wechselnden Lichtverhältnissen eine maximale Kalibrierungsgenauigkeit zu erzielen.
+  * Erhöhen Sie den Wert (z. B. auf 60–300 Sekunden), um die Verarbeitung zu beschleunigen, wenn die Lichtverhältnisse konstant sind und Sie häufig Kalibrierungszielbilder haben.
 
 ### Zeitzonenversatz des Lichtsensors
 
@@ -81,7 +81,7 @@ Diese Einstellungen steuern, wie Chloros Ihre Bilder verarbeitet und kalibriert.
 * **Bereich**: -12 bis +12 Stunden
 * **Standard**: 0 Stunden
 * **Beschreibung**: Gibt den Zeitzonenversatz (in Stunden gegenüber UTC) für Zeitstempel von Lichtsensordaten an. Dies wird bei der Verarbeitung von PPK-Datendateien (Post-Processed Kinematic) verwendet, um eine korrekte Zeitsynchronisation zwischen Bildaufnahmen und GPS-Daten sicherzustellen.
-* **Wann anpassen**: Stellen Sie diesen Wert auf Ihren lokalen Zeitzonenversatz ein, wenn Ihre PPK-Daten die lokale Zeit anstelle von UTC verwenden. Zum Beispiel:
+* **Wann anzupassen**: Stellen Sie diesen Wert auf Ihren lokalen Zeitzonenversatz ein, wenn Ihre PPK-Daten die Ortszeit anstelle von UTC verwenden. Beispiel:
   * Pazifische Zeit: -8 oder -7 (je nach Sommerzeit)
   * Ostküstenzeit: -5 oder -4 (je nach Sommerzeit)
   * Mitteleuropäische Zeit: +1 oder +2 (je nach Sommerzeit)
@@ -90,21 +90,21 @@ Diese Einstellungen steuern, wie Chloros Ihre Bilder verarbeitet und kalibriert.
 
 * **Typ**: Kontrollkästchen
 * **Standard**: Deaktiviert (nicht markiert)
-* **Beschreibung**: Aktiviert die Verwendung von Post-Processed Kinematic (PPK)-Korrekturen aus MAPIR DAQ-Rekordern, die ein GPS (GNSS) enthalten. Wenn diese Option aktiviert ist, verwendet Chloros alle .daq-Protokolldateien, die Belichtungsstiftdaten in Ihrem Projektverzeichnis enthalten, und wendet präzise Geolokalisierungskorrekturen auf Ihre Bilder an.
-* **Voraussetzung**: In Ihrem Projektverzeichnis muss eine .daq-Protokolldatei mit Belichtungsstifteinträgen vorhanden sein.
-* **Wann aktivieren**: Es wird empfohlen, die PPK-Korrektur immer zu aktivieren, wenn Ihre .daq-Protokolldatei Belichtungsrückmeldungen enthält.
+* **Beschreibung**: Ermöglicht die Verwendung von nachbearbeiteten kinematischen (PPK) Korrekturen aus MAPIR DAQ-Rekordern, die ein GPS (GNSS) enthalten. Wenn diese Option aktiviert ist, verwendet Chloros alle .daq-Protokolldateien, die Belichtungsstiftdaten in Ihrem Projektverzeichnis enthalten, und wendet präzise Geolokalisierungskorrekturen auf Ihre Bilder an.
+* **Voraussetzung**: In Ihrem Projektverzeichnis muss eine .daq-Protokolldatei mit Belichtungs-Pin-Einträgen vorhanden sein.
+* **Wann aktivieren**: Es wird empfohlen, die PPK-Korrektur immer zu aktivieren, wenn Ihre .daq-Protokolldatei Belichtungs-Feedback-Einträge enthält.
 
 ### Belichtungs-Pin 1
 
 * **Typ**: Dropdown-Auswahl
-* **Sichtbarkeit**: Nur sichtbar, wenn „PPK-Korrekturen anwenden” aktiviert ist UND Belichtungsdaten für Pin 1 verfügbar sind
+* **Sichtbarkeit**: Nur sichtbar, wenn „PPK-Korrekturen anwenden” aktiviert ist UND Belichtungsdaten für Pin 1 verfügbar sind.
 * **Optionen**:
   * Im Projekt erkannte Kameramodellnamen
   * „Nicht verwenden” – Diesen Belichtungs-Pin ignorieren
-* **Standard**: Wird automatisch basierend auf der Projektkonfiguration ausgewählt
+* **Standard**: Automatische Auswahl basierend auf der Projektkonfiguration
 * **Beschreibung**: Weist dem Belichtungs-Pin 1 eine bestimmte Kamera für die PPK-Zeitsynchronisation zu. Der Belichtungs-Pin zeichnet den genauen Zeitpunkt auf, zu dem der Kameraverschluss ausgelöst wird, was für eine genaue PPK-Geolokalisierung entscheidend ist.
 * **Verhalten bei automatischer Auswahl**:
-  * Einzelne Kamera + einzelner Pin: Wählt automatisch die Kamera aus.
+  * Einzelne Kamera + einzelner Pin: Die Kamera wird automatisch ausgewählt.
   * Einzelne Kamera + zwei Pins: Pin 1 wird automatisch der Kamera zugewiesen.
   * Mehrere Kameras: Manuelle Auswahl erforderlich
 
@@ -114,12 +114,12 @@ Diese Einstellungen steuern, wie Chloros Ihre Bilder verarbeitet und kalibriert.
 * **Sichtbarkeit**: Nur sichtbar, wenn „PPK-Korrekturen anwenden” aktiviert ist UND Belichtungsdaten für Pin 2 verfügbar sind
 * **Optionen**:
   * Im Projekt erkannte Kameramodellnamen
-  * „Nicht verwenden” – Diesen Belichtungs-Pin ignorieren
+  * „Nicht verwenden” – Dieser Belichtungs-Pin wird ignoriert
 * **Standard**: Automatische Auswahl basierend auf der Projektkonfiguration
 * **Beschreibung**: Weist dem Belichtungs-Pin 2 eine bestimmte Kamera für die PPK-Zeitsynchronisation zu, wenn eine Konfiguration mit zwei Kameras verwendet wird.
 * **Verhalten bei automatischer Auswahl**:
-  * Einzelne Kamera + einzelner Pin: Pin 2 wird automatisch auf „Nicht verwenden” gesetzt
-  * Einzelne Kamera + zwei Pins: Pin 2 wird automatisch auf „Nicht verwenden” gesetzt
+  * Einzelne Kamera + einzelner Pin: Pin 2 wird automatisch auf „Nicht verwenden” gesetzt.
+  * Einzelne Kamera + zwei Pins: Pin 2 wird automatisch auf „Nicht verwenden” gesetzt.
   * Mehrere Kameras: Manuelle Auswahl erforderlich
 * **Hinweis**: Dieselbe Kamera kann nicht gleichzeitig Pin 1 und Pin 2 zugewiesen werden.
 
@@ -132,7 +132,7 @@ Mit diesen Einstellungen können Sie multispektrale Indizes für die Analyse und
 ### Index hinzufügen
 
 * **Typ**: Spezielles Indexkonfigurationsfeld
-* **Beschreibung**: Öffnet ein interaktives Fenster, in dem Sie multispektrale Vegetationsindizes (NDVI, NDRE, EVI usw.) auswählen und konfigurieren können, die während der Bildverarbeitung berechnet werden sollen. Sie können mehrere Indizes hinzufügen, die jeweils über eigene Visualisierungseinstellungen verfügen.
+* **Beschreibung**: Öffnet ein interaktives Fenster, in dem Sie multispektrale Vegetationsindizes (NDVI, NDRE, EVI usw.) auswählen und konfigurieren können, die während der Bildverarbeitung berechnet werden sollen. Sie können mehrere Indizes hinzufügen, die jeweils eigene Visualisierungseinstellungen haben.
 * **Verfügbare Indizes**: Das System umfasst mehr als 30 vordefinierte multispektrale Indizes, darunter:
   * NDVI (normalisierter Differenzvegetationsindex)
   * NDRE (normalisierter Differenzindex RedEdge)
@@ -160,7 +160,7 @@ Mit diesen Einstellungen können Sie multispektrale Indizes für die Analyse und
 
 ***
 
-## Exportieren
+## Export
 
 Diese Einstellungen steuern das Format und die Qualität der exportierten verarbeiteten Bilder.
 
@@ -168,17 +168,17 @@ Diese Einstellungen steuern das Format und die Qualität der exportierten verarb
 
 * **Typ**: Dropdown-Auswahl
 * **Optionen**:
-  * **TIFF (16-Bit)** – Unkomprimiertes 16-Bit-Format TIFF
+  * **TIFF (16-Bit)** – Unkomprimiertes 16-Bit-TIFF-Format
   * **TIFF (32 Bit, Prozent)** – 32-Bit-Gleitkomma-TIFF mit Reflexionswerten in Prozent
-  * **PNG (8 Bit)** - Komprimiertes 8-Bit-PNG-Format
-  * **JPG (8 Bit)** - Komprimiertes 8-Bit-JPEG-Format
+  * **PNG (8 Bit)** – Komprimiertes 8-Bit-Format PNG
+  * **JPG (8 Bit)** – Komprimiertes 8-Bit-Format JPEG
 * **Standard**: TIFF (16 Bit)
 * **Beschreibung**: Wählt das Dateiformat zum Speichern verarbeiteter und kalibrierter Bilder aus.
 * **Formatempfehlungen**:
-  * **TIFF (16-Bit)**: Empfohlen für wissenschaftliche Analysen und professionelle Arbeitsabläufe. Erhält maximale Datenqualität ohne Kompressionsartefakte. Am besten geeignet für multispektrale Analysen und die weitere Verarbeitung in GIS-Software.
+  * **TIFF (16 Bit)**: Empfohlen für wissenschaftliche Analysen und professionelle Arbeitsabläufe. Erhält maximale Datenqualität ohne Kompressionsartefakte. Am besten geeignet für multispektrale Analysen und die weitere Verarbeitung in GIS-Software.
   * **TIFF (32-Bit, Prozent)**: Am besten geeignet für Arbeitsabläufe, die Reflexionswerte als Prozentsätze (0–100 %) erfordern. Bietet maximale Präzision für radiometrische Messungen.
-  * **PNG (8 Bit)**: Gut geeignet für die Anzeige im Internet und allgemeine Visualisierungen. Kleinere Dateigrößen mit verlustfreier Komprimierung, aber reduziertem Dynamikbereich.
-  * **JPG (8 Bit)**: Kleinste Dateigrößen, am besten nur für Vorschauen und die Anzeige im Internet geeignet. Verwendet verlustbehaftete Komprimierung, die für wissenschaftliche Analysen nicht geeignet ist.
+  * **PNG (8 Bit)**: Gut geeignet für die Anzeige im Internet und allgemeine Visualisierungen. Kleinere Dateigrößen mit verlustfreier Komprimierung, jedoch reduzierter Dynamikbereich.
+  * **JPG (8 Bit)**: Kleinste Dateigrößen, am besten geeignet für Vorschauen und die Anzeige im Internet. Verwendet verlustbehaftete Komprimierung, die für wissenschaftliche Analysen nicht geeignet ist.
 
 ***
 
@@ -204,7 +204,7 @@ Mit dieser Funktion können Sie Ihre aktuellen Projekteinstellungen als wiederve
 
 Diese Einstellung legt fest, wo neue Projekte standardmäßig gespeichert werden.
 
-* **Typ**: Anzeige des Verzeichnispfads + Schaltfläche „Bearbeiten”
+* **Typ**: Anzeige des Verzeichnispfads + Schaltfläche „Bearbeiten“
 * **Standard**: `C:\Users\[Username]\Chloros Projects`
 * **Beschreibung**: Zeigt das aktuelle Standardverzeichnis an, in dem neue Chloros-Projekte erstellt werden. Klicken Sie auf das Bearbeitungssymbol, um ein anderes Verzeichnis auszuwählen.
 * **Wann ändern**:
@@ -252,4 +252,4 @@ Die meisten Einstellungsänderungen (insbesondere in den Kategorien „Verarbeit
 
 ***
 
-Weitere Informationen zu multispektralen Indizes in Chloros finden Sie auf der Seite [Multispektrale Indexformeln](multispectral-index-formulas.md).
+Weitere Informationen zu Multispektralindizes in Chloros finden Sie auf der Seite [Multispektralindexformeln](multispectral-index-formulas.md).

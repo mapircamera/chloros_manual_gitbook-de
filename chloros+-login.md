@@ -2,7 +2,7 @@
 
 ## Chloros und Chloros (Browser) Anmeldung
 
-Über das Benutzermenü <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> Seitenleistenmenü können Sie sich bei Ihrem Chloros+-Konto anmelden und zusätzliche Funktionen freischalten.
+Über das Benutzermenü <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> Seitenleiste können Sie sich bei Ihrem Chloros+-Konto anmelden und zusätzliche Funktionen freischalten.
 
 Nach der Anmeldung werden Ihre Kontodaten angezeigt:
 
@@ -34,7 +34,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 ### Ablauf des Plans
 
-Der Ablauf des Plans in der GUI zeigt an, wann Ihre Lizenz ungültig wird. Bei monatlichen Abonnements endet die Gültigkeit am Ende des Monats. Bei Jahresabonnements endet die Gültigkeit ein Jahr nach Beginn des Abonnements. Die Lizenzprüfung erfordert eine monatliche Internetverbindung zur Überprüfung, mit einer Nachfrist von 30 Tagen.
+Der Ablauf des Plans in der GUI zeigt an, wann Ihre Lizenz ungültig wird. Bei monatlichen Abonnements endet die Laufzeit am Ende des Monats. Bei Jahresabonnements endet die Laufzeit ein Jahr nach Beginn des Abonnements. Die Lizenzprüfung erfordert eine monatliche Internetverbindung zur Überprüfung, mit einer 30-tägigen Nachfrist.
 
 ### Gerätebeschränkung
 

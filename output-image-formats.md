@@ -3,7 +3,6 @@ metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/output-image-formats
 ---
-
 # Ausgabe-Bildformate
 
 ### TIFF (16-Bit)
@@ -20,5 +19,5 @@ metaLinks:
 
 ### **PNG (8 Bit)**
 
-8-Bit (Pixel-Digitalzahl 0–255) PNG (.png)-Formatausgabe. Verlustfreie Komprimierung, geeignet für die Anzeige und Visualisierung im Internet.
+Ausgabe im Format PNG (.png) mit 8 Bit (Pixel-Digitalzahl 0–255). Verlustfreie Komprimierung, geeignet für die Anzeige und Visualisierung im Internet.
 

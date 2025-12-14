@@ -17,7 +17,7 @@ Die gängigste Methode zum Öffnen eines Bildes im Bildbetrachter:
 
 Sobald ein Bild im Vorschau-Bereich geladen ist:
 
-1. Klicken Sie auf das Symbol „Bildbetrachter“ <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> in der linken Seitenleiste.
+1. Klicken Sie auf das Symbol **„Bildbetrachter“** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> in der linken Seitenleiste.
 2. Die Registerkarte „Bildbetrachter“ wird geöffnet und zeigt das ausgewählte Bild im Vollbildmodus an.
 3. In der linken Seitenleiste stehen erweiterte Anzeige- und Analysewerkzeuge zur Verfügung.
 
@@ -31,7 +31,7 @@ Der größte Teil des Bildschirms zeigt Ihr Bild an:
 
 * **Volle Auflösung**: Bilder werden in ihrer nativen Auflösung angezeigt.
 * **Zoombar**: Verwenden Sie die Steuerelemente oder das Mausrad, um zu zoomen
-* **Verschiebbar**: Klicken und ziehen Sie, um sich im gezoomten Bild zu bewegen
+* **Verschiebbar**: Klicken und ziehen Sie, um sich beim Zoomen zu bewegen
 * **Seitenverhältnis beibehalten**: Bilder werden proportional skaliert
 
 ***
@@ -91,7 +91,7 @@ Wenn Sie den Mauszeiger über das Bild bewegen, werden die Pixelwerte in Echtzei
 
 **Anzeigeort des Werts:**
 
-* **Gleitkommazahl und rote Linie in der Gradientenlegende der Index-LUT auf der rechten Seite**
+* **Gleitkommazahl und rote Linie in der Index-LUT-Gradientenlegende auf der rechten Seite**
 * **Bei weiterer Vergrößerung: Gleitkommawert in der Nähe des Cursors und hervorgehobenes Pixel**
 * Zeigt Werte für Pixel **unter dem Cursor oder hervorgehoben** an
 * Wird aktualisiert, wenn Sie die Maus bewegen
@@ -134,7 +134,7 @@ Wenden Sie multispektrale Indizes und Farblookup-Tabellen an:
 
 1. Suchen Sie **Index/LUT Sandbox** in der **Bildanzeige** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> Seitenleiste
 2. Wählen Sie den Vegetationsindex (NDVI, NDRE usw.)
-3. Wählen Sie eine multispektrale Formel oder erstellen Sie eine eigene benutzerdefinierte Formel (nur Chloros+)
+3. Wählen Sie eine multispektrale Formel oder erstellen Sie Ihre eigene benutzerdefinierte Formel (nur Chloros+)
 4. Wenden Sie einen Farb-LUT-Farbverlauf zur Visualisierung an
 5. Passen Sie Wertebereiche und Schwellenwerte an
 
@@ -179,7 +179,7 @@ Ausführliche Anweisungen finden Sie unter [Index/LUT-Sandbox](index-lut-sandbox
 2. Überprüfen Sie die Vegetationsflächen:
    * **NDVI**: Sollte für gesunde Pflanzen einen Wert zwischen 0,4 und 0,9 anzeigen.
    * **NDRE**: Höhere Werte für kräftiges Wachstum
-   * **GNDVI**: Ähnlich wie NDVI, jedoch chlorophyllempfindlich
+   * **GNDVI**: Ähnlich wie NDVI, jedoch chlorophyllsensitiv
 3. Nichtvegetation überprüfen:
    * **Boden**: Nahe 0 oder leicht negativ
    * **Wasser**: Negative Werte (-0,5 bis 0)

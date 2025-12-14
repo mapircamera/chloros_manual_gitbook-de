@@ -1,25 +1,25 @@
-# Bildlayer
+# Bild-Ebenen
 
-Über das Dropdown-Menü „Bildlayer“ im Chloros-Bildbetrachter können Sie schnell zwischen verschiedenen Versionen desselben Bildes wechseln – von den Originalaufnahmen über die verarbeiteten Reflektionsausgaben bis hin zu den berechneten Indexbildern.
+Über das Dropdown-Menü „Bild-Ebenen“ im Chloros Bildbetrachter können Sie schnell zwischen verschiedenen Versionen desselben Bildes wechseln – von den Originalaufnahmen über die verarbeiteten Reflektionsausgaben bis hin zu den berechneten Indexbildern.
 
-## Was sind Bildlayer?
+## Was sind Bild-Ebenen?
 
-In Chloros beziehen sich **Layer** auf die verschiedenen Bildausgaben, die für ein einzelnes Quellbild verfügbar sind. Wenn Sie Bilder verarbeiten, erstellt Chloros mehrere Versionen:
+In Chloros beziehen sich **Ebenen** auf die verschiedenen Bildausgaben, die für ein einzelnes Quellbild verfügbar sind. Wenn Sie Bilder verarbeiten, erstellt Chloros mehrere Versionen:
 
 * **Originalbilder** (JPG- und RAW-Dateien von Ihrer Kamera)
 * **Reflexionskalibrierte** Ausgaben (wenn die Reflexionskalibrierung aktiviert war)
 * **Zielbilder** (wenn das Bild Kalibrierungsziele enthält)
 * **Indexbilder** (NDVI, NDRE, GNDVI usw., wenn Indizes konfiguriert wurden)
 
-Über das **Dropdown-Menü „Layer Selector“** oben rechts im Bildbetrachter können Sie sofort zwischen diesen Versionen wechseln, ohne den Betrachter zu verlassen.
+Über das **Dropdown-Menü „Ebenenselektor“** oben rechts im Bildbetrachter können Sie sofort zwischen diesen Versionen wechseln, ohne den Betrachter zu verlassen.
 
 ***
 
-## Verfügbare Layer-Typen
+## Verfügbare Ebenentypen
 
 ### JPG
 
-* Das originale JPG-Vorschaubild Ihrer Kamera
+* Das ursprüngliche JPG-Vorschaubild Ihrer Kamera
 * Immer für alle Bilder verfügbar
 * Unbearbeitet, wie von der Kamera aufgenommen
 * Am schnellsten zu laden und anzuzeigen
@@ -34,7 +34,7 @@ In Chloros beziehen sich **Layer** auf die verschiedenen Bildausgaben, die für 
 
 * Die ursprünglichen RAW-Sensordaten Ihrer Kamera
 * Debayering ohne Nachbearbeitung
-* Höhere Bittiefe als JPG (in der Regel 12-Bit- oder 14-Bit-Sensordaten)
+* Höhere Bit-Tiefe als JPG (in der Regel 12-Bit- oder 14-Bit-Sensordaten)
 
 **Anzeigezweck:**
 
@@ -62,12 +62,12 @@ In Chloros beziehen sich **Layer** auf die verschiedenen Bildausgaben, die für 
 
 * Das kalibrierte Reflexionsgrad-Ausgabebild
 * Vignettierung korrigiert (sofern in der Verarbeitung aktiviert)
-* Reflexion kalibriert anhand von Zieldaten (sofern aktiviert)
+* Reflexion kalibriert unter Verwendung von Zieldaten (sofern aktiviert)
 * Multiband TIFF mit allen Kamerakanälen
 * Pixelwerte stellen die prozentuale Reflexion dar (bei Verwendung des Prozentmodus)
 * Bereit zur Bearbeitung mit der [Index/LUT-Sandbox](index-lut-sandbox.md)
 
-**Anzeigezwecke:**
+**Anzeigezeitpunkt:**
 
 * Überprüfen der kalibrierten Ergebnisse
 * Überprüfen der Kalibrierungsqualität
@@ -81,7 +81,7 @@ In Chloros beziehen sich **Layer** auf die verschiedenen Bildausgaben, die für 
 ### RAW (NDVI Index)... und ähnliche
 
 * Berechnetes Vegetationsindexbild (in diesem Beispiel NDVI)
-* Der Name des Index ändert sich je nachdem, welcher Index während der Verarbeitung konfiguriert wurde
+* Der Name des Index ändert sich je nachdem, welcher Index während der Verarbeitung konfiguriert wurde.
 * Beispiele: RAW (NDVI Index), RAW (NDRE Index), RAW (GNDVI Index) usw.
 * Einbandiges Graustufenbild, das die Ergebnisse der Indexberechnung zeigt
 * Für jeden in den Projekteinstellungen konfigurierten Index wird eine Ebene angezeigt
@@ -92,11 +92,11 @@ In Chloros beziehen sich **Layer** auf die verschiedenen Bildausgaben, die für 
 * RAW (NDRE Index)
 * RAW (GNDVI Index)
 * RAW (OSAVI Index)
-* RAW (EVI-Index)
-* RAW (SAVI-Index)
+* RAW (EVI Index)
+* RAW (SAVI Index)
 * Und viele mehr... (siehe [Multispektrale Indexformeln](../project-settings/multispectral-index-formulas.md))
 
-**Anzeigezwecke:**
+**Wann anzeigen:**
 
 * Überprüfen der Indexberechnungsergebnisse
 * Überprüfen der Indexwertbereiche
@@ -109,21 +109,21 @@ In Chloros beziehen sich **Layer** auf die verschiedenen Bildausgaben, die für 
 
 ### Öffnen des Dropdown-Menüs
 
-1. Öffnen Sie ein Bild im Vollbildmodus (klicken Sie auf eine beliebige Miniaturansicht im Bildbetrachter).
-2. Suchen Sie das **Ebenen-Dropdown-Menü** in der oberen rechten Ecke des Betrachters.
-3. Das Dropdown-Menü zeigt die aktuell ausgewählte Ebene an (z. B. „JPG“).
-4. Klicken Sie auf das Dropdown-Menü, um alle verfügbaren Ebenen anzuzeigen.
+1. Öffnen Sie ein Bild im Vollbildmodus (klicken Sie auf eine beliebige Miniaturansicht im Bildbetrachter)
+2. Suchen Sie das **Ebenen-Dropdown-Menü** in der oberen rechten Ecke des Betrachters
+3. Das Dropdown-Menü zeigt die aktuell ausgewählte Ebene an (z. B. „JPG”)
+4. Klicken Sie auf das Dropdown-Menü, um alle verfügbaren Ebenen anzuzeigen
 
-### Wechseln zwischen Ebenen
+### Ebenen wechseln
 
-1. Klicken Sie auf das Ebenen-Dropdown-Menü, um die Liste zu öffnen.
-2. Alle für das aktuelle Bild verfügbaren Ebenen werden angezeigt.
+1. Klicken Sie auf das Ebenen-Dropdown-Menü, um die Liste zu öffnen
+2. Alle für das aktuelle Bild verfügbaren Ebenen werden angezeigt
 3. Klicken Sie auf einen beliebigen Ebenennamen, um zu dieser Version zu wechseln.
 4. Das Bild wird sofort aktualisiert und zeigt die ausgewählte Ebene an.
 
 **Schnelles Wechseln:**
 
-* Das Dropdown-Menü merkt sich Ihre letzte Auswahl.
+* Das Dropdown-Menü speichert Ihre letzte Auswahl.
 * Beim Navigieren zum nächsten Bild versucht Chloros, denselben Ebenentyp anzuzeigen.
 * Wenn diese Ebene im nächsten Bild nicht vorhanden ist, wird standardmäßig JPG angezeigt.
 
@@ -146,13 +146,13 @@ Nicht alle Ebenen sind für jedes Bild verfügbar:
 
 ## Layer-Persistenz
 
-### Zwischen Bildern navigieren
+### Navigieren zwischen Bildern
 
 Wenn Sie zu einem anderen Bild navigieren (mit den Pfeiltasten oder durch Klicken auf Miniaturansichten):
 
-**Die Layer-Einstellung bleibt erhalten:**
+**Die Ebeneneinstellung bleibt erhalten:**
 
-* Wenn Sie „RAW (Reflexionsgrad)” anzeigen, wird das nächste Bild als „RAW (Reflexionsgrad)” angezeigt (sofern verfügbar).
+* Wenn Sie „RAW (Reflexionsgrad)“ anzeigen, wird als nächstes Bild „RAW (Reflexionsgrad)“ angezeigt (sofern verfügbar).
 * Wenn Sie „RAW (NDVI Index)” anzeigen, wird als nächstes Bild „RAW (NDVI Index)” angezeigt (sofern verfügbar).
 * Wenn dieselbe Ebene nicht vorhanden ist, wird standardmäßig JPG angezeigt.
 
@@ -176,7 +176,7 @@ Wenn Sie zu einem anderen Bild navigieren (mit den Pfeiltasten oder durch Klicke
 2. Wählen Sie **RAW (Original)** aus der Dropdown-Liste.
 3. Beachten Sie die Vignettierung und die unkalibrierten Werte.
 4. Wechseln Sie in der Dropdown-Liste zu **RAW (Reflexionsgrad)**.
-5. Vergleichen – Vignettierung entfernt, Werte kalibriert.
+5. Vergleichen Sie – Vignettierung entfernt, Werte kalibriert.
 
 ### Arbeitsablauf 2: Indexüberprüfung
 
@@ -191,13 +191,13 @@ Wenn Sie zu einem anderen Bild navigieren (mit den Pfeiltasten oder durch Klicke
 
 ### Arbeitsablauf 3: Zielüberprüfung
 
-**Ziel**: Überprüfen Sie, ob alle Zielbilder korrekt erkannt wurden.
+**Ziel**: Überprüfen Sie, ob alle Zielbilder korrekt erkannt wurden
 
-1. Navigieren Sie zu einem Zielbild.
-2. Wählen Sie **RAW (Ziel)** aus dem Dropdown-Menü.
-3. Überprüfen Sie, ob die Kalibrierungsziele deutlich sichtbar sind und erkannt werden.
-4. Navigieren Sie zum nächsten Zielbild.
-5. Wiederholen Sie die Überprüfung für alle Ziele.
+1. Navigieren Sie zu einem Zielbild
+2. Wählen Sie **RAW (Ziel)** aus der Dropdown-Liste
+3. Überprüfen Sie, ob die Kalibrierungsziele deutlich sichtbar sind und erkannt werden
+4. Navigieren Sie zum nächsten Zielbild
+5. Wiederholen Sie die Überprüfung für alle Ziele
 
 ### Arbeitsablauf 4: Überprüfung der Pixelwerte
 
@@ -253,20 +253,20 @@ Verschiedene Ebenen zeigen unterschiedliche Pixelwertbereiche an:
 
 * **Tastaturkürzel**: Es gibt zwar keine Tastaturkürzel für Ebenen, aber die Navigationspfeile (←/→) funktionieren für alle Ebenen.
 * **Konsistente Arbeitsabläufe**: Wählen Sie eine Ebene aus (z. B. NDVI) und überprüfen Sie den gesamten Datensatz, bevor Sie zu einer anderen wechseln.
-* **Schnelle Vergleiche**: Wechseln Sie zwischen „Original“ und „Reflexion“, um die Verarbeitungsqualität zu überprüfen.
+* **Schnelle Vergleiche**: Wechseln Sie zwischen „Original“ und „Reflexionsgrad“, um die Verarbeitungsqualität zu überprüfen.
 
 ### Leistungsaspekte
 
 * **JPG wird am schnellsten geladen**: Verwenden Sie dieses Format für die schnelle Navigation durch viele Bilder.
 * **RAW-Ebenen werden langsamer geladen**: Höhere Auflösung und Bittiefe.
-* **Indexebenen**: Ähnliche Geschwindigkeit wie Reflektions-Ebenen.
+* **Indexebenen**: Ähnliche Geschwindigkeit wie Reflexionsebenen.
 * **Das erste Laden ist am langsamsten**: Nachfolgende Ansichten derselben Ebene werden zwischengespeichert und sind schneller.
 
-### Qualitätsüberprüfung
+### Qualitätsprüfung
 
-* **Überprüfen Sie immer RAW (Original)**: Überprüfen Sie die Qualität der Quelldaten, bevor Sie den verarbeiteten Ergebnissen vertrauen.
-* **Ebenen vergleichen**: Verwenden Sie die Ebenenumschaltung, um zu überprüfen, ob die Verarbeitung korrekt funktioniert hat
-* **Indexbereiche überprüfen**: Verwenden Sie den Pixelprozentmodus mit Indexebenen, um zu überprüfen, ob die Werte angemessen sind
+* **Immer RAW (Original) überprüfen**: Überprüfen Sie die Qualität der Quelldaten, bevor Sie den verarbeiteten Ergebnissen vertrauen.
+* **Ebenen vergleichen**: Verwenden Sie den Ebenenwechsel, um zu überprüfen, ob die Verarbeitung korrekt funktioniert hat.
+* **Indexbereiche überprüfen**: Verwenden Sie den Pixelprozentmodus mit Indexebenen, um zu überprüfen, ob die Werte plausibel sind.
 
 ***
 
@@ -274,7 +274,7 @@ Verschiedene Ebenen zeigen unterschiedliche Pixelwertbereiche an:
 
 ### Ebene nicht verfügbar
 
-**Problem**: Die erwartete Ebene wird nicht in der Dropdown-Liste angezeigt
+**Problem**: Die erwartete Ebene wird nicht in der Dropdown-Liste angezeigt.
 
 **Mögliche Ursachen:**
 
@@ -286,7 +286,7 @@ Verschiedene Ebenen zeigen unterschiedliche Pixelwertbereiche an:
 **Lösungen:**
 
 1. Überprüfen Sie, ob das Bild verarbeitet wurde (überprüfen Sie den Ausgabeordner auf verarbeitete Dateien).
-2. Überprüfen Sie die Projekteinstellungen, um sicherzustellen, dass die Indizes konfiguriert wurden.
+2. Überprüfen Sie die Projekteinstellungen, um sicherzustellen, dass Indizes konfiguriert wurden.
 3. Führen Sie die Verarbeitung erneut durch und aktivieren Sie die gewünschten Indizes.
 
 ### Falsche Ebene angezeigt
@@ -295,11 +295,11 @@ Verschiedene Ebenen zeigen unterschiedliche Pixelwertbereiche an:
 
 **Ursache**: Die Ebeneneinstellung aus dem vorherigen Bild wurde übernommen, aber diese Ebene ist im aktuellen Bild nicht vorhanden.
 
-**Lösung**: Chloros wechselt automatisch zu JPG, wenn die bevorzugte Ebene nicht verfügbar ist – dies ist ein normales Verhalten.
+**Lösung:** Chloros wechselt automatisch zu JPG, wenn die bevorzugte Ebene nicht verfügbar ist – dies ist ein normales Verhalten.
 
 ### Kalibrierungsziele werden nicht angezeigt
 
-**Problem**: Die RAW-Ebene (Ziel) zeigt keine Zielerkennung an.
+**Problem:** Die RAW-Ebene (Ziel) zeigt keine Zielerkennung an.
 
 **Mögliche Ursachen:**
 
@@ -309,7 +309,7 @@ Verschiedene Ebenen zeigen unterschiedliche Pixelwertbereiche an:
 
 **Lösungen:**
 
-1. Überprüfen Sie das Debug-Protokoll auf Meldungen wie „Ziel gefunden“.
+1. Überprüfen Sie das Debug-Protokoll auf Meldungen „Ziel gefunden”.
 2. Vergewissern Sie sich, dass das Bild tatsächlich sichtbare Kalibrierungsziele enthält.
 3. Passen Sie die Einstellungen für die Zielerkennung in den Projekteinstellungen an.
 4. Siehe [Auswahl von Zielbildern](../processing-images-gui/choosing-target-images.md).
@@ -323,7 +323,7 @@ Verschiedene Ebenen zeigen unterschiedliche Pixelwertbereiche an:
 Beim Betrachten einer Ebene können Sie Folgendes verwenden:
 
 * **Zoomsteuerung**: Vergrößern Sie das Bild, um Details zu untersuchen.
-* **Verschieben**: Klicken und ziehen Sie, um sich im gezoomten Bild zu bewegen.
+* **Pan**: Klicken und ziehen Sie, um sich im vergrößerten Bild zu bewegen.
 * **Pixelwertprüfung**: Zeigen Sie die Werte an der Cursorposition an.
 * **Navigationspfeile**: Wechseln Sie zwischen Bildern, während die Ebene beibehalten wird.
 * **Pixelprozentmodus**: Wechseln Sie zwischen DN- und Prozentanzeige.
@@ -348,5 +348,5 @@ Nachdem Sie nun die Bildlayer verstanden haben:
 
 * [**Öffnen eines Bildes im Vollbildmodus**](opening-an-image-full-screen.md) – Vollständige Anleitung zum Bildbetrachter
 * [**Index/LUT-Sandbox**](index-lut-sandbox.md) – Interaktive Indexvisualisierung
-* [**Multispektrale Indexformeln**](../project-settings/multispectral-index-formulas.md) – Referenz zu verfügbaren Indizes
+* [**Multispektrale Indexformeln**](../project-settings/multispectral-index-formulas.md) – Referenz der verfügbaren Indizes
 * [**Beenden der Verarbeitung**](../processing-images-gui/finishing-the-processing.md) – Verstehen der verarbeiteten Ergebnisse

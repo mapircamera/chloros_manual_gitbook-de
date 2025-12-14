@@ -25,7 +25,7 @@ Für typische MAPIR Survey3 Kamera-Workflows eignen sich die Standardeinstellung
 * ✅ **Debayer-Verfahren**: Hohe Qualität (schneller)
 * ✅ **Exportformat**: TIFF (16 Bit)
 
-Importieren Sie einfach Ihre Bilder und starten Sie die Verarbeitung mit diesen Standardeinstellungen.
+Importieren Sie einfach Ihre Bilder und beginnen Sie mit der Verarbeitung mit diesen Standardeinstellungen.
 
 ***
 
@@ -44,7 +44,7 @@ Steuert, wie Chloros Kalibrierungsziele in Ihren Bildern identifiziert.
 
 **Wann anpassen:**
 
-* Vergrößern Sie die Probenfläche, wenn falsche Erkennungen auftreten.
+* Vergrößern Sie die Probenfläche, wenn es zu Fehlerkennungen kommt.
 * Verringern Sie sie, wenn Ziele nicht erkannt werden.
 * Passen Sie die Clusterung an, wenn Ziele in mehrere Erkennungen aufgeteilt werden.
 
@@ -54,7 +54,7 @@ Wichtigste Bildverarbeitungs- und Kalibrierungsoptionen.
 
 **Wichtige Einstellungen:**
 
-* **Vignettierungskorrektur**: Kompensiert die Verdunkelung des Objektivs an den Rändern ✅ Empfohlen
+* **Vignettenkorrektur**: Kompensiert die Verdunkelung des Objektivs an den Rändern ✅ Empfohlen
 * **Reflexionskalibrierung**: Normalisiert Werte mithilfe von Kalibrierungszielen ✅ Empfohlen
 * **Debayer-Verfahren**: Algorithmus zur Konvertierung von RAW in 3-Kanal-Multispektral
 * **Minimales Neukalibrierungsintervall**: Zeit zwischen der Verwendung von Kalibrierungszielen (0 = alle verwenden)
@@ -120,7 +120,7 @@ Erstellen Sie wiederverwendbare Vorlagen für konsistente Arbeitsabläufe:
 
 * Wenden Sie identische Einstellungen auf mehrere Projekte an.
 * Teilen Sie Konfigurationen mit Teammitgliedern.
-* Sorgen Sie für Konsistenz bei wiederholten Erhebungen.
+* Sorgen Sie für Konsistenz bei wiederholten Umfragen.
 
 ### Vorlage in neues Projekt laden
 
@@ -203,7 +203,7 @@ Für wiederholte Erhebungen desselben Gebiets im Laufe der Zeit:
 Für Projekte mit vielen Bildern (500+):
 
 * Erwägen Sie, die Daten nach Datum oder Gebiet in kleinere Projekte aufzuteilen.
-* Verwenden Sie Chloros+ Parallelverarbeitung für schnellere Ergebnisse.
+* Verwenden Sie die parallele Verarbeitung Chloros+ für schnellere Ergebnisse.
 * Erwägen Sie CLI oder API für die Batch-Automatisierung.
 * Passen Sie das minimale Neukalibrierungsintervall an, um die Zielerkennungszeit zu verkürzen.
 
@@ -218,7 +218,7 @@ Für Projekte mit vielen Bildern (500+):
 * [ ] Reflektionskalibrierung aktiviert
 * [ ] Mindestens ein Kalibrierungszielbild importiert
 * [ ] Gewünschte multispektrale Indizes hinzugefügt
-* [ ] Für Ihren Arbeitsablauf geeignetes Exportformat
+* [ ] Für Ihren Workflow geeignetes Exportformat
 * [ ] PPK-Einstellungen konfiguriert (bei Verwendung von .daq mit Belichtungsereignissen)
 
 ***
