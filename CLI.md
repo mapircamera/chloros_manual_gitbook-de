@@ -1,8 +1,6 @@
 # CLI: Befehlszeile
 
-<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
-
-Die **Chloros CLI** bietet leistungsstarken Befehlszeilenzugriff auf die Bildverarbeitungs-Engine Chloros und ermöglicht so die Automatisierung, Skripterstellung und den Headless-Betrieb für Ihre Bildverarbeitungs-Workflows.
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>Die **Chloros CLI** bietet leistungsstarken Befehlszeilenzugriff auf die Bildverarbeitungs-Engine Chloros und ermöglicht so die Automatisierung, Skripterstellung und den Headless-Betrieb für Ihre Bildverarbeitungs-Workflows.
 
 ### Hauptmerkmale
 
@@ -135,9 +133,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 **Sonderzeichen**: Verwenden Sie einfache Anführungszeichen um Passwörter, die Zeichen wie `$`, `!` oder Leerzeichen enthalten.
 {% endhint %}
 
-**Ausgabe:**
-
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>***
+**Ausgabe:**<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>***
 
 ### `logout` – Anmeldedaten löschen
 
@@ -161,6 +157,10 @@ chloros-cli logout
 ✓ Logout successful
 ℹ Credentials cleared from cache
 ```
+
+{% hint style=&quot;info&quot; %}
+**SDK Benutzer**: Das Python SDK bietet auch eine programmatische `logout()`-Methode zum Löschen von Anmeldedaten innerhalb von Python-Skripten. Weitere Informationen finden Sie in der [Python SDK-Dokumentation](api-python-sdk.md#logout).
+{% endhint %}
 
 ***
 
@@ -211,13 +211,11 @@ chloros-cli export-status
 chloros-cli export-status
 ```
 
-**Anwendungsfall:** Rufen Sie diesen Befehl während der Verarbeitung auf, um den Exportfortschritt zu überprüfen.
-
-***
+**Anwendungsfall:** Rufen Sie diesen Befehl während der Verarbeitung auf, um den Exportfortschritt zu überprüfen.***
 
 ### `language` – Verwaltung der Sprache der Benutzeroberfläche
 
-Anzeigen oder Ändern der Sprache der Benutzeroberfläche CLI.
+Anzeigen oder Ändern der Sprache der Benutzeroberfläche von CLI.
 
 **Syntax:**
 
@@ -250,9 +248,9 @@ chloros-cli language ja
 
 #### Unterstützte Sprachen (insgesamt 38)
 
-| Code    | Sprache              | Name in der Landessprache      |
+| Code    | Sprache              | Name in Originalsprache      |
 | ------- | --------------------- | ---------------- |
-| `en`    | Englisch               | English          |
+| `en`    | Englisch               | Englisch          |
 | `es`    | Spanisch               | Español          |
 | `pt`    | Portugiesisch            | Português        |
 | `fr`    | Französisch                | Français         |
@@ -270,7 +268,7 @@ chloros-cli language ja
 | `hi`    | Hindi                 | हिंदी            |
 | `id`    | Indonesisch            | Bahasa Indonesia |
 | `vi`    | Vietnamesisch            | Tiếng Việt       |
-| `th`    | Thai                  | ไทย              |
+| `th`    | Thailändisch                  | ไทย              |
 | `sv`    | Schwedisch               | Svenska          |
 | `da`    | Dänisch                | Dansk            |
 | `no`    | Norwegisch             | Norsk            |
@@ -292,14 +290,14 @@ chloros-cli language ja
 | `sl`    | Slowenisch             | Slovenščina      |
 
 {% hint style=&quot;success&quot; %}
-**Automatische Beibehaltung**: Ihre Spracheinstellung wird unter `~/.chloros/cli_language.json` gespeichert und bleibt über alle Sitzungen hinweg erhalten.
+**Automatische Speicherung**: Ihre Spracheinstellung wird in `~/.chloros/cli_language.json` gespeichert und bleibt über alle Sitzungen hinweg erhalten.
 {% endhint %}
 
 ***
 
 ### `set-project-folder` – Standardprojektordner festlegen
 
-Ändern Sie den Speicherort des Standardprojektordners (gemeinsam mit GUI).
+Ändern Sie den Speicherort des Standardprojektordners (gemeinsam mit der GUI).
 
 **Syntax:**
 
@@ -317,7 +315,7 @@ chloros-cli set-project-folder "C:\Projects\2025"
 
 ### `get-project-folder` – Projektordner anzeigen
 
-Zeigt den aktuellen Standardprojektordner an.
+Zeigt den aktuellen Standard-Projektordner an.
 
 **Syntax:**
 
@@ -375,15 +373,11 @@ chloros-cli --port 5001 process "C:\Datasets\Survey_001"
 
 ### Parallele Verarbeitung
 
-Chloros+ CLI **skaliert automatisch** die parallele Verarbeitung entsprechend den Fähigkeiten Ihres Computers:
-
-**So funktioniert es:**
+Chloros+ CLI **skaliert automatisch**die parallele Verarbeitung entsprechend den Fähigkeiten Ihres Computers:**So funktioniert es:**
 
 * Erkennt Ihre CPU-Kerne und Ihren Arbeitsspeicher
 * Weist Worker zu: **2× CPU-Kerne** (verwendet Hyperthreading)
-* **Maximal: 16 parallele Worker** (für Stabilität)
-
-**Systemstufen:**
+* **Maximal: 16 parallele Worker** (für Stabilität)**Systemstufen:**
 
 | Systemtyp   | CPU        | RAM      | Worker  | Leistung     |
 | ------------- | ---------- | -------- | -------- | --------------- |
@@ -419,8 +413,8 @@ Der CLI verwendet **High Quality (Faster)** als standardmäßigen und empfohlene
 Konvertiert die Rohwerte des Sensors mithilfe von Kalibrierungsfeldern in standardisierte Reflektionsprozentsätze.
 
 * **Standardmäßig aktiviert** – Unverzichtbar für die Vegetationsanalyse.
-* Erfordert Kalibrierungszieltafeln in Bildern.
-* Verwenden Sie `--no-reflectance`, um die Funktion zu deaktivieren.
+* Erfordert Kalibrierungszielfelder in Bildern.
+* Verwenden Sie `--no-reflectance`, um diese Funktion zu deaktivieren.
 
 {% hint style=&quot;info&quot; %}
 **Anforderungen**: Stellen Sie sicher, dass die Kalibrierungsfelder in Ihren Bildern richtig belichtet und sichtbar sind, um eine genaue Reflektionsumwandlung zu gewährleisten.
@@ -436,7 +430,7 @@ Konvertiert die Rohwerte des Sensors mithilfe von Kalibrierungsfeldern in standa
 
 ### Ausgabeformate
 
-<table><thead><tr><th width="197">Format</th><th width="130.20001220703125">Bittiefe</th><th width="116.5999755859375">Dateigröße</th><th>Am besten geeignet für</th></tr></thead><tbody><tr><td><strong>TIFF (16 Bit)</strong> ⭐</td><td>16-Bit-Ganzzahl</td><td>Groß</td><td>GIS-Analyse, Photogrammetrie (empfohlen)</td></tr><tr><td><strong>TIFF (32-Bit, Prozent)</strong></td><td>32-Bit-Gleitkomma</td><td>Sehr groß</td><td>Wissenschaftliche Analyse, Forschung</td></tr><tr><td><strong>PNG (8 Bit)</strong></td><td>8-Bit-Ganzzahl</td><td>Mittel</td><td>Visuelle Inspektion, Web-Freigabe</td></tr><tr><td><strong>JPG (8-Bit)</strong></td><td>8-Bit-Ganzzahl</td><td>Klein</td><td>Schnellvorschau, komprimierte Ausgabe</td></tr></tbody></table>***
+<table><thead><tr><th width="197">Format</th><th width="130.20001220703125">Bittiefe</th><th width="116.5999755859375">Dateigröße</th><th>Am besten geeignet für</th></tr></thead><tbody><tr><td><strong>TIFF (16 Bit)</strong> ⭐</td><td>16-Bit-Ganzzahl</td><td>Groß</td><td>GIS-Analyse, Photogrammetrie (empfohlen)</td></tr><tr><td><strong>TIFF (32-Bit, Prozent)</strong></td><td>32-Bit-Gleitkomma</td><td>Sehr groß</td><td>Wissenschaftliche Analyse, Forschung</td></tr><tr><td><strong>PNG (8 Bit)</strong></td><td>8-Bit-Ganzzahl</td><td>Mittel</td><td>Visuelle Inspektion, Web-Sharing</td></tr><tr><td><strong>JPG (8-Bit)</strong></td><td>8-Bit-Ganzzahl</td><td>Klein</td><td>Schnellvorschau, komprimierte Ausgabe</td></tr></tbody></table>***
 
 ## Automatisierung und Skripting
 
@@ -586,6 +580,7 @@ if __name__ == '__main__':
 ### Beispiel für die Ausgabestruktur
 
 ```
+
 MyProject/
 ├── project.json                             # Project metadata
 ├── 2025_0203_193056_008.JPG                # Original JPG
@@ -602,7 +597,7 @@ Typische Verarbeitungszeiten für 100 Bilder (jeweils 12 MP):
 
 | Modus              | Zeit      | Hardware                                     |
 | ----------------- | --------- | -------------------------------------------- |
-| **Parallelmodus** | 5–10 Min.  | i7/Ryzen 7, 16 GB RAM, SSD (bis zu 16 Worker) |
+| **Parallelmodus** | 5–10 min  | i7/Ryzen 7, 16 GB RAM, SSD (bis zu 16 Worker) |
 | **Parallelmodus** | 10–15 Min. | i5/Ryzen 5, 8 GB RAM, HDD (bis zu 8 Worker)   |
 
 {% hint style=&quot;info&quot; %}
@@ -636,18 +631,17 @@ dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
 ```
 
 3. Fügen Sie ihn manuell zu PATH hinzu:
-   * Öffnen Sie „Systemeigenschaften“ → „Umgebungsvariablen“.
+   * Öffnen Sie Systemeinstellungen → Umgebungsvariablen.
    * Bearbeiten Sie die Variable PATH.
    * Fügen Sie Folgendes hinzu: `C:\Program Files\Chloros\resources\cli`
    * Terminal neu starten
 
 ***
 
-### Backend konnte nicht gestartet werden
-
-**Fehler:**
+### Backend konnte nicht gestartet werden**Fehler:**
 
 ```
+
 Backend failed to start within 30 seconds
 ```
 
@@ -669,17 +663,16 @@ chloros-cli --restart process "C:\Datasets\Field_A"
 
 ***
 
-### Probleme mit der Lizenz/Authentifizierung
-
-**Fehler:**
+### Probleme mit der Lizenz/Authentifizierung**Fehler:**
 
 ```
+
 Chloros+ license required for CLI access
 ```
 
 **Lösungen:**
 
-1. Überprüfen Sie, ob Sie über ein aktives Chloros+-Abonnement verfügen.
+1. Vergewissern Sie sich, dass Sie über ein aktives Chloros+-Abonnement verfügen.
 2. Melden Sie sich mit Ihren Anmeldedaten an:
 
 ```powershell
@@ -696,11 +689,10 @@ chloros-cli status
 
 ***
 
-### Keine Bilder gefunden
-
-**Fehler:**
+### Keine Bilder gefunden**Fehler:**
 
 ```
+
 No images found in the specified folder
 ```
 
@@ -713,9 +705,7 @@ No images found in the specified folder
 
 ***
 
-### Verarbeitung stockt oder hängt
-
-**Lösungen:**
+### Verarbeitung stockt oder hängt**Lösungen:**
 
 1. Überprüfen Sie den verfügbaren Speicherplatz (stellen Sie sicher, dass genügend Speicherplatz für die Ausgabe vorhanden ist).
 2. Schließen Sie andere Anwendungen, um Speicherplatz freizugeben.
@@ -723,11 +713,10 @@ No images found in the specified folder
 
 ***
 
-### Port bereits in Verwendung
-
-**Fehler:**
+### Port bereits in Verwendung**Fehler:**
 
 ```
+
 Port 5000 is already in use
 ```
 
@@ -745,7 +734,7 @@ chloros-cli --port 5001 process "C:\Datasets\Field_A"
 
 ### F: Benötige ich eine Lizenz für CLI?
 
-**A:** Ja! Für CLI ist eine kostenpflichtige **Chloros+-Lizenz** erforderlich.
+**A:**Ja! Für CLI ist eine kostenpflichtige**Chloros+-Lizenz** erforderlich.
 
 * ❌ Standard-Tarif (kostenlos): CLI deaktiviert
 * ✅ Chloros+ (kostenpflichtige) Tarife: CLI vollständig aktiviert
@@ -754,9 +743,7 @@ Abonnieren Sie unter: [https://cloud.mapir.camera/pricing](https://cloud.mapir.c
 
 ***
 
-### F: Kann ich CLI auf einem Server ohne GUI verwenden?
-
-**A:** Ja! CLI läuft vollständig headless. Anforderungen:
+### F: Kann ich CLI auf einem Server ohne GUI verwenden?**A:** Ja! CLI läuft vollständig headless. Anforderungen:
 
 * Windows Server 2016 oder höher
 * Visual C++ Redistributable installiert
@@ -765,9 +752,7 @@ Abonnieren Sie unter: [https://cloud.mapir.camera/pricing](https://cloud.mapir.c
 
 ***
 
-### F: Wo werden die verarbeiteten Bilder gespeichert?
-
-**A:** Standardmäßig werden die verarbeiteten Bilder im **gleichen Ordner wie die Eingabe** in Unterordnern des Kameramodells (z. B. `Survey3N_RGN/`) gespeichert.
+### F: Wo werden die verarbeiteten Bilder gespeichert?**A:**Standardmäßig werden die verarbeiteten Bilder im**gleichen Ordner wie die Eingabe** in Unterordnern des Kameramodells (z. B. `Survey3N_RGN/`) gespeichert.
 
 Verwenden Sie die Option `-o`, um einen anderen Ausgabeordner anzugeben:
 
@@ -777,15 +762,9 @@ chloros-cli process "C:\Input" -o "D:\Output"
 
 ***
 
-### F: Kann ich mehrere Ordner gleichzeitig verarbeiten?
+### F: Kann ich mehrere Ordner gleichzeitig verarbeiten?**A:** Nicht direkt mit einem Befehl, aber Sie können Skripte verwenden, um Ordner nacheinander zu verarbeiten. Siehe Abschnitt [Automatisierung und Skripterstellung](CLI.md#automation--scripting).***
 
-**A:** Nicht direkt mit einem Befehl, aber Sie können Skripte verwenden, um Ordner nacheinander zu verarbeiten. Siehe Abschnitt [Automatisierung und Skripterstellung](CLI.md#automation--scripting).
-
-***
-
-### F: Wie speichere ich die Ausgabe von CLI in einer Protokolldatei?
-
-**PowerShell:**
+### F: Wie speichere ich die Ausgabe von CLI in einer Protokolldatei?**PowerShell:**
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" | Tee-Object -FilePath "processing.log"
@@ -799,9 +778,7 @@ chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
 
 ***
 
-### F: Was passiert, wenn ich während der Verarbeitung Strg+C drücke?
-
-**A:** CLI wird:
+### F: Was passiert, wenn ich während der Verarbeitung Strg+C drücke?**A:** CLI wird:
 
 1. Die Verarbeitung ordnungsgemäß beenden
 2. Das Backend herunterfahren
@@ -811,15 +788,9 @@ Teilweise verarbeitete Bilder können im Ausgabeordner verbleiben.
 
 ***
 
-### F: Kann ich die Verarbeitung von CLI automatisieren?
+### F: Kann ich die Verarbeitung von CLI automatisieren?**A:** Auf jeden Fall! CLI ist für die Automatisierung ausgelegt. Beispiele für PowerShell, Batch und Python finden Sie unter [Automatisierung und Skripting](CLI.md#automation--scripting).***
 
-**A:** Auf jeden Fall! CLI ist für die Automatisierung ausgelegt. Beispiele für PowerShell, Batch und Python finden Sie unter [Automatisierung und Skripting](CLI.md#automation--scripting).
-
-***
-
-### F: Wie kann ich die Version von CLI überprüfen?
-
-**A:**
+### F: Wie kann ich die Version von CLI überprüfen?**A:**
 
 ```powershell
 chloros-cli --version
@@ -828,6 +799,7 @@ chloros-cli --version
 **Ausgabe:**
 
 ```
+
 Chloros CLI 1.0.2
 ```
 
@@ -853,9 +825,7 @@ chloros-cli language --help
 
 * **E-Mail**: info@mapir.camera
 * **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* **Preise**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
-
-***
+* **Preise**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)***
 
 ## Vollständige Beispiele
 
@@ -939,7 +909,7 @@ chloros-cli logout
 
 ***
 
-### Beispiel 7: Mehrsprachige Verwendung
+### Beispiel 7: Mehrsprachige Nutzung
 
 Sprache der Benutzeroberfläche ändern:
 

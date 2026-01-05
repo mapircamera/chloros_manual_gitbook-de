@@ -29,6 +29,8 @@
 
 ## BILDANZEIGE (GUI)
 
+* [Bildraster](image-viewer-gui/image-grid.md)
 * [Bild im Vollbildmodus öffnen](image-viewer-gui/opening-an-image-full-screen.md)
 * [Bild-Ebenen](image-viewer-gui/image-layers.md)
 * [Index/LUT-Sandbox](image-viewer-gui/index-lut-sandbox.md)
+* [Kartenmarkierungen](image-viewer-gui/map-markers.md)

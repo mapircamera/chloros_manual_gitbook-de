@@ -3,9 +3,10 @@ metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/download
 ---
+
 # Download
 
-Laden Sie die neueste Version von Chloros für Windows herunter, um mit der multispektralen Bildverarbeitung zu beginnen.
+Laden Sie die neueste Version von Chloros herunter, um mit der multispektralen Bildverarbeitung zu beginnen.
 
 ### Systemanforderungen
 
@@ -15,12 +16,12 @@ Laden Sie die neueste Version von Chloros für Windows herunter, um mit der mult
 | **Prozessor**        | Intel Core i5 oder gleichwertig     | Intel Core i7 oder besser         |
 | **Arbeitsspeicher (RAM)**     | 8 GB                             | 16 GB oder mehr                    |
 | **Grafikkarte**    | DirectX 11-kompatibel           | NVIDIA-GPU mit 4 GB+ VRAM       |
-| **Speicherplatz**          | 2 GB freier Speicherplatz                  | SSD mit 10 GB+ freiem Speicherplatz       |
+| **Speicherplatz**          | 6 GB freier Speicherplatz                  | SSD mit 10 GB+ freiem Speicherplatz       |
 | **Bildschirm**          | 1920 x 1080                       | 2560 x 1440 oder höher             |
 | **Internet**         | Für die Lizenzaktivierung erforderlich | Für die Lizenzaktivierung erforderlich |
 
 {% hint style=&quot;info&quot; %}
-**GPU-Beschleunigung**: Chloros+ Benutzer mit NVIDIA-GPUs (4 GB+ VRAM) können die CUDA-Beschleunigung für eine deutlich schnellere Verarbeitung nutzen.
+**GPU-Beschleunigung**: Chloros+-Benutzer mit NVIDIA-GPUs (4 GB+ VRAM) können die CUDA-Beschleunigung für eine deutlich schnellere Verarbeitung nutzen. Chloros+-Benutzer profitieren außerdem von Multithreading für maximale Geschwindigkeit.
 {% endhint %}
 
 ***
@@ -31,11 +32,10 @@ Laden Sie die neueste Version von Chloros für Windows herunter, um mit der mult
 
 ### Neueste stabile Version
 
-**Chloros-Installationsprogramm für Windows**
-
-* **Version**: 1.0.3
-* **Veröffentlichungsdatum**: Dezember ?, 2025
-* **Dateigröße**: 1,6 GB
+**Chloros-Installationsprogramm für Windows*** **Version**: 1.0.4
+* **Veröffentlichungsdatum**: 5. Januar 2026
+* **Dateigröße (Download)**: 1,8 GB
+* **Dateigröße (installiert)**: 5,7 GB
 * **Dateityp**: .exe (Windows-Installationsprogramm)
 
 #### **Installationsschritte:**
@@ -43,9 +43,9 @@ Laden Sie die neueste Version von Chloros für Windows herunter, um mit der mult
 1. Laden Sie die Datei `CHLOROS INSTALLER - CURRENT VERSION.exe` herunter.
 2. Doppelklicken Sie auf das Installationsprogramm, um die Installation zu starten.
 3. Befolgen Sie die Anweisungen des Installationsassistenten.
-4. Wählen Sie das Installationsverzeichnis (Standard: `C:\Program Files\Chloros\`).
-5. Schließen Sie die Installation ab und starten Sie Chloros.
-6. Melden Sie sich mit Ihrem MAPIR Cloud Chloros+-Konto an (oder fahren Sie mit der kostenlosen Version fort).
+4. Wählen Sie das Installationsverzeichnis (Standard: `C:\Program Files\[USER]\Chloros\`).
+5. Schließen Sie die Installation ab und starten Sie Chloros, Chloros (Browser) oder Chloros CLI.
+6. Melden Sie sich mit Ihrem [MAPIR Cloud Chloros+ Konto](https://cloud.mapir.camera/pricing) an (oder fahren Sie mit der kostenlosen Version fort).
 
 {% hint style=&quot;success&quot; %}
 Das Installationsprogramm fügt `chloros-cli` automatisch zu Ihrem System-PATH hinzu, um den Zugriff über die Befehlszeile zu ermöglichen.
@@ -63,33 +63,27 @@ Für Entwickler und Automatisierungs-Workflows installieren Sie Chloros Python S
 pip install chloros-sdk
 ```
 
-**Dokumentation**: [API: Python SDK](api-python-sdk.md)
+**Dokumentation**: [API: Python SDK](api-python-sdk.md)**Anforderungen**: Chloros Desktop muss installiert sein, Chloros+ Lizenzanmeldung erforderlich.***
 
-**Anforderungen**: Chloros Desktop muss installiert sein, Chloros+ Lizenz erforderlich.
-
-***
-
-## Lieferumfang
+## Was ist enthalten?
 
 Die Installation von Chloros umfasst:
 
-* ✅ **Chloros Desktop GUI** – Grafische Benutzeroberfläche mit vollem Funktionsumfang
+* ✅ **Chloros** – Grafische Benutzeroberfläche mit vollem Funktionsumfang
 * ✅ **Chloros (Browser)** – Webbasierte Benutzeroberfläche für Systeme mit geringerer Leistung
-* ✅ **Chloros CLI** – Befehlszeilenschnittstelle (erfordert Chloros+-Lizenz)
-* ✅ **Backend-Engine** – Bildverarbeitungs-Pipeline
-* ✅ **Kameraprofile** – Vorkonfigurierte MAPIR-Kameravorlagen
-
-***
+* ✅ **Chloros CLI** – Befehlszeilenschnittstelle (erfordert Chloros+ Lizenz)
+* ✅ **Chloros SDK** - Python API (erfordert Chloros+ Lizenz)
+* ✅ **Kameraprofile** - Vorkonfigurierte MAPIR Kameravorlagen***
 
 ## Upgrade auf Chloros+
 
 Schalten Sie mit einem Chloros+-Abonnement erweiterte Funktionen frei:
 
 * 🚀 **Multithread-Verarbeitung** – Bilder parallel verarbeiten
-* ⚡ **GPU (CUDA)-Beschleunigung** – Nutzen Sie die Leistung der NVIDIA-GPU
+* ⚡ **GPU-Beschleunigung (CUDA)** – Nutzen Sie die Leistung von NVIDIA-GPUs
 * 💻 **CLI-Zugriff** – Automatisieren Sie mit Befehlszeilentools
 * 🐍 **Python SDK** – Programmatischer API-Zugriff
-* 📱 **Mehrere Geräte** – Verwendung auf 2 bis 10+ Geräten (je nach Tarif)
+* 📱 **Mehrere Geräte** – Verwendung auf 2 bis 10+ Geräten (abhängig vom Tarif)
 * 🧮 **Benutzerdefinierte Formeln** – Erstellen Sie benutzerdefinierte multispektrale Indizes
 
 <p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Chloros+ Pläne und Preise anzeigen</a></p>***
@@ -126,44 +120,41 @@ Benötigen Sie Hilfe bei der Installation oder Einrichtung?
 * 📧 **E-Mail**: info@mapir.camera
 * 🌐 **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **Dokumentation**: [Erste Schritte](./)
-* ❓ **FAQ**: [Häufig gestellte Fragen](faq.md)
-
-***
+* ❓ **FAQ**: [Häufig gestellte Fragen](faq.md)***
 
 ## Änderungsprotokoll
 
 <details>
 
+<summary>Version 1.0.4</summary>
+
+#### **Veröffentlichungsdatum**: 5. Januar 2026**Neue Funktionen*** **Umschalten zwischen Bild und Metadaten**: Im Dateibrowser wurde eine Umschaltfunktion hinzugefügt, um die Metadaten des ausgewählten Bildes in einer Tabelle anstelle des Bildrasters anzuzeigen.
+* **Zoom-Schieberegler für Bildraster**: Neuer UI-Schieberegler zum Anpassen der Miniaturbildgröße (unterstützt auch STRG + Mausrad)
+* **Export-Schaltflächen für Bildraster**: Schaltflächen in der oberen Zeile zum Umschalten der Miniaturansichten von JPG zu verarbeiteten Exporten (Ziele, Reflexion, Index, LUT)
+* **Registerkarte „Karte“**: Neue interaktive 2D-Karte mit GPS-Standortmarkierungen für Bilder.
+  * Unterstützt Google Maps und ESRI-Kartenkacheln (wählt automatisch den besten Kachelservice basierend auf der Verfügbarkeit der Zoomstufe aus).
+  * Miniaturansicht bei Mauszeiger über Kartenmarkierungen.
+
+**Fehlerbehebungen*** Verbesserte Unterstützung für die Installation von Chloros auf nicht englischsprachigen Computern.
+
+</details>
+
+<details>
+
 <summary>Version 1.0.3</summary>
 
-### **Veröffentlichungsdatum**: Dezember ?, 2025
+#### **Veröffentlichungsdatum**: 20. Dezember 2025**Neue Funktionen*** Erstmalige Veröffentlichung
 
-#### Neue Funktionen
+**Verbesserungen*** Erstmalige Veröffentlichung
 
-* Erstmalige Veröffentlichung
+**Fehlerbehebungen*** Erstmalige Veröffentlichung
 
-#### Verbesserungen
-
-* Erstmalige Veröffentlichung
-
-#### Fehlerbehebungen
-
-* Erstmalige Veröffentlichung
-
-#### Bekannte Probleme
-
-* Erstmalige Veröffentlichung
+**Bekannte Probleme*** Erstmalige Veröffentlichung
 
 </details>***
 
-## Lizenzvereinbarung
-
-**Proprietäre Software** – Copyright (c) 2025 MAPIR Inc.
+## Lizenzvereinbarung**Proprietäre Software** – Copyright (c) 2025 MAPIR Inc.
 
 Die unbefugte Nutzung, Verbreitung oder Änderung ist untersagt.
 
-**Kostenlose Version**: Verfügbar für den privaten und gewerblichen Gebrauch mit eingeschränkten Funktionen.
-
-**Chloros+**: Abonnementbasierte Lizenz für erweiterte Funktionen und gewerbliche Nutzung.
-
-<figure><img src=".gitbook/assets/t3-125_2.jpg" alt=""><figcaption></figcaption></figure>
+**Kostenlose Version**: Verfügbar für den privaten und gewerblichen Gebrauch mit eingeschränkten Funktionen.**Chloros+**: Abonnementbasierte Lizenz für erweiterte Funktionen und gewerbliche Nutzung.

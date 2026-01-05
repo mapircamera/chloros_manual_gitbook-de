@@ -6,9 +6,7 @@
 
 Nach der Anmeldung werden Ihre Kontodaten angezeigt:
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
-
-## CLI-Anmeldung
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>## CLI-Anmeldung
 
 Melden Sie sich mit Ihren Chloros+-Anmeldedaten an, um die CLI-Verarbeitung zu aktivieren.
 
@@ -17,6 +15,10 @@ Melden Sie sich mit Ihren Chloros+-Anmeldedaten an, um die CLI-Verarbeitung zu a
 ```bash
 chloros-cli login <email> <password>
 ```
+
+{% hint style=&quot;info&quot; %}
+**SDK-Benutzer**: Das Python SDK bietet auch eine programmatische `logout()`-Methode zum Löschen zwischengespeicherter Anmeldedaten. Weitere Informationen finden Sie in der [Python SDK Dokumentation](api-python-sdk.md#logout).
+{% endhint %}
 
 **Beispiel:**
 
@@ -30,9 +32,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 **Ausgabe:**
 
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
-
-### Ablauf des Plans
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>### Ablauf des Plans
 
 Der Ablauf des Plans in der GUI zeigt an, wann Ihre Lizenz ungültig wird. Bei monatlichen Abonnements endet die Laufzeit am Ende des Monats. Bei Jahresabonnements endet die Laufzeit ein Jahr nach Beginn des Abonnements. Die Lizenzprüfung erfordert eine monatliche Internetverbindung zur Überprüfung, mit einer 30-tägigen Nachfrist.
 

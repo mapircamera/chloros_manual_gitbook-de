@@ -9,7 +9,7 @@ Nachdem Sie ein Projekt in Chloros erstellt oder geöffnet haben, müssen Sie al
 3. Im Dateibrowser-Fenster wird die Dateiliste Ihres Projekts angezeigt.
 
 {% Hinweis style=&quot;info&quot; %}
-**Unterstützte Dateitypen**: Chloros unterstützt RAW+JPG- und JPG-Bilddateien von MAPIR Survey3W- und Survey3N-Kameras. Es werden nur RAW+JPG empfohlen.
+**Unterstützte Dateitypen**: Chloros unterstützt RAW+JPG- und JPG-Bilddateien von MAPIR Survey3W und Survey3N Kameras. Es werden nur RAW+JPG empfohlen.
 {% endhint %}
 
 ***
@@ -22,7 +22,7 @@ Es gibt zwei Möglichkeiten, Bilder zu Ihrem Projekt hinzuzufügen:
 
 Verwenden Sie diese Option, um einzelne Bilddateien oder eine kleine Auswahl von Dateien zu importieren.
 
-1. Klicken Sie oben im Dateibrowser-Fenster auf die Schaltfläche **„Dateien hinzufügen”**.
+1. Klicken Sie auf die Schaltfläche **„Dateien hinzufügen”** <img src="../.gitbook/assets/image.png" alt="" data-size="line"> oben im Dateibrowser-Fenster.
 2. Navigieren Sie zu dem Ordner, der Ihre Bilder enthält.
 3. Wählen Sie eine oder mehrere Bilddateien aus (halten Sie **Strg** gedrückt, um mehrere Dateien auszuwählen).
 4. Klicken Sie auf **„Öffnen”**, um die ausgewählten Dateien zu importieren.
@@ -31,30 +31,23 @@ Verwenden Sie diese Option, um einzelne Bilddateien oder eine kleine Auswahl von
 
 Verwenden Sie diese Option, um alle Bilder aus einem Ordner auf einmal zu importieren.
 
-1. Klicken Sie oben im Dateibrowser-Fenster auf die Schaltfläche **„Ordner hinzufügen“**.
-2. Navigieren Sie zu dem Ordner, der Ihre Aufnahmen enthält, und wählen Sie ihn aus.
-3. Klicken Sie auf **„Ordner auswählen“**, um alle unterstützten Bilder aus diesem Ordner zu importieren.
-
-***
+1. Klicken Sie auf die Schaltfläche **„Ordner hinzufügen”** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> oben im Dateibrowser-Fenster.
+2. Navigieren Sie zu dem Ordner, der Ihre Bilder enthält, und wählen Sie ihn aus.
+3. Klicken Sie auf **„Ordner auswählen”**, um alle unterstützten Bilder aus diesem Ordner zu importieren.***
 
 ## Informationen zur Dateibrowser-Tabelle
 
 Nach dem Import werden die Bilder in einer Tabelle mit den folgenden Spalten angezeigt:
 
-### Miniaturansicht
-
-* Kleine Vorschau jedes Bildes.
-* Klicken Sie auf die Miniaturansicht, um das vollständige Bild im Hauptvorschau-Bereich anzuzeigen.
-
 ### Dateiname
 
-* Originaldateiname der Kamera.
-* Behält die Namenskonvention der Kamera bei (z. B. IMG\_0001.RAW).
+* Originaldateiname der Kamera
+* Behält die Namenskonvention der Kamera bei (z. B. IMG\_0001.RAW)
 
 ### Zeitstempel
 
-* Datum und Uhrzeit der Aufnahme.
-* Aus den EXIF-Metadaten des Bildes extrahiert.
+* Datum und Uhrzeit der Bildaufnahme
+* Aus den EXIF-Metadaten des Bildes extrahiert
 * Wird für die PPK-Synchronisation und die Erkennung von Kalibrierungszielen verwendet
 
 ### Kameramodell
@@ -73,27 +66,25 @@ Nach dem Import werden die Bilder in einer Tabelle mit den folgenden Spalten ang
 
 ## Verwalten von Dateien in Ihrem Projekt
 
-### Dateien entfernen
+### Entfernen von Dateien
 
 So entfernen Sie unerwünschte Bilder aus Ihrem Projekt:
 
 1. Wählen Sie ein oder mehrere Bilder in der Dateibrowser-Tabelle aus.
-2. Klicken Sie auf die Schaltfläche **„Ausgewählte entfernen“**.
+2. Klicken Sie auf die Schaltfläche **„Ausgewählte entfernen“** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> .
 3. Bestätigen Sie das Entfernen (die Dateien werden nicht von der Festplatte gelöscht, sondern nur aus dem Projekt entfernt).
 
 ### Sortieren und Filtern
 
 * **Nach Spalte sortieren**: Klicken Sie auf eine beliebige Spaltenüberschrift, um die Bilder zu sortieren.
-* **Sortieren nach Zeitstempel**: Nützlich zum Organisieren chronologischer Aufnahmesequenzen.
-* **Filter nach Kameramodell**: Gruppieren Sie Bilder nach Kameratyp, wenn Sie mehrere Kameras verwenden.
-
-***
+* **Nach Zeitstempel sortieren**: Nützlich zum Organisieren chronologischer Aufnahmesequenzen.
+* **Filter nach Kameramodell**: Gruppieren Sie Bilder nach Kameratyp, wenn Sie mehrere Kameras verwenden.***
 
 ## Bildvorschau
 
 ### Vollbild anzeigen
 
-Klicken Sie auf eine beliebige Bildminiaturansicht im Dateibrowser, um sie im Hauptvorschau-Bereich anzuzeigen:
+Klicken Sie auf eine beliebige Bildminiatur im Dateibrowser, um sie im Hauptvorschau-Bereich anzuzeigen:
 
 1. Das Bild wird im mittleren Vorschaufenster angezeigt.
 2. Verwenden Sie die Zoomsteuerung, um Bilddetails zu überprüfen.
@@ -104,9 +95,7 @@ Klicken Sie auf eine beliebige Bildminiaturansicht im Dateibrowser, um sie im Ha
 * **Vorheriges Bild**: Klicken Sie auf den Pfeil nach links oder drücken Sie die Taste ←.
 * **Nächstes Bild**: Klicken Sie auf den Pfeil nach rechts oder drücken Sie die Taste →.
 * **Vergrößern/Verkleinern**: Verwenden Sie das Mausrad oder die Zoomtasten.
-* **Schwenken**: Klicken und ziehen Sie bei vergrößertem Bild auf das Bild.
-
-***
+* **Schwenken**: Klicken und ziehen Sie bei vergrößertem Bild auf das Bild.***
 
 ## Umgang mit doppelten Dateien
 
@@ -128,12 +117,10 @@ Wenn Ihr Projekt Bilder von mehreren MAPIR-Kameras enthält:
 
 1. Chloros erkennt automatisch jedes Kameramodell.
 2. Jeder Kameratyp wird mit dem entsprechenden Kalibrierungsprofil verarbeitet.
-3. Der Dateibrowser zeigt das Kameramodell in der Spalte „Kameramodell” an.
+3. Der Dateibrowser zeigt das Kameramodell in der Spalte „Kameramodell“ an.
 4. Die Verarbeitung wendet die richtigen Einstellungen für jeden Kameratyp an.
 
-**Beispielszenario**: Survey3W RGN + Survey3N OCN Dual-Kamera-Konfiguration.
-
-***
+**Beispielszenario**: Survey3W RGN + Survey3N OCN Dual-Kamera-Konfiguration.***
 
 ## Bewährte Verfahren
 
@@ -154,7 +141,7 @@ Wenn Ihr Projekt Bilder von mehreren MAPIR-Kameras enthält:
 * Fügen Sie immer 1–2 Kalibrierungszielbilder pro Sitzung hinzu.
 * Nehmen Sie die Ziele vor und nach der Aufnahmesitzung auf.
 * Platzieren Sie die Ziele unter den gleichen Lichtbedingungen wie im Aufnahmebereich.
-* Markieren Sie die Zielbilder mit dem Kontrollkästchen „Ziel“, um die Verarbeitung zu beschleunigen.
+* Markieren Sie Zielbilder mit dem Kontrollkästchen „Ziel“, um die Verarbeitung zu beschleunigen.
 
 ***
 
@@ -187,9 +174,7 @@ Wenn Ihr Projekt Bilder von mehreren MAPIR-Kameras enthält:
 * Kamera-Uhr nicht richtig eingestellt
 * EXIF-Daten durch externe Software entfernt
 
-**Lösung**: Überprüfen Sie, ob die Zeiteinstellungen der Kamera während der Aufnahme korrekt waren.
-
-***
+**Lösung**: Überprüfen Sie, ob die Zeiteinstellungen der Kamera während der Aufnahme korrekt waren.***
 
 ## Nächste Schritte
 
@@ -199,6 +184,6 @@ Sobald Ihre Dateien importiert sind:
 2. **Überprüfen Sie die Kameramodelle** – Überprüfen Sie die korrekte Kameraerkennung.
 3. **Markieren Sie die Zielbilder** – siehe [Auswählen von Zielbildern](choosing-target-images.md).
 4. **Passen Sie die Einstellungen an** – konfigurieren Sie die Verarbeitungsoptionen in den [Projekteinstellungen](adjusting-project-settings.md).
-5. **Verarbeitung starten** – Siehe [Starten der Verarbeitung](starting-the-processing.md)
+5. **Verarbeitung starten** – Siehe [Verarbeitung starten](starting-the-processing.md)
 
-Ausführliche Informationen zur Projektkonfiguration finden Sie unter [Anpassen der Projekteinstellungen](adjusting-project-settings.md).
+Ausführliche Informationen zur Projektkonfiguration finden Sie unter [Projekteinstellungen anpassen](adjusting-project-settings.md).

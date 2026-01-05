@@ -26,7 +26,7 @@ Bevor Sie auf die Schaltfläche „Start“ klicken, überprüfen Sie, ob alles 
 Die Schaltfläche „Start/Wiedergabe“ befindet sich in der oberen Kopfzeile von Chloros:
 
 * Position: Oben in der Mitte des Fensters
-* Symbol: **Schaltfläche „Wiedergabe/Start“** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">
+* Symbol: **Schaltfläche „Wiedergabe/Start“** <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line">
 * Status: Die Schaltfläche ist aktiviert (hell), wenn die Verarbeitung bereit ist
 
 ### Zum Starten klicken
@@ -58,17 +58,15 @@ Chloros arbeitet je nach Ihrer Lizenz in zwei verschiedenen Verarbeitungsmodi:
 
 **Der Fortschrittsbalken zeigt 2 Phasen an:**
 
-1. **Zielerkennung** – Scannen nach Kalibrierungszielen
-2. **Verarbeitung** – Anwenden der Kalibrierung und Exportieren der Bilder
-
-**Verarbeitungszeit:**
+1.**Zielerkennung** – Scannen nach Kalibrierungszielen
+2. **Verarbeitung** – Anwenden der Kalibrierung und Exportieren der Bilder**Verarbeitungszeit:**
 
 * Deutlich langsamer als der parallele Modus von Chloros+
 * Geeignet für kleine bis mittlere Datensätze (&lt; 200 Bilder)
 
-### Modus Chloros+ (Parallelverarbeitung)
+### Chloros+-Modus (parallele Verarbeitung)
 
-**Erfordert eine Lizenz für Chloros+**
+**Erfordert eine Chloros+-Lizenz**
 
 **So funktioniert es:**
 
@@ -79,25 +77,19 @@ Chloros arbeitet je nach Ihrer Lizenz in zwei verschiedenen Verarbeitungsmodi:
 
 **Der Fortschrittsbalken zeigt 4 Phasen an:**
 
-1. **Erkennen** – Kalibrierungsziele finden
+1.**Erkennen** – Kalibrierungsziele finden
 2. **Analysieren** – Bildmetadaten untersuchen und Pipeline vorbereiten
 3. **Kalibrieren** – Korrekturen und Kalibrierungen anwenden
-4. **Exportieren** – Verarbeitete Bilder und Indizes speichern
+4. **Exportieren** – Verarbeitete Bilder und Indizes speichern**Interaktion mit der Fortschrittsanzeige:*** **Bewegen Sie die Maus** über die Leiste, um ein detailliertes Dropdown-Fenster mit den 4 Phasen anzuzeigen.
+* **Klicken Sie** auf die Fortschrittsanzeige, um das Dropdown-Fenster an dieser Stelle einzufrieren.
+* **Klicken Sie erneut**, um das Fenster wieder freizugeben und auszublenden.**Verarbeitungszeit:**
 
-**Interaktion mit der Fortschrittsanzeige:**
-
-* **Bewegen Sie die Maus** über die Leiste, um ein detailliertes Dropdown-Fenster mit den 4 Phasen anzuzeigen
-* **Klicken Sie** auf die Fortschrittsanzeige, um das Dropdown-Fenster an dieser Stelle einzufrieren
-* **Klicken Sie erneut**, um das Fenster wieder zu aktivieren und auszublenden.
-
-**Verarbeitungszeit:**
-
-* Deutlich schneller als im freien Modus.
-* Skaliert mit der Anzahl der CPU-Kerne.
-* GPU-Beschleunigung verbessert die Geschwindigkeit zusätzlich.
+* Deutlich schneller als im freien Modus
+* Skaliert mit der Anzahl der CPU-Kerne
+* GPU-Beschleunigung verbessert die Geschwindigkeit zusätzlich
 
 {% hint style=&quot;info&quot; %}
-**Chloros+ Geschwindigkeit**: Die parallele Verarbeitung kann bei großen Datensätzen 5-10 Mal schneller sein als der sequentielle Modus. Ein Projekt mit 500 Bildern, das im kostenlosen Modus 2 Stunden dauert, kann mit Chloros+ in 15-20 Minuten abgeschlossen werden.
+**Chloros+ Geschwindigkeit**: Die parallele Verarbeitung kann bei großen Datensätzen 5-10 Mal schneller sein als der sequenzielle Modus. Ein Projekt mit 500 Bildern, das im kostenlosen Modus 2 Stunden dauert, kann mit Chloros+ in 15-20 Minuten abgeschlossen werden.
 {% endhint %}
 
 ***
@@ -121,15 +113,13 @@ Chloros arbeitet je nach Ihrer Lizenz in zwei verschiedenen Verarbeitungsmodi:
 
 * Konvertiert RAW-Bayer-Musterdaten in vollständige RGB-Bilder
 * Wendet einen hochwertigen Demosaicing-Algorithmus an
-* Erhält maximale Bildqualität und Detailgenauigkeit
+* Erhält maximale Bildqualität und Details
 
 **Dauer:** Variiert je nach Bildanzahl und CPU-Geschwindigkeit
 
 ### Stufe 3: Kalibrierung
 
-**Was Chloros leistet:**
-
-* **Vignettierungskorrektur**: Entfernt die Verdunkelung der Linsen an den Rändern
+**Was Chloros leistet:*** **Vignettierungskorrektur**: Entfernt die Verdunkelung des Objektivs an den Rändern
 * **Reflexionskalibrierung**: Normalisiert anhand von Zielreflexionswerten
 * Wendet Korrekturen auf alle Bänder/Kanäle an
 * Verwendet für jedes Bild das geeignete Kalibrierungsziel basierend auf dem Zeitstempel
@@ -155,9 +145,7 @@ Chloros arbeitet je nach Ihrer Lizenz in zwei verschiedenen Verarbeitungsmodi:
 * Schreibt Dateien in Unterordner des Kameramodells
 * Behält ursprüngliche Dateinamen mit Suffixen bei
 
-**Dauer:** Variiert je nach Exportformat und Dateigröße
-
-***
+**Dauer:** Variiert je nach Exportformat und Dateigröße***
 
 ## Verarbeitungsverhalten
 
@@ -197,9 +185,7 @@ Nach dem Start läuft die gesamte Pipeline automatisch ab:
 * Teilweise Ergebnisse werden nicht gespeichert.
 * Bei Abbruch muss von vorne begonnen werden.
 
-**Planungstipp:** Bei sehr großen Projekten sollten Sie eine Verarbeitung in Stapeln oder die Verwendung von CLI in Betracht ziehen, um eine bessere Kontrolle zu erzielen.
-
-***
+**Planungstipp:** Bei sehr großen Projekten sollten Sie eine Verarbeitung in Stapeln oder die Verwendung von CLI in Betracht ziehen, um eine bessere Kontrolle zu haben.***
 
 ## Überwachen Ihrer Verarbeitung
 
@@ -236,12 +222,12 @@ Wenn Sie die Verarbeitung stoppen müssen:
 
 **Nach dem Abbruch:**
 
-* Überprüfen und beheben Sie alle Probleme.
-* Passen Sie die Einstellungen nach Bedarf an.
-* Starten Sie die Verarbeitung von vorne.
-* Für ein optimales Erlebnis schließen Sie Chloros vollständig und starten Sie es neu.
+* Überprüfen und beheben Sie alle Probleme
+* Passen Sie die Einstellungen nach Bedarf an
+* Starten Sie die Verarbeitung von vorne
+* Für ein optimales Ergebnis schließen Sie Chloros vollständig und starten Sie es neu
 
-{% hint style=&quot;warning&quot; %}
+{% Hinweis style=&quot;warning&quot; %}
 **Keine Teilergebnisse**: Durch das Abbrechen werden alle Fortschritte verworfen. Chloros speichert keine teilweise verarbeiteten Bilder.
 {% endhint %}
 
@@ -256,13 +242,13 @@ Die tatsächliche Verarbeitungszeit hängt stark von folgenden Faktoren ab:
 * Eingabeformat (RAW oder JPG)
 * Verarbeitungsmodus (Free oder Chloros+)
 * CPU-Geschwindigkeit und Anzahl der Kerne
-* Verfügbarkeit der GPU (nur Chloros+)
+* Verfügbarkeit einer GPU (nur Chloros+)
 * Anzahl der zu berechnenden Indizes
 * Komplexität des Exportformats
 
 ### Grobe Schätzungen (Chloros+, 12-MP-Bilder, moderne CPU)
 
-| Anzahl der Bilder | Kostenloser Modus | Chloros+ (CPU) | Chloros+ (GPU) |
+| Bildanzahl | Kostenloser Modus | Chloros+ (CPU) | Chloros+ (GPU) |
 | ----------- | --------- | -------------- | -------------- |
 | 50 Bilder   | 15–20 Min. | 5–8 Min.        | 3–5 Min.        |
 | 100 Bilder  | 30–40 Min. | 10–15 Min.      | 5–8 Min.        |
@@ -270,7 +256,7 @@ Die tatsächliche Verarbeitungszeit hängt stark von folgenden Faktoren ab:
 | 500 Bilder  | 2–3 Std.   | 45–60 Min.      | 20–30 Min.      |
 | 1000 Bilder | 4–6 Std.   | 1,5–2 Std.      | 40–60 Min.      |
 
-{% hint style=&quot;info&quot; %}
+{% Hinweis style=&quot;info&quot; %}
 **Erster Durchlauf**: Die erste Verarbeitung kann länger dauern, da Chloros Caches und Profile erstellt. Die nachfolgende Verarbeitung ähnlicher Datensätze erfolgt schneller.
 {% endhint %}
 
