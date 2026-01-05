@@ -88,7 +88,7 @@ Die Registerkarte „Karte“ unterstützt zwei Kachelanbieter für die Hintergr
 
 Sie können den Kartenschicht-Typ auswählen (von links nach rechts):
 
- <img src="../.gitbook/assets/image (23).png" alt="" data-size="original">### Gelände
+ <img src="../.gitbook/assets/image (23).png" alt="" data-size="line">### Gelände
 
 Zeigt Höhenprofile und Kartenkacheln mit Details (Straßen usw.) an.
 
