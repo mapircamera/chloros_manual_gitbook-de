@@ -1,14 +1,14 @@
 # Hinzufügen von Dateien zu einem Projekt
 
-Nachdem Sie ein Projekt in Chloros erstellt oder geöffnet haben, müssen Sie als Nächstes Ihre Multispektralbilder hinzufügen, um mit der Verarbeitung zu beginnen. Über die Registerkarte „Dateibrowser“<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> erleichtert das Importieren von Bildern und die Verwaltung Ihres Datensatzes.
+Nachdem Sie ein Projekt in Chloros erstellt oder geöffnet haben, müssen Sie als Nächstes Ihre Multispektralbilder hinzufügen, um mit der Verarbeitung zu beginnen. Über den Dateibrowser<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> erleichtert das Importieren von Bildern und die Verwaltung Ihres Datensatzes.
 
-## Auf den Dateibrowser zugreifen
+## Aufrufen des Dateibrowsers
 
 1. Öffnen oder erstellen Sie ein Projekt in Chloros
 2. Klicken Sie auf das Symbol **Dateibrowser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> in der linken Seitenleiste.
 3. Im Dateibrowser-Fenster wird die Dateiliste Ihres Projekts angezeigt.
 
-{% Hinweis style=&quot;info&quot; %}
+{% hint style="info" %}
 **Unterstützte Dateitypen**: Chloros unterstützt RAW+JPG- und JPG-Bilddateien von MAPIR Survey3W und Survey3N Kameras. Es werden nur RAW+JPG empfohlen.
 {% endhint %}
 
@@ -32,12 +32,14 @@ Verwenden Sie diese Option, um einzelne Bilddateien oder eine kleine Auswahl von
 Verwenden Sie diese Option, um alle Bilder aus einem Ordner auf einmal zu importieren.
 
 1. Klicken Sie auf die Schaltfläche **„Ordner hinzufügen”** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> oben im Dateibrowser-Fenster.
-2. Navigieren Sie zu dem Ordner, der Ihre Bilder enthält, und wählen Sie ihn aus.
-3. Klicken Sie auf **„Ordner auswählen”**, um alle unterstützten Bilder aus diesem Ordner zu importieren.***
+2. Navigieren Sie zu dem Ordner, der Ihre Bilder aus der Aufnahmesitzung enthält, und wählen Sie ihn aus.
+3. Klicken Sie auf **„Ordner auswählen”**, um alle unterstützten Bilder aus diesem Ordner zu importieren.
+
+***
 
 ## Informationen zur Dateibrowser-Tabelle
 
-Nach dem Import werden die Bilder in einer Tabelle mit den folgenden Spalten angezeigt:
+Nach dem Importieren werden die Bilder in einer Tabelle mit den folgenden Spalten angezeigt:
 
 ### Dateiname
 
@@ -62,6 +64,12 @@ Nach dem Import werden die Bilder in einer Tabelle mit den folgenden Spalten ang
 * Beschleunigt die Zielerkennung während der Verarbeitung erheblich
 * Weitere Informationen finden Sie unter [Auswählen von Zielbildern](choosing-target-images.md)
 
+### Anzeigen von Bildmetadaten
+
+Wenn Sie auf die Umschaltfläche oben rechts über der Tabelle klicken, werden die Metadaten des ausgewählten Bildes im Bildrasterbereich angezeigt.
+
+<figure><img src="../.gitbook/assets/chloros_grid_meta.gif" alt=""><figcaption></figcaption></figure>
+
 ***
 
 ## Verwalten von Dateien in Ihrem Projekt
@@ -78,7 +86,9 @@ So entfernen Sie unerwünschte Bilder aus Ihrem Projekt:
 
 * **Nach Spalte sortieren**: Klicken Sie auf eine beliebige Spaltenüberschrift, um die Bilder zu sortieren.
 * **Nach Zeitstempel sortieren**: Nützlich zum Organisieren chronologischer Aufnahmesequenzen.
-* **Filter nach Kameramodell**: Gruppieren Sie Bilder nach Kameratyp, wenn Sie mehrere Kameras verwenden.***
+* **Kamera-Modellfilter**: Gruppieren Sie Bilder nach Kameratyp, wenn Sie mehrere Kameras verwenden.
+
+***
 
 ## Bildvorschau
 
@@ -93,9 +103,11 @@ Klicken Sie auf eine beliebige Bildminiatur im Dateibrowser, um sie im Hauptvors
 ### Schnellnavigation
 
 * **Vorheriges Bild**: Klicken Sie auf den Pfeil nach links oder drücken Sie die Taste ←.
-* **Nächstes Bild**: Klicken Sie auf den Pfeil nach rechts oder drücken Sie die Taste →.
+* **Nächstes Bild**: Klicken Sie auf den rechten Pfeil oder drücken Sie die Taste →.
 * **Vergrößern/Verkleinern**: Verwenden Sie das Mausrad oder die Zoomtasten.
-* **Schwenken**: Klicken und ziehen Sie bei vergrößertem Bild auf das Bild.***
+* **Schwenken**: Klicken und ziehen Sie bei vergrößertem Bild auf das Bild.
+
+***
 
 ## Umgang mit doppelten Dateien
 
@@ -105,8 +117,8 @@ Chloros erkennt und ignoriert automatisch doppelte Dateien:
 * Verhindert versehentliche Doppelverarbeitung.
 * Bei Erkennung von Duplikaten wird eine Warnmeldung angezeigt.
 
-{% hint style=&quot;warning&quot; %}
-**Wichtig**: Benennen Sie Ihre Originalbilddateien vor dem Import nicht um und nehmen Sie keine Änderungen daran vor. Chloros benötigt die Originaldateinamen und Metadaten für eine ordnungsgemäße Verarbeitung.
+{% hint style="warning" %}
+**Wichtig**: Benennen Sie Ihre Originalbilddateien vor dem Import nicht um und nehmen Sie keine Änderungen daran vor. Chloros benötigt die Originaldateinamen und Metadaten für die korrekte Verarbeitung.
 {% endhint %}
 
 ***
@@ -115,12 +127,14 @@ Chloros erkennt und ignoriert automatisch doppelte Dateien:
 
 Wenn Ihr Projekt Bilder von mehreren MAPIR-Kameras enthält:
 
-1. Chloros erkennt automatisch jedes Kameramodell.
-2. Jeder Kameratyp wird mit dem entsprechenden Kalibrierungsprofil verarbeitet.
-3. Der Dateibrowser zeigt das Kameramodell in der Spalte „Kameramodell“ an.
-4. Die Verarbeitung wendet die richtigen Einstellungen für jeden Kameratyp an.
+1. Chloros erkennt automatisch jedes Kameramodell
+2. Jeder Kameratyp wird mit dem entsprechenden Kalibrierungsprofil verarbeitet
+3. Der Dateibrowser zeigt das Kameramodell in der Spalte „Kameramodell” an.
+4. Bei der Verarbeitung werden die richtigen Einstellungen für jeden Kameratyp angewendet.
 
-**Beispielszenario**: Survey3W RGN + Survey3N OCN Dual-Kamera-Konfiguration.***
+**Beispielszenario**: Survey3W RGN + Survey3N OCN Dual-Kamera-Konfiguration
+
+***
 
 ## Bewährte Verfahren
 
@@ -141,7 +155,7 @@ Wenn Ihr Projekt Bilder von mehreren MAPIR-Kameras enthält:
 * Fügen Sie immer 1–2 Kalibrierungszielbilder pro Sitzung hinzu.
 * Nehmen Sie die Ziele vor und nach der Aufnahmesitzung auf.
 * Platzieren Sie die Ziele unter den gleichen Lichtbedingungen wie im Aufnahmebereich.
-* Markieren Sie Zielbilder mit dem Kontrollkästchen „Ziel“, um die Verarbeitung zu beschleunigen.
+* Markieren Sie die Zielbilder mit dem Kontrollkästchen „Ziel“, um die Verarbeitung zu beschleunigen.
 
 ***
 
@@ -162,7 +176,7 @@ Wenn Ihr Projekt Bilder von mehreren MAPIR-Kameras enthält:
 **Mögliche Ursachen:**
 
 * Geänderte EXIF-Metadaten
-* Mit externer Software bearbeitete Bilder
+* Bilder wurden in einer externen Software bearbeitet
 * Unvollständige Dateiübertragung
 
 **Lösung**: Importieren Sie die ursprünglichen, unveränderten Dateien erneut von der Kamera/SD-Karte.
@@ -174,16 +188,18 @@ Wenn Ihr Projekt Bilder von mehreren MAPIR-Kameras enthält:
 * Kamera-Uhr nicht richtig eingestellt
 * EXIF-Daten durch externe Software entfernt
 
-**Lösung**: Überprüfen Sie, ob die Zeiteinstellungen der Kamera während der Aufnahme korrekt waren.***
+**Lösung**: Überprüfen Sie, ob die Zeiteinstellungen der Kamera während der Aufnahme korrekt waren.
+
+***
 
 ## Nächste Schritte
 
 Sobald Ihre Dateien importiert sind:
 
 1. **Überprüfen Sie die Dateiliste** – Stellen Sie sicher, dass alle Bilder korrekt geladen wurden.
-2. **Überprüfen Sie die Kameramodelle** – Überprüfen Sie die korrekte Kameraerkennung.
-3. **Markieren Sie die Zielbilder** – siehe [Auswählen von Zielbildern](choosing-target-images.md).
-4. **Passen Sie die Einstellungen an** – konfigurieren Sie die Verarbeitungsoptionen in den [Projekteinstellungen](adjusting-project-settings.md).
-5. **Verarbeitung starten** – Siehe [Verarbeitung starten](starting-the-processing.md)
+2. **Überprüfen Sie die Kameramodelle** – Vergewissern Sie sich, dass die Kameraerkennung korrekt ist.
+3. **Markieren Sie die Zielbilder** – Siehe [Auswählen von Zielbildern](choosing-target-images.md)
+4. **Passen Sie die Einstellungen an** – Konfigurieren Sie die Verarbeitungsoptionen unter [Projekteinstellungen](adjusting-project-settings.md)
+5. **Starten Sie die Verarbeitung** – Siehe [Starten der Verarbeitung](starting-the-processing.md)
 
-Ausführliche Informationen zur Projektkonfiguration finden Sie unter [Projekteinstellungen anpassen](adjusting-project-settings.md).
+Ausführliche Informationen zur Projektkonfiguration finden Sie unter [Anpassen der Projekteinstellungen](adjusting-project-settings.md).

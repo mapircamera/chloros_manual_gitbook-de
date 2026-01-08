@@ -31,7 +31,7 @@ Der größte Teil des Bildschirms zeigt Ihr Bild an:
 
 * **Volle Auflösung**: Bilder werden in ihrer nativen Auflösung angezeigt.
 * **Zoombar**: Verwenden Sie die Steuerelemente oder das Mausrad, um zu zoomen
-* **Verschiebbar**: Klicken und ziehen Sie, um sich beim Zoomen zu bewegen
+* **Verschiebbar**: Klicken und ziehen Sie, um sich im gezoomten Bild zu bewegen
 * **Seitenverhältnis beibehalten**: Bilder werden proportional skaliert
 
 ***
@@ -64,51 +64,47 @@ Passen Sie die Vergrößerung an, um Bilddetails zu betrachten:
 * Drücken Sie die Taste **−** (Minus).
 * Scrollen Sie mit dem Mausrad **nach unten**.
 
-**An Bildschirm anpassen:**
+#### Verschieben beim Zoomen
 
-* Klicken Sie auf die Schaltfläche **↔** (Anpassen).
-* Drücken Sie die Taste **0** (Null).
-* Doppelklicken Sie auf das Bild.
-
-#### Schwenken bei Vergrößerung
-
-Bei Vergrößerung über die Bildschirmgröße hinaus:
+Wenn Sie über die Bildschirmgröße hinaus zoomen:
 
 1. Bewegen Sie den Mauszeiger über das Bild.
 2. Klicken Sie und **halten Sie die linke Maustaste gedrückt**.
-3. **Ziehen** Sie, um das Bild zu verschieben
-4. Lassen Sie die Taste los, um das Verschieben zu beenden
+3. **Ziehen** Sie, um das Bild zu verschieben.
+4. Lassen Sie die Taste los, um das Verschieben zu beenden.
 
-**Alternative**: Verwenden Sie die Pfeiltasten, um in kleinen Schritten zu verschieben
+**Alternative**: Verwenden Sie die Pfeiltasten, um in kleinen Schritten zu verschieben.
 
 ***
 
-## Pixelwertprüfung
+## Überprüfen der Pixelwerte
 
-### Anzeigen der Pixelwerte am Cursor
+### Pixelwerte am Cursor anzeigen
 
 Wenn Sie den Mauszeiger über das Bild bewegen, werden die Pixelwerte in Echtzeit angezeigt:
 
 **Anzeigeort des Werts:**
 
-* **Gleitkommazahl und rote Linie in der Index-LUT-Gradientenlegende auf der rechten Seite**
-* **Bei weiterer Vergrößerung: Gleitkommawert in der Nähe des Cursors und hervorgehobenes Pixel**
+* **Gleitkomma und rote Linie in der Index-LUT-Gradientenlegende auf der rechten Seite**
+* **Bei weiterem Vergrößern: Gleitkommawert in der Nähe des Cursors und hervorgehobenes Pixel**
 * Zeigt Werte für Pixel **unter dem Cursor oder hervorgehoben** an
-* Wird aktualisiert, wenn Sie die Maus bewegen
+* Aktualisierung beim Bewegen der Maus
 
 ***
 
 ## Bildtypen, die Sie anzeigen können
 
-### Originalbilder (vor der Verarbeitung)
+### JPG
 
-**RAW- und JPG-Bilder von der Kamera:**
+**JPG-Bilder von der Kamera:**
 
-* Anzeige der RAW-Daten als Vorschau
+* Anzeige der JPG-Daten als Vorschau
 * Anzeige der ursprünglichen, unkorrigierten Werte
 * Nützlich zur Überprüfung der Bildqualität vor der Verarbeitung
 
-### Kalibrierte Reflexionsbilder
+### RAW (Original)
+
+### RAW (Reflexionsgrad)
 
 **Nach der Verarbeitung:**
 
@@ -117,7 +113,7 @@ Wenn Sie den Mauszeiger über das Bild bewegen, werden die Pixelwerte in Echtzei
 * Multiband TIFF (Red, Green, NIR usw.)
 * Wissenschaftliche Daten bereit für die Analyse
 
-### Indexbilder
+### RAW (Index)
 
 **NDVI, NDRE, GNDVI usw. (\_NDVI.tif-Dateien):**
 
@@ -134,7 +130,7 @@ Wenden Sie multispektrale Indizes und Farblookup-Tabellen an:
 
 1. Suchen Sie **Index/LUT Sandbox** in der **Bildanzeige** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> Seitenleiste
 2. Wählen Sie den Vegetationsindex (NDVI, NDRE usw.)
-3. Wählen Sie eine multispektrale Formel oder erstellen Sie Ihre eigene benutzerdefinierte Formel (nur Chloros+)
+3. Wählen Sie eine multispektrale Formel oder erstellen Sie eine eigene benutzerdefinierte Formel (nur Chloros+)
 4. Wenden Sie einen Farb-LUT-Farbverlauf zur Visualisierung an
 5. Passen Sie Wertebereiche und Schwellenwerte an
 
@@ -155,19 +151,7 @@ Ausführliche Anweisungen finden Sie unter [Index/LUT-Sandbox](index-lut-sandbox
 
 * **+** oder **=**: Vergrößern
 * **−**: Verkleinern
-* **0** (Null): An Bildschirm anpassen
 * **Mausrad**: Vergrößern/Verkleinern
-
-### Ansichtssteuerung
-
-* **P**: Pixelprozentmodus umschalten
-* **L**: Ebenenbedienfeld umschalten
-* **Esc**: Vollbildmodus schließen oder zum Dateibrowser zurückkehren
-
-### Sonstiges
-
-* **Strg+S**: Aktuelles Bild speichern
-* **F**: Vollbildmodus (falls verfügbar)
 
 ***
 
@@ -178,7 +162,7 @@ Ausführliche Anweisungen finden Sie unter [Index/LUT-Sandbox](index-lut-sandbox
 1. Öffnen Sie NDVI oder ein anderes Indexbild.
 2. Überprüfen Sie die Vegetationsflächen:
    * **NDVI**: Sollte für gesunde Pflanzen einen Wert zwischen 0,4 und 0,9 anzeigen.
-   * **NDRE**: Höhere Werte für kräftiges Wachstum
+   * **NDRE**: Höhere Werte für kräftiges Wachstum.
    * **GNDVI**: Ähnlich wie NDVI, jedoch chlorophyllsensitiv
 3. Nichtvegetation überprüfen:
    * **Boden**: Nahe 0 oder leicht negativ
