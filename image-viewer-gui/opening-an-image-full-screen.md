@@ -32,9 +32,7 @@ Der größte Teil des Bildschirms zeigt Ihr Bild an:
 * **Volle Auflösung**: Bilder werden in ihrer nativen Auflösung angezeigt.
 * **Zoombar**: Verwenden Sie die Steuerelemente oder das Mausrad, um zu zoomen
 * **Verschiebbar**: Klicken und ziehen Sie, um sich im gezoomten Bild zu bewegen
-* **Seitenverhältnis beibehalten**: Bilder werden proportional skaliert
-
-***
+* **Seitenverhältnis beibehalten**: Bilder werden proportional skaliert***
 
 ## Anzeigeoptionen
 
@@ -42,25 +40,19 @@ Der größte Teil des Bildschirms zeigt Ihr Bild an:
 
 #### Durch Bilder blättern
 
-Navigieren Sie mit Tastaturkürzeln oder Schaltflächen durch Ihren Bildsatz:
+Navigieren Sie mit Tastenkombinationen oder Schaltflächen durch Ihren Bildsatz:
 
-* **Nächstes Bild**: Klicken Sie auf die Schaltfläche → oder drücken Sie die Taste **→** (Pfeil nach rechts).
-* **Vorheriges Bild**: Klicken Sie auf die Schaltfläche ← oder drücken Sie die Taste **←** (Pfeil nach links).
+* **Nächstes Bild**: Klicken Sie auf die Schaltfläche → oder drücken Sie die Taste**→** (Pfeil nach rechts).
+* **Vorheriges Bild**: Klicken Sie auf die Schaltfläche ← oder drücken Sie die Taste**←** (Pfeil nach links).
 * **Zu einem bestimmten Bild springen**: Kehren Sie zum Dateibrowser zurück und klicken Sie auf die gewünschte Miniaturansicht.
 
 #### Zoomsteuerung
 
 Passen Sie die Vergrößerung an, um Bilddetails zu betrachten:
 
-**Vergrößern:**
-
-* Klicken Sie auf die Schaltfläche **+** (Plus).
-* Drücken Sie die Taste **+** oder **=**.
-* Scrollen Sie mit dem Mausrad **nach oben**.
-
-**Verkleinern:**
-
-* Klicken Sie auf die Schaltfläche **−** (Minus).
+**Vergrößern:*** Klicken Sie auf die Schaltfläche **+** (Plus).
+* Drücken Sie die Taste **+**oder**=**.
+* Scrollen Sie mit dem Mausrad **nach oben**.**Verkleinern:*** Klicken Sie auf die Schaltfläche **−** (Minus).
 * Drücken Sie die Taste **−** (Minus).
 * Scrollen Sie mit dem Mausrad **nach unten**.
 
@@ -73,21 +65,13 @@ Wenn Sie über die Bildschirmgröße hinaus zoomen:
 3. **Ziehen** Sie, um das Bild zu verschieben.
 4. Lassen Sie die Taste los, um das Verschieben zu beenden.
 
-**Alternative**: Verwenden Sie die Pfeiltasten, um in kleinen Schritten zu verschieben.
-
-***
+**Alternative**: Verwenden Sie die Pfeiltasten, um in kleinen Schritten zu verschieben.***
 
 ## Überprüfen der Pixelwerte
 
 ### Pixelwerte am Cursor anzeigen
 
-Wenn Sie den Mauszeiger über das Bild bewegen, werden die Pixelwerte in Echtzeit angezeigt:
-
-**Anzeigeort des Werts:**
-
-* **Gleitkomma und rote Linie in der Index-LUT-Gradientenlegende auf der rechten Seite**
-* **Bei weiterem Vergrößern: Gleitkommawert in der Nähe des Cursors und hervorgehobenes Pixel**
-* Zeigt Werte für Pixel **unter dem Cursor oder hervorgehoben** an
+Wenn Sie den Mauszeiger über das Bild bewegen, werden die Pixelwerte in Echtzeit angezeigt:**Anzeigeort des Werts:*** **Gleitende Zahl und rote Linie in der Gradientenlegende des Index-LUT auf der rechten Seite*** **Bei weiterem Vergrößern: gleitender Wert in der Nähe des Cursors und hervorgehobenes Pixel*** Zeigt Werte für Pixel **unter dem Cursor oder hervorgehoben** an
 * Aktualisierung beim Bewegen der Maus
 
 ***
@@ -108,7 +92,7 @@ Wenn Sie den Mauszeiger über das Bild bewegen, werden die Pixelwerte in Echtzei
 
 **Nach der Verarbeitung:**
 
-* Vignettierung korrigiert
+* Vignette korrigiert
 * Reflexion kalibriert
 * Multiband TIFF (Red, Green, NIR usw.)
 * Wissenschaftliche Daten bereit für die Analyse
@@ -128,7 +112,7 @@ Wenn Sie den Mauszeiger über das Bild bewegen, werden die Pixelwerte in Echtzei
 
 Wenden Sie multispektrale Indizes und Farblookup-Tabellen an:
 
-1. Suchen Sie **Index/LUT Sandbox** in der **Bildanzeige** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> Seitenleiste
+1. Suchen Sie **Index/LUT Sandbox**in der**Bildanzeige** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> Seitenleiste
 2. Wählen Sie den Vegetationsindex (NDVI, NDRE usw.)
 3. Wählen Sie eine multispektrale Formel oder erstellen Sie eine eigene benutzerdefinierte Formel (nur Chloros+)
 4. Wenden Sie einen Farb-LUT-Farbverlauf zur Visualisierung an
@@ -149,11 +133,9 @@ Ausführliche Anweisungen finden Sie unter [Index/LUT-Sandbox](index-lut-sandbox
 
 ### Zoomen
 
-* **+** oder **=**: Vergrößern
+* **+**oder**=**: Vergrößern
 * **−**: Verkleinern
-* **Mausrad**: Vergrößern/Verkleinern
-
-***
+* **Mausrad**: Vergrößern/Verkleinern***
 
 ### Überprüfen der Indexberechnungen
 
@@ -166,9 +148,7 @@ Ausführliche Anweisungen finden Sie unter [Index/LUT-Sandbox](index-lut-sandbox
    * **GNDVI**: Ähnlich wie NDVI, jedoch chlorophyllsensitiv
 3. Nichtvegetation überprüfen:
    * **Boden**: Nahe 0 oder leicht negativ
-   * **Wasser**: Negative Werte (-0,5 bis 0)
-
-***
+   * **Wasser**: Negative Werte (-0,5 bis 0)***
 
 ## Fehlerbehebung bei Anzeigefehlern
 
@@ -212,7 +192,7 @@ Ausführliche Anweisungen finden Sie unter [Index/LUT-Sandbox](index-lut-sandbox
 
 **Lösungen:**
 
-1. Vergewissern Sie sich, dass Sie die verarbeitete Ausgabe anzeigen (überprüfen Sie die Dateinamenerweiterung).
+1. Überprüfen Sie, ob Sie die verarbeitete Ausgabe anzeigen (überprüfen Sie die Dateinamenerweiterung).
 2. Überprüfen Sie den Status der Prozentmodus-Schaltfläche.
 3. Vergleichen Sie mit bekanntermaßen guten Bildern aus demselben Datensatz.
 

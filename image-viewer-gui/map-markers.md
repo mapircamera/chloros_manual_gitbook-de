@@ -1,6 +1,6 @@
 # Kartenmarkierungen
 
-Auf der Registerkarte „Karte“ werden Ihre Bilder anhand ihrer GPS-Koordinaten auf einer interaktiven 2D-Karte angezeigt. Dies bietet einen geografischen Überblick über Ihre Aufnahmesitzung und hilft Ihnen, die räumliche Abdeckung zu visualisieren. Es ist auch nützlich, wenn Sie Ihre Bilder zum ersten Mal importieren, um schnell alle Bilder zu entfernen, die Sie nicht verarbeiten müssen.
+Auf der Registerkarte „Karte“ werden Ihre Bilder anhand ihrer GPS-Koordinaten auf einer interaktiven 2D-Karte angezeigt. Dies bietet einen geografischen Überblick über Ihre Aufnahmesitzung und hilft Ihnen, die räumliche Abdeckung zu visualisieren. Dies ist auch beim ersten Importieren Ihrer Bilder nützlich, um schnell alle Bilder zu entfernen, die Sie nicht verarbeiten müssen.
 
 <figure><img src="../.gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
 
@@ -28,11 +28,11 @@ Die Registerkarte „Karte“ <img src="../.gitbook/assets/image (3).png" alt=""
 
 ### Breitengrad
 
-* Der Breitengrad des Bildes
+* Breitengrad des Bildes
 
 ### Längengrad
 
-* Der Längengrad des Bildes
+* Längengrad des Bildes
 
 ### Höhe
 
@@ -52,7 +52,7 @@ Jedes Bild mit GPS-Daten wird durch eine Markierung auf der Karte dargestellt:
 
 * Markierungen geben die genauen GPS-Koordinaten an, an denen jedes Bild aufgenommen wurde.
 * Gruppierte Markierungen können beim Herauszoomen zusammengefasst werden.
-* Zoomen Sie hinein, um die einzelnen Bildpositionen zu sehen.
+* Zoomen Sie hinein, um die einzelnen Bildpositionen anzuzeigen.
 
 {% hint style="success" %}
 SUPER-ZOOM: Wenn Sie die maximale Zoomstufe des Kartenkachelanbieters erreicht haben, wird die Kachel bei weiterem Zoomen vergrößert, sodass Sie Markierungen sehen können, die nahe beieinander liegen.
@@ -90,7 +90,7 @@ Die Registerkarte „Karte“ unterstützt zwei Kachelanbieter für die Hintergr
 
 Sie können den Kartenschicht-Typ auswählen (von links nach rechts):
 
- <img src="../.gitbook/assets/image (23).png" alt="" data-size="line">### Gelände
+ <img src="../.gitbook/assets/image (23).png" alt="" data-size="original">### Gelände
 
 Zeigt Höhenprofile und Kartenkacheln mit Details (Straßen usw.) an.
 
@@ -110,28 +110,26 @@ Zeigt Satellitenkartenkacheln mit zusätzlichen Details (Straßen usw.) an.
 
 ## Kartennavigation
 
-### Zoom-Steuerung
+### Zoomsteuerung
 
-* **Vergrößern/Verkleinern**: Verwenden Sie das Mausrad oder die Zoom-Schaltflächen.
+* **Vergrößern/Verkleinern**: Verwenden Sie das Mausrad oder die Zoomtasten.
 * **Vollbild**: Vollbildanzeige der Karte
 
 ### Schwenksteuerung
 
-* **Schwenk**: Klicken und ziehen Sie, um sich auf der Karte zu bewegen.
-
-***
+* **Schwenk**: Klicken und ziehen Sie, um sich auf der Karte zu bewegen.***
 
 ## Anwendungsfälle
 
-### Visualisierung der Flugroute
+### Visualisierung der Flugbahn
 
-* Zeigen Sie den Erfassungsbereich der Drohnenaufnahmen an.
+* Zeigen Sie den Erfassungsbereich von Drohnenaufnahmen an.
 * Identifizieren Sie Lücken in der Bildabdeckung.
-* Überprüfen Sie die Ausführung der Flugroute.
+* Überprüfen Sie die Ausführung der Flugbahn.
 
 ### Überprüfung der Bodenvermessung
 
-* Sehen Sie sich die räumliche Verteilung der Bodenaufnahmen an.
+* Sehen Sie sich die räumliche Verteilung der bodengestützten Aufnahmen an.
 * Lokalisieren Sie Kalibrierungszielbilder relativ zum Vermessungsgebiet.
 * Planen Sie zusätzliche Aufnahmeorte.
 
@@ -162,4 +160,4 @@ Zeigt Satellitenkartenkacheln mit zusätzlichen Details (Straßen usw.) an.
 * Das GPS der Kamera hatte eine schlechte Satellitenverbindung.
 * GPS-Drift während der Aufnahme.
 
-**Lösung**: Dies ist in der Regel ein Problem der Aufnahmezeit. Erwägen Sie die Verwendung von PPK/RTK-GPS für Präzisionsanwendungen.
+**Lösung**: Dies ist in der Regel ein Problem zum Zeitpunkt der Aufnahme. Erwägen Sie die Verwendung von PPK/RTK-GPS für Präzisionsanwendungen.
