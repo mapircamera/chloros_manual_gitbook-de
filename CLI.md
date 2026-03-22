@@ -1,48 +1,66 @@
 # CLI: Befehlszeile
 
-<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>Die **Chloros CLI** bietet leistungsstarken Befehlszeilenzugriff auf die Bildverarbeitungs-Engine Chloros und ermöglicht so die Automatisierung, Skripterstellung und den Headless-Betrieb für Ihre Bildverarbeitungs-Workflows.
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>Das **Chloros CLI** bietet leistungsstarken Befehlszeilenzugriff auf die Bildverarbeitungs-Engine Chloros und ermöglicht so Automatisierung, Skripterstellung und den Headless-Betrieb für Ihre Bildverarbeitungs-Workflows.
 
 ### Hauptmerkmale
 
-* 🚀 **Automatisierung** – Skriptbasierte Stapelverarbeitung mehrerer Datensätze
-* 🔗 **Integration** – Einbettung in bestehende Workflows und Pipelines
+* 🚀 **Automatisierung** – Skripten Sie die Stapelverarbeitung mehrerer Datensätze
+* 🔗 **Integration** – Einbindung in bestehende Workflows und Pipelines
 * 💻 **Headless-Betrieb** – Ausführung ohne GUI
 * 🌍 **Mehrsprachigkeit** – Unterstützung für 38 Sprachen
-* ⚡ **Parallelverarbeitung** – Dynamische Skalierung an Ihre CPU (bis zu 16 parallele Worker)
+* ⚡ **Parallelverarbeitung** – [Dynamic Compute Adaptation](processing-architecture/dynamic-compute-adaptation.md) optimiert automatisch für Ihre Hardware
 
 ### Anforderungen
 
 | Anforderung          | Details                                                             |
 | -------------------- | ------------------------------------------------------------------- |
-| **Betriebssystem** | Windows 10/11 (64-Bit)                                              |
+| **Betriebssystem** | Windows 10/11 (64-Bit), Linux x86_64 (amd64), Linux arm64 (NVIDIA Jetson JetPack 6) |
 | **Lizenz**          | Chloros+ ([kostenpflichtiger Tarif erforderlich](https://cloud.mapir.camera/pricing)) |
 | **Arbeitsspeicher**           | Mindestens 8 GB RAM (16 GB empfohlen)                                  |
 | **Internet**         | Für die Lizenzaktivierung erforderlich                                     |
-| **Festplattenspeicher**       | Variiert je nach Projektgröße                                              |
+| **Speicherplatz**       | Variiert je nach Projektgröße                                              |
 
-{% Hinweis style=&quot;warning&quot; %}
-**Lizenzanforderungen**: Für CLI ist ein kostenpflichtiges Abonnement für Chloros+ erforderlich. Standard-Tarife (kostenlos) haben keinen Zugriff auf CLI. Besuchen Sie [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing), um ein Upgrade durchzuführen.
+{% hint style="warning" %}
+**Lizenzanforderung**: Für CLI ist ein kostenpflichtiges Chloros+-Abonnement erforderlich. Standard-Tarife (kostenlos) bieten keinen Zugriff auf CLI. Besuchen Sie [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing), um ein Upgrade durchzuführen.
 {% endhint %}
 
 ## Schnellstart
 
 ### Installation
 
+#### Windows
+
 Das CLI ist automatisch im Chloros-Installationsprogramm enthalten:
 
-1. Laden Sie das **Chloros-Installationsprogramm.exe** herunter und führen Sie es aus.
-2. Führen Sie den Installationsassistenten aus.
-3. CLI installiert unter: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
+1. Laden Sie den **Chloros Installer.exe** herunter und führen Sie ihn aus.
+2. Führen Sie den Installationsassistenten durch.
+3. CLI wird installiert unter: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
 
-{% hint style=&quot;success&quot; %}
-Das Installationsprogramm fügt `chloros-cli` automatisch zu Ihrem System-PATH hinzu. Starten Sie Ihr Terminal nach der Installation neu.
+{% hint style="success" %}
+Das Installationsprogramm fügt `chloros-cli` automatisch zum System-PATH hinzu. Starten Sie Ihr Terminal nach der Installation neu.
 {% endhint %}
 
-### Erstmalige Einrichtung
+#### Linux
+
+Installieren Sie das `.deb`-Paket für Ihre Architektur:
+
+```bash
+# Linux amd64
+sudo dpkg -i chloros-amd64.deb
+
+# Linux arm64 (NVIDIA Jetson, JetPack 6)
+sudo dpkg -i chloros-arm64-jp6.deb
+```
+
+Ausführliche Informationen zur Einrichtung von Linux finden Sie unter [Linux Installation](linux/linux-installation.md).
+
+### Ersteinrichtung
 
 Bevor Sie CLI verwenden, aktivieren Sie Ihre Chloros+-Lizenz:
 
-```bash
+**Windows:**
+
+```powershell
 # Login with your Chloros+ account
 chloros-cli login user@example.com 'your_password'
 
@@ -53,12 +71,33 @@ chloros-cli status
 chloros-cli process "C:\Images\Dataset001"
 ```
 
+**Linux:**
+
+```bash
+# Login with your Chloros+ account
+chloros-cli login user@example.com 'your_password'
+
+# Check license status
+chloros-cli status
+
+# Process your first project
+chloros-cli process ~/images/dataset001
+```
+
 ### Grundlegende Verwendung
 
 Verarbeiten Sie einen Ordner mit den Standardeinstellungen:
 
+**Windows:**
+
 ```powershell
 chloros-cli process "C:\Images\Dataset001"
+```
+
+**Linux:**
+
+```bash
+chloros-cli process ~/images/dataset001
 ```
 
 ***
@@ -85,31 +124,38 @@ Bilder in einem Ordner mit Kalibrierung verarbeiten.
 chloros-cli process <input-folder> [options]
 ```
 
-**Beispiel:**
+**Beispiele:**
 
-```powershell
+```bash
+# Windows
 chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
+
+# Linux
+chloros-cli process ~/datasets/survey_001 --vignette --reflectance
 ```
 
-#### Optionen für Verarbeitungsbefehle
+#### Optionen des Verarbeitungsbefehls
 
 | Option                | Typ    | Standard        | Beschreibung                                                                            |
 | --------------------- | ------- | -------------- | -------------------------------------------------------------------------------------- |
-| `<input-folder>`      | Pfad    | _Erforderlich_     | Ordner mit RAW/JPG-Multispektralbildern                                         |
+| `<input-folder>`      | Pfad    | _Erforderlich_     | Ordner mit RAW-/JPG-Multispektralbildern                                         |
 | `-o, --output`        | Pfad    | Wie Eingabe  | Ausgabeordner für verarbeitete Bilder                                                     |
 | `-n, --project-name`  | Zeichenfolge  | Automatisch generiert | Benutzerdefinierter Projektname                                                                    |
-| `--vignette`          | Flag    | Aktiviert        | Vignettenkorrektur aktivieren                                                             |
-| `--no-vignette`       | Flag    | -              | Vignettenkorrektur deaktivieren                                                            |
-| `--reflectance`       | Flag    | Aktiviert        | Reflektionskalibrierung aktivieren                                                         |
-| `--no-reflectance`    | Flag    | -              | Reflektionskalibrierung deaktivieren                                                        |
+| `--vignette`          | Flag    | Aktiviert        | Vignettierungskorrektur aktivieren                                                             |
+| `--no-vignette`       | Flag    | -              | Vignettierungskorrektur deaktivieren                                                            |
+| `--reflectance`       | Flag    | Aktiviert        | Reflektanzkalibrierung aktivieren                                                         |
+| `--no-reflectance`    | Flag    | -              | Reflektanzkalibrierung deaktivieren                                                        |
 | `--ppk`               | Flag    | Deaktiviert       | PPK-Korrekturen aus .daq-Lichtsensordaten anwenden                                      |
 | `--format`            | Auswahl  | TIFF (16-Bit)  | Ausgabeformat: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
-| `--min-target-size`   | Ganzzahl | Auto           | Mindestzielgröße in Pixeln für die Erkennung des Kalibrierungsfeldes                          |
-| `--target-clustering` | Ganzzahl | Auto           | Schwellenwert für die Zielclusterung (0-100)                                                    |
+| `--min-target-size`   | Ganzzahl | Auto           | Minimale Zielgröße in Pixeln für die Erkennung des Kalibrierungsfeldes                          |
+| `--target-clustering` | Ganzzahl | Auto           | Schwellenwert für Zielclusterung (0–100)                                                    |
+| `--debayer`           | Auswahl  | `standard`     | Debayer-Methode: `standard` oder `texture-aware` (nur Chloros+)                          |
+| `--target`, `--targets` | Flag  | Deaktiviert       | Suche nur in einem Unterordner „target“ oder „targets“ nach Kalibrierungszielen (beschleunigt die Verarbeitung) |
+| `--indices`           | Liste    | Keine           | Zu berechnende Vegetationsindizes (z. B. `--indices NDVI NDRE GNDVI`)                    |
 | `--exposure-pin-1`    | Zeichenfolge  | Keine           | Belichtung für Kameramodell sperren (Pin 1)                                                 |
-| `--exposure-pin-2`    | Zeichenfolge  | Keine           | Belichtung für Kameramodell sperren (Pin 2)                                                 |
+| `--exposure-pin-2`    | Zeichenkette  | Keine           | Belichtung für Kameramodell sperren (Pin 2)                                                 |
 | `--recal-interval`    | Ganzzahl | Auto           | Neukalibrierungsintervall in Sekunden                                                      |
-| `--timezone-offset`   | Ganzzahl | 0              | Zeitzonenverschiebung in Stunden                                                               |
+| `--timezone-offset`   | Ganzzahl | 0              | Zeitzonenversatz in Stunden                                                               |
 
 ***
 
@@ -125,19 +171,19 @@ chloros-cli login <email> <password>
 
 **Beispiel:**
 
-```powershell
+```bash
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% hint style=&quot;warning&quot; %}
-**Sonderzeichen**: Verwenden Sie einfache Anführungszeichen um Passwörter, die Zeichen wie `$`, `!` oder Leerzeichen enthalten.
+{% hint style="warning" %}
+**Sonderzeichen**: Setzen Sie Passwörter, die Zeichen wie `$`, `!` oder Leerzeichen enthalten, in einfache Anführungszeichen.
 {% endhint %}
 
 **Ausgabe:**<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>***
 
 ### `logout` – Anmeldedaten löschen
 
-Löschen Sie gespeicherte Anmeldedaten und melden Sie sich von Ihrem Konto ab.
+Löscht gespeicherte Anmeldedaten und meldet Sie von Ihrem Konto ab.
 
 **Syntax:**
 
@@ -147,7 +193,7 @@ chloros-cli logout
 
 **Beispiel:**
 
-```powershell
+```bash
 chloros-cli logout
 ```
 
@@ -158,13 +204,13 @@ chloros-cli logout
 ℹ Credentials cleared from cache
 ```
 
-{% hint style=&quot;info&quot; %}
-**SDK Benutzer**: Das Python SDK bietet auch eine programmatische `logout()`-Methode zum Löschen von Anmeldedaten innerhalb von Python-Skripten. Weitere Informationen finden Sie in der [Python SDK-Dokumentation](api-python-sdk.md#logout).
+{% hint style="info" %}
+**SDK-Benutzer**: Das Python SDK bietet auch eine programmatische `logout()`-Methode zum Löschen von Anmeldedaten innerhalb von Python-Skripten. Weitere Informationen finden Sie in der [Python SDK-Dokumentation](api-python-sdk.md#logout).
 {% endhint %}
 
 ***
 
-### `status` – Lizenzstatus überprüfen
+### `status` – Lizenzstatus prüfen
 
 Zeigt den aktuellen Lizenz- und Authentifizierungsstatus an.
 
@@ -176,7 +222,7 @@ chloros-cli status
 
 **Beispiel:**
 
-```powershell
+```bash
 chloros-cli status
 ```
 
@@ -195,7 +241,7 @@ chloros-cli status
 
 ***
 
-### `export-status` – Exportfortschritt überprüfen
+### `export-status` – Exportfortschritt prüfen
 
 Überwachen Sie den Exportfortschritt von Thread 4 während oder nach der Verarbeitung.
 
@@ -207,15 +253,15 @@ chloros-cli export-status
 
 **Beispiel:**
 
-```powershell
+```bash
 chloros-cli export-status
 ```
 
-**Anwendungsfall:** Rufen Sie diesen Befehl während der Verarbeitung auf, um den Exportfortschritt zu überprüfen.***
+**Anwendungsfall:** Rufen Sie diesen Befehl während der laufenden Verarbeitung auf, um den Exportfortschritt zu überprüfen.***
 
-### `language` – Verwaltung der Sprache der Benutzeroberfläche
+### `language` – Sprache der Benutzeroberfläche verwalten
 
-Anzeigen oder Ändern der Sprache der Benutzeroberfläche von CLI.
+Zeigen Sie die Sprache der Benutzeroberfläche von CLI an oder ändern Sie sie.
 
 **Syntax:**
 
@@ -232,7 +278,7 @@ chloros-cli language <language-code>
 
 **Beispiele:**
 
-```powershell
+```bash
 # View current language
 chloros-cli language
 
@@ -248,9 +294,9 @@ chloros-cli language ja
 
 #### Unterstützte Sprachen (insgesamt 38)
 
-| Code    | Sprache              | Name in Originalsprache      |
+| Code    | Sprache              | Name in der Originalsprache      |
 | ------- | --------------------- | ---------------- |
-| `en`    | Englisch               | Englisch          |
+| `en`    | Englisch               | English          |
 | `es`    | Spanisch               | Español          |
 | `pt`    | Portugiesisch            | Português        |
 | `fr`    | Französisch                | Français         |
@@ -261,7 +307,7 @@ chloros-cli language ja
 | `zh`    | Chinesisch (vereinfacht)  | 简体中文             |
 | `zh-TW` | Chinesisch (traditionell) | 繁體中文             |
 | `ru`    | Russisch               | Русский          |
-| `nl`    | Niederländisch                 | Nederlands       |
+| `nl`    | Niederländisch                | Nederlands       |
 | `ar`    | Arabisch                | العربية          |
 | `pl`    | Polnisch                | Polski           |
 | `tr`    | Türkisch               | Türkçe           |
@@ -274,7 +320,7 @@ chloros-cli language ja
 | `no`    | Norwegisch             | Norsk            |
 | `fi`    | Finnisch               | Suomi            |
 | `el`    | Griechisch                 | Ελληνικά         |
-| `cs`    | Tschechisch                 | Čeština          |
+| `cs`    | Tschechisch                | Čeština          |
 | `hu`    | Ungarisch             | Magyar           |
 | `ro`    | Rumänisch              | Română           |
 | `uk`    | Ukrainisch             | Українська       |
@@ -289,15 +335,15 @@ chloros-cli language ja
 | `et`    | Estnisch              | Eesti            |
 | `sl`    | Slowenisch             | Slovenščina      |
 
-{% hint style=&quot;success&quot; %}
+{% hint style="success" %}
 **Automatische Speicherung**: Ihre Spracheinstellung wird in `~/.chloros/cli_language.json` gespeichert und bleibt über alle Sitzungen hinweg erhalten.
 {% endhint %}
 
 ***
 
-### `set-project-folder` – Standardprojektordner festlegen
+### `set-project-folder` – Standard-Projektordner festlegen
 
-Ändern Sie den Speicherort des Standardprojektordners (gemeinsam mit der GUI).
+Ändern Sie den Speicherort des Standard-Projektordners (gemeinsam mit der GUI unter Windows).
 
 **Syntax:**
 
@@ -305,17 +351,21 @@ chloros-cli language ja
 chloros-cli set-project-folder <folder-path>
 ```
 
-**Beispiel:**
+**Beispiele:**
 
-```powershell
+```bash
+# Windows
 chloros-cli set-project-folder "C:\Projects\2025"
+
+# Linux
+chloros-cli set-project-folder ~/projects/2025
 ```
 
 ***
 
 ### `get-project-folder` – Projektordner anzeigen
 
-Zeigt den aktuellen Standard-Projektordner an.
+Zeigt den aktuellen Speicherort des Standard-Projektordners an.
 
 **Syntax:**
 
@@ -325,14 +375,19 @@ chloros-cli get-project-folder
 
 **Beispiel:**
 
-```powershell
+```bash
 chloros-cli get-project-folder
 ```
 
 **Ausgabe:**
 
 ```
+
+# Windows
 ℹ Current project folder: C:\Projects\2025
+
+# Linux
+ℹ Current project folder: /home/user/.local/share/chloros/projects
 ```
 
 ***
@@ -349,94 +404,163 @@ chloros-cli reset-project-folder
 
 ***
 
+### `selftest` – Systemdiagnose ausführen
+
+Führt 7 Diagnosetests durch, um Ihre Systemkonfiguration zu überprüfen.
+
+**Syntax:**
+
+```bash
+chloros-cli selftest
+```
+
+**Durchgeführte Diagnosen:**
+
+1. Versionsprüfung
+2. Portverfügbarkeit (5000)
+3. Backend-Start
+4. API-Konnektivitätstest
+5. Systeminformationen und GPU-Erkennung
+6. Überprüfung der Denoiser-Modelle
+7. CUDA-Verfügbarkeitsprüfung
+
+{% hint style="info" %}
+**Nützlich für die Fehlerbehebung**: Führen Sie nach der Installation `selftest` aus, um zu überprüfen, ob Ihr System korrekt konfiguriert ist, insbesondere auf Linux/Jetson, wo die GPU- und CUDA-Einstellungen möglicherweise überprüft werden müssen.
+{% endhint %}
+
+***
+
+### `update` – Nach Updates suchen (nur Linux)
+
+Suchen Sie nach Updates für CLI auf Linux-Systemen und installieren Sie diese.
+
+**Syntax:**
+
+```bash
+# Check for updates without installing
+chloros-cli update --check
+
+# Check for and install updates
+chloros-cli update
+```
+
+| Option    | Beschreibung                        |
+| --------- | ---------------------------------- |
+| `--check` | Nur nach Updates suchen, nicht installieren |
+
+{% hint style="info" %}
+Dieser Befehl ist nur auf Linux verfügbar. Auf Windows werden Updates über das Installationsprogramm bereitgestellt.
+{% endhint %}
+
+***
+
 ## Globale Optionen
 
 Diese Optionen gelten für alle Befehle:
 
-| Option          | Typ    | Standard       | Beschreibung                                      |
-| --------------- | ------- | ------------- | ------------------------------------------------ |
-| `--backend-exe` | Pfad    | Automatisch erkannt | Pfad zur ausführbaren Backend-Datei                       |
-| `--port`        | Ganzzahl | 5000          | Backend-Portnummer API                          |
-| `--restart`     | Flag    | -             | Neustart des Backends erzwingen (beendet vorhandene Prozesse) |
-| `--version`     | Flag    | -             | Versionsinformationen anzeigen und beenden                |
-| `--help`        | Flag    | -             | Hilfeinformationen anzeigen und beenden                   |
+| Option            | Typ    | Standard       | Beschreibung                                      |
+| ----------------- | ------- | ------------- | ------------------------------------------------ |
+| `--backend-exe`   | Pfad    | Automatisch erkannt | Pfad zur ausführbaren Backend-Datei                       |
+| `--port`          | Ganzzahl | 5000          | Portnummer des Backends API                          |
+| `--restart`       | Flag    | -             | Neustart des Backends erzwingen (beendet laufende Prozesse) |
+| `--version`       | Flag    | -             | Versionsinformationen anzeigen und beenden                |
+| `--help`          | Flag    | -             | Hilfeinformationen anzeigen und beenden                   |
+
+{% hint style="info" %}
+**Automatische Erkennung des Backends**: Der Pfad `--backend-exe` wird je nach Plattform automatisch erkannt:
+* **Windows**: `C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe`
+* **Linux (.deb)**: `/usr/lib/chloros/chloros-backend`
+* **Linux (manuell)**: `/opt/mapir/chloros/backend/chloros-backend`
+{% endhint %}
 
 **Beispiel mit globalen Optionen:**
+
+**Windows:**
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Survey_001"
 ```
 
+**Linux:**
+
+```bash
+chloros-cli --port 5001 process ~/datasets/survey_001
+```
+
 ***
 
-## Anleitung zu den Verarbeitungseinstellungen
+## Leitfaden zu den Verarbeitungseinstellungen
 
-### Parallele Verarbeitung
+### Parallele Verarbeitung &amp; Dynamische Rechenanpassung
 
-Chloros+ CLI **skaliert automatisch**die parallele Verarbeitung entsprechend den Fähigkeiten Ihres Computers:**So funktioniert es:**
+Chloros 1.1.0 enthält [Dynamische Rechenanpassung](processing-architecture/dynamic-compute-adaptation.md) – die Verarbeitungs-Engine **erkennt automatisch Ihre Hardware** und wählt die optimale Strategie aus:
 
-* Erkennt Ihre CPU-Kerne und Ihren Arbeitsspeicher
-* Weist Worker zu: **2× CPU-Kerne** (verwendet Hyperthreading)
-* **Maximal: 16 parallele Worker** (für Stabilität)**Systemstufen:**
+| Plattform | Strategie | Worker | Pipeline | Anmerkungen |
+| --- | --- | --- | --- | --- |
+| **Jetson Nano 8 GB** | `GPU_SINGLE` | 1 | `tiled_gpu` | Speichereffizient, serialisiert |
+| **Jetson Orin NX 16 GB** | `GPU_PARALLEL` | 3 | `fused_gpu` | Parallele GPU-Verarbeitung |
+| **Desktop mit 8 GB GPU** | `GPU_SINGLE` | 3 | `tiled_gpu` | Gute Desktop-Leistung |
+| **Desktop mit 12 GB+ GPU** | `GPU_PARALLEL` | 3–4 | `fused_gpu` | Optimale Desktop-Leistung |
+| **Reines CPU-System** | `CPU_PARALLEL` | Kerne – 1 | `cpu_fallback` | Keine GPU erforderlich |
 
-| Systemtyp   | CPU        | RAM      | Worker  | Leistung     |
-| ------------- | ---------- | -------- | -------- | --------------- |
-| **High-End**  | 16+ Kerne  | 32+ GB   | Bis zu 16 | Maximale Geschwindigkeit   |
-| **Mittelklasse** | 8–15 Kerne | 16–31 GB | 8–16     | Ausgezeichnete Geschwindigkeit |
-| **Einstiegsklasse**   | 4–7 Kerne  | 8–15 GB  | 4–8      | Gute Geschwindigkeit      |
-
-{% hint style=&quot;success&quot; %}
-**Automatische Optimierung**: Der CLI erkennt automatisch Ihre Systemspezifikationen und konfiguriert die optimale Parallelverarbeitung. Keine manuelle Konfiguration erforderlich!
+{% hint style="success" %}
+**Keine manuelle Konfiguration erforderlich!** Chloros erkennt Ihre CPU, GPU, RAM und (auf Jetson) die Temperatursensoren automatisch und konfiguriert dann automatisch die optimale Verarbeitungs-Pipeline.
 {% endhint %}
 
 ### Debayer-Methoden
 
-Der CLI verwendet **High Quality (Faster)** als standardmäßigen und empfohlenen Debayer-Algorithmus:
+| Methode | CLI-Flag | Qualität | Geschwindigkeit | Lizenz |
+| --- | --- | --- | --- | --- |
+| **Standard (schnell, mittlere Qualität)** | `--debayer standard` | Gut | Schnell | Kostenlos / Chloros+ |
+| **Texture Aware (Langsam, höchste Qualität)** | `--debayer texture-aware` | Höchste | Langsam | Nur Chloros+ |
 
-| Methode                      | Qualität | Geschwindigkeit | Beschreibung                                 |
-| --------------------------- | ------- | ----- | ------------------------------------------- |
-| **Hohe Qualität (schneller)** ⭐ | ⭐⭐⭐⭐    | ⚡⚡⚡   | Kantensensitiver Algorithmus (Standard, empfohlen) |
+Die Standard-Debayer-Methode ist **Standard**. Die Methode**Texturbewusst** verwendet ein KI/ML-Rauschunterdrückungsmodell für die höchste Ausgabequalität, erfordert jedoch eine Chloros+-Lizenz und eine NVIDIA-GPU.
 
-### Vignettierungskorrektur
+```bash
+# Use Texture Aware debayer (Chloros+ only)
+chloros-cli process ~/datasets/field_a --debayer texture-aware
+```
 
-**Funktion:** Korrigiert den Lichtabfall an den Bildrändern (dunklere Ecken, die häufig bei Kameraaufnahmen auftreten).
+### Vignettenkorrektur
 
-* **Standardmäßig aktiviert** – Die meisten Benutzer sollten diese Option aktiviert lassen.
-* Verwenden Sie `--no-vignette`, um sie zu deaktivieren.
+**Funktionsweise:** Korrigiert den Lichtabfall an den Bildrändern (dunkle Ecken, wie sie bei Kameraaufnahmen häufig vorkommen).
 
-{% hint style=&quot;success&quot; %}
-**Empfehlung**: Aktivieren Sie immer die Vignettenkorrektur, um eine gleichmäßige Helligkeit im gesamten Bild zu gewährleisten.
+* **Standardmäßig aktiviert** – Die meisten Benutzer sollten diese Option aktiviert lassen
+* Verwenden Sie `--no-vignette`, um sie zu deaktivieren
+
+{% hint style="success" %}
+**Empfehlung**: Aktivieren Sie die Vignettenkorrektur immer, um eine gleichmäßige Helligkeit im gesamten Bild zu gewährleisten.
 {% endhint %}
 
-### Reflektionskalibrierung
+### Reflektanzkalibrierung
 
-Konvertiert die Rohwerte des Sensors mithilfe von Kalibrierungsfeldern in standardisierte Reflektionsprozentsätze.
+Konvertiert rohe Sensorwerte mithilfe von Kalibrierungsfeldern in standardisierte Reflektanzprozentsätze.
 
-* **Standardmäßig aktiviert** – Unverzichtbar für die Vegetationsanalyse.
-* Erfordert Kalibrierungszielfelder in Bildern.
-* Verwenden Sie `--no-reflectance`, um diese Funktion zu deaktivieren.
+* **Standardmäßig aktiviert** – Unverzichtbar für die Vegetationsanalyse
+* Erfordert Kalibrierungszielfelder in den Bildern
+* Verwenden Sie `--no-reflectance`, um die Funktion zu deaktivieren
 
-{% hint style=&quot;info&quot; %}
-**Anforderungen**: Stellen Sie sicher, dass die Kalibrierungsfelder in Ihren Bildern richtig belichtet und sichtbar sind, um eine genaue Reflektionsumwandlung zu gewährleisten.
+{% hint style="info" %}
+**Voraussetzungen**: Stellen Sie sicher, dass die Kalibrierungsfelder in Ihren Bildern richtig belichtet und sichtbar sind, um eine genaue Reflektanzumwandlung zu gewährleisten.
 {% endhint %}
 
 ### PPK-Korrekturen
 
-**Funktion:** Wendet nachbearbeitete kinematische Korrekturen unter Verwendung von DAQ-A-SD-Protokolldaten an, um die GPS-Genauigkeit zu verbessern.
+**Funktionsweise:** Wendet kinematische Korrekturen nach der Verarbeitung unter Verwendung von DAQ-A-SD-Protokolldaten an, um die GPS-Genauigkeit zu verbessern.
 
 * **Standardmäßig deaktiviert**
-* Verwenden Sie `--ppk`, um die Funktion zu aktivieren.
-* Erfordert .daq-Dateien im Projektordner von MAPIR DAQ-A-SD-Lichtsensor.
+* Verwenden Sie `--ppk` zum Aktivieren
+* Erfordert .daq-Dateien im Projektordner vom MAPIR DAQ-A-SD-Lichtsensor.
 
 ### Ausgabeformate
 
-<table><thead><tr><th width="197">Format</th><th width="130.20001220703125">Bittiefe</th><th width="116.5999755859375">Dateigröße</th><th>Am besten geeignet für</th></tr></thead><tbody><tr><td><strong>TIFF (16 Bit)</strong> ⭐</td><td>16-Bit-Ganzzahl</td><td>Groß</td><td>GIS-Analyse, Photogrammetrie (empfohlen)</td></tr><tr><td><strong>TIFF (32-Bit, Prozent)</strong></td><td>32-Bit-Gleitkomma</td><td>Sehr groß</td><td>Wissenschaftliche Analyse, Forschung</td></tr><tr><td><strong>PNG (8 Bit)</strong></td><td>8-Bit-Ganzzahl</td><td>Mittel</td><td>Visuelle Inspektion, Web-Sharing</td></tr><tr><td><strong>JPG (8-Bit)</strong></td><td>8-Bit-Ganzzahl</td><td>Klein</td><td>Schnellvorschau, komprimierte Ausgabe</td></tr></tbody></table>***
+<table><thead><tr><th width="197">Format</th><th width="130.20001220703125">Bittiefe</th><th width="116.5999755859375">Dateigröße</th><th>Am besten geeignet für</th></tr></thead><tbody><tr><td><strong>TIFF (16-Bit)</strong> ⭐</td><td>16-Bit-Ganzzahl</td><td>Groß</td><td>GIS-Analyse, Photogrammetrie (empfohlen)</td></tr><tr><td><strong>TIFF (32-Bit, Prozent)</strong></td><td>32-Bit-Gleitkomma</td><td>Sehr groß</td><td>Wissenschaftliche Analyse, Forschung</td></tr><tr><td><strong>PNG (8-Bit)</strong></td><td>8-Bit-Ganzzahl</td><td>Mittel</td><td>Sichtprüfung, Web-Freigabe</td></tr><tr><td><strong>JPG (8-Bit)</strong></td><td>8-Bit-Ganzzahl</td><td>Klein</td><td>Schnellvorschau, komprimierte Ausgabe</td></tr></tbody></table>***
 
-## Automatisierung und Skripting
+## Automatisierung &amp; Skripterstellung
 
-### PowerShell-Stapelverarbeitung
+### PowerShell-Stapelverarbeitung (Windows)
 
-Automatische Verarbeitung mehrerer Datensatzordner:
+Automatische Verarbeitung mehrerer Datensatzordner auf Windows:
 
 ```powershell
 # process_all_datasets.ps1
@@ -460,9 +584,9 @@ foreach ($dataset in $datasets) {
 Write-Host "All datasets processed!" -ForegroundColor Green
 ```
 
-### Windows-Stapelscript
+### Windows-Batch-Skript (Windows)
 
-Einfache Schleife für die Stapelverarbeitung:
+Einfache Schleife für die Stapelverarbeitung auf Windows:
 
 ```batch
 @echo off
@@ -487,9 +611,35 @@ echo All datasets processed!
 pause
 ```
 
-### Python Automatisierungsskript
+### Bash-Batch-Verarbeitung (Linux)
 
-Erweiterte Automatisierung mit Fehlerbehandlung:
+Verarbeitung mehrerer Datensatzordner auf Linux:
+
+```bash
+#!/bin/bash
+# process_all_datasets.sh
+
+for dataset in ~/datasets/2026/*/; do
+    name=$(basename "$dataset")
+    echo "Processing $name..."
+
+    chloros-cli process "$dataset" \
+        --vignette \
+        --reflectance
+
+    if [ $? -eq 0 ]; then
+        echo "✓ $name complete"
+    else
+        echo "✗ $name failed"
+    fi
+done
+
+echo "All datasets processed!"
+```
+
+### Python-Automatisierungsskript (plattformübergreifend)
+
+Erweiterte Automatisierung mit Fehlerbehandlung (funktioniert auf Windows und Linux):
 
 ```python
 import subprocess
@@ -514,6 +664,9 @@ def process_dataset(input_folder):
 
 def main():
     """Process all datasets in a directory"""
+    # Adjust path for your platform
+    # Windows: Path('C:/Datasets/2025')
+    # Linux:   Path.home() / 'datasets' / '2025'
     datasets_dir = Path('C:/Datasets/2025')
     log_file = Path('processing_log.txt')
     
@@ -568,14 +721,14 @@ if __name__ == '__main__':
 
 ***
 
-## Verarbeitungsworkflow
+## Verarbeitungsablauf
 
 ### Standard-Workflow
 
 1. **Eingabe**: Ordner mit RAW/JPG-Bildpaaren
 2. **Erkennung**: CLI sucht automatisch nach unterstützten Bilddateien
-3. **Verarbeitung**: Der Parallelmodus skaliert entsprechend Ihrer CPU-Kerne (Chloros+)
-4. **Ausgabe**: Erstellt Unterordner für Kameramodelle mit verarbeiteten Bildern
+3. **Verarbeitung**: Der Parallelmodus skaliert entsprechend der Anzahl Ihrer CPU-Kerne (Chloros+)
+4. **Ausgabe**: Erstellt Unterordner nach Kameramodell mit den verarbeiteten Bildern
 
 ### Beispiel für die Ausgabestruktur
 
@@ -591,17 +744,20 @@ MyProject/
     └── ...
 ```
 
-### Geschätzte Verarbeitungszeit
+### Geschätzte Verarbeitungszeiten
 
 Typische Verarbeitungszeiten für 100 Bilder (jeweils 12 MP):
 
-| Modus              | Zeit      | Hardware                                     |
-| ----------------- | --------- | -------------------------------------------- |
-| **Parallelmodus** | 5–10 min  | i7/Ryzen 7, 16 GB RAM, SSD (bis zu 16 Worker) |
-| **Parallelmodus** | 10–15 Min. | i5/Ryzen 5, 8 GB RAM, HDD (bis zu 8 Worker)   |
+| Plattform | Modus | Geschätzte Zeit | Anmerkungen |
+| --- | --- | --- | --- |
+| **Desktop mit 12 GB+ GPU** | `GPU_PARALLEL` | 5–10 Min. | Schnellste Option |
+| **Desktop mit 8 GB GPU** | `GPU_SINGLE` | 10–15 Min. | Gute Leistung |
+| **Jetson Orin NX 16 GB** | `GPU_PARALLEL` | 15–25 Min. | Edge-Computing |
+| **Jetson Nano 8 GB** | `GPU_SINGLE` | 30–60 Min. | Speicherbeschränkt |
+| **Nur CPU** | `CPU_PARALLEL` | 20–40 Min. | Keine GPU erforderlich |
 
-{% hint style=&quot;info&quot; %}
-**Leistungstipp**: Die Bearbeitungszeit hängt von der Anzahl der Bilder, der Auflösung und den Computerspezifikationen ab.
+{% hint style="info" %}
+**Leistungstipp**: Die Verarbeitungszeit hängt von der Anzahl der Bilder, der Auflösung, der Debayer-Methode und der Hardware ab. „Texture Aware Debayer“ dauert deutlich länger als „Standard“. Weitere Informationen finden Sie unter [Dynamische Rechenanpassung](processing-architecture/dynamic-compute-adaptation.md).
 {% endhint %}
 
 ***
@@ -610,13 +766,13 @@ Typische Verarbeitungszeiten für 100 Bilder (jeweils 12 MP):
 
 ### CLI nicht gefunden
 
-**Fehler:**
+**Windows Fehler:**
 
 ```
 'chloros-cli' is not recognized as an internal or external command
 ```
 
-**Lösungen:**
+**Windows Lösungen:**
 
 1. Überprüfen Sie den Installationsort:
 
@@ -631,10 +787,37 @@ dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
 ```
 
 3. Fügen Sie ihn manuell zu PATH hinzu:
-   * Öffnen Sie Systemeinstellungen → Umgebungsvariablen.
-   * Bearbeiten Sie die Variable PATH.
-   * Fügen Sie Folgendes hinzu: `C:\Program Files\Chloros\resources\cli`
+   * Öffnen Sie „Systemeigenschaften“ → „Umgebungsvariablen“
+   * Bearbeiten Sie die Variable PATH
+   * Fügen Sie hinzu: `C:\Program Files\Chloros\resources\cli`
    * Terminal neu starten
+
+**Linux Fehler:**
+
+```
+chloros-cli: command not found
+```
+
+**Linux Lösungen:**
+
+1. Installation überprüfen:
+
+```bash
+which chloros-cli
+dpkg -L chloros-amd64  # or chloros-arm64-jp6
+```
+
+2. Laden Sie Ihre Shell neu:
+
+```bash
+source ~/.bashrc
+```
+
+3. Überprüfen Sie die Berechtigungen:
+
+```bash
+sudo chmod +x /usr/bin/chloros-cli
+```
 
 ***
 
@@ -647,23 +830,37 @@ Backend failed to start within 30 seconds
 
 **Lösungen:**
 
-1. Überprüfen Sie, ob das Backend bereits ausgeführt wird (schließen Sie es zuerst)
-2. Überprüfen Sie, ob die Firewall Windows nicht blockiert
+1. Prüfen Sie, ob das Backend bereits läuft (schließen Sie es zuerst)
+2. Prüfen Sie, ob die Firewall den Datenverkehr blockiert (Windows) oder prüfen Sie die Portverfügbarkeit (Linux: `lsof -i :5000`)
 3. Versuchen Sie es mit einem anderen Port:
 
-```powershell
+```bash
+# Windows
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
+
+# Linux
+chloros-cli --port 5001 process ~/datasets/field_a
 ```
 
-4. Erzwingen Sie einen Neustart des Backends:
+4. Backend neu starten:
 
-```powershell
+```bash
+# Windows
 chloros-cli --restart process "C:\Datasets\Field_A"
+
+# Linux
+chloros-cli --restart process ~/datasets/field_a
+```
+
+5. Bei Linux prüfen, ob die Backend-Ausführungsdatei vorhanden ist:
+
+```bash
+ls -la /usr/lib/chloros/chloros-backend
 ```
 
 ***
 
-### Probleme mit der Lizenz/Authentifizierung**Fehler:**
+### Probleme mit der Lizenz / Authentifizierung**Fehler:**
 
 ```
 
@@ -672,16 +869,16 @@ Chloros+ license required for CLI access
 
 **Lösungen:**
 
-1. Vergewissern Sie sich, dass Sie über ein aktives Chloros+-Abonnement verfügen.
+1. Überprüfen Sie, ob Sie über ein aktives Chloros+-Abonnement verfügen
 2. Melden Sie sich mit Ihren Anmeldedaten an:
 
-```powershell
+```bash
 chloros-cli login user@example.com 'password'
 ```
 
 3. Überprüfen Sie den Lizenzstatus:
 
-```powershell
+```bash
 chloros-cli status
 ```
 
@@ -698,34 +895,44 @@ No images found in the specified folder
 
 **Lösungen:**
 
-1. Überprüfen Sie, ob der Ordner unterstützte Formate enthält (.RAW, .TIF, .JPG).
-2. Überprüfen Sie, ob der Ordnerpfad korrekt ist (verwenden Sie Anführungszeichen für Pfade mit Leerzeichen).
-3. Stellen Sie sicher, dass Sie Leserechte für den Ordner haben.
-4. Überprüfen Sie, ob die Dateierweiterungen korrekt sind.
+1. Überprüfen Sie, ob der Ordner unterstützte Formate enthält (.RAW, .TIF, .JPG)
+2. Überprüfen Sie, ob der Ordnerpfad korrekt ist (verwenden Sie Anführungszeichen für Pfade mit Leerzeichen)
+3. Stellen Sie sicher, dass Sie Leserechte für den Ordner haben
+4. Überprüfen Sie, ob die Dateiendungen korrekt sind
 
 ***
 
-### Verarbeitung stockt oder hängt**Lösungen:**
+### Verarbeitung stockt oder hängt sich auf**Lösungen:**
 
-1. Überprüfen Sie den verfügbaren Speicherplatz (stellen Sie sicher, dass genügend Speicherplatz für die Ausgabe vorhanden ist).
-2. Schließen Sie andere Anwendungen, um Speicherplatz freizugeben.
-3. Reduzieren Sie die Anzahl der Bilder (verarbeiten Sie sie in Stapeln).
+1. Überprüfen Sie den verfügbaren Speicherplatz (stellen Sie sicher, dass genügend Platz für die Ausgabe vorhanden ist)
+2. Schließen Sie andere Anwendungen, um Speicherplatz freizugeben
+3. Reduzieren Sie die Anzahl der Bilder (verarbeiten Sie in Stapeln)
 
 ***
 
-### Port bereits in Verwendung**Fehler:**
+### Port bereits in Gebrauch**Fehler:**
 
 ```
 
 Port 5000 is already in use
 ```
 
-**Lösung:**
+**Lösungen:**
 
-Geben Sie einen anderen Port an:
+**Windows:**
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
+```
+
+**Linux:**
+
+```bash
+# Find what's using port 5000
+lsof -i :5000
+
+# Use a different port
+chloros-cli --port 5001 process ~/datasets/field_a
 ```
 
 ***
@@ -737,34 +944,43 @@ chloros-cli --port 5001 process "C:\Datasets\Field_A"
 **A:**Ja! Für CLI ist eine kostenpflichtige**Chloros+-Lizenz** erforderlich.
 
 * ❌ Standard-Tarif (kostenlos): CLI deaktiviert
-* ✅ Chloros+ (kostenpflichtige) Tarife: CLI vollständig aktiviert
+* ✅ Chloros+ (kostenpflichtiger) Tarif: CLI vollständig aktiviert
 
-Abonnieren Sie unter: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
+Abonnieren unter: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
 ***
 
-### F: Kann ich CLI auf einem Server ohne GUI verwenden?**A:** Ja! CLI läuft vollständig headless. Anforderungen:
-
+### F: Kann ich CLI auf einem Server ohne GUI verwenden?**A:** Ja! CLI läuft vollständig headless. Dies ist der primäre Anwendungsfall bei Linux.**Windows-Server:**
 * Windows Server 2016 oder höher
 * Visual C++ Redistributable installiert
-* Ausreichend RAM (mindestens 8 GB, 16 GB empfohlen)
-* Einmalige Aktivierung der GUI-Lizenz auf einem beliebigen Rechner
+
+**Linux-Server:**
+* Ubuntu 20.04+ / Debian 11+ (amd64) oder JetPack 6 (arm64)
+* Installation über das `.deb`-Paket
+
+**Beide Plattformen:**
+* Mindestens 8 GB RAM (16 GB empfohlen)
+* Einmalige Lizenzaktivierung: `chloros-cli login user@example.com 'password'`
 
 ***
 
-### F: Wo werden die verarbeiteten Bilder gespeichert?**A:**Standardmäßig werden die verarbeiteten Bilder im**gleichen Ordner wie die Eingabe** in Unterordnern des Kameramodells (z. B. `Survey3N_RGN/`) gespeichert.
+### F: Wo werden die verarbeiteten Bilder gespeichert?**A:**Standardmäßig werden die verarbeiteten Bilder im**selben Ordner wie die Eingabedateien** in Unterordnern nach Kameramodell gespeichert (z. B. `Survey3N_RGN/`).
 
 Verwenden Sie die Option `-o`, um einen anderen Ausgabeordner anzugeben:
 
-```powershell
+```bash
+# Windows
 chloros-cli process "C:\Input" -o "D:\Output"
+
+# Linux
+chloros-cli process ~/input -o ~/output
 ```
 
 ***
 
-### F: Kann ich mehrere Ordner gleichzeitig verarbeiten?**A:** Nicht direkt mit einem Befehl, aber Sie können Skripte verwenden, um Ordner nacheinander zu verarbeiten. Siehe Abschnitt [Automatisierung und Skripterstellung](CLI.md#automation--scripting).***
+### F: Kann ich mehrere Ordner gleichzeitig bearbeiten?**A:** Nicht direkt mit einem einzigen Befehl, aber Sie können Skripte verwenden, um Ordner nacheinander zu verarbeiten. Siehe Abschnitt [Automatisierung &amp; Skripting](CLI.md#automation--scripting).***
 
-### F: Wie speichere ich die Ausgabe von CLI in einer Protokolldatei?**PowerShell:**
+### F: Wie speichere ich die CLI-Ausgabe in einer Protokolldatei?**PowerShell:**
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" | Tee-Object -FilePath "processing.log"
@@ -776,23 +992,29 @@ chloros-cli process "C:\Datasets\Field_A" | Tee-Object -FilePath "processing.log
 chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
 ```
 
+**Linux Bash:**
+
+```bash
+chloros-cli process ~/datasets/field_a 2>&1 | tee processing.log
+```
+
 ***
 
-### F: Was passiert, wenn ich während der Verarbeitung Strg+C drücke?**A:** CLI wird:
+### F: Was passiert, wenn ich während der Verarbeitung Strg+C drücke?**A:** Das CLI wird:
 
 1. Die Verarbeitung ordnungsgemäß beenden
 2. Das Backend herunterfahren
-3. Mit dem Code 130 beenden
+3. Mit Code 130 beenden
 
 Teilweise verarbeitete Bilder können im Ausgabeordner verbleiben.
 
 ***
 
-### F: Kann ich die Verarbeitung von CLI automatisieren?**A:** Auf jeden Fall! CLI ist für die Automatisierung ausgelegt. Beispiele für PowerShell, Batch und Python finden Sie unter [Automatisierung und Skripting](CLI.md#automation--scripting).***
+### F: Kann ich die Verarbeitung mit CLI automatisieren?**A:** Auf jeden Fall! CLI ist für die Automatisierung ausgelegt. Siehe [Automatisierung &amp; Skripting](CLI.md#automation--scripting) für PowerShell (Windows), Batch (Windows), Bash (Linux) und Python (plattformübergreifend).***
 
-### F: Wie kann ich die Version von CLI überprüfen?**A:**
+### F: Wie überprüfe ich die Version von CLI?**A:**
 
-```powershell
+```bash
 chloros-cli --version
 ```
 
@@ -800,18 +1022,18 @@ chloros-cli --version
 
 ```
 
-Chloros CLI 1.0.2
+Chloros CLI 1.1.0
 ```
 
 ***
 
-## Hilfe erhalten
+## Hilfe
 
-### Befehlszeilenhilfe
+### Hilfe über die Befehlszeile
 
-Zeigen Sie die Hilfeinformationen direkt in CLI an:
+Rufen Sie die Hilfeinformationen direkt in CLI auf:
 
-```powershell
+```bash
 # General help
 chloros-cli --help
 
@@ -821,7 +1043,7 @@ chloros-cli login --help
 chloros-cli language --help
 ```
 
-### Support-Kanäle
+### Supportkanäle
 
 * **E-Mail**: info@mapir.camera
 * **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
@@ -829,12 +1051,20 @@ chloros-cli language --help
 
 ## Vollständige Beispiele
 
-### Beispiel 1: Grundlegende Verarbeitung
+### Beispiel 1: Grundlegende Bearbeitung
 
-Verarbeitung mit Standardeinstellungen (Vignette, Reflexion):
+Bearbeitung mit Standardeinstellungen (Vignette, Reflexion):
+
+**Windows:**
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A_2025_01_15"
+```
+
+**Linux:**
+
+```bash
+chloros-cli process ~/datasets/field_a_2025_01_15
 ```
 
 ***
@@ -843,6 +1073,8 @@ chloros-cli process "C:\Datasets\Field_A_2025_01_15"
 
 32-Bit-Float TIFF:
 
+**Windows:**
+
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
   --format "TIFF (32-bit, Percent)" ^
@@ -850,11 +1082,22 @@ chloros-cli process "C:\Datasets\Field_A" ^
   --reflectance
 ```
 
+**Linux:**
+
+```bash
+chloros-cli process ~/datasets/field_a \
+  --format "TIFF (32-bit, Percent)" \
+  --vignette \
+  --reflectance
+```
+
 ***
 
 ### Beispiel 3: Schnelle Vorschauverarbeitung
 
-8-Bit PNG ohne Kalibrierung für schnelle Überprüfung:
+8-Bit-PNG ohne Kalibrierung für die schnelle Überprüfung:
+
+**Windows:**
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
@@ -863,11 +1106,22 @@ chloros-cli process "C:\Datasets\Field_A" ^
   --no-reflectance
 ```
 
+**Linux:**
+
+```bash
+chloros-cli process ~/datasets/field_a \
+  --format "PNG (8-bit)" \
+  --no-vignette \
+  --no-reflectance
+```
+
 ***
 
 ### Beispiel 4: PPK-korrigierte Verarbeitung
 
-Anwendung von PPK-Korrekturen mit Reflexion:
+PPK-Korrekturen mit Reflexionsgrad anwenden:
+
+**Windows:**
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
@@ -875,11 +1129,21 @@ chloros-cli process "C:\Datasets\Field_A" ^
   --reflectance
 ```
 
+**Linux:**
+
+```bash
+chloros-cli process ~/datasets/field_a \
+  --ppk \
+  --reflectance
+```
+
 ***
 
 ### Beispiel 5: Benutzerdefinierter Ausgabeort
 
-Verarbeitung auf einem anderen Laufwerk mit spezifischem Format:
+Verarbeitung an einem anderen Ort mit spezifischem Format:
+
+**Windows:**
 
 ```powershell
 chloros-cli process "C:\Input\Raw_Images" ^
@@ -887,13 +1151,21 @@ chloros-cli process "C:\Input\Raw_Images" ^
   --format "TIFF (16-bit)"
 ```
 
+**Linux:**
+
+```bash
+chloros-cli process ~/input/raw_images \
+  -o ~/output/processed \
+  --format "TIFF (16-bit)"
+```
+
 ***
 
-### Beispiel 6: Authentifizierungs-Workflow
+### Beispiel 6: Authentifizierungsablauf
 
-Authentifizierungsablauf abschließen:
+Vollständiger Authentifizierungsablauf (auf allen Plattformen identisch):
 
-```powershell
+```bash
 # Step 1: Login
 chloros-cli login user@example.com 'MyP@ssw0rd'
 
@@ -901,7 +1173,9 @@ chloros-cli login user@example.com 'MyP@ssw0rd'
 chloros-cli status
 
 # Step 3: Process images
-chloros-cli process "C:\Datasets\Field_A"
+# Windows: chloros-cli process "C:\Datasets\Field_A"
+# Linux:   chloros-cli process ~/datasets/field_a
+chloros-cli process ~/datasets/field_a
 
 # Step 4: Logout (optional, when switching accounts)
 chloros-cli logout
@@ -911,9 +1185,9 @@ chloros-cli logout
 
 ### Beispiel 7: Mehrsprachige Nutzung
 
-Sprache der Benutzeroberfläche ändern:
+Ändern der Sprache der Benutzeroberfläche (auf allen Plattformen identisch):
 
-```powershell
+```bash
 # List available languages
 chloros-cli language --list
 
@@ -921,7 +1195,9 @@ chloros-cli language --list
 chloros-cli language es
 
 # Process with Spanish interface
-chloros-cli process "C:\Vuelos\Campo_A"
+# Windows: chloros-cli process "C:\Vuelos\Campo_A"
+# Linux:   chloros-cli process ~/vuelos/campo_a
+chloros-cli process ~/vuelos/campo_a
 
 # Change back to English
 chloros-cli language en

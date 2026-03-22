@@ -13,14 +13,14 @@
 * [Download](download.md)
 * [FAQ](faq.md)
 
-## Bilder verarbeiten (GUI)
+## Bildverarbeitung (GUI)
 
-* [Projekteinstellungen anpassen](processing-images-gui/adjusting-project-settings.md)
-* [Dateien zu einem Projekt hinzufügen](processing-images-gui/adding-files-to-a-project.md)
-* [Auswählen der Zielbilder](processing-images-gui/choosing-target-images.md)
-* [Starten der Verarbeitung](processing-images-gui/starting-the-processing.md)
-* [Überwachen der Verarbeitung](processing-images-gui/monitoring-the-processing.md)
-* [Beenden der Verarbeitung](processing-images-gui/finishing-the-processing.md)
+* [Anpassen der Projekteinstellungen](processing-images-gui/adjusting-project-settings.md)
+* [Hinzufügen von Dateien zu einem Projekt](processing-images-gui/adding-files-to-a-project.md)
+* [Zielbilder auswählen](processing-images-gui/choosing-target-images.md)
+* [Verarbeitung starten](processing-images-gui/starting-the-processing.md)
+* [Verarbeitung überwachen](processing-images-gui/monitoring-the-processing.md)
+* [Verarbeitung abschließen](processing-images-gui/finishing-the-processing.md)
 
 ## PROJEKTEINSTELLUNGEN
 
@@ -31,6 +31,17 @@
 
 * [Bildraster](image-viewer-gui/image-grid.md)
 * [Bild im Vollbildmodus öffnen](image-viewer-gui/opening-an-image-full-screen.md)
-* [Bild-Ebenen](image-viewer-gui/image-layers.md)
+* [Bildebenen](image-viewer-gui/image-layers.md)
 * [Index/LUT-Sandbox](image-viewer-gui/index-lut-sandbox.md)
 * [Kartenmarkierungen](image-viewer-gui/map-markers.md)
+
+## Linux &amp; Edge Computing
+
+* [Linux-Übersicht](linux/linux-overview.md)
+* [Linux-Installation](linux/linux-installation.md)
+* [NVIDIA Jetson-Handbuch](linux/nvidia-jetson-guide.md)
+
+## Verarbeitungsarchitektur
+
+* [Dynamische Rechenanpassung](processing-architecture/dynamic-compute-adaptation.md)
+* [Verarbeitungspipeline](processing-architecture/processing-pipeline.md)

@@ -1,54 +1,54 @@
 # Hinzufügen von Dateien zu einem Projekt
 
-Nachdem Sie ein Projekt in Chloros erstellt oder geöffnet haben, müssen Sie als Nächstes Ihre Multispektralbilder hinzufügen, um mit der Verarbeitung zu beginnen. Über den Dateibrowser<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> erleichtert das Importieren von Bildern und die Verwaltung Ihres Datensatzes.
+Nachdem Sie in Chloros ein Projekt erstellt oder geöffnet haben, müssen Sie im nächsten Schritt Ihre Multispektralbilder hinzufügen, um mit der Verarbeitung zu beginnen. Über die Registerkarte „Dateibrowser“<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> erleichtert das Importieren von Bildern und die Verwaltung Ihres Datensatzes.
 
 ## Aufrufen des Dateibrowsers
 
 1. Öffnen oder erstellen Sie ein Projekt in Chloros
-2. Klicken Sie auf das Symbol **Dateibrowser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> in der linken Seitenleiste.
-3. Im Dateibrowser-Fenster wird die Dateiliste Ihres Projekts angezeigt.
+2. Klicken Sie auf das Symbol **Dateibrowser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> in der linken Seitenleiste
+3. Im Dateibrowser-Fenster wird die Dateiliste Ihres Projekts angezeigt
 
 {% hint style="info" %}
-**Unterstützte Dateitypen**: Chloros unterstützt RAW+JPG- und JPG-Bilddateien von MAPIR Survey3W und Survey3N Kameras. Es werden nur RAW+JPG empfohlen.
+**Unterstützte Dateiformate**: Chloros unterstützt RAW+JPG- und JPG-Bilddateien von den Kameras MAPIR, Survey3W und Survey3N. Es werden ausschließlich RAW+JPG-Dateien empfohlen.
 {% endhint %}
 
 ***
 
-## Hinzufügen von Bildern zu Ihrem Projekt
+## Bilder zu Ihrem Projekt hinzufügen
 
-Es gibt zwei Möglichkeiten, Bilder zu Ihrem Projekt hinzuzufügen:
+Es gibt zwei Hauptmethoden, um Bilder zu Ihrem Projekt hinzuzufügen:
 
 ### Methode 1: Dateien hinzufügen
 
-Verwenden Sie diese Option, um einzelne Bilddateien oder eine kleine Auswahl von Dateien zu importieren.
+Verwenden Sie diese Option, um einzelne Bilddateien oder eine kleine Auswahl an Dateien zu importieren.
 
-1. Klicken Sie auf die Schaltfläche **„Dateien hinzufügen”** <img src="../.gitbook/assets/image.png" alt="" data-size="line"> oben im Dateibrowser-Fenster.
-2. Navigieren Sie zu dem Ordner, der Ihre Bilder enthält.
-3. Wählen Sie eine oder mehrere Bilddateien aus (halten Sie **Strg** gedrückt, um mehrere Dateien auszuwählen).
-4. Klicken Sie auf **„Öffnen”**, um die ausgewählten Dateien zu importieren.
+1. Klicken Sie auf die Schaltfläche **„Dateien hinzufügen“** <img src="../.gitbook/assets/image.png" alt="" data-size="line"> oben im Dateibrowser-Fenster
+2. Navigieren Sie zu dem Ordner, der Ihre Bilder enthält
+3. Wählen Sie eine oder mehrere Bilddateien aus (halten Sie **Strg** gedrückt, um mehrere Dateien auszuwählen)
+4. Klicken Sie auf **„Öffnen“**, um die ausgewählten Dateien zu importieren
 
 ### Methode 2: Ordner hinzufügen
 
 Verwenden Sie diese Option, um alle Bilder aus einem Ordner auf einmal zu importieren.
 
-1. Klicken Sie auf die Schaltfläche **„Ordner hinzufügen”** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> oben im Dateibrowser-Fenster.
-2. Navigieren Sie zu dem Ordner, der Ihre Bilder aus der Aufnahmesitzung enthält, und wählen Sie ihn aus.
-3. Klicken Sie auf **„Ordner auswählen”**, um alle unterstützten Bilder aus diesem Ordner zu importieren.***
+1. Klicken Sie auf die Schaltfläche **„Ordner hinzufügen“** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> oben im Dateibrowser-Fenster
+2. Navigieren Sie zu dem Ordner, der Ihre Aufnahmen enthält, und wählen Sie ihn aus
+3. Klicken Sie auf **„Ordner auswählen“**, um alle unterstützten Bilder aus diesem Ordner zu importieren***
 
-## Informationen zur Dateibrowser-Tabelle
+## Die Tabelle im Dateibrowser verstehen
 
-Nach dem Importieren werden die Bilder in einer Tabelle mit den folgenden Spalten angezeigt:
+Sobald die Bilder importiert sind, werden sie in einer Tabelle mit den folgenden Spalten angezeigt:
 
 ### Dateiname
 
-* Originaldateiname der Kamera
+* Ursprünglicher Dateiname der Kamera
 * Behält die Namenskonvention der Kamera bei (z. B. IMG\_0001.RAW)
 
 ### Zeitstempel
 
 * Datum und Uhrzeit der Bildaufnahme
 * Aus den EXIF-Metadaten des Bildes extrahiert
-* Wird für die PPK-Synchronisation und die Erkennung von Kalibrierungszielen verwendet
+* Wird für die PPK-Synchronisation und die Erkennung von Kalibrierungsmarken verwendet
 
 ### Kameramodell
 
@@ -60,11 +60,11 @@ Nach dem Importieren werden die Bilder in einer Tabelle mit den folgenden Spalte
 
 * Aktivieren Sie dieses Kontrollkästchen für Bilder, die Kalibrierungsziele enthalten
 * Beschleunigt die Zielerkennung während der Verarbeitung erheblich
-* Weitere Informationen finden Sie unter [Auswählen von Zielbildern](choosing-target-images.md)
+* Weitere Informationen finden Sie unter [Auswahl von Zielbildern](choosing-target-images.md)
 
 ### Anzeigen von Bildmetadaten
 
-Wenn Sie auf die Umschaltfläche oben rechts über der Tabelle klicken, werden die Metadaten des ausgewählten Bildes im Bildrasterbereich angezeigt.
+Durch Klicken auf die Umschaltfläche in der oberen rechten Ecke über der Tabelle werden die Metadaten des ausgewählten Bildes im Bildrasterbereich angezeigt.
 
 <figure><img src="../.gitbook/assets/chloros_grid_meta.gif" alt=""><figcaption></figcaption></figure>
 
@@ -72,47 +72,47 @@ Wenn Sie auf die Umschaltfläche oben rechts über der Tabelle klicken, werden d
 
 ## Verwalten von Dateien in Ihrem Projekt
 
-### Entfernen von Dateien
+### Dateien entfernen
 
 So entfernen Sie unerwünschte Bilder aus Ihrem Projekt:
 
-1. Wählen Sie ein oder mehrere Bilder in der Dateibrowser-Tabelle aus.
-2. Klicken Sie auf die Schaltfläche **„Ausgewählte entfernen“** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> .
-3. Bestätigen Sie das Entfernen (die Dateien werden nicht von der Festplatte gelöscht, sondern nur aus dem Projekt entfernt).
+1. Wählen Sie ein oder mehrere Bilder in der Tabelle des Dateibrowsers aus
+2. Klicken Sie auf die Schaltfläche **„Ausgewählte entfernen“** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> Schaltfläche
+3. Bestätigen Sie das Entfernen (die Dateien werden nicht von der Festplatte gelöscht, sondern nur aus dem Projekt entfernt)
 
 ### Sortieren und Filtern
 
-* **Nach Spalte sortieren**: Klicken Sie auf eine beliebige Spaltenüberschrift, um die Bilder zu sortieren.
-* **Nach Zeitstempel sortieren**: Nützlich zum Organisieren chronologischer Aufnahmesequenzen.
-* **Kamera-Modellfilter**: Gruppieren Sie Bilder nach Kameratyp, wenn Sie mehrere Kameras verwenden.***
+* **Nach Spalte sortieren**: Klicken Sie auf eine beliebige Spaltenüberschrift, um die Bilder zu sortieren
+* **Sortierung nach Zeitstempel**: Nützlich zum Organisieren chronologischer Aufnahmesequenzen
+* **Filter nach Kameramodell**: Gruppieren Sie Bilder nach Kameratyp, wenn Sie mehrere Kameras verwenden***
 
 ## Bildvorschau
 
 ### Vollbild anzeigen
 
-Klicken Sie auf eine beliebige Bildminiaturansicht im Dateibrowser, um sie im Hauptvorschau-Bereich anzuzeigen:
+Klicken Sie auf eine beliebige Bildminiatur im Dateibrowser, um sie im Hauptvorschau-Bereich anzuzeigen:
 
-1. Das Bild wird im mittleren Vorschaufenster angezeigt.
-2. Verwenden Sie die Zoomsteuerung, um Bilddetails zu überprüfen.
-3. Navigieren Sie mit den Pfeiltasten zwischen den Bildern.
+1. Das Bild erscheint im mittleren Vorschaufenster
+2. Verwenden Sie die Zoom-Steuerelemente, um Bilddetails zu betrachten
+3. Navigieren Sie mit den Pfeiltasten zwischen den Bildern
 
-### Schnellnavigation
+### Schnelle Navigation
 
-* **Vorheriges Bild**: Klicken Sie auf den Pfeil nach links oder drücken Sie die Taste ←.
-* **Nächstes Bild**: Klicken Sie auf den rechten Pfeil oder drücken Sie die Taste →.
-* **Vergrößern/Verkleinern**: Verwenden Sie das Mausrad oder die Zoomtasten.
-* **Verschieben**: Klicken und ziehen Sie das Bild, wenn es vergrößert ist.***
+* **Vorheriges Bild**: Klicken Sie auf den Pfeil nach links oder drücken Sie die Taste ←
+* **Nächstes Bild**: Klicken Sie auf den Rechtspfeil oder drücken Sie die Taste →
+* **Vergrößern/Verkleinern**: Verwenden Sie das Mausrad oder die Zoom-Schaltflächen
+* **Schwenken**: Klicken und ziehen Sie auf dem Bild, wenn es vergrößert ist***
 
 ## Umgang mit doppelten Dateien
 
 Chloros erkennt und ignoriert automatisch doppelte Dateien:
 
 * Dateien mit identischen Dateinamen werden übersprungen
-* Verhindert versehentliche Doppelverarbeitung
-* Bei Erkennung von Duplikaten wird eine Warnmeldung angezeigt
+* Verhindert versehentliche doppelte Verarbeitung
+* Warnmeldung wird angezeigt, wenn Duplikate erkannt werden
 
 {% hint style="warning" %}
-**Wichtig**: Benennen Sie Ihre Originalbilddateien vor dem Import nicht um und ändern Sie sie nicht. Chloros ist für die ordnungsgemäße Verarbeitung auf die ursprünglichen Dateinamen und Metadaten angewiesen.
+**Wichtig**: Benennen Sie Ihre Originalbilddateien vor dem Import nicht um und ändern Sie sie nicht. Chloros ist für die korrekte Verarbeitung auf die Originaldateinamen und Metadaten angewiesen.
 {% endhint %}
 
 ***
@@ -123,8 +123,8 @@ Wenn Ihr Projekt Bilder von mehreren MAPIR-Kameras enthält:
 
 1. Chloros erkennt automatisch jedes Kameramodell
 2. Jeder Kameratyp wird mit dem entsprechenden Kalibrierungsprofil verarbeitet
-3. Der Dateibrowser zeigt das Kameramodell in der Spalte „Kameramodell” an.
-4. Bei der Verarbeitung werden die richtigen Einstellungen für jeden Kameratyp angewendet.
+3. Der Dateibrowser zeigt das Kameramodell in der Spalte „Kameramodell“ an
+4. Bei der Verarbeitung werden die richtigen Einstellungen für jeden Kameratyp angewendet
 
 **Beispielszenario**: Survey3W RGN + Survey3N OCN Dual-Kamera-Konfiguration***
 
@@ -132,22 +132,22 @@ Wenn Ihr Projekt Bilder von mehreren MAPIR-Kameras enthält:
 
 ### Vor dem Import organisieren
 
-* Bewahren Sie die Kalibrierungszielbilder im selben Ordner wie die Vermessungsbilder auf.
-* Behalten Sie die ursprüngliche Ordnerstruktur Ihrer Kamera/SD-Karte bei.
-* Mischen Sie keine Datensätze aus verschiedenen Sitzungen in einem Projekt.
+* Speichern Sie Kalibrierungszielbilder im selben Ordner wie die Vermessungsbilder
+* Behalten Sie die ursprüngliche Ordnerstruktur Ihrer Kamera/SD-Karte bei
+* Mischen Sie keine Datensätze aus verschiedenen Sitzungen in einem Projekt
 
 ### Dateibenennung
 
-* Behalten Sie die ursprünglichen Dateinamen der Kamera bei (IMG\_0001.RAW usw.).
-* Benennen Sie Dateien vor dem Import nicht um.
-* Die ursprünglichen Namen enthalten wichtige Metadaten.
+* Behalten Sie die ursprünglichen Kameradateinamen bei (IMG\_0001.RAW usw.)
+* Benennen Sie Dateien vor dem Import nicht um
+* Die ursprünglichen Namen enthalten wichtige Metadaten
 
 ### Kalibrierungszielbilder
 
-* Fügen Sie immer 1–2 Kalibrierungszielbilder pro Sitzung hinzu.
-* Nehmen Sie die Ziele vor und nach der Aufnahmesitzung auf.
-* Platzieren Sie die Ziele unter den gleichen Lichtverhältnissen wie im Aufnahmebereich.
-* Markieren Sie die Zielbilder mit dem Kontrollkästchen „Ziel“, um die Verarbeitung zu beschleunigen.
+* Fügen Sie immer 1–2 Kalibrierungszielbilder pro Sitzung hinzu
+* Nehmen Sie die Ziele vor und nach der Aufnahmesitzung auf
+* Platzieren Sie die Ziele unter denselben Lichtbedingungen wie den Aufnahmebereich
+* Markieren Sie Zielbilder mit dem Kontrollkästchen „Ziel“, um die Verarbeitung zu beschleunigen
 
 ***
 
@@ -159,19 +159,19 @@ Wenn Ihr Projekt Bilder von mehreren MAPIR-Kameras enthält:
 
 * Dateiformat wird nicht unterstützt (nur RAW+JPG und JPG von MAPIR-Kameras)
 * Bilder stammen von Nicht-MAPIR-Kameras (siehe [Unterstützte Kameras](../supported-cameras.md))
-* Datei beschädigt oder unvollständige Übertragung von der SD-Karte
+* Beschädigte Datei oder unvollständige Übertragung von der SD-Karte
 
-**Lösung**: Überprüfen Sie das Dateiformat und die Kompatibilität des Kameramodells.
+**Lösung**: Überprüfen Sie die Kompatibilität von Dateiformat und Kameramodell
 
-### Kameramodell wird nicht erkannt
+### Kameramodell nicht erkannt
 
 **Mögliche Ursachen:**
 
 * Geänderte EXIF-Metadaten
-* Bilder in externer Software bearbeitet
+* Bilder wurden in externer Software bearbeitet
 * Unvollständige Dateiübertragung
 
-**Lösung**: Importieren Sie die ursprünglichen, unveränderten Dateien erneut von der Kamera/SD-Karte.
+**Lösung**: Importieren Sie die ursprünglichen, unveränderten Dateien erneut von der Kamera/SD-Karte
 
 ### Fehlende Zeitstempel
 
@@ -180,16 +180,16 @@ Wenn Ihr Projekt Bilder von mehreren MAPIR-Kameras enthält:
 * Kamera-Uhr nicht richtig eingestellt
 * EXIF-Daten durch externe Software entfernt
 
-**Lösung**: Überprüfen Sie, ob die Zeiteinstellungen der Kamera während der Aufnahme korrekt waren.***
+**Lösung**: Überprüfen Sie, ob die Zeiteinstellungen der Kamera während der Aufnahme korrekt waren***
 
 ## Nächste Schritte
 
 Sobald Ihre Dateien importiert sind:
 
-1. **Überprüfen Sie die Dateiliste** – Stellen Sie sicher, dass alle Bilder korrekt geladen wurden.
-2. **Überprüfen Sie die Kameramodelle** – Vergewissern Sie sich, dass die Kameraerkennung korrekt ist.
-3. **Markieren Sie die Zielbilder** – Siehe [Auswählen von Zielbildern](choosing-target-images.md)
-4. **Passen Sie die Einstellungen an** – Konfigurieren Sie die Verarbeitungsoptionen unter [Projekteinstellungen](adjusting-project-settings.md)
+1. **Überprüfen Sie die Dateiliste** – Stellen Sie sicher, dass alle Bilder korrekt geladen wurden
+2. **Kameramodelle überprüfen** – Überprüfen Sie, ob die Kamera korrekt erkannt wurde
+3. **Zielbilder markieren** – Siehe [Zielbilder auswählen](choosing-target-images.md)
+4. **Einstellungen anpassen** – Konfigurieren Sie die Verarbeitungsoptionen in den [Projekteinstellungen](adjusting-project-settings.md)
 5. **Verarbeitung starten** – Siehe [Verarbeitung starten](starting-the-processing.md)
 
 Ausführliche Informationen zur Projektkonfiguration finden Sie unter [Projekteinstellungen anpassen](adjusting-project-settings.md).

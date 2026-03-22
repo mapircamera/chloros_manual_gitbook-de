@@ -1,45 +1,45 @@
 # Kartenmarkierungen
 
-Auf der Registerkarte „Karte“ werden Ihre Bilder anhand ihrer GPS-Koordinaten auf einer interaktiven 2D-Karte angezeigt. Dies bietet einen geografischen Überblick über Ihre Aufnahmesitzung und hilft Ihnen, die räumliche Abdeckung zu visualisieren. Dies ist auch beim ersten Importieren Ihrer Bilder nützlich, um schnell alle Bilder zu entfernen, die Sie nicht verarbeiten müssen.
+Auf der Registerkarte „Karte“ werden Ihre Bilder anhand ihrer GPS-Koordinaten auf einer interaktiven 2D-Karte angezeigt. Dies bietet einen geografischen Überblick über Ihre Aufnahmesitzung und hilft Ihnen, die räumliche Abdeckung zu visualisieren. Dies ist auch beim ersten Import Ihrer Bilder nützlich, um Bilder, die Sie nicht bearbeiten müssen, schnell zu entfernen.
 
 <figure><img src="../.gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
 
 ## Auf die Registerkarte „Karte“ zugreifen
 
-1. Öffnen oder erstellen Sie ein Projekt in Chloros.
-2. Importieren Sie Bilder, die GPS-Metadaten enthalten.
-3. Klicken Sie auf die Registerkarte „Karte“ <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> in der linken Seitenleiste.
-4. Die Karte zeigt Markierungen an den GPS-Standorten der einzelnen Bilder an.
+1. Öffnen oder erstellen Sie ein Projekt in Chloros
+2. Importieren Sie Bilder, die GPS-Metadaten enthalten
+3. Klicken Sie auf die Registerkarte **Karte** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> in der linken Seitenleiste
+4. Die Karte zeigt Markierungen an den GPS-Standorten der einzelnen Bilder an
 
 {% hint style="info" %}
-**GPS erforderlich**: Nur Bilder mit eingebetteten GPS-Koordinaten in ihren EXIF-Metadaten werden auf der Karte angezeigt. Stellen Sie sicher, dass Ihr Kamera während der Aufnahme GPS aktiviert hat.
+**GPS erforderlich**: Auf der Karte werden nur Bilder angezeigt, deren EXIF-Metadaten GPS-Koordinaten enthalten. Stellen Sie sicher, dass die GPS-Funktion Ihrer Kamera während der Aufnahme aktiviert ist.
 {% endhint %}
 
 ***
 
-## Anpassen von Bildern über die Registerkarte „Karte“
+## Bilder über die Registerkarte „Karte“ bearbeiten
 
-Die Registerkarte „Karte“ <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> hat die gleichen Funktionen zum Hinzufügen  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  und Entfernen  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  Dateischaltflächen wie die Registerkarte [**Dateibrowser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Außerdem wird dieselbe Projektdateitabellenliste angezeigt, jedoch mit anderen Spaltenüberschriften:
+Die Registerkarte **Karte**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> verfügt über dieselben Schaltflächen zum Hinzufügen  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  und  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  Datei-Schaltflächen wie die Registerkarte [**Dateibrowser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Außerdem zeigt er dieselbe Projektdatei-Tabellenliste an, jedoch mit anderen Spaltenüberschriften:
 
 ### Dateiname
 
-* Originaldateiname der Kamera
+* Ursprünglicher Dateiname der Kamera
 * Behält die Namenskonvention der Kamera bei (z. B. IMG\_0001.RAW)
 
 ### Breitengrad
 
-* Breitengrad des Bildes
+* Der Breitengrad des Bildes
 
 ### Längengrad
 
-* Längengrad des Bildes
+* Der Längengrad des Bildes
 
 ### Höhe
 
 * Die Höhe des Bildes
 
 {% hint style="info" %}
-Durch Klicken auf die Spaltenüberschriften der Tabelle werden auch die Zeilendaten sortiert.
+Durch Klicken auf die Spaltenüberschriften der Tabelle werden die Daten in den Zeilen sortiert
 {% endhint %}
 
 ***
@@ -48,28 +48,28 @@ Durch Klicken auf die Spaltenüberschriften der Tabelle werden auch die Zeilenda
 
 Jedes Bild mit GPS-Daten wird durch eine Markierung auf der Karte dargestellt:
 
-### Markierungsanzeige
+### Anzeige der Markierungen
 
-* Markierungen geben die genauen GPS-Koordinaten an, an denen jedes Bild aufgenommen wurde.
-* Gruppierte Markierungen können beim Herauszoomen zusammengefasst werden.
-* Zoomen Sie hinein, um die einzelnen Bildpositionen anzuzeigen.
+* Markierungen zeigen die genauen GPS-Koordinaten an, an denen jedes Bild aufgenommen wurde
+* Bei starkem Herauszoomen können Markierungen zu Gruppen zusammengefasst werden
+* Zoomen Sie heran, um die einzelnen Bildstandorte zu sehen
 
 {% hint style="success" %}
-SUPER-ZOOM: Wenn Sie die maximale Zoomstufe des Kartenkachelanbieters erreicht haben, wird die Kachel bei weiterem Zoomen vergrößert, sodass Sie Markierungen sehen können, die nahe beieinander liegen.
+SUPER-ZOOM: Wenn Sie die maximale Zoomstufe des Kartenkachel-Anbieters erreichen, wird die Kachel bei weiterem Heranzoomen vergrößert, sodass Sie Markierungen sehen können, die nahe beieinander liegen.
 {% endhint %}
 
-### Vorschau beim Darüberfahren
+### Vorschau beim Bewegen des Mauszeigers
 
-* **Bewegen Sie den Mauszeiger** über eine Markierung, um eine Miniaturansicht des Bildes zu sehen.
-* So können Sie Bilder schnell visuell identifizieren, ohne die Kartenansicht zu verlassen.
-* Nützlich, um bestimmte Bilder innerhalb einer großen Aufnahmesitzung zu finden.
+* **Bewegen Sie den Mauszeiger** über einen beliebigen Marker, um eine Miniaturansicht des Bildes zu sehen
+* Dies ermöglicht eine schnelle visuelle Identifizierung, ohne die Kartenansicht zu verlassen
+* Nützlich zum Auffinden bestimmter Bilder innerhalb einer großen Aufnahmeserie
 
 ***
 
-## Kartenkachelanbieter
+## Kartenkachel-Anbieter
 
 {% hint style="success" %}
-**Automatische Auswahl**: Chloros wählt automatisch den Kachel-Dienst aus, der die beste Zoomstufe für Ihren aktuellen Kartenstandort bietet. Bei Bedarf können Sie manuell zwischen den Anbietern wechseln.
+**Automatische Auswahl**: Chloros wählt automatisch den Kacheldienst aus, der die beste Zoomstufe für Ihren aktuellen Kartenstandort bietet. Sie können bei Bedarf manuell zwischen den Anbietern wechseln.
 {% endhint %}
 
 Die Registerkarte „Karte“ unterstützt zwei Kachelanbieter für die Hintergrundkartenbilder:
@@ -77,12 +77,12 @@ Die Registerkarte „Karte“ unterstützt zwei Kachelanbieter für die Hintergr
 ### Google Maps
 
 * Standard-Satelliten- und Kartenbilder von Google
-* Am besten für allgemeine weltweite Abdeckung geeignet
+* Am besten geeignet für allgemeine weltweite Abdeckung
 
 ### ESRI
 
 * Satelliten- und Luftbilder von ESRI ArcGIS
-* Bietet oft Bilder mit höherer Auflösung in bestimmten Regionen
+* Bietet in bestimmten Regionen oft Bilder mit höherer Auflösung
 
 ***
 
@@ -92,72 +92,72 @@ Sie können den Kartenschicht-Typ auswählen (von links nach rechts):
 
  <img src="../.gitbook/assets/image (23).png" alt="" data-size="original">### Gelände
 
-Zeigt Höhenprofile und Kartenkacheln mit Details (Straßen usw.) an.
+Zeigt Höhenprofile und Kartenkacheln mit Details (Straßen usw.) an
 
 ### Karte
 
-Zeigt Standard-Kartenkacheln (geringere Bandbreite) mit Details (Straßen usw.) an.
+Zeigt Standard-Kartenkacheln (geringere Bandbreite) mit Details (Straßen usw.) an
 
 ### Satellit
 
-Zeigt detaillierte Satellitenkartenkacheln (höhere Bandbreite) an.
+Zeigt detaillierte Satellitenkartenkacheln (höhere Bandbreite) an
 
 ### Hybrid
 
-Zeigt Satellitenkartenkacheln mit zusätzlichen Details (Straßen usw.) an.
+Zeigt Satellitenkartenkacheln mit zusätzlichen Details (Straßen usw.) an
 
 ***
 
 ## Kartennavigation
 
-### Zoomsteuerung
+### Zoom-Steuerung
 
-* **Vergrößern/Verkleinern**: Verwenden Sie das Mausrad oder die Zoomtasten.
-* **Vollbild**: Vollbildanzeige der Karte
+* **Vergrößern/Verkleinern**: Verwenden Sie das Mausrad oder die Zoom-Schaltflächen
+* **Vollbild**: Zeigt die Karte im Vollbildmodus an
 
-### Schwenksteuerung
+### Schwenk-Steuerung
 
-* **Schwenk**: Klicken und ziehen Sie, um sich auf der Karte zu bewegen.***
+* **Schwenken**: Klicken und ziehen, um sich auf der Karte zu bewegen***
 
 ## Anwendungsfälle
 
 ### Visualisierung der Flugbahn
 
-* Zeigen Sie den Erfassungsbereich von Drohnenaufnahmen an.
-* Identifizieren Sie Lücken in der Bildabdeckung.
-* Überprüfen Sie die Ausführung der Flugbahn.
+* Anzeigen des Erfassungsbereichs von Drohnenaufnahmen
+* Identifizieren von Lücken in der Bildabdeckung
+* Überprüfen der Flugbahnausführung
 
 ### Überprüfung der Bodenvermessung
 
-* Sehen Sie sich die räumliche Verteilung der bodengestützten Aufnahmen an.
-* Lokalisieren Sie Kalibrierungszielbilder relativ zum Vermessungsgebiet.
-* Planen Sie zusätzliche Aufnahmeorte.
+* Anzeigen der räumlichen Verteilung bodengestützter Aufnahmen
+* Lokalisieren von Kalibrierungszielbildern relativ zum Vermessungsgebiet
+* Planen zusätzlicher Aufnahmestandorte
 
 ### Qualitätskontrolle
 
-* Identifizieren Sie schnell Bilder, die an unerwarteten Orten aufgenommen wurden.
-* Überprüfen Sie die GPS-Genauigkeit im gesamten Datensatz.
-* Vergleichen Sie Bildorte mit Feldnotizen.
+* Schnelle Identifizierung von Bildern, die an unerwarteten Orten aufgenommen wurden
+* Überprüfung der GPS-Genauigkeit im gesamten Datensatz
+* Abgleich der Bildstandorte mit Feldnotizen
 
 ***
 
 ## Fehlerbehebung
 
-### Keine Markierungen werden angezeigt
+### Es werden keine Markierungen angezeigt
 
 **Mögliche Ursachen:**
 
-* Bilder enthalten keine GPS-Metadaten.
-* GPS war während der Aufnahme auf der Kamera deaktiviert.
-* EXIF-Daten wurden durch externe Software entfernt.
+* Die Bilder enthalten keine GPS-Metadaten
+* Das GPS der Kamera war während der Aufnahme deaktiviert
+* Die EXIF-Daten wurden durch externe Software entfernt
 
-**Lösung**: Überprüfen Sie, ob GPS auf Ihrer Kamera aktiviert ist, und importieren Sie die Originaldateien erneut.
+**Lösung**: Überprüfen Sie, ob GPS auf Ihrer Kamera aktiviert ist, und importieren Sie die Originaldateien erneut
 
-### Markierungen an falscher Stelle
+### Marker an falscher Position
 
 **Mögliche Ursachen:**
 
-* Das GPS der Kamera hatte eine schlechte Satellitenverbindung.
-* GPS-Drift während der Aufnahme.
+* Das Kamera-GPS hatte einen schlechten Satellitenempfang
+* GPS-Abweichung während der Aufnahme
 
-**Lösung**: Dies ist in der Regel ein Problem zum Zeitpunkt der Aufnahme. Erwägen Sie die Verwendung von PPK/RTK-GPS für Präzisionsanwendungen.
+**Lösung**: Dies ist in der Regel ein Problem zum Zeitpunkt der Aufnahme; erwägen Sie die Verwendung von PPK/RTK-GPS für Präzisionsanwendungen
