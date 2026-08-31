@@ -1,10 +1,10 @@
 # Unterstützte Sprachen
 
-Chloros bietet eine vollständige Benutzeroberfläche in **38 Sprachen weltweit** und ist damit für Nutzer auf der ganzen Welt zugänglich. Sie können die Sprache sofort in allen Benutzeroberflächen wechseln: Desktop, Browser, CLI und Python SDK.
+Chloros bietet vollständige Benutzeroberflächenunterstützung in **38 Sprachen weltweit** und ist somit für Nutzer auf der ganzen Welt zugänglich. Sie können sowohl in der Desktop-Benutzeroberfläche als auch im CLI sofort zwischen den Sprachen wechseln.
 
 Chloros unterstützt die folgenden Sprachen:
 
-| # | Sprache | Name | CLI-Code |
+| # | Sprache | Name in der Originalsprache | CLI-Code |
 |---|----------|-------------|----------|
 | 1 | 🇺🇸 Englisch | English | `en` |
 | 2 | 🇪🇸 Spanisch | Español | `es` |
@@ -47,16 +47,16 @@ Chloros unterstützt die folgenden Sprachen:
 
 ## So ändern Sie die Sprache
 
-### Im Chloros-Desktop/Browser
+### In Chloros Desktop
 
-1. Öffnen Sie die Anwendungseinstellungen
-2. Navigieren Sie zum Sprachauswahlmenü
-3. Wählen Sie Ihre bevorzugte Sprache aus der Liste aus
-4. Die Benutzeroberfläche wird sofort aktualisiert
+1. Öffnen Sie die Anwendungseinstellungen.
+2. Navigieren Sie zum Sprachauswahlmenü.
+3. Wählen Sie Ihre bevorzugte Sprache aus der Liste aus.
+4. Die Benutzeroberfläche wird sofort aktualisiert.
 
-### Im Chloros CLI
+### In Chloros CLI
 
-Verwenden Sie den Befehl `language`, um die Sprache der Benutzeroberfläche anzuzeigen oder zu ändern:
+Verwenden Sie den Befehl `language`, um die Sprache der Benutzeroberfläche von CLI anzuzeigen oder zu ändern:
 
 ```bash
 # View current language
@@ -77,17 +77,13 @@ chloros-cli language --list
 
 Weitere Informationen finden Sie in der [CLI-Dokumentation](CLI.md).
 
-### In Chloros Python SDK
-
-Legen Sie den Sprachparameter bei der Initialisierung des SDK fest, um Meldungen und Ausgaben in Ihrer bevorzugten Sprache zu erhalten.
-
 ## Abdeckung
 
 Alle 38 Sprachen werden vollständig unterstützt in:
 
-* **Chloros Desktop** – Vollständige GUI-Übersetzung
-* **Chloros Browser** – Weboberfläche in allen Sprachen
+* **Chloros Desktop** – Vollständige Übersetzung der grafischen Benutzeroberfläche
 * **Chloros CLI** – Befehlszeilenschnittstelle und Ausgabemeldungen
-* **Chloros Python SDK** – API-Meldungen und Dokumentation
 
-Die Sprachunterstützung stellt sicher, dass Nutzer weltweit barrierefrei und effizient in ihrer Muttersprache arbeiten können.
+Das Python SDK API und die dazugehörige [Referenzdokumentation](reference/sdk-reference.md) werden in englischer Sprache bereitgestellt.
+
+Die Sprachunterstützung gewährleistet, dass Nutzer weltweit barrierefrei und effizient in ihrer Muttersprache arbeiten können.

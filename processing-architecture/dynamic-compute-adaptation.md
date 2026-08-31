@@ -1,23 +1,30 @@
-# Dynamische Anpassung der Rechenleistung
+# Dynamische Rechenanpassung
 
-Chloros 1.1.0 bietet eine intelligente Hardwareerkennung und die automatische Auswahl der Verarbeitungsstrategie. Die Verarbeitungs-Engine passt sich Ihrer Hardware an – vom Jetson Nano bis zur Workstation mit mehreren GPUs – ohne dass eine manuelle Konfiguration erforderlich ist.
+Chloros 1.2.0 nutzt Hardwareerkennung und die automatische Auswahl der Verarbeitungsstrategie. Die Verarbeitungs-Engine passt sich Ihrer Hardware an – vom Jetson Orin Nano bis hin zu einer Workstation mit mehreren GPUs – ohne jegliche manuelle Konfiguration.
 
 ***
 
 ## So funktioniert es
 
-Beim Start von Chloros wird Ihr System automatisch profiliert:
+Beim Start von Chloros wird Ihr System profiliert:
 
-1. **Erkennt das Betriebssystem** – Windows oder Linux
+1. **Erkennung des Betriebssystems** – Windows oder Linux
 2. **Ermittelt CPU-Kerne und Gesamtspeicher**
 
-3.**Erkennt vorhandene GPUs** – NVIDIA CUDA-Fähigkeit, VRAM, Modell
+3.**Erkennt vorhandene GPUs** – NVIDIA-CUDA-Fähigkeit, VRAM, Modell
 4. **Ermittelt das Jetson-Modell** (falls zutreffend) – über `/proc/device-tree/model`
-5. **Überprüft Temperatursensoren** (Jetson) – für temperaturbewusste Verarbeitung
-6. **Wählt die optimale Rechenstrategie aus** — basierend auf der gesamten erkannten Hardware
+5. **Überprüft die Temperatursensoren** (Jetson) — für temperaturbewusste Verarbeitung
+6. **Wählt die Rechenstrategie aus** – basierend auf der gesamten erkannten Hardware
 7. **Konfiguriert die Anzahl der Worker, den Pipeline-Typ und die Speicherzuweisung** automatisch
 
-Das Ergebnis wird zwischengespeichert, sodass nachfolgende Durchläufe schneller starten. Bei Hardwareänderungen (z. B. Hinzufügen einer GPU) führt Chloros beim nächsten Start eine Neuprofilierung durch.
+Das erkannte Profil wird für die Sitzung im Arbeitsspeicher und auf der Festplatte zwischengespeichert, sodass spätere Ausführungen schneller starten:
+
+| Plattform | Zwischengespeichertes Profil |
+| --- | --- |
+| **Linux / Jetson** | `~/.config/chloros/system_config.json` (berücksichtigt `XDG_CONFIG_HOME`) |
+| **Windows** | `%LOCALAPPDATA%\Chloros\config\system_config.json` |
+
+Löschen Sie diese Datei, um eine erneute Erkennung zu erzwingen – nützlich nach dem Hinzufügen einer GPU oder von mehr RAM. Chloros führt ebenfalls automatisch eine erneute Erkennung durch, wenn der Cache von einer inkompatiblen älteren Version geschrieben wurde.
 
 ***
 
@@ -25,32 +32,76 @@ Das Ergebnis wird zwischengespeichert, sodass nachfolgende Durchläufe schneller
 
 Chloros wählt je nach Ihrer Hardware eine von drei Rechenstrategien aus:
 
-| Strategie | GPU erforderlich | Worker | Pipeline | Am besten geeignet für |
+| Strategie | Ausgewählt, wenn | Worker | Executor | Pipeline |
 | --- | --- | --- | --- | --- |
-| **`GPU_PARALLEL`** | Ja (12 GB+ VRAM oder 16 GB+ gemeinsam genutzt) | 3–4 | `fused_gpu` | Desktop-GPUs mit 12 GB+, Jetson Orin NX 16 GB, AGX Orin |
-| **`GPU_SINGLE`** | Ja (&lt; 12 GB VRAM) | 1–3 | `tiled_gpu` | Einsteiger-GPUs, Jetson Nano, Orin Nano |
-| **`CPU_PARALLEL`** | Nein | Kerne – 1 | `cpu_fallback` | Systeme ohne NVIDIA-GPU |
+| **`GPU_PARALLEL`**| CUDA-GPU mit**12 GB+ VRAM**(bei Jetson Unified Memory sind außerdem insgesamt 12 GB+ gemeinsam genutzter RAM erforderlich) | `min(4, VRAM ÷ 4GB)`, mindestens 2 —**auf Jetson auf 2 begrenzt** | `ProcessPoolExecutor` (spawn) | `fused_gpu` |
+| **`GPU_SINGLE`**| CUDA-GPU mit**2–12 GB VRAM**| 3 (I/O-Überlappung; GPU-Zugriff durch ein Semaphor serialisiert).**1 (sequenziell) auf Jetsons mit weniger als 12 GB RAM** | `ProcessPoolExecutor` (spawn); sequenziell im Prozess auf Jetsons mit geringem RAM | `fused_gpu` / `tiled_gpu` |
+| **`CPU_PARALLEL`** | Keine CUDA-GPU oder weniger als 2 GB VRAM | `max(2, physical cores − 1)` | `ThreadPoolExecutor` | `cpu_fallback` |
+
+Anwendungsbeispiele für die `GPU_PARALLEL`-Worker-Formel: 12 GB VRAM → 3 Worker, 16 GB+ → 4 Worker, jeder Jetson → 2 Worker.
+
+Die Parallelisierung erfolgt mit dem Standard-`concurrent.futures` von Python: GPU-Strategien verwenden einen `ProcessPoolExecutor` mit der Startmethode **spawn** (jeder Worker ist ein separater Prozess mit eigenem CUDA-Kontext – `fork` würde einen bereits initialisierten CUDA-Zustand kopieren und die untergeordneten Prozesse beschädigen), und die CPU-Strategie verwendet `ThreadPoolExecutor`. Chloros verwendet kein verteiltes Framework von Drittanbietern (wie z. B. Ray).
 
 ### Pipeline-Typen
 
-* **`fused_gpu`** — Vollständiger GPU-Verarbeitungspfad. Alle Debayer-, Korrektur- und Indexoperationen werden auf der GPU in einem einzigen fusionierten Durchlauf ausgeführt. Höchster Durchsatz, erfordert jedoch mehr VRAM.
-* **`tiled_gpu`** — Speichereffizienter GPU-Pfad. Verarbeitet Bilder in Kacheln, um sie an den begrenzten GPU-Speicher anzupassen. Geringerer Durchsatz, funktioniert jedoch auf Geräten mit begrenztem Speicher.
-* **`cpu_fallback`** — Reine CPU-Verarbeitung unter Verwendung von Multithread-Parallelität. Wird verwendet, wenn keine NVIDIA-GPU verfügbar ist.***
+* **`fused_gpu`** – Vollständiger GPU-Verarbeitungspfad. Debayering, Korrektur und Indizierungsoperationen werden auf der GPU in einem einzigen fusionierten Durchlauf ausgeführt. Höchster Durchsatz, benötigt am meisten VRAM.
+* **`tiled_gpu`** – Speichereffizienter GPU-Pfad. Verarbeitet Bilder in Kacheln, um sie an den begrenzten GPU-Speicher anzupassen. Geringerer Durchsatz, funktioniert jedoch auf Geräten mit begrenztem Speicher.
+* **`cpu_fallback`** – Reine CPU-Verarbeitung unter Verwendung von Multithread-Parallelität. Wird verwendet, wenn keine NVIDIA-GPU verfügbar ist, und als Fallback der letzten Instanz, wenn beide GPU-Pfade fehlschlagen.
+
+Die Fallback-Kette zur Laufzeit lautet immer `fused_gpu` → `tiled_gpu` → `cpu_fallback`.
+
+***
+
+## Manuelle Übersteuerung der Strategie
+
+Setzen Sie die Umgebungsvariable `CHLOROS_STRATEGY`, um eine bestimmte Strategie zu erzwingen – eine Experten-Notfalllösung für den Fall, dass die automatische Erkennung eine für Ihre Situation ungeeignete Option auswählt (z. B. um die GPU für andere Aufgaben freizuhalten):
+
+```bash
+# Valid values: CPU_PARALLEL, GPU_SINGLE, GPU_PARALLEL
+CHLOROS_STRATEGY=CPU_PARALLEL chloros-cli process ~/datasets/flight001
+```
+
+Bei der Variablen wird die Groß-/Kleinschreibung nicht berücksichtigt; alles, was nicht zu den drei Namen gehört, wird ignoriert, und die automatische Erkennung läuft normal weiter. Auch bei einer Überschreibung wählt Chloros weiterhin die Anzahl der Worker für Sie aus:
+
+| Überschreibung | Verwendete Worker-Anzahl |
+| --- | --- |
+| `CPU_PARALLEL` | `max(2, physical cores − 1)` |
+| `GPU_SINGLE` | 3 |
+| `GPU_PARALLEL` | `min(4, physical cores)` |
+
+Es wird empfohlen, die Einstellung pro Befehl statt dauerhaft vorzunehmen, damit sich normale Läufe weiterhin automatisch anpassen.
+
+***
 
 ## Plattformspezifisches Verhalten
 
 | Plattform | Strategie | Worker | Pipeline | Anmerkungen |
 | --- | --- | --- | --- | --- |
-| **Jetson Nano 8 GB** | `GPU_SINGLE` | 1 | `tiled_gpu` (seriell) | Speichereffizienter Modus, verarbeitet jeweils ein Bild |
-| **Jetson Orin NX 16 GB** | `GPU_PARALLEL` | 3 | `fused_gpu` (parallel) | Empfohlenes Edge-Gerät – echte parallele GPU-Verarbeitung |
-| **Jetson AGX Orin 64 GB** | `GPU_PARALLEL` | 4 | `fused_gpu` (parallel) | Maximale Edge-Leistung |
-| **Desktop mit 8 GB GPU** | `GPU_SINGLE` | 3 | `tiled_gpu` | Gute Desktop-Leistung mit speichereffizienten Kacheln |
-| **Desktop mit 12 GB+ GPU** | `GPU_PARALLEL` | 3–4 | `fused_gpu` | Optimale Desktop-Leistung |
-| **Reines CPU-System** | `CPU_PARALLEL` | Kerne – 1 | `cpu_fallback` | Keine GPU erforderlich, nutzt ThreadPool |
+| **Jetson Orin Nano 8 GB** | `GPU_SINGLE` | 1 | `tiled_gpu` (sequenziell) | Speichereffizienter Modus, jeweils ein Bild |
+| **Jetson Orin NX 8 GB** | `GPU_SINGLE` | 1 | `tiled_gpu` (sequenziell) | Gemeinsamer Arbeitsspeicher von unter 12 GB erzwingt sequenzielle Verarbeitung |
+| **Jetson Orin NX 16 GB** | `GPU_PARALLEL` | 2 | `fused_gpu` (parallel) | Empfohlenes Edge-Gerät – Jetson-Begrenzung auf 2 Worker |
+| **Jetson AGX Orin 32–64 GB** | `GPU_PARALLEL` | 2 | `fused_gpu` (parallel) | Maximale Edge-Leistung (ebenfalls durch Jetson auf 2 Worker begrenzt) |
+| **Desktop mit 8 GB GPU** | `GPU_SINGLE` | 3 | `fused_gpu` / `tiled_gpu` | 3 Worker überlappen sich bei der E/A, während ein Semaphor den GPU-Zugriff serialisiert |
+| **Desktop mit 12 GB+ GPU** | `GPU_PARALLEL` | 3–4 | `fused_gpu` (gleichzeitig) | Optimale Desktop-Leistung: 12 GB → 3 Worker, 16 GB+ → 4 |
+| **Reines CPU-System** | `CPU_PARALLEL` | physische Kerne − 1 (mind. 2) | `cpu_fallback` | Keine GPU erforderlich, nutzt einen Thread-Pool |
 
 {% hint style="info" %}
-**Jetson Unified Memory**: Jetson-Geräte teilen sich GPU- und CPU-Speicher. Ein Jetson Orin NX 16 GB meldet ~15,3 GB VRAM, jedoch handelt es sich hierbei um denselben physischen RAM, der vom Betriebssystem und den CPU-Prozessen genutzt wird. Chloros berücksichtigt dies bei der Festlegung von Schwellenwerten für die Speicherzuweisung.
+**Jetson Unified Memory**: Jetson-Geräte teilen sich GPU- und CPU-Speicher. Ein Jetson Orin NX mit 16 GB meldet ca. 15,3 GB VRAM, doch dabei handelt es sich um denselben physischen RAM, der vom Betriebssystem und den CPU-Prozessen genutzt wird. Aus diesem Grund erfüllen Jetson-Geräte mit 16 GB oder mehr die Voraussetzungen für `GPU_PARALLEL` wie eine Desktop-GPU mit 12 GB oder mehr, sind jedoch auf 2 Worker begrenzt – die GPU, die Worker-Prozesse und ihre CUDA-Kontexte pro Worker greifen alle auf denselben gemeinsamen Pool zu.
 {% endhint %}
+
+### GPU-Budget nach VRAM (diskrete GPUs)
+
+Auf x86_64-Hosts mit einer diskreten NVIDIA-GPU bestimmt der erkannte VRAM auch, wie viel Rechenleistung die Karte beanspruchen darf und wie groß Batches werden können:
+
+| Erkannter VRAM | Obergrenze des GPU-Budgets | Batch-Größen-Multiplikator |
+| --- | --- | --- |
+| **8 GB+** | 90 % | ×2,0 |
+| **6–8 GB** | 85 % | ×1,75 |
+| **3,5–6 GB** | 80 % | ×1,5 |
+| **2–3,5 GB** | 75 % | ×1,25 |
+| **Unter 2 GB** | 70 % | ×1,0 |
+
+Diskrete GPUs reservieren nur 0,5 GB für das System, da sie den System-RAM nicht gemeinsam nutzen. Jetson-Profile reservieren weitaus mehr und haben eine niedrigere Obergrenze – siehe den [NVIDIA Jetson-Leitfaden](../linux/nvidia-jetson-guide.md#per-model-gpu-budget).
 
 ***
 
@@ -58,81 +109,101 @@ Chloros wählt je nach Ihrer Hardware eine von drei Rechenstrategien aus:
 
 Chloros verwendet eine [4-Thread-Verarbeitungspipeline](processing-pipeline.md):
 
-* **Thread 1** (Erkennung) — Bildladen, EXIF-Analyse, Zielerkennung
-* **Thread 2** (Kalibrierung) — Berechnung der Reflexionskalibrierung
+* **Thread 1** (Erkennung) – Bildladen, EXIF-Analyse, Zielerkennung
+* **Thread 2** (Kalibrierung) – Berechnung der Reflexionskalibrierung
 * **Thread 3** (Verarbeitung) – GPU-Debayering, Vignettierungskorrektur, Indexberechnung
 * **Thread 4** (Export) – Dateischreiben, Einbetten von Metadaten
 
-Sobald frühere Pipeline-Threads ihre Arbeit abgeschlossen haben (z. B. wenn alle Bilder erkannt wurden), wird ihre GPU-Speicherzuweisung freigegeben und **auf die verbleibenden aktiven Threads umverteilt**. Das bedeutet, dass Thread 3 (die GPU-intensive Phase) im Verlauf der Pipeline zunehmend mehr Speicher erhält, wodurch der Durchsatz für die rechenintensivsten Aufgaben verbessert wird.
+Die Threads 1, 2 und 4 beanspruchen die GPU nur geringfügig; Thread 3 ist der rechenintensive Thread. Sobald frühere Pipeline-Threads abgeschlossen sind, wird ihr GPU-Budget **auf die verbleibenden aktiven Threads umverteilt**, sodass Thread 3 im Verlauf der Ausführung zunehmend mehr Speicher erhält.
 
 ### Zuweisungsphasen
 
 | Phase | Aktive Threads | GPU-Speicherverteilung |
 | --- | --- | --- |
-| **Früh** | 1, 2, 3, 4 | Auf alle Threads verteilt |
-| **Frühe Mitte** | 2, 3, 4 | Speicher von Thread 1 neu verteilt |
-| **Späte Mitte** | 3, 4 | Speicher von Threads 1+2 geht an 3+4 |
-| **Spät** | 3 oder 4 | Maximaler Speicher für verbleibenden Thread |***
+| **Früh** | 1, 2, 3, 4 | Auf alle Threads aufgeteilt, der größte Teil geht an Thread 3 |
+| **Mitte-Früh** | 2, 3, 4 | Der Anteil von Thread 1 wird neu verteilt |
+| **Mitte-Spät** | 3, 4 | Die Anteile der Threads 1 und 2 gehen an 3 und 4 |
+| **Spät** | 3 oder 4 | Der zuletzt aktive Thread erhält seine maximale Zuweisung |
 
-## Texture Aware-Verarbeitung
+Zwei Regeln bestimmen die Zahlen:
 
-Die Texture Aware-Debayer-Methode (nur Chloros+) verbraucht aufgrund des AI/ML-Rauschunterdrückungsmodells deutlich mehr GPU-Speicher als die Standardmethode:
+* Ein Thread, der der **einzige** aktive ist, erhält die maximale Zuweisung seines Profils.
+* Wenn mehr als eine *ressourcenintensive* GPU-Aufgabe aktiv ist, wird die Basiszuweisung jeder ressourcenintensiven Aufgabe auf diese aufgeteilt (niemals unter das konfigurierte Minimum).
 
-* Systeme mit **&lt; 7 GB VRAM** werden im Texture Aware-Modus in eine synchrone Verarbeitungsschleife gezwungen (jeweils ein Bild)
-* Systeme mit **7 GB+ VRAM** können Texture Aware parallel verarbeiten, allerdings mit einer im Vergleich zum Standard reduzierten Anzahl an Workern***
+Der tatsächlich zur Laufzeit verwendete Wert ist der **niedrigere** Wert aus der Zuweisung des Plattformprofils und der aktuellen Empfehlung des GPU-Speichermonitors, sodass eine ausgelastete Karte immer Vorrang vor einem optimistischen Profil hat.***
+
+## Textur-bewusste Verarbeitung
+
+Der texturorientierte Debayer (**nur Chloros+** — `--debayer texture-aware`) führt ein KI-/ML-Rauschunterdrückungsmodell aus, das pro Kopie etwa 1,75 GB VRAM in FP16 benötigt; daher verbraucht es weitaus mehr GPU-Speicher als die Standardmethode:
+
+* Systeme mit **weniger als 7 GB VRAM**verarbeiten „Texture Aware“ in einer**synchronen Schleife, jeweils ein Bild nach dem anderen** – mehrere Modellkopien passen nicht hinein, und ein Worker-Pool würde nur zu Konflikten führen
+* Systeme mit **7 GB oder mehr VRAM** können „Texture Aware“ parallel verarbeiten, allerdings mit einer im Vergleich zu „Standard“ reduzierten Anzahl an Workern
+* Auf **Jetson** wird „Texture Aware“ immer an einen einzelnen Worker gebunden, und bei Modellen mit geringem Stromverbrauch (Nano, Orin Nano) wird zudem automatisch eine GPU-Taktbegrenzung angewendet – siehe den [NVIDIA Jetson-Leitfaden](../linux/nvidia-jetson-guide.md#gpu-frequency-cap-for-texture-aware-on-nano-and-orin-nano)***
 
 ## Wärmemanagement (Jetson)
 
-Jetson-Geräte unterliegen thermischen Einschränkungen, insbesondere bei geschlossenen oder luftgestützten Einsätzen. Chloros überwacht die GPU- und CPU-Temperaturen und passt die Verarbeitung automatisch an:
+Jetson-Geräte unterliegen thermischen Einschränkungen, insbesondere bei Einsätzen in geschlossenen Räumen oder in Flugzeugen. Chloros überwacht die integrierten Temperatursensoren des Jetson und skaliert die Batch-Größen automatisch:
 
 | Temperatur | Reaktion |
 | --- | --- |
 | **&lt; 70 °C** | Normalbetrieb – volle Geschwindigkeit |
-| **70 °C** (Warnung) | Batchgröße reduzieren |
-| **80 °C** (Kritisch) | Aggressive Drosselung – geringere Parallelität und Worker-Anzahl |
+| **70 °C** (Warnung) | Die Batchgröße wird schrittweise verringert (100 % → 50 % zwischen 70 °C und 80 °C) |
+| **80 °C** (kritisch) | Aggressive Drosselung (50 % → 0 % zwischen 80 °C und 90 °C) |
 | **90 °C** (Herunterfahren) | GPU-Verarbeitung vollständig stoppen |
 
-Die Temperaturüberwachung erfolgt auf Jetson-Plattformen über `tegrastats`. Auf Desktop-Systemen mit ausreichender Kühlung wird die thermische Drosselung selten ausgelöst.
+Auf Desktop-Systemen mit ausreichender Kühlung wird die thermische Drosselung selten ausgelöst.
 
 ***
 
-## Umgang mit Speicherauslastung
+## Umgang mit Speicherbelastung
 
-Chloros überwacht den Speicherbedarf des Systems während der Verarbeitung:
+Chloros überwacht den GPU-Speicher während der Verarbeitung kontinuierlich und reagiert auf drei Ebenen.
 
-* **Speicherschwelle**: Eine Auslastung von 85 % löst ein konservatives Verhalten aus
-* **OOM-Reduzierung**: Tritt ein Out-of-Memory-Ereignis auf, wird die Zuweisung um 25 % reduziert (Multiplikator 0,75)
-* **Pipeline-Fallback**: Bei starkem Speicherengpass wechselt die Pipeline automatisch von `fused_gpu` zu `tiled_gpu`
-* **Swap-Empfehlungen**: Auf Jetson warnt Chloros Sie, wenn der Swap-Speicher für die Größe Ihres Datensatzes nicht ausreicht***
+**Batch-Größe.** Ein Batch beginnt bei 8 Bildern multipliziert mit dem Plattform-Multiplikator aus den obigen Tabellen. Chloros prüft anschließend den freien VRAM, reserviert 20 % davon für den eigenen Overhead von PyTorch und geht von etwa 100 MB GPU-Speicher pro 12-MP-Bild aus – der Batch entspricht dem jeweils kleineren Wert aus der durch den Speicher abgeleiteten Grenze und der Plattform-Basis. Sie fällt niemals unter 1.**Präventive Reduzierung.**Bei einer**VRAM-Auslastung von über 85 %** werden die Batch-Größen reduziert, bevor es zu Ausfällen kommt.**Reduzierung der Zuweisung pro Thread.** Mit steigender aktueller Auslastung wird das GPU-Budget jedes Threads gekürzt: ×0,75 bei einer Auslastung über 80 %, ×0,5 bei einer Auslastung über 90 %. Die Überwachungsschwellen liegen bei 70 % (konservativ), 85 % (normale Betriebsgrenze) und 95 % (OOM-Risiko).**OOM-Backoff und Wiederherstellung.** Sollte es dennoch zu einem Out-of-Memory-Ereignis kommen:
+
+* wird die Batchgröße **halbiert** und bei jedem weiteren „OOM“-Ereignis erneut halbiert – jeder nachfolgende erfolgreiche Batch versetzt diese Strafe um einen Schritt zurück
+* werden die Zuweisungen für aktive Threads auf 70 % ihres aktuellen Werts reduziert, und der Allokator wechselt zu seiner konservativen Strategie, die nach einer Reihe erfolgreicher Zuweisungen wieder gelockert wird
+* Bei starkem Druck wechselt die Pipeline von `fused_gpu` zu `tiled_gpu` und als letztes Mittel zu `cpu_fallback`
+
+**Host-RAM (Jetson).** Vor der Verarbeitung schätzt CLI den Spitzenbedarf an Host-Speicher anhand Ihrer Bildanzahl und des Debayer-Modus und warnt, wenn RAM plus dateibasierter Swap voraussichtlich nicht ausreichen, wobei die genauen Befehle zum Hinzufügen von Swap ausgegeben werden – siehe den [NVIDIA Jetson-Leitfaden](../linux/nvidia-jetson-guide.md#swap-warning-and-recommendations).***
 
 ## Überwachung der Rechenanpassung
 
-### Statusausgabe von CLI
-
-Zu Beginn der Verarbeitung zeigt CLI das erkannte Hardwareprofil an:
-
-```
-
-Chloros CLI 1.1.0
-Platform: Linux aarch64 (Jetson Orin NX 16GB)
-Strategy: GPU_PARALLEL | Workers: 3 | Pipeline: fused_gpu
-CUDA: Available | GPU Memory: 15.3 GB (shared)
-```
-
 ### Systemdiagnose
 
-Führen Sie `chloros-cli selftest` aus, um ein vollständiges Hardwareprofil anzuzeigen und die Rechenkapazitäten zu überprüfen:
+`chloros-cli selftest` ist der schnellste Weg, um zu überprüfen, was die Rechenschicht erkennt:
 
 ```bash
 chloros-cli selftest
 ```
 
-Dadurch werden die CUDA-Verfügbarkeit, der GPU-Speicher, die Denoiser-Modelle und die Backend-Konnektivität überprüft.
+Die 7 Prüfungen umfassen Version, Portverfügbarkeit, Backend-Start, `/api/test`, Systeminformationen, Vorhandensein des Denoiser-Modells sowie die Bereitschaft von CUDA und Denoiser. Prüfung 5 gibt die Hardware-Zeile direkt aus:
+
+```
+      GPU: NVIDIA RTX A4000, CUDA: True, PyTorch: 2.7.0
+```
+
+Prüfung 7 gibt `CUDA: <bool>, Denoiser: <bool>` aus – beide müssen wahr sein, damit „Texture Aware“ überhaupt genutzt werden kann.
+
+### Backend-Protokolle
+
+Die Strategie und die Anzahl der Worker werden zu Beginn jedes Laufs im Backend festgelegt – es gibt keinen CLI-Hinweis, der diese angibt. Wenn etwas unerwartet verläuft (ein GPU-Pfad fällt zurück, ein OOM, ein Denoiser, der nicht geladen werden kann), wird dies im Backend-Protokoll für diese Sitzung angezeigt:
+
+| Plattform | Protokollspeicherort |
+| --- | --- |
+| **Linux / Jetson** | `~/.cache/chloros/logs/backend_<YYYYMMDD_HHMMSS>.log` (eine Datei pro Start) |
+| **Linux, CLI – gestartetes Backend** | ebenfalls `~/.chloros/backend.log` |
+| **Windows** | `%LOCALAPPDATA%\Chloros\logs\` |
+
+### Live-Fortschritt
+
+Während eines Durchlaufs zeigt CLI den Live-Fortschritt pro Thread an (Erkennen, Analysieren, Verarbeiten, Exportieren), der über Server-Sent Events übertragen wird – ein praktischer Anhaltspunkt dafür, ob Thread 3 den Engpass darstellt. Siehe [Verarbeitungspipeline](processing-pipeline.md).
 
 ***
 
 ## Nächste Schritte
 
-* [Verarbeitungspipeline](processing-pipeline.md) – Die 4-Thread-Pipeline-Architektur verstehen
+* [Verarbeitungspipeline](processing-pipeline.md) – Die Architektur der 4-Thread-Pipeline verstehen
 * [NVIDIA Jetson-Leitfaden](../linux/nvidia-jetson-guide.md) – Jetson-spezifische Bereitstellung und Optimierung
-* [CLI : Befehlszeile](../CLI.md) – Vollständige CLI-Referenz
+* [CLI: Befehlszeile](../CLI.md) — Das CLI-Handbuch
+* [CLI-Referenz](../reference/cli-reference.md) — Vollständige Befehlsliste für 1.2.0
