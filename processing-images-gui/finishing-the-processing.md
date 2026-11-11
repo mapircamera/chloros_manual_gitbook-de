@@ -1,18 +1,22 @@
 # Abschluss der Verarbeitung
 
-Sobald Chloros die Verarbeitung abgeschlossen hat, ist es an der Zeit, Ihre Ergebnisse zu überprüfen, die Ausgabequalität zu kontrollieren und Ihre verarbeiteten Bilder für die Verwendung in Ihrem Workflow vorzubereiten. Diese Seite führt Sie durch die letzten Schritte und die nächsten Maßnahmen.
+Sobald Chloros
+die Verarbeitung abgeschlossen hat, ist es an der Zeit, Ihre Ergebnisse zu überprüfen, die Ausgabequalität zu verifizieren und Ihre verarbeiteten Bilder für die Verwendung in Ihrem Workflow vorzubereiten. Diese Seite führt Sie durch die letzten Schritte und die nächsten Maßnahmen.
 
 ## Anzeige „Verarbeitung abgeschlossen“
 
 Wenn die Verarbeitung erfolgreich abgeschlossen ist, werden mehrere Anzeigen eingeblendet:
 
 * ✅ **Fortschrittsbalken**: Erreicht 100 % Fertigstellung
-* ✅ **Debug-Protokoll**: Zeigt die letzten Zeilen von `[RUN-SUMMARY]` mit den jeweiligen Zahlen an (Bilder, Kameragruppen, Ziele, kalibrierte Bilder, geschriebene Dateien)
-* ✅ **Start-Schaltfläche**: Wird wieder aktiviert (bereit für den nächsten Verarbeitungslauf)
-* ✅ **Ausgabedateien**: Alle verarbeiteten Bilder werden im Ausgabeverzeichnis des Projekts (unten) gespeichert
+* ✅ **Debug-Protokoll**: Zeigt die letzten `[RUN-SUMMARY]`-Zeilen mit den jeweiligen Zahlen an (Bilder, Kameragruppen, Ziele, kalibrierte Bilder, geschriebene Dateien)
+* ✅ **Start-Schaltfläche**: Wird wieder aktiviert (bereit für den nächsten Verarbeitungsdurchlauf)
+* ✅ **Ausgabedateien**: Alle verarbeiteten Bilder wurden im Ausgabeverzeichnis des Projekts (unten) gespeichert
 
 {% hint style="warning" %}
-**Ein Lauf, bei dem keine Bilder geschrieben werden, gilt als Fehler.** Wenn Sie Bildprodukte angefordert haben und der Durchlauf keine geschrieben hat, meldet Chloros dies als Fehler – `[RUN-SUMMARY]` deutet im Protokollnamen auf die wahrscheinliche Ursache hin (nichts importiert, kein Ziel erkannt, oder alle angeforderten Produkte wurden als nicht anwendbar übersprungen). Das Äquivalent CLI beendet den Lauf mit einem Wert ungleich Null. Ein absichtlich nur auf Metadaten ausgerichteter Lauf (alle Exportprodukte deaktiviert, keine Indizes) gilt weiterhin als erfolgreich. Siehe [die CLI-Referenz](../reference/cli-reference.md#a-run-that-writes-no-images-fails).
+**Ein Durchlauf, bei dem keine Bilder geschrieben werden, gilt als Fehler.** Wenn Sie Bildprodukte angefordert haben und der Durchlauf keine geschrieben hat, meldet Chloros
+dies als Fehler – der Log-Name „`[RUN-SUMMARY]`“ gibt einen Hinweis auf die wahrscheinliche Ursache (nichts importiert, kein Ziel erkannt oder jedes angeforderte Produkt als nicht anwendbar übersprungen). Das entsprechende CLI
+-Programm beendet sich mit einem Wert ungleich Null. Ein absichtlich nur auf Metadaten ausgerichteter Lauf (alle Exportprodukte deaktiviert, keine Indizes) gilt weiterhin als erfolgreich. Siehe [die CLI
+-Referenz](../reference/cli-reference.md#a-run-that-writes-no-images-fails).
 {% endhint %}
 
 ***
@@ -21,7 +25,8 @@ Wenn die Verarbeitung erfolgreich abgeschlossen ist, werden mehrere Anzeigen ein
 
 ### Öffnen des Ausgabeordners
 
-1. Klicken Sie im **Hauptmenü** auf das Symbol „<img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt="" data-size="line">“ (oben links)
+1. Klicken Sie auf das Symbol **Hauptmenü** <img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt="" data-size="line">
+(oben links)
 2. Wählen Sie **„Projektordner öffnen“**
 
 3. Ihr Datei-Explorer öffnet sich im Projektverzeichnis
@@ -29,7 +34,7 @@ Wenn die Verarbeitung erfolgreich abgeschlossen ist, werden mehrere Anzeigen ein
 
 ### Die Ausgabestruktur
 
-Die Produkte werden **im Projektordner gespeichert, gruppiert nach Kamera und anschließend nach Dateiformat**:
+Die Ergebnisse werden **im Projektordner gespeichert, gruppiert nach Kamera und anschließend nach Dateiformat**:
 
 ```
 <project>/
@@ -43,25 +48,30 @@ Die Produkte werden **im Projektordner gespeichert, gruppiert nach Kamera und an
         └── Radiance_Images/             # float32 radiance always lands here
 ```
 
-* **Kameraordner**: `LATT-<sensor>-<lens>-F<filter>` für LATTICE (entspricht dem EXIF-Eintrag der Aufnahme `Model`), `<model>_<filter>` für Survey3 (z. B. `Survey3N_RGN`). Zwei Kameras, die denselben Sensor und Filter verwenden, sich jedoch im Objektiv unterscheiden, behalten separate Verzeichnisstrukturen bei – Vignettierung, Sichtfeld und Verzeichnung unterscheiden sich.
-* **Format-Ordner**: richtet sich nach Ihrer Einstellung für das Exportformat – `tiff16`, `tiff8`, `png8`, `jpg8` oder `tiff32` für TIFF (32-Bit, Prozent). Die Strahlungsintensität ist immer vom Typ „float32“ und wird stets unter `tiff32` gespeichert.
+* **Kameraordner**: `LATT-<sensor>-<lens>-F<filter>` für LATTICE (entspricht dem EXIF-Datensatz der Aufnahme: `Model`), `<model>_<filter>` für Survey3
+(z. B. `Survey3N_RGN`). Zwei Kameras, die denselben Sensor und Filter verwenden, sich jedoch im Objektiv unterscheiden, bilden separate Verzeichnisstrukturen – Vignettierung, Sichtfeld und Verzeichnung unterscheiden sich.
+* **Formatordner**: richtet sich nach Ihrer Einstellung für das Exportformat – `tiff16`, `tiff8`, `png8`, `jpg8`, oder `tiff32` für TIFF
+(32-Bit, Prozent). Die Strahlungsintensität ist immer vom Typ „float32“ und wird immer unter `tiff32` abgelegt.
 * **Produktordner**:
   * `Reflectance_Calibrated_Images/` – kalibrierte Reflexion
-  * `Debayered_Images/` – linear debayert (LATTICE)
-  * `Preview_Images/` – Anzeige-Vorschau (LATTICE)
-  * `Radiance_Images/` – spektrale Strahlungsintensität (Float32), W/m²/sr/nm (LATTICE multispektral)
-  * `Vignette_Corrected_Images/` **oder** `Sensor_Response_Images/` — der unkalibrierte Fallback für Bilder ohne Reflektanzreferenz; pro Durchlauf existiert genau einer der beiden, ausgewählt durch die Einstellung „Vignettenkorrektur“
-  * `<INDEX>_Index_Images/` — ein Ordner pro ausgewähltem Index (z. B. `NDVI_Index_Images`)
+  * `Debayered_Images/` – linear debayert (LATTICE): Dunkeloffset entfernt und demosaiziert, ohne Flatfield oder Unmix, in der nativen Ausrichtung des Sensors
+  * `Preview_Images/` – Anzeigevorschau (LATTICE)
+  * `Radiance_Images/` – spektrale Strahlungsintensität in float32, W/m²/sr/nm (LATTICE multispektral)
+  * `Vignette_Corrected_Images/` **oder** `Sensor_Response_Images/` — die unkalibrierte Ausweichvariante für Bilder ohne Reflexionsreferenz; pro Durchlauf existiert genau eines der beiden, ausgewählt durch die Einstellung zur Vignettierungskorrektur
+  * `<INDEX>_Index_Images/` – ein Ordner pro ausgewähltem Index (z. B. `NDVI_Index_Images`)
+* **`clamp_masks/`** (neu in 1.3.0, nur für multispektrale M3C-Kameras von LATTICE): erscheint in einem Formatordner neben den Produktordnern, wenn die Bandentmischung negative Werte in einem Strahlungs- oder Reflektanzprodukt auf Null beschneidet. Er enthält eine Pixel-Maske pro betroffenem Produkt, z. B. `tiff16/clamp_masks/Reflectance_Calibrated_Images/<name>_clampmask.tif`. Masken befinden sich niemals in einem Produktordner, sodass ein Produktordner unverändert an Photogrammetrie-Software übergeben werden kann. Siehe [Clamp-Masken](../output-image-formats.md#clamp-masks).
 
 {% hint style="info" %}
-**Jedes exportierte Produkt behält den Namen der QUELLDATEI bei.**Ein Radiance-Export von `capture_..._raw.tif` heißt weiterhin `capture_..._raw.tif` – er befindet sich lediglich in `tiff32/Radiance_Images/`.**Der Ordner identifiziert das Produkt, nicht der Dateiname**; daher liefert die Suche nach „`*radiance*.tif`“ keine Ergebnisse; suchen Sie stattdessen nach dem Verzeichnis.
+**Jedes exportierte Produkt behält den Namen der QUELLDATEI bei.**Ein Radiance-Export von `capture_..._raw.tif` heißt weiterhin `capture_..._raw.tif` – er befindet sich lediglich in `tiff32/Radiance_Images/`.**Der Ordner identifiziert das Produkt, nicht der Dateiname**; daher liefert eine Suche nach „`*radiance*.tif`“ keine Ergebnisse; suchen Sie stattdessen nach dem Verzeichnis.
 {% endhint %}
 
+<!-- SCREENSHOT-NEEDED: Windows Explorer open on a processed project folder showing the tree: a LATT-M3C multispectral camera folder expanded with tiff16 (Reflectance_Calibrated_Images, Debayered_Images, Preview_Images, NDVI_Index_Images, clamp_masks) and tiff32 (Radiance_Images, clamp_masks) subfolders visible -->
 
 
-<!-- SCREENSHOT-NEEDED: Windows Explorer open on a processed project folder showing the tree: a LATT-… camera folder expanded with tiff16 (Reflectance_Calibrated_Images, Debayered_Images, Preview_Images, NDVI_Index_Images) and tiff32 (Radiance_Images) subfolders visible -->### Wie viele Dateien sollten vorhanden sein?
+### Wie viele Dateien sollte es geben?
 
-Zählen Sie nicht nach einer Formel – die Anzahl der Ausgabedateien hängt davon ab, welche Produkte aktiviert wurden und welche für die jeweilige Kamera gelten (z. B. erhalten Kameras vom Typ RGB keine Strahlungs- oder Reflexionsdaten). Die maßgebliche Anzahl findet sich im Protokoll: Die letzte Zeile „`[RUN-SUMMARY]`“ gibt genau an, wie viele Dateien geschrieben wurden, und in den Hinweszeilen wird erläutert, was übersprungen wurde.
+Zählen Sie nicht nach einer Formel – die Anzahl der Ausgabedateien hängt davon ab, welche Produkte aktiviert wurden und welche für die jeweilige Kamera gelten (z. B. erhalten RGB
+-Kameras keine Strahlungs- oder Reflexionsdaten). Die verbindliche Anzahl finden Sie im Protokoll: Die letzte Zeile „`[RUN-SUMMARY]`“ gibt genau an, wie viele Dateien geschrieben wurden, und in den Erläuterungszeilen wird erklärt, was übersprungen wurde.
 
 ***
 
@@ -69,57 +79,68 @@ Zählen Sie nicht nach einer Formel – die Anzahl der Ausgabedateien hängt dav
 
 ### Schnellvorschau im Datei-Explorer
 
-**Windows integrierte Vorschau:**
+**In Windows
+integrierte Vorschau:**
 
 1. Navigieren Sie in einen Produktordner (z. B. `tiff16/Reflectance_Calibrated_Images/`)
 2. Wählen Sie eine Bilddatei aus
-3. Die Vorschau wird im Vorschau-Fenster des Windows-Explorers angezeigt
+3. Die Vorschau wird im Vorschaufenster des Windows
+-Explorers angezeigt
 4. Blättern Sie mit den Pfeiltasten durch die Bilder
 
 ### Vorschau in externen Bildbetrachtern
 
-**Empfohlene Bildbetrachter:*** **QGIS** – Kostenlose GIS-Software (ideal für georeferenzierte Multispektralanalysen)
-* **IrfanView** – Schneller, ressourcenschonender Bildbetrachter (unterstützt TIFF)
-* **Adobe Photoshop** – Professionelle Bildbearbeitung (TIFF-Unterstützung)
+**Empfohlene Bildbetrachter:*** **QGIS** – Kostenlose GIS-Software (am besten geeignet für georeferenzierte Multispektralanalysen)
+* **IrfanView** – Schneller, ressourcenschonender Bildbetrachter (unterstützt TIFF
+)
+* **Adobe Photoshop** – Professionelle Bildbearbeitung (TIFF
+-Unterstützung)
 * **GIMP** – Kostenlose Alternative zu Photoshop
-* **Windows Photos** – Einfache Bildanzeige (unterstützt möglicherweise kein 16-Bit-TIFF)
+* **Windows
+-Fotos** – Einfache Bildanzeige (unterstützt möglicherweise kein 16-Bit-TIFF
+)
 
-### Vorschau im Chloros-Bildbetrachter
+### Vorschau im Chloros
+-Bildbetrachter
 
-Verwenden Sie den in Chloros integrierten Bildbetrachter für eine erweiterte Visualisierung:
+Verwenden Sie den in Chloros
+integrierten Bildbetrachter für erweiterte Visualisierung:
 
 1. Klicken Sie im Dateibrowser auf eine Bildminiaturansicht
-2. Das Bild wird im Hauptvorschaubereich geöffnet
+2. Das Bild wird im Hauptvorschau-Bereich geöffnet
 3. Klicken Sie in der linken Seitenleiste auf die Registerkarte **Bildbetrachter** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">
+
 4. Verwenden Sie [Index/LUT-Sandbox](../image-viewer-gui/index-lut-sandbox.md) für interaktive Analysen
 
 Ausführliche Anweisungen finden Sie unter [Bildbetrachter](../image-viewer-gui/opening-an-image-full-screen.md).
 
 ***
 
-## Auslesen der Reflexions-Pixelwerte (GIS / Pix4D / Skripte)
+## Auslesen der Reflexionsgrad-Pixelwerte (GIS / Pix4D / Skripte)
 
-Die Reflexion wird als ganzzahliger DN-Wert gespeichert, und **der DN-Wert, der ρ = 1,0 entspricht, hängt von der Quellkamera ab**:
+Die Reflektanz wird als ganzzahliger DN-Wert gespeichert, und **der DN-Wert, der ρ = 1,0 entspricht, hängt von der Quellkamera ab**:
 
-| Quelle          | ρ = 1,0 entspricht | Wie lässt sich dies feststellen                                        |
+| Quelle          | ρ = 1,0 ist | So lässt sich dies erkennen                                        |
 | --------------- | ---------- | -------------------------------------------------- |
-| LATTICE (M3C/M3M) | **32768** (Spielraum bis zu ρ 2,0) | Das XMP-Tag `Chloros:PixelScale=32768` ist in die Datei eingetragen |
-| Survey3         | **65535** (bei ρ 1,0 abgeschnitten)     | Keine `Chloros:*`-XMP-Tags – dieses Fehlen ist das Signal |
+| LATTICE (M3C/M3M) | **32768** (Spielraum bis zu ρ 2,0) | Das XMP-Tag `Chloros:PixelScale=32768` ist in die Datei eingebettet |
+| Survey3
+         | **65535** (bei ρ 1,0 abgeschnitten)     | Kein `Chloros:PixelScale`-Tag – das Fehlen ist das Signal (Survey3
+-Produkte enthalten zwar andere `Chloros:*`-Verarbeitungs-Tags) |
 
-**Lies das `Chloros:PixelScale`-Tag und teile durch diesen Wert**, anstatt pauschal von 65535 auszugehen – die Division der LATTICE-Reflexion durch 65535 halbiert stillschweigend jeden Wert. Ein Sonderfall enthält bewusst kein Skalierungs-Tag: Eine als 8-Bit-Ausgabe geschriebene Aufnahme mit 8-Bit-Quelle wird abgeschnitten, nicht neu skaliert, und erhält absichtlich kein Skalierungs-Tag – exportieren Sie stattdessen mit 16 Bit oder 32 Bit, anstatt den Wert zu dividieren. Siehe [Ausgabebildformate](../output-image-formats.md) für die vollständige Erklärung.***
+**Lesen Sie das `Chloros:PixelScale`-Tag aus und dividieren Sie durch diesen Wert**, anstatt pauschal von 65535 auszugehen – die Division der LATTICE-Reflexionswerte durch 65535 halbiert stillschweigend jeden Wert. Eine Reflektanzdatei aus der Zeit vor Version 1.3.0, die als 8-Bit-Datei geschrieben wurde, wurde beschnitten, nicht neu skaliert und enthält kein Skalierungs-Tag: Exportieren Sie sie stattdessen mit 16 Bit oder 32 Bit neu, anstatt sie zu dividieren. Siehe [Ausgabebildformate](../output-image-formats.md) für die vollständige Erklärung.***
 
 ## In die Exporte übernommene Metadaten
 
 Jedes Produkt behält den **GPS-Block**der Quellaufnahme und dessen**EXIF-Sub-IFD** bei, sodass ein
-Export die Daten `FocalLength`, `FNumber`, `ExposureTime`, `ISO`, `DateTimeOriginal` und
+Export die Dateien `FocalLength`, `FNumber`, `ExposureTime`, `ISO`, `DateTimeOriginal` und
 `CameraSerialNumber` sowie die Georeferenzierung.
 
 {% hint style="warning" %}
 **Wenn ein Orthomosaik in einem absurden Maßstab ausgegeben wird, überprüfen Sie zunächst `FocalLength`.**
-Pix4D berechnet den Ground Sample Distance (GSD) anhand der Brennweite und der Flughöhe. Ohne das Tag
+Pix4D berechnet den Ground Sample Distance (GSD) aus Brennweite und Höhe. Ohne das Tag
 greift das Programm auf einen völlig falschen Maßstab zurück – bei einem gemessenen Flug mit 49 Aufnahmen wurde ein 411 m × 160 m
-Orangenhain als 47,8 km × 13 km rekonstruiert, was ein 455-Megapixel-Orthofoto von überwiegend
-leerem Raum ergab. Langsames Tiling und eine unerwartet große Datei sind Symptome dafür, keine separaten
+Orangenhain als 47,8 km × 13 km rekonstruiert, was zu einem 455-Megapixel-Orthobild mit überwiegend
+leerem Raum führte. Langsames Tiling und eine unerwartet große Datei sind Symptome hierfür, keine separaten
 Probleme.
 
 ```bash
@@ -127,10 +148,20 @@ exiftool -FocalLength -GPSLatitude "YourProject/.../some_export.tif"
 ```
 {% endhint %}
 
-Es wird nicht *jedes* Tag kopiert. Die Struktur-Tags von IFD0 werden bewusst zurückgelassen (das Kopieren
+Es wird nicht *jedes* Tag kopiert. Die Struktur-Tags von IFD0 werden bewusst weggelassen (das Kopieren
 dieser Tags führt zu einer Beschädigung der LATTICE-Ausgabe), und `ExifImageWidth` / `ExifImageHeight` werden ausgeschlossen,
-da sie die ursprüngliche Aufnahme beschreiben – ein Export mit geänderter Größe würde andernfalls
-Abmessungen beanspruchen, die im Widerspruch zu seinem eigenen Raster stehen.
+da sie die ursprüngliche Aufnahme beschreiben – ein Export, dessen Größe angepasst wurde, würde andernfalls
+Abmessungen angeben, die im Widerspruch zu seinem eigenen Raster stehen.
+
+Chloros
+schreibt außerdem eigene `Chloros:*`-XMP-Tags, die beschreiben, welche Bearbeitungsschritte an jedem Produkt vorgenommen wurden
+(zum Beispiel `Chloros:ProcessingLevel`, `Chloros:CalibrationApplied`,
+`Chloros:VignetteCorrected`). Ab Version 1.3.0 enthalten Survey3
+-Produkte diese in jedem Verarbeitungsmodus
+Verarbeitungsmodus mit; Indexprodukte beschreiben den Index selbst (`Chloros:ProcessingLevel=index`, die
+Formel und ob diese aus Reflektanz oder Strahlungsintensität berechnet wurde), anstatt die
+Tags der Quell-Rohdaten zu wiederholen; und Produkte in Ordnern, deren Pfad länger als 260 Zeichen ist, behalten ihre Metadaten
+ebenfalls bei. Siehe [Ausgabebildformate](../output-image-formats.md#index-products).
 
 ***
 
@@ -138,23 +169,28 @@ Abmessungen beanspruchen, die im Widerspruch zu seinem eigenen Raster stehen.
 
 ### Auf Warnungen oder Fehler prüfen
 
-1. Öffnen Sie das **Debug-Protokoll** auf der Registerkarte „<img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line">“
+1. Öffnen Sie die Registerkarte **Debug-Protokoll** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line">
+
 2. Blättern Sie durch die Meldungen
 3. Suchen Sie nach gelben Warnungen oder roten Fehlern
-4. Lesen Sie die Zeilen „`[RUN-SUMMARY]`“ und etwaige Hinweise
-5. Wenden Sie sich an den MAPIR-Support, um Unterstützung zu erhalten
+4. Lesen Sie die Zeilen `[RUN-SUMMARY]` und etwaige Hinweise
+5. Wenden Sie sich an den MAPIR
+-Support, um Unterstützung zu erhalten
 
 ### Speichern des Protokolls
 
-Um einen Nachweis über die Verarbeitung zu führen oder das Protokoll an den MAPIR-Support zu senden:
+Um einen Nachweis über die Verarbeitung zu führen oder das Protokoll an den MAPIR
+-Support zu senden:
 
 1. Klicken Sie auf die Schaltfläche **„Kopieren“**oder**„Herunterladen“**
 
-2. Speichern Sie das Protokoll als Textdatei im Projektordner
+2. Speichern Sie es als Textdatei im Projektordner
 3. Fügen Sie es der Projektdokumentation bei
-4. Senden Sie es bei auftretenden Problemen an den MAPIR-Support
+4. Senden Sie es bei auftretenden Problemen an den MAPIR
+-Support
 
-***
+Um ein Problem direkt an MAPIR
+zu melden, verwenden Sie das Fehler-Symbol (**Fehler melden**) oben auf der Registerkarte „Debug-Protokoll“ – siehe [Einen Fehler über die Registerkarte „Protokoll“ melden](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
 
 ## Häufige Probleme bei der Ausgabe und deren Lösungen
 
@@ -162,31 +198,34 @@ Um einen Nachweis über die Verarbeitung zu führen oder das Protokoll an den MA
 
 **Mögliche Ursachen:**
 
-* Das Produkt ist für diese Kamera nicht geeignet (z. B. Strahlungsintensität/Reflexionsgrad für RGB-Kameras – dies wird im Protokoll angegeben)
+* Das Produkt ist für diese Kamera nicht geeignet (z. B. Radiance/Reflexion für RGB
+-Kameras – dies wird im Protokoll angegeben)
 * Eine erforderliche Referenz fehlte (z. B. Reflektanz ohne Ziel und ohne `.daq`-Downwelling)
 * Das Kontrollkästchen für den Export des Produkts war in den Projekteinstellungen deaktiviert
-* Der Speicherplatz reichte während des Exports nicht aus
+* Der Speicherplatz auf der Festplatte reichte während des Exports nicht aus
 
 **Lösungen:**
 
-1. Überprüfen Sie die Zeilen „`[RUN-SUMMARY]`“ und „`[EXPORT-CHECK]`“ im Debug-Protokoll – sie erklären die kameraspezifischen Überspringungen
+1. Überprüfen Sie die Hinweise `[RUN-SUMMARY]` und die Zeilen `[EXPORT-CHECK]` im Debug-Protokoll – dort werden die kameraspezifischen Übersprünge erläutert
 2. Überprüfen Sie die Kontrollkästchen für die Exportprodukte in den [Projekteinstellungen](adjusting-project-settings.md)
 3. Stellen Sie sicher, dass ausreichend Speicherplatz vorhanden war
-4. Führen Sie die Verarbeitung nach Behebung der Ursache erneut durch
+4. Führen Sie die Verarbeitung erneut durch, nachdem Sie die Ursache behoben haben
 
 ### Problem: Dunkle oder helle Ränder (Vignettierung weiterhin sichtbar)
 
 **Mögliche Ursachen:**
 
 * Vignettierungskorrektur deaktiviert
-* Kamera/Objektiv nicht in der Chloros-Profil-Datenbank enthalten
+* Kamera/Objektiv nicht in der Chloros
+-Profil-Datenbank enthalten
 * Extreme Vignettierung, die die Korrekturmöglichkeiten übersteigt
 
 **Lösungen:**
 
 1. Überprüfen Sie, ob die Vignettierungskorrektur in den Projekteinstellungen aktiviert war
 2. Überprüfen Sie, ob das Kameramodell korrekt erkannt wurde
-3. Wenden Sie sich an den MAPIR-Support, wenn die Vignettierung weiterhin auftritt
+3. Wenden Sie sich an den MAPIR
+-Support, wenn die Vignettierung weiterhin auftritt
 
 ### Problem: Falsche Farben oder Werte
 
@@ -194,25 +233,27 @@ Um einen Nachweis über die Verarbeitung zu führen oder das Protokoll an den MA
 
 * Keine Kalibrierungsziele erkannt
 * Falsches Kalibrierungszielmodell ausgewählt
-* Reflexionskalibrierung deaktiviert
+* Reflektanzkalibrierung deaktiviert
 * Zielbilder von schlechter Qualität
 
 **Lösungen:**
 
-1. Überprüfen Sie, ob die Reflektanzkalibrierung aktiviert war.
-2. Überprüfen Sie die Meldungen „Ziel gefunden“ im Debug-Protokoll.
-3. Überprüfen Sie die Qualität der Zielbilder.
-4. Führen Sie die Verarbeitung erneut durch, nachdem Sie die richtigen Ziele markiert haben.
+1. Überprüfen Sie, ob die Reflektanzkalibrierung aktiviert war
+2. Überprüfen Sie die Meldungen „Ziel gefunden“ im Debug-Protokoll
+3. Überprüfen Sie die Qualität der Zielbilder
+4. Führen Sie die Verarbeitung erneut durch, nachdem Sie die richtigen Ziele markiert haben
 
-### Problem: NDVI-Werte scheinen falsch zu sein
+### Problem: Die NDVI
+-Werte scheinen falsch zu sein
 
-**Erwartete NDVI-Bereiche:*** **Wasser, Felsen, Boden**: -0,1 bis 0,2
+**Erwartete NDVI
+-Bereiche:*** **Wasser, Felsen, Boden**: -0,1 bis 0,2
 * **Spärliche/kranke Vegetation**: 0,2 bis 0,4
 * **Mäßige Vegetation**: 0,4 bis 0,6
-* **Gesunde, dichte Vegetation**: 0,6 bis 0,9**Falls die Werte außerhalb dieser Bereiche liegen:**
+* **Gesunde, dichte Vegetation**: 0,6 bis 0,9**Wenn die Werte außerhalb dieser Bereiche liegen:**
 
 1. Überprüfen Sie, ob die Reflektanzkalibrierung angewendet wurde
-2. Überprüfen Sie, ob das Lichtsensorprotokoll enthalten ist
+2. Überprüfen Sie, ob das Lichtsensorprotokoll enthalten war
 3. Überprüfen Sie, ob Kalibrierungsziele erkannt wurden
 4. Stellen Sie sicher, dass das richtige Kameramodell erkannt wurde
 5. Überprüfen Sie den Zeitpunkt und die Bedingungen der Zielbildaufnahme
@@ -231,10 +272,12 @@ Um einen Nachweis über die Verarbeitung zu führen oder das Protokoll an den MA
    * Agisoft Metashape
    * DroneDeploy
    * WebODM
-2. **Behalten Sie die EXIF-Metadaten bei**: Stellen Sie sicher, dass die GPS-Daten für die Geotag-Zuordnung erhalten bleiben
-3. **Kalibrierte Arbeitsabläufe**: Verwenden Sie Reflektanzbilder für wissenschaftliche Genauigkeit – LATTICE-Reflektanzbilder enthalten die XMP-Kalibrierungs-Tags, die Pix4D liest
-4. **Indexmosaike verarbeiten**: Erstellen Sie NDVI-Orthomosaike aus einzelnen Indexbildern
-5. **Georeferenzierte GeoTIFF-Dateien exportieren**: Zur Verwendung in GIS-Anwendungen
+2. **EXIF-Metadaten beibehalten**: Stellen Sie sicher, dass die GPS-Daten für die Geotagging-Funktion erhalten bleiben
+3. **Kalibrierte Arbeitsabläufe**: Verwenden Sie Reflexionsbilder für wissenschaftliche Genauigkeit – LATTICE-Reflexionsbilder enthalten die XMP-Kalibrierungs-Tags, die Pix4D liest
+4. **Indexmosaike verarbeiten**: Erstellen Sie NDVI
+-Orthomosaike aus einzelnen Indexbildern
+5. **GeoTIFF
+mit Georeferenzierung exportieren**: Zur Verwendung in GIS-Anwendungen
 
 ### Für die GIS-Analyse
 
@@ -242,17 +285,21 @@ Um einen Nachweis über die Verarbeitung zu führen oder das Protokoll an den MA
 
 1.**In QGIS, ArcGIS oder ähnliche Programme laden**
 
-2.**Verwenden Sie 16-Bit-Reflexionsbilder (TIFF)** für die Multiband-Analyse (durch den Wert der Datei `Chloros:PixelScale` dividieren)
-3. **Verwenden Sie Indexbilder** (NDVI, NDRE) als gebrauchsfertige Vegetationsebenen
-4. **Rasterrechner**: Bänder für benutzerdefinierte Analysen kombinieren
+2.**Verwenden Sie 16-Bit-TIFF
+-Reflexionsbilder** für die Multiband-Analyse (durch den Wert „`Chloros:PixelScale`“ der Datei dividieren)
+3. **Verwenden Sie Indexbilder** (NDVI
+, NDRE
+) als gebrauchsfertige Vegetationsebenen
+4. **Rasterkalkulator**: Bänder für benutzerdefinierte Analysen kombinieren
 5. **Exportieren**: Klassifizierungskarten, Änderungserkennung und Karten zum Vegetationszustand erstellen
 
-### Für direkte Analyse / Berichterstellung
+### Für direkte Analysen / Berichterstellung
 
 **Empfohlener Arbeitsablauf:**
 
-1.**Verwenden Sie Indexbilder mit LUT-Farben** für visuelle Berichte
-2. **Statistiken extrahieren**: Mittelwert von NDVI pro Feld/Parzelle
+1.**Indexbilder mit LUT-Farben verwenden** für visuelle Berichte
+2. **Statistiken extrahieren**: Mittlerer NDVI
+-Wert pro Feld/Parzelle
 3. **Zeitreihen**: Indizes über mehrere Erfassungszeiträume hinweg vergleichen
 4. **Berichte erstellen**: Karten, Statistiken und Visualisierungen einbinden***
 
@@ -260,14 +307,14 @@ Um einen Nachweis über die Verarbeitung zu führen oder das Protokoll an den MA
 
 ### Empfohlene Sicherungsstrategie
 
-**Was gesichert werden sollte:*** ✅ **Original-RAW-/JPG-Bilder oder LATTICE-Rohaufnahmen** – Auf einem separaten Laufwerk/in der Cloud archivieren; die Rohdaten sind die Quelle der Pipeline, und alles andere kann daraus neu generiert werden
+**Was gespeichert werden sollte:*** ✅ **Original-RAW-/JPG-Bilder oder LATTICE-Rohaufnahmen** – Auf einem separaten Laufwerk/in der Cloud archivieren; die Rohdaten sind die Quelle der Pipeline, und alles andere kann daraus neu generiert werden
 * ✅ **`.daq` / `.csv`-Lichtsensordateien** – werden benötigt, um die Reflektanz später erneut abzuleiten
 * ✅ **Verarbeitete Ergebnisse** – kalibrierte Bilder und Indizes aufbewahren
 * ✅ **Projektordner** (`project.json` und zugehörige Dateien) – Enthält alle Einstellungen für eine eventuelle erneute Verarbeitung
 * ✅ **Debug-Protokoll** – Dokumentiert Details der Verarbeitung
 * ✅ **Kalibrierungszielbilder** – Zur Überprüfung und erneuten Verarbeitung**Empfehlungen zur Speicherung:*** **Sofortige Sicherung**: Externe Festplatte
 * **Langzeitarchiv**: Cloud-Speicher (Google Drive, Dropbox usw.)
-* **Kritische Daten**: Bewahren Sie 2–3 Kopien an verschiedenen Orten auf***
+* **Kritische Daten**: 2–3 Kopien an verschiedenen Orten aufbewahren***
 
 ## Nächste Verarbeitungsläufe
 
@@ -279,7 +326,7 @@ Falls Sie in Zukunft ähnliche Datensätze verarbeiten möchten:
 2. **Neues Projekt erstellen** unter Verwendung der gespeicherten Vorlage
 3. **Neue Bilder importieren**
 
-4.**Verarbeiten**Sie die Bilder mit identischen Einstellungen, um Konsistenz zu gewährleisten
+4.**Verarbeiten**Sie die Daten mit identischen Einstellungen, um Konsistenz zu gewährleisten
 
 ### Stapelverarbeitung mehrerer Sitzungen
 
@@ -287,32 +334,42 @@ Bei mehreren Sitzungen/Datensätzen:**Option 1: GUI – Mehrere Projekte**
 
 * Erstellen Sie für jede Sitzung ein separates Projekt
 * Verwenden Sie einheitliche Vorlageneinstellungen
-* Verarbeiten Sie die Projekte nacheinander
+* Verarbeiten Sie jeweils ein Projekt nach dem anderen
 
-**Option 2: Chloros CLI (nur Chloros+)**
+**Option 2: Chloros
+-CLI
+(nur Chloros
++)**
 
 * Stapelverarbeitung automatisieren
 * Mehrere Ordner mit Skripten verarbeiten
-* Siehe [CLI-Dokumentation](../CLI.md) und die [CLI-Referenz](../reference/cli-reference.md)
+* Siehe [CLI
+-Dokumentation](../CLI.md) und die [CLI
+-Referenz](../reference/cli-reference.md)
 
-**Option 3: Python SDK (nur Chloros+)**
+**Option 3: Python
+-SDK
+(nur Chloros
++)**
 
 * Programmgesteuerte Steuerung
 * Integration in Analyse-Pipelines
-* Siehe [API-Dokumentation](../api-python-sdk.md) und die [SDK-Referenz](../reference/sdk-reference.md)
+* Siehe [API
+-Dokumentation](../api-python-sdk.md) und die [SDK
+-Referenz](../reference/sdk-reference.md)
 
 ***
 
 ## Fehlerbehebung bei der Nachbearbeitung
 
-### Erneute Verarbeitung mit anderen Einstellungen
+### Neuverarbeitung mit anderen Einstellungen
 
 Wenn die Ergebnisse nicht zufriedenstellend sind:
 
 1. Bewahren Sie die Originalbilder auf (niemals löschen)
 2. Öffnen Sie dasselbe Projekt in Chloros
 3. Passen Sie die Einstellungen im Bereich „Projekteinstellungen“ an
-4. Führen Sie die Verarbeitung erneut durch – die Ergebnisse werden in denselben Produktordnern abgelegt, sodass Dateien mit demselben Namen aus dem vorherigen Durchlauf ersetzt werden
+4. Führen Sie die Verarbeitung erneut durch – die Ergebnisse werden in denselben Produktordnern gespeichert, sodass Dateien mit demselben Namen aus dem vorherigen Durchlauf ersetzt werden
 
 ### Verarbeitung einer Teilmenge von Bildern
 
@@ -330,11 +387,15 @@ Falls Probleme auftreten:
 * 📧 **E-Mail**: info@mapir.camera (bitte Debug-Protokoll beifügen)
 * 🌐 **Support**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **FAQ**: [Häufig gestellte Fragen](../faq.md)
-* 📖 **Dokumentation**: [Chloros-Handbuch](../)***
+* 📖 **Dokumentation**: [Chloros
+-Handbuch](../)
+
+***
 
 ## Zusammenfassung: Vollständiger Arbeitsablauf
 
-Sie haben nun den gesamten Chloros-Verarbeitungsworkflow abgeschlossen:
+Sie haben nun den gesamten Chloros
+-Verarbeitungsablauf abgeschlossen:
 
 1. ✅ **Projekt erstellt** – Siehe [Projekte](../projects.md)
 2. ✅ **Dateien hinzugefügt** – Siehe [Dateien hinzufügen](adding-files-to-a-project.md)
@@ -352,13 +413,17 @@ Sie haben nun den gesamten Chloros-Verarbeitungsworkflow abgeschlossen:
 
 * [**Bildbetrachter**](../image-viewer-gui/opening-an-image-full-screen.md) – Interaktive Visualisierung und Analyse
 * [**Index-/LUT-Sandbox**](../image-viewer-gui/index-lut-sandbox.md) – Testen benutzerdefinierter Indizes
-* [**Multispektrale Indexformeln**](../project-settings/multispectral-index-formulas.md) – Vollständiges Index-Nachschlagewerk
+* [**Multispektrale Indexformeln**](../project-settings/multispectral-index-formulas.md) – Vollständige Index-Referenz
 
 ### Automatisierung &amp; Integration
 
-* [**CLI-Dokumentation**](../CLI.md) – Batch-Verarbeitung über die Befehlszeile
-* [**Python SDK**](../api-python-sdk.md) – Programmgesteuerte Automatisierung
-* [**Chloros+ Funktionen**](../#chloros) – Erweiterte Verarbeitungsmöglichkeiten
+* [**CLI
+-Dokumentation**](../CLI.md) – Stapelverarbeitung über die Befehlszeile
+* [**Python
+-SDK
+**](../api-python-sdk.md) – Programmatische Automatisierung
+* [**Funktionen von Chloros
++**](../#chloros) – Erweiterte Verarbeitungsmöglichkeiten
 
 ### Support &amp; Schulungen
 

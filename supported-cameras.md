@@ -6,10 +6,23 @@ metaLinks:
 
 # Unterstützte Kameras
 
-Chloros verarbeitet Bilddaten von zwei MAPIR-Kameraserien auf **allen Plattformen** (Windows, Linux amd64 und Linux arm64/Jetson):
+Chloros
+verarbeitet Bilddaten von zwei MAPIR
+-Kameraserien auf **allen Plattformen** (Windows
+, Linux
+amd64 und Linux
+arm64/Jetson):
 
-* **Survey3** – Kameras der Typen Survey3W (breit) und Survey3N (schmal). Eingabe: `RAW+JPG`.
-* **LATTICE**– M3C- und M3M-Multispektralkameramodule. Eingabe: `.tif`/`.tiff`-Aufnahmen. LATTICE-Kameras können auch**live** von Chloros aus gesteuert werden – über die Registerkarte „Kameras“ der Benutzeroberfläche (Windows) oder über `chloros-cli lattice` / Python und SDK (Windows und Linux) – einschließlich synchronisierter Mehrkamera-Arrays. Siehe den [LATTICE-Leitfaden](lattice/).
+* **Survey3** — Survey3W
+- (Breitwinkel-) und Survey3N
+- (Schmalwinkel-)Kameras. Eingabe: `RAW+JPG`.
+* **LATTICE**– Multispektralkameramodule M3C und M3M. Eingabe: `.tif`/`.tiff`-Aufnahmen. LATTICE-Kameras können auch**live** über Chloros
+gesteuert werden – über die Registerkarte „Kameras“ der Benutzeroberfläche (Windows
+) oder über `chloros-cli lattice` bzw. das Python
+-SDK
+(Windows
+und Linux
+) – einschließlich synchronisierter Mehrkamera-Arrays. Siehe das [LATTICE-Handbuch](lattice/).
 
 Die Verarbeitungspipeline akzeptiert auch `.dng`-Eingabedateien.
 
@@ -17,35 +30,71 @@ Die Verarbeitungspipeline akzeptiert auch `.dng`-Eingabedateien.
 
 <table data-header-hidden><thead><tr><th width="156">Hersteller</th><th width="250">Kameramodell</th><th width="138">Filtermodell</th><th width="187">Bildtyp</th></tr></thead><tbody><tr><td><strong>Hersteller</strong></td><td><strong>Kameramodell</strong></td><td><strong>Filtermodell</strong></td><td><strong>Bildtyp</strong></td></tr><tr><td>MAPIR</td><td>Survey3W, Survey3N</td><td>RGB</td><td>RAW+JPG, JPG</td></tr><tr><td>MAPIR</td><td>Survey3W, Survey3N</td><td>RGN</td><td>RAW+JPG, JPG</td></tr><tr><td>MAPIR</td><td>Survey3W, Survey3N</td><td>OCN</td><td>RAW+JPG, JPG</td></tr><tr><td>MAPIR</td><td>Survey3W, Survey3N</td><td>NGB</td><td>RAW+JPG, JPG</td></tr><tr><td>MAPIR</td><td>Survey3W, Survey3N</td><td>RE</td><td>RAW+JPG, JPG</td></tr><tr><td>MAPIR</td><td>Survey3W, Survey3N</td><td>NIR</td><td>RAW+JPG, JPG</td></tr></tbody></table>## LATTICE
 
-Die LATTICE-Reihe ist ein modulares Multispektralkamerasystem, das auf dem Global-Shutter-Sensor IMX265 von Sony (3,1 MP, 3,45 µm Pixel) basiert. Jede Kamera speichert ihre Identität als Modellzeichenfolge:
+Die LATTICE-Reihe ist ein modulares Multispektralkamerasystem, das auf dem Global-Shutter-Sensor Sony IMX265 (3,1 MP, 3,45 µm Pixel) basiert. Jede Kamera speichert ihre Identität als Modellzeichenfolge:
 
 ```
 <sensor>-<lens>-F<filter>        e.g.  M3C-L41-FRGN,  M3M-L87-F550
-```
+```.
 
-Chloros zeigt sie mit dem Präfix `LATT-` an (zum Beispiel `LATT-M3M-L41-F550`), und die Modellzeichenfolge steuert alle nachgelagerten Prozesse – Sensorprofil, Bandanordnung und Kalibrierung werden automatisch ermittelt; es muss pro Kamera nichts konfiguriert werden. Die Objektivnummer entspricht dem **horizontalen Sichtfeld in Grad**: `L41` = schmal 41°, `L87` = weit 87°.
+Chloros
+
+zeigt diese mit dem Präfix `LATT-` an (zum Beispiel `LATT-M3M-L41-F550`), und die Modellzeichenfolge steuert alle nachgelagerten Prozesse – Sensorprofil, Bandanordnung und Kalibrierung werden automatisch ermittelt; es muss pro Kamera nichts konfiguriert werden. Die Objektivnummer entspricht dem **horizontalen Sichtfeld in Grad**: `L41` = schmal 41°, `L87` = weit 87°.
 
 Es gibt zwei Sensorkonfigurationen:
 
 | Konfiguration | Sensor      | Filtertyp                           | Bänder pro Kamera                                                        |
 | ------------- | ----------- | ------------------------------------- | ----------------------------------------------------------------------- |
-| **M3C**       | Bayer-Farbe | Dreifach-Bandpass                       | 3 Spektralbänder aus einer einzigen Belichtung                                 |
+| **M3C**       | Bayer-Farbfilter | Dreifach-Bandpassfilter                       | 3 Spektralbänder aus einer einzigen Belichtung                                 |
 | **M3M**       | Monochrom  | Einfacher Schmalband-Interferenzfilter | 1 kalibriertes Band – Kombination mehrerer M3M-Kameras für Vegetationsindizes |
 
 ### M3C (Bayer)-Filteroptionen
 
-| Filter | Bänder (Bezeichnung bei Mittenwellenlänge in nm / FWHM nm)       |
+| Filter | Bänder (Bezeichnung bei Mittenwellenlänge in nm / FWHM
+
+in nm)       |
 | ------ | ---------------------------------------- |
-| `FRGB` | Blue 475/30 · Green 550/30 · Red 625/30  |
-| `FRGN` | Red 660/21 · Green 550/30 · NIR 850/30   |
-| `FOCN` | Orange 615/21 · Cyan 490/38 · NIR 808/14 |
-| `FNGB` | Blue 475/30 · Green 550/30 · NIR 850/30  |
+| `FRGB` | Blue
+
+475/30 · Green
+
+550/30 · Red
+
+625/30  |
+| `FRGN` | Red
+
+660/21 · Green
+
+550/30 · NIR
+
+850/30   |
+| `FOCN` | Orange
+
+618,4/46 · Cyan
+
+494,1/40 · NIR
+
+821,6/54 (gemessen – siehe unten) |
+| `FNGB` | Blue
+
+475/30 · Green
+
+550/30 · NIR
+
+850/30  |
+
+Für `FOCN` entsprechen die Werte dem **gemessenen** Halbwertsband des Filters (Chloros
+
+1.3.0 und höher; frühere Versionen verwendeten die Werte aus dem Datenblatt 615/21 · 490/38 · 808/14). Die Bandnamen bleiben `Orange_615`, `Cyan_490` und `NIR_808`, und die gemessene Mitte sowie die Breite entsprechen den Angaben, die Chloros
+
+in jeden kalibrierten Export einfügt.
 
 ### M3M (Mono)-Filterkatalog – 23 Artikelnummern
 
-Die F-Zahl ist die Artikelnummer; das gemessene Band (auf jedem kalibrierten Export eingeprägt) ist der Filterscan pro Charge:
+Die F-Zahl ist die Artikelnummer; das gemessene Band (das in jeden kalibrierten Export eingeprägt ist) ist der Filterscan pro Charge:
 
-| Artikelnummer    | Mitte (nm, gemessen) | FWHM Kanten (nm) | Breite (nm) |
+| Artikelnummer | Mitte (nm, gemessen) | FWHM
+
+-Kanten (nm) | Breite (nm) |
 | ------ | --------------------- | --------------- | ---------- |
 | F385   | 379,4                 | 367–392         | 25         |
 | F405   | 403,9                 | 390–417         | 27         |
@@ -71,8 +120,14 @@ Die F-Zahl ist die Artikelnummer; das gemessene Band (auf jedem kalibrierten Exp
 | F950   | 945,1                 | 929–961         | 32         |
 | F988 † | 985,3                 | 968–1003        | 35         |
 
-_„Die Bandkanten werden als Werte der Halbwertsbreite aus den Filterscans pro Charge von MAPIR gemessen – dieselben Werte, die Chloros in jeden kalibrierten Export einfügt.“_ „— (nominal)“ = noch kein Chargenscan; bei diesen SKUs entspricht der angegebene Mittelpunkt der SKU-Nummer und die Breite dem Herstellerwert.
+_„Die Bandkanten werden als Halbwertsbreite aus den MAPIR
 
-† „Die Reflexion von F988 wird mithilfe einer Reflexionsplatte in der Szene kalibriert: Da das Band außerhalb des kalibrierten Bereichs des DAQ-Lichtsensors liegt, wendet Chloros Ihre letzte Erfassung der Reflexionsplatte an und behält diese zwischen den Messungen bei.“ Siehe [Kalibrierungsziele](calibration-targets.md).
+-Filterscans pro Charge gemessen – dieselben Werte, die Chloros
+
+in jeden kalibrierten Export einfügt.“_ „— (nominal)“ = noch kein Chargenscan; bei diesen Artikelnummern entspricht der angegebene Mittelpunkt der Artikelnummer und die Breite der Herstellerangabe.
+
+† „Die Reflexion von F988 wird mithilfe einer Reflexionsplatte vor Ort kalibriert: Da das Band außerhalb des kalibrierten Bereichs des DAQ-Lichtsensors liegt, wendet Chloros
+
+Ihre letzte Plattenaufnahme an und behält diese zwischen den Plattenmessungen bei.“ Siehe [Kalibrierungsziele](calibration-targets.md).
 
 Informationen zur Live-Kamerasteuerung, zu Arrays, zur Netzwerkeinrichtung und zur radiometrischen Verarbeitungskette finden Sie im [LATTICE-Leitfaden](lattice/).
