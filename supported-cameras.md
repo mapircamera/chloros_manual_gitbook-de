@@ -6,23 +6,10 @@ metaLinks:
 
 # Unterstützte Kameras
 
-Chloros
-verarbeitet Bilddaten von zwei MAPIR
--Kameraserien auf **allen Plattformen** (Windows
-, Linux
-amd64 und Linux
-arm64/Jetson):
+Chloros verarbeitet Bilddaten von zwei MAPIR-Kameraserien auf **allen Plattformen** (Windows, Linux amd64 und Linux arm64/Jetson):
 
-* **Survey3** — Survey3W
-- (Breitwinkel-) und Survey3N
-- (Schmalwinkel-)Kameras. Eingabe: `RAW+JPG`.
-* **LATTICE**– Multispektralkameramodule M3C und M3M. Eingabe: `.tif`/`.tiff`-Aufnahmen. LATTICE-Kameras können auch**live** über Chloros
-gesteuert werden – über die Registerkarte „Kameras“ der Benutzeroberfläche (Windows
-) oder über `chloros-cli lattice` bzw. das Python
--SDK
-(Windows
-und Linux
-) – einschließlich synchronisierter Mehrkamera-Arrays. Siehe das [LATTICE-Handbuch](lattice/).
+* **Survey3** — Survey3W- (Breitwinkel-) und Survey3N- (Schmalwinkel-)Kameras. Eingabe: `RAW+JPG`.
+* **LATTICE**– Multispektralkameramodule M3C und M3M. Eingabe: `.tif`/`.tiff`-Aufnahmen. LATTICE-Kameras können auch**live** über Chloros gesteuert werden – über die Registerkarte „Kameras“ der Benutzeroberfläche (Windows) oder über `chloros-cli lattice` bzw. das Python-SDK (Windows und Linux) – einschließlich synchronisierter Mehrkamera-Arrays. Siehe das [LATTICE-Handbuch](lattice/).
 
 Die Verarbeitungspipeline akzeptiert auch `.dng`-Eingabedateien.
 
@@ -36,9 +23,7 @@ Die LATTICE-Reihe ist ein modulares Multispektralkamerasystem, das auf dem Globa
 <sensor>-<lens>-F<filter>        e.g.  M3C-L41-FRGN,  M3M-L87-F550
 ```.
 
-Chloros
-
-zeigt diese mit dem Präfix `LATT-` an (zum Beispiel `LATT-M3M-L41-F550`), und die Modellzeichenfolge steuert alle nachgelagerten Prozesse – Sensorprofil, Bandanordnung und Kalibrierung werden automatisch ermittelt; es muss pro Kamera nichts konfiguriert werden. Die Objektivnummer entspricht dem **horizontalen Sichtfeld in Grad**: `L41` = schmal 41°, `L87` = weit 87°.
+Chloros zeigt diese mit dem Präfix `LATT-` an (zum Beispiel `LATT-M3M-L41-F550`), und die Modellzeichenfolge steuert alle nachgelagerten Prozesse – Sensorprofil, Bandanordnung und Kalibrierung werden automatisch ermittelt; es muss pro Kamera nichts konfiguriert werden. Die Objektivnummer entspricht dem **horizontalen Sichtfeld in Grad**: `L41` = schmal 41°, `L87` = weit 87°.
 
 Es gibt zwei Sensorkonfigurationen:
 
@@ -49,52 +34,20 @@ Es gibt zwei Sensorkonfigurationen:
 
 ### M3C (Bayer)-Filteroptionen
 
-| Filter | Bänder (Bezeichnung bei Mittenwellenlänge in nm / FWHM
-
-in nm)       |
+| Filter | Bänder (Bezeichnung bei Mittenwellenlänge in nm / FWHM in nm)       |
 | ------ | ---------------------------------------- |
-| `FRGB` | Blue
+| `FRGB` | Blue 475/30 · Green 550/30 · Red 625/30  |
+| `FRGN` | Red 660/21 · Green 550/30 · NIR 850/30   |
+| `FOCN` | Orange 618,4/46 · Cyan 494,1/40 · NIR 821,6/54 (gemessen – siehe unten) |
+| `FNGB` | Blue 475/30 · Green 550/30 · NIR 850/30  |
 
-475/30 · Green
-
-550/30 · Red
-
-625/30  |
-| `FRGN` | Red
-
-660/21 · Green
-
-550/30 · NIR
-
-850/30   |
-| `FOCN` | Orange
-
-618,4/46 · Cyan
-
-494,1/40 · NIR
-
-821,6/54 (gemessen – siehe unten) |
-| `FNGB` | Blue
-
-475/30 · Green
-
-550/30 · NIR
-
-850/30  |
-
-Für `FOCN` entsprechen die Werte dem **gemessenen** Halbwertsband des Filters (Chloros
-
-1.3.0 und höher; frühere Versionen verwendeten die Werte aus dem Datenblatt 615/21 · 490/38 · 808/14). Die Bandnamen bleiben `Orange_615`, `Cyan_490` und `NIR_808`, und die gemessene Mitte sowie die Breite entsprechen den Angaben, die Chloros
-
-in jeden kalibrierten Export einfügt.
+Für `FOCN` entsprechen die Werte dem **gemessenen** Halbwertsband des Filters (Chloros 1.3.0 und höher; frühere Versionen verwendeten die Werte aus dem Datenblatt 615/21 · 490/38 · 808/14). Die Bandnamen bleiben `Orange_615`, `Cyan_490` und `NIR_808`, und die gemessene Mitte sowie die Breite entsprechen den Angaben, die Chloros in jeden kalibrierten Export einfügt.
 
 ### M3M (Mono)-Filterkatalog – 23 Artikelnummern
 
 Die F-Zahl ist die Artikelnummer; das gemessene Band (das in jeden kalibrierten Export eingeprägt ist) ist der Filterscan pro Charge:
 
-| Artikelnummer | Mitte (nm, gemessen) | FWHM
-
--Kanten (nm) | Breite (nm) |
+| Artikelnummer | Mitte (nm, gemessen) | FWHM-Kanten (nm) | Breite (nm) |
 | ------ | --------------------- | --------------- | ---------- |
 | F385   | 379,4                 | 367–392         | 25         |
 | F405   | 403,9                 | 390–417         | 27         |
@@ -120,14 +73,8 @@ Die F-Zahl ist die Artikelnummer; das gemessene Band (das in jeden kalibrierten 
 | F950   | 945,1                 | 929–961         | 32         |
 | F988 † | 985,3                 | 968–1003        | 35         |
 
-_„Die Bandkanten werden als Halbwertsbreite aus den MAPIR
+_„Die Bandkanten werden als Halbwertsbreite aus den MAPIR-Filterscans pro Charge gemessen – dieselben Werte, die Chloros in jeden kalibrierten Export einfügt.“_ „— (nominal)“ = noch kein Chargenscan; bei diesen Artikelnummern entspricht der angegebene Mittelpunkt der Artikelnummer und die Breite der Herstellerangabe.
 
--Filterscans pro Charge gemessen – dieselben Werte, die Chloros
-
-in jeden kalibrierten Export einfügt.“_ „— (nominal)“ = noch kein Chargenscan; bei diesen Artikelnummern entspricht der angegebene Mittelpunkt der Artikelnummer und die Breite der Herstellerangabe.
-
-† „Die Reflexion von F988 wird mithilfe einer Reflexionsplatte vor Ort kalibriert: Da das Band außerhalb des kalibrierten Bereichs des DAQ-Lichtsensors liegt, wendet Chloros
-
-Ihre letzte Plattenaufnahme an und behält diese zwischen den Plattenmessungen bei.“ Siehe [Kalibrierungsziele](calibration-targets.md).
+† „Die Reflexion von F988 wird mithilfe einer Reflexionsplatte vor Ort kalibriert: Da das Band außerhalb des kalibrierten Bereichs des DAQ-Lichtsensors liegt, wendet Chloros Ihre letzte Plattenaufnahme an und behält diese zwischen den Plattenmessungen bei.“ Siehe [Kalibrierungsziele](calibration-targets.md).
 
 Informationen zur Live-Kamerasteuerung, zu Arrays, zur Netzwerkeinrichtung und zur radiometrischen Verarbeitungskette finden Sie im [LATTICE-Leitfaden](lattice/).

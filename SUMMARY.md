@@ -55,7 +55,7 @@
 * [DAQ-E-Vernetzung und Zeitsynchronisation](daq/ethernet-ptp.md)
 * [Reflexions-Workflows](daq/reflectance.md)
 
-## Linux &amp; Edge-Computing
+## Linux & Edge-Computing
 
 * [Linux – Überblick](linux/linux-overview.md)
 * [Linux – Installation](linux/linux-installation.md)
@@ -66,7 +66,7 @@
 * [Dynamische Rechenanpassung](processing-architecture/dynamic-compute-adaptation.md)
 * [Verarbeitungspipeline](processing-architecture/processing-pipeline.md)
 
-## Referenz (CLI &amp; SDK)
+## Referenz (CLI & SDK)
 
 * [Chloros CLI Referenz](reference/cli-reference.md)
 * [Chloros Python SDK Referenz](reference/sdk-reference.md)

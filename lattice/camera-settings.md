@@ -2,11 +2,9 @@
 
 Die Registerkarte **Kameras** ist die Live-Bedienoberfläche vChloros
 
-für LATTICE-Kameras: ein Hauptbildbereich, in dem jede angeschlossene Kamera als Live-Kachel angezeigt wird, sowie eine Seitenleiste, die zwischen drei Seiten wechselt – der **Kameraliste**, einem**Einstellungsbereich**(Einstellungen pro Kamera, Array oder Aufnahme – jeweils einzeln) sowie der**Index-Rechner**. Diese Seite dokumentiert alle Steuerelemente in der Kameraliste, im Einstellungsbereich pro Kamera und im Array-Einstellungsbereich. Aufnahmemodi, die Auswahl des Exporttyps sowie der „Capture All“-Ablauf werden auf der zugehörigen Seite [Aufnahmeeinstellungen &amp; -modi](capture.md) behandelt.
+für LATTICE-Kameras: ein Hauptbildbereich, in dem jede angeschlossene Kamera als Live-Kachel angezeigt wird, sowie eine Seitenleiste, die zwischen drei Seiten wechselt – der **Kameraliste**, einem**Einstellungsbereich**(Einstellungen pro Kamera, Array oder Aufnahme – jeweils einzeln) sowie der**Index-Rechner**. Diese Seite dokumentiert alle Steuerelemente in der Kameraliste, im Einstellungsbereich pro Kamera und im Array-Einstellungsbereich. Aufnahmemodi, die Auswahl des Exporttyps sowie der „Capture All“-Ablauf werden auf der zugehörigen Seite [Aufnahmeeinstellungen & -modi](capture.md) behandelt.
 
-Die Registerkarte „Kameras“ erscheint in der Seitenleiste, sobald das Chloros
-
--Backend bereit ist. Alle unten aufgeführten Steuerelemente kommunizieren über `127.0.0.1:5000` mit dem lokalen Backend; Änderungen werden sofort auf die Live-Kamera angewendet, sofern nicht anders angegeben.
+Die Registerkarte „Kameras“ erscheint in der Seitenleiste, sobald das Chloros-Backend bereit ist. Alle unten aufgeführten Steuerelemente kommunizieren über `127.0.0.1:5000` mit dem lokalen Backend; Änderungen werden sofort auf die Live-Kamera angewendet, sofern nicht anders angegeben.
 
 ## Auf dieser Seite verwendete Kameratypen
 
@@ -14,40 +12,12 @@ Die Steuerelemente werden je nach ausgewählter Kamerart ein- oder ausgeblendet.
 
 | Begriff | Bedeutung | Filterkanäle |
 | --- | --- | --- |
-| **RGB
-
--Kamera** | LATTICE M3C mit FRGB-Filter (Modell enthält `-FRGB`) | Red
-
-/ Green
-
-/ Blue
-
-|
-| **Bayer-Multispektral** | LATTICE M3C mit FRGN, FOCN oder FNGB | FRGN: Red
-
-/ Green
-
-/ NIR
-
-· FOCN: Orange
-
-/ Cyan
-
-/ NIR
-
-· FNGB: NIR
-
-/ Green
-
-/ Blue
-
-|
+| **RGB-Kamera** | LATTICE M3C mit FRGB-Filter (Modell enthält `-FRGB`) | Red / Green / Blue |
+| **Bayer-Multispektral** | LATTICE M3C mit FRGN, FOCN oder FNGB | FRGN: Red / Green / NIR · FOCN: Orange / Cyan / NIR · FNGB: NIR / Green / Blue |
 | **Mono (M3M)** | LATTICE M3M – ein Schmalbandfilter, ein kalibriertes Band | Einzelband |
 | **Array-Mitglied** | Eine Kamera, die als Teil eines synchronisierten Arrays angeschlossen ist (kombinierte oder separate Anzeige) | Je nach Filter |
 
-Bei RGB
-
--Kameras erfolgt eine photometrische Verarbeitung (Weißabgleich, Farbprofile, Gamma); bei Multispektral- und Mono-Kameras wird die radiometrische Kette angewendet und die photometrischen Einstellungen werden übersprungen. Array-Mitglieder übergeben Einstellungen auf Stream-Ebene (Pixelformat, Auflösung, Binning, Trigger, Bildrate) an das Array weiter – diese Zeilen werden im kameraspezifischen Bereich schreibgeschützt und werden stattdessen in den Array-Einstellungsbereich verschoben.
+Bei RGB-Kameras erfolgt eine photometrische Verarbeitung (Weißabgleich, Farbprofile, Gamma); bei Multispektral- und Mono-Kameras wird die radiometrische Kette angewendet und die photometrischen Einstellungen werden übersprungen. Array-Mitglieder übergeben Einstellungen auf Stream-Ebene (Pixelformat, Auflösung, Binning, Trigger, Bildrate) an das Array weiter – diese Zeilen werden im kameraspezifischen Bereich schreibgeschützt und werden stattdessen in den Array-Einstellungsbereich verschoben.
 
 ## Der Hauptbereich für den Live-Feed
 
@@ -55,9 +25,7 @@ Bei RGB
 
 
 
-Wenn keine Kameras angeschlossen sind, zeigt der Live-Feed-Bereich einen Startbildschirm mit der Aufforderung **„Schließen Sie eine Kamera an, um zu beginnen“**und zwei Schaltflächen an:**Kamera verbinden**(grün, öffnet den Verbindungsdialog für eine einzelne Kamera) und**Array verbinden** (blau, öffnet den Verbindungsdialog für ein Array). Die Verbindungsdialoge selbst sind unter [Kameras verbinden](connecting.md) dokumentiert; Array-Konzepte (Synchronisation, Ebenen, Bandbreite) unter [Multi-Kamera-Arrays](arrays.md). Wenn Sie ein gespeichertes Projekt öffnen, das Kameras enthält, zeigt der Begrüßungsbildschirm stattdessen einen Ladekreis mit der Meldung „N gespeicherte Kameras werden erneut geöffnet…“, während Chloros
-
-die Streams aus der letzten Sitzung wiederherstellt.
+Wenn keine Kameras angeschlossen sind, zeigt der Live-Feed-Bereich einen Startbildschirm mit der Aufforderung **„Schließen Sie eine Kamera an, um zu beginnen“**und zwei Schaltflächen an:**Kamera verbinden**(grün, öffnet den Verbindungsdialog für eine einzelne Kamera) und**Array verbinden** (blau, öffnet den Verbindungsdialog für ein Array). Die Verbindungsdialoge selbst sind unter [Kameras verbinden](connecting.md) dokumentiert; Array-Konzepte (Synchronisation, Ebenen, Bandbreite) unter [Multi-Kamera-Arrays](arrays.md). Wenn Sie ein gespeichertes Projekt öffnen, das Kameras enthält, zeigt der Begrüßungsbildschirm stattdessen einen Ladekreis mit der Meldung „N gespeicherte Kameras werden erneut geöffnet…“, während Chloros die Streams aus der letzten Sitzung wiederherstellt.
 
 <!-- SCREENSHOT-NEEDED: Cameras tab empty state — the "Connect a camera to get started" splash with the green Connect Camera and blue Connect Array buttons. -->
 
@@ -88,7 +56,7 @@ Wenn das Raster entsperrt ist, ziehen Sie eine beliebige Kachel auf einen belieb
 Auf der ersten Seite der Seitenleiste werden alle verbundenen Kameras und Arrays aufgelistet:
 
 * **Kamera verbinden**(grün) /**Array verbinden** (blau, zeigt „Wird erkannt…“ während des Scannens an). Beide sind deaktiviert, solange ein Verbindungsdialog geöffnet ist.
-* **Alles aufnehmen** (rot) – nimmt jede aufgelistete Kamera mit den in den Aufnahmeeinstellungen ausgewählten Exporttypen auf. Erfordert ein geöffnetes Projekt. Ausführlich dokumentiert unter [Aufnahmeeinstellungen &amp; Modi](capture.md).
+* **Alles aufnehmen** (rot) – nimmt jede aufgelistete Kamera mit den in den Aufnahmeeinstellungen ausgewählten Exporttypen auf. Erfordert ein geöffnetes Projekt. Ausführlich dokumentiert unter [Aufnahmeeinstellungen & Modi](capture.md).
 * **Zahnrad „Aufnahmeeinstellungen“** (neben „Alles aufnehmen“) – öffnet den [Bereich „Aufnahmeeinstellungen“](capture.md#the-capture-settings-pane). Ist ohne Projekt oder während der Aufnahme deaktiviert.
 
 ### Kamerareihen
@@ -122,21 +90,11 @@ Solange Sie die Reihenfolge nicht ändern, zeigt die Liste zuerst Arrays und dan
 
 ### Live-Histogramm
 
-Oben im Fenster befindet sich ein Live-Luma-Histogramm, das mit einer Frequenz von ca. 8 Hz aus der JPEG
+Oben im Fenster befindet sich ein Live-Luma-Histogramm, das mit einer Frequenz von ca. 8 Hz aus der JPEG-Vorschau berechnet wird. Der Mittelwert ist Bayer-gewichtet – (R+2G+B)/4 –, um der kamerainternen Belichtungsmessung zu entsprechen.
 
--Vorschau berechnet wird. Der Mittelwert ist Bayer-gewichtet – (R+2G+B)/4 –, um der kamerainternen Belichtungsmessung zu entsprechen.
-
-* **Orange
-
-r gestrichelter Strich**= das Belichtungsziel.**Ziehen Sie ihn horizontal, um das Ziel neu festzulegen** – beim Loslassen wird ein Befehl gesendet, und durch das Ziehen wird der Belichtungszielmodus auf „Manuell“ umgeschaltet.
-* **Green
-
-e durchgezogene Linie** = der tatsächliche Luma-Mittelwert (das, was die Belichtungssteuerung derzeit liefert).
-* **RGB
-
--Schaltfläche** (oben rechts): Schaltet bandweise überlagerte Histogramme um, die entsprechend dem Filter der Kamera eingefärbt sind (z. B. bei FRGN: graues NIR
-
-, grün, rot). Bei Mono-Kameras (M3M) trägt die Schaltfläche die Bezeichnung „MONO“ und ist deaktiviert – bei Mono wird immer das Ein-Band-Luma-Histogramm angezeigt.
+* **Orange gestrichelter Strich**= das Belichtungsziel.**Ziehen Sie ihn horizontal, um das Ziel neu festzulegen** – beim Loslassen wird ein Befehl gesendet, und durch das Ziehen wird der Belichtungszielmodus auf „Manuell“ umgeschaltet.
+* **Green durchgezogene Linie** = der tatsächliche Luma-Mittelwert (das, was die Belichtungssteuerung derzeit liefert).
+* **RGB-Schaltfläche** (oben rechts): Schaltet bandweise überlagerte Histogramme um, die entsprechend dem Filter der Kamera eingefärbt sind (z. B. bei FRGN: graues NIR, grün, rot). Bei Mono-Kameras (M3M) trägt die Schaltfläche die Bezeichnung „MONO“ und ist deaktiviert – bei Mono wird immer das Ein-Band-Luma-Histogramm angezeigt.
 * Die Beschriftungen der X-Achse richten sich nach der Bit-Tiefe des Sensors des aktuellen Pixelformats: 0..255, 0..1023, 0..4095 oder 0..65535.
 
 ### Zeilen
@@ -148,60 +106,26 @@ mit Kamerainformationen
 | Zeile | Verhalten |
 | --- | --- |
 | **Modell** | Schreibgeschützt (z. B. `LATT-M3C-L87-FRGN`). |
-| **Radiometrische Kalibrierung** | Green
-
-es **„Aktiv“**-Symbol mit einer Beschriftung, die die Kalibrierungsstufe, den Hash-Wert, das Kalibrierungsdatum und die Bandliste anzeigt, geladen aus dem Kalibrierungspaket der Kamera (siehe [Werksradiometrische Kalibrierung](https://mapir.gitbook.io/lattice-camera/calibration/factory-radiometric-calibration)).**Bei RGB
-
--Kameras ausgeblendet** – diese verfügen über eine photometrische Weißabgleichskalibrierung, nicht über eine bandweise Strahlungskalibrierung. |
-| **Kalibrierungsbericht**|**Download**-Schaltfläche – öffnet das seriennummernspezifische NIST-Kalibrierungszertifikat der Kamera als PDF in Ihrem Betriebssystem-Viewer. Wenn das Zertifikat noch nicht zwischengespeichert ist, zeigt Chloros
-
-stattdessen einen Hinweis an. |
+| **Radiometrische Kalibrierung** | Green es **„Aktiv“**-Symbol mit einer Beschriftung, die die Kalibrierungsstufe, den Hash-Wert, das Kalibrierungsdatum und die Bandliste anzeigt, geladen aus dem Kalibrierungspaket der Kamera (siehe [Werksradiometrische Kalibrierung](https://mapir.gitbook.io/lattice-camera/calibration/factory-radiometric-calibration)).**Bei RGB-Kameras ausgeblendet** – diese verfügen über eine photometrische Weißabgleichskalibrierung, nicht über eine bandweise Strahlungskalibrierung. |
+| **Kalibrierungsbericht**|**Download**-Schaltfläche – öffnet das seriennummernspezifische NIST-Kalibrierungszertifikat der Kamera als PDF in Ihrem Betriebssystem-Viewer. Wenn das Zertifikat noch nicht zwischengespeichert ist, zeigt Chloros stattdessen einen Hinweis an. |
 | **Seriennummer** | Schreibgeschützt. |
 | **Firmware**| Zeigt die aktuelle Version an und ermittelt anschließend die für dieses Modell verfügbare Version (pro Modell zwischengespeichert – ein Array aus N Kameras fragt den Server einmal ab). Status: „Wird geprüft…“ → Schaltfläche**„Auf X aktualisieren“**→ „Wird geflasht…“ → „Aktualisiert von A auf B“ / „Fehlgeschlagen: …“ / „Übersprungen: …“ / grün**„Auf dem neuesten Stand“**. Tooltip der Update-Schaltfläche: „Werkseinstellung + Flashen + Neuprogrammierung von UserSet1. ~2–3 Minuten; Verbindung nicht trennen.“ |
 | **IP** | Schreibgeschützt. |
 | **Temperatur** | Schreibgeschützt, wird alle 3 s aktualisiert. Leuchtet orange bei ≥65 °C und rot mit einem ⚠ bei ≥75 °C. |
-| **Kalibrierungsziel** | Aktiviert die ArUco-Reflexionszielerkennung mit einer panelbezogenen NDVI
-
--Validierungstabelle unterhalb der Live-Ansicht (Listenansicht) – siehe [Die Kalibrierungsziel-Tabelle](#the-calibration-target-table). Nur für die aktuelle Sitzung – wird immer deaktiviert geöffnet. |
+| **Kalibrierungsziel** | Aktiviert die ArUco-Reflexionszielerkennung mit einer panelbezogenen NDVI-Validierungstabelle unterhalb der Live-Ansicht (Listenansicht) – siehe [Die Kalibrierungsziel-Tabelle](#the-calibration-target-table). Nur für die aktuelle Sitzung – wird immer deaktiviert geöffnet. |
 | **Lichtsensor**-Dropdown | Bindet einen DAQ-Lichtsensor (DAQ-E/M/U, aus der Liste auf der Registerkarte „Lichtsensoren“) an diese Kamera für die Beleuchtungskorrektur bei einfallendem Licht (DLS) und die prädiktive automatische Belichtung. „„Keine“ löscht die Zuordnung. Sind keine Sensoren angeschlossen, zeigt das Dropdown-Menü „(keine Sensoren angeschlossen – DAQ-Registerkarte öffnen)“ an. Die Zuordnung wird mit dem Projekt gespeichert. |
 
 #### Die Tabelle „Kalibrierungsziel“
 
 Die Tabelle dient **ausschließlich zur Validierungsanzeige** („nur zur Validierung – ändert die Kalibrierung nicht“). In der Kopfzeile sind die Seriennummer der Kamera, der Filter, die Zielnummer und die Markergröße in Pixeln angegeben, und es gibt eine Zeile pro Panel:
 
-* **Panel**, gefolgt von einer Spalte pro Band mit dem Wert des Panels – eine Bayer-Kamera zeigt ihre drei Bänder nach Name und Wellenlänge an (z. B. FRGN: Red
-
-660 nm / Green
-
-550 nm / NIR
-
-850 nm); eine **Monochrom-Kamera (M3M) zeigt ihr einziges Band** an (z. B. `F750`) und hat keine NDVI
-
--Spalten.
+* **Panel**, gefolgt von einer Spalte pro Band mit dem Wert des Panels – eine Bayer-Kamera zeigt ihre drei Bänder nach Name und Wellenlänge an (z. B. FRGN: Red 660 nm / Green 550 nm / NIR 850 nm); eine **Monochrom-Kamera (M3M) zeigt ihr einziges Band** an (z. B. `F750`) und hat keine NDVI-Spalten.
 * **Sat** – der Anteil der gesättigten Pixel des Panels (bernsteinfarben ab 1 %, rot ab 5 %).
-* **NDVI
-
-Meas**,**NDVI
-
-Theo** (der Referenz-Reflexions-NDVI
-
-des Panels) und **Δ**– nur bei Bayer-Multispektralkameras. Ein kleines Zeichen hinter „NDVI
-
-Meas“ gibt an, woraus der gemessene NDVI
-
-berechnet wurde:**ρ**(Reflexion – ein Lichtsensorwert ist verfügbar),**L**(Strahlungsintensität – kein Lichtsensorwert) oder**DN**(Rohwerte der Kamera). Nur ein**ρ**-NDVI
-
-ist mit dem NDVI
-
-Theo vergleichbar: Bei L und DN ist die Spalte „Δ“ ausgegraut und ein Hinweis weist darauf hin („Kein Lichtsensorwert: NDVI
-
-basiert auf Radiance, daher ist Δ keine Kalibrierungsprüfung“ / „NDVI
-
-basiert auf Rohwerten der Kamera, daher ist Δ keine Kalibrierungsprüfung“). Bei ρ ist Δ unter 0,02 grün, unter 0,05 gelb und ansonsten rot.
+* **NDVI Meas**,**NDVI Theo** (der Referenz-Reflexions-NDVI des Panels) und **Δ**– nur bei Bayer-Multispektralkameras. Ein kleines Zeichen hinter „NDVI Meas“ gibt an, woraus der gemessene NDVI berechnet wurde:**ρ**(Reflexion – ein Lichtsensorwert ist verfügbar),**L**(Strahlungsintensität – kein Lichtsensorwert) oder**DN**(Rohwerte der Kamera). Nur ein**ρ**-NDVI ist mit dem NDVI Theo vergleichbar: Bei L und DN ist die Spalte „Δ“ ausgegraut und ein Hinweis weist darauf hin („Kein Lichtsensorwert: NDVI basiert auf Radiance, daher ist Δ keine Kalibrierungsprüfung“ / „NDVI basiert auf Rohwerten der Kamera, daher ist Δ keine Kalibrierungsprüfung“). Bei ρ ist Δ unter 0,02 grün, unter 0,05 gelb und ansonsten rot.
 
 <!-- SCREENSHOT-NEEDED: a 1.3.0 Calibration Target table under a live feed in list view — a Bayer camera's table showing the band columns, Sat, and "NDVI Meas ρ" / NDVI Theo / Δ; ideally next to a mono camera's single-band table with no NDVI columns. -->
 
-### Belichtung &amp; Verstärkung
+### Belichtung & Verstärkung
 
 <!-- SCREENSHOT-NEEDED: per-camera Exposure & Gain section — Exposure (us) and Gain (dB) rows with Auto/Manual toggles, AE Target Brightness, AE Smoothing slider, AE Region of Interest row with the Aim button, and (on an array camera) AE Tune Speed and Highlight Protection rows. -->
 
@@ -218,21 +142,11 @@ Alle numerischen Eingaben hier verwenden Spinner, die durch Gedrückthalten besc
 | **Highlight-Schutz** | Streng (1 %) / Normal (5 %) / Locker (15 %) | Streng | Kameras, die diese Einstellung bereitstellen | Wie viel des Bildausschnitts darf in Weiß ausbleichen, bevor die Belichtungsautomatik das Bild abdunkelt. |
 
 {% hint style="info" %}
-**Lichtanforderungen für Bayer-Multispektralkameras (RGN
-
-/ OCN
-
-/ NGB
-
-):** Die Szene muss in allen drei Kanälen über ausreichend Licht verfügen, sonst funktioniert die Kalibrierung nicht korrekt — eine einzige Sensorbelichtung deckt alle drei Spektren ab. Verwenden Sie einen DAQ-Lichtsensor, um die Lichtverhältnisse zu messen, oder wechseln Sie in den All-Mono-Modus (M3M), damit jedes Band seine eigene Belichtung erhält. Wenn eine Aufnahme diese Vorgabe nicht erfüllt, erkennt Chloros
-
-dies und warnt Sie (die „Unmix-Clamp“-Benachrichtigung). Im Live-Modus zeigt eine Kanal-Split-Kachel **„Banddaten mit geringer Zuverlässigkeit · N %“** an, wenn der Unmix dieses Band bei 25 % oder mehr seiner Pixel geklemmt hat.
+**Lichtanforderungen für Bayer-Multispektralkameras (RGN / OCN / NGB):** Die Szene muss in allen drei Kanälen über ausreichend Licht verfügen, sonst funktioniert die Kalibrierung nicht korrekt — eine einzige Sensorbelichtung deckt alle drei Spektren ab. Verwenden Sie einen DAQ-Lichtsensor, um die Lichtverhältnisse zu messen, oder wechseln Sie in den All-Mono-Modus (M3M), damit jedes Band seine eigene Belichtung erhält. Wenn eine Aufnahme diese Vorgabe nicht erfüllt, erkennt Chloros dies und warnt Sie (die „Unmix-Clamp“-Benachrichtigung). Im Live-Modus zeigt eine Kanal-Split-Kachel **„Banddaten mit geringer Zuverlässigkeit · N %“** an, wenn der Unmix dieses Band bei 25 % oder mehr seiner Pixel geklemmt hat.
 {% endhint %}
 
 {% hint style="info" %}
-**Wie die automatische Belichtung Belichtungszeit und Verstärkung einsetzt (1.3.0).** Bei automatischer Verstärkung hält Chloros
-
-die Verstärkung bei 0 dB, bis die Belichtungszeit den maximal zulässigen Wert erreicht hat (die AE-Obergrenze, die Triggerperiode eines Arrays oder die DAQ-Belichtungsobergrenze); erst dann steigt die Verstärkung an. In einem Array hat die Triggerrate Vorrang: Die automatische Belichtung füllt die durch die Rate vorgegebene Periode aus, und erhöht dann den Verstärkungsfaktor, sodass eine dunkler werdende Szene die automatische Triggerrate nicht mehr verringert (in Version 1.2.0 war dies noch der Fall). Eine **manuelle**Belichtung an einem Array-Mitglied, die länger als die Triggerperiode dauert, verlangsamt den Trigger des Arrays entsprechend; die automatische Triggerrate wird wiederhergestellt, sobald jedes Element, das sie verlangsamt hat, wieder auf automatische Belichtung umgeschaltet ist. Wenn sowohl**Belichtung**als auch**AE-Zielhelligkeit** auf „Auto“ stehen und ein DAQ-Lichtsensor einen Messwert liefert, wird die Belichtung jeder Kamera beibehalten, sobald sich die automatische Belichtung eingependelt hat, solange das gemessene Licht innerhalb von etwa ±25 % bleibt; Eine größere, anhaltende Lichtänderung, ein Neustart der Einstellungen (z. B. eine Änderung des ROI) oder eine von Ihnen vorgenommene Belichtungsänderung löst die Belichtung erneut aus.
+**Wie die automatische Belichtung Belichtungszeit und Verstärkung einsetzt (1.3.0).** Bei automatischer Verstärkung hält Chloros die Verstärkung bei 0 dB, bis die Belichtungszeit den maximal zulässigen Wert erreicht hat (die AE-Obergrenze, die Triggerperiode eines Arrays oder die DAQ-Belichtungsobergrenze); erst dann steigt die Verstärkung an. In einem Array hat die Triggerrate Vorrang: Die automatische Belichtung füllt die durch die Rate vorgegebene Periode aus, und erhöht dann den Verstärkungsfaktor, sodass eine dunkler werdende Szene die automatische Triggerrate nicht mehr verringert (in Version 1.2.0 war dies noch der Fall). Eine **manuelle**Belichtung an einem Array-Mitglied, die länger als die Triggerperiode dauert, verlangsamt den Trigger des Arrays entsprechend; die automatische Triggerrate wird wiederhergestellt, sobald jedes Element, das sie verlangsamt hat, wieder auf automatische Belichtung umgeschaltet ist. Wenn sowohl**Belichtung**als auch**AE-Zielhelligkeit** auf „Auto“ stehen und ein DAQ-Lichtsensor einen Messwert liefert, wird die Belichtung jeder Kamera beibehalten, sobald sich die automatische Belichtung eingependelt hat, solange das gemessene Licht innerhalb von etwa ±25 % bleibt; Eine größere, anhaltende Lichtänderung, ein Neustart der Einstellungen (z. B. eine Änderung des ROI) oder eine von Ihnen vorgenommene Belichtungsänderung löst die Belichtung erneut aus.
 {% endhint %}
 
 {% hint style="info" %}
@@ -246,7 +160,7 @@ die Verstärkung bei 0 dB, bis die Belichtungszeit den maximal zulässigen Wert 
 * Eine Kamera, deren automatische Belichtung bei starker Sonneneinstrahlung nicht mehr reagiert, wird auf dem Niveau der aktuellen Lichtverhältnisse gehalten, das vom Lichtsensor oder – falls kein Lichtsensor angeschlossen ist – anhand der eigenen Bilder der Kamera ermittelt wird, und bei einer Lichtänderung wieder losgelassen. Ein verdunkelter oder abgedeckter Lichtsensor stört dies nicht.
 {% endhint %}
 
-### Pixelformat &amp; Auflösung
+### Pixelformat & Auflösung
 
 <!-- SCREENSHOT-NEEDED: per-camera Pixel Format & Resolution section on a STANDALONE camera — Pixel Format, Resolution, and Binning dropdowns plus the Current WxH readout. A second capture on an array member showing the read-only "Set in array settings" state would also be useful. -->
 
@@ -273,34 +187,18 @@ Alle Einstellungen in diesem Abschnitt wirken sich **nur auf die Anzeige**aus �
 | --- | --- | --- | --- | --- |
 | **Render-Auflösung** | 360p (am schnellsten) / 480p / 720p / 1080p / Native Sensorauflösung (langsamste) | 720p | Alle | Die Höhe, in der das Backend die radiometrische Vorschau-Kette ausführt. Eine niedrigere Einstellung erhöht die Bildrate, ohne das Sichtfeld zu verändern. |
 | **Index**| Kontrollkästchen „Aktivieren“ + Zahnrad | Aus | Nur Bayer-Multispektral,**nicht** Mitglieder von Combined-Array | Live-Vorschau des Vegetationsindex. Das Zahnrad öffnet den gemeinsamen [Index-Rechner](#index-calculator-pane), der mit den natürlichen Filterbändern der Kamera vorbelegt ist (z. B. `Red_660_RGN`, `Green_550_RGN`, `NIR_850_RGN`). Der benutzerdefinierte Ausdruck sowie die LUT (ein/aus, Standardstufe 7 Blendenstufen, Standardmin. 0,2, Standardmax. 1) wird bei jedem Vorschaubild berechnet. Mitglieder des kombinierten Arrays blenden diese Zeile aus – das Array verfügt über einen gemeinsamen Index. |
-| **Weißabgleich** | Aus / Einmal / Kontinuierlich + Schaltfläche zur Neuerfassung | Kontinuierlich | Nur RGB
-
-| Live-Weißabgleich. Die Schaltfläche „Aktualisieren“ erfasst den Weißabgleich erneut anhand des aktuellen DLS-Spektrums (deaktiviert, wenn der Modus auf „Aus“ steht). |
-| **Gamma** | Ein / Aus | Ein | Nur RGB
-
-| Anzeige des Gammawerts (γ = 2,2 LUT) in der Live-Vorschau. Gespeicherte Aufnahmen bleiben linear. |
+| **Weißabgleich** | Aus / Einmal / Kontinuierlich + Schaltfläche zur Neuerfassung | Kontinuierlich | Nur RGB | Live-Weißabgleich. Die Schaltfläche „Aktualisieren“ erfasst den Weißabgleich erneut anhand des aktuellen DLS-Spektrums (deaktiviert, wenn der Modus auf „Aus“ steht). |
+| **Gamma** | Ein / Aus | Ein | Nur RGB | Anzeige des Gammawerts (γ = 2,2 LUT) in der Live-Vorschau. Gespeicherte Aufnahmen bleiben linear. |
 | **Rauschunterdrückung** | Kontrollkästchen + Stärke 0–100 | Aus / 50 | Alle (pro Kamera, auch innerhalb von Arrays) | Bilateraler Filter in der Live-Vorschau. Höhere Werte = glatteres, aber weicheres Detailbild. |
 | **Schärfe** | Kontrollkästchen + Stärke 0–100 | Aus / 30 | Alle | Unscharfmaskierung in der Live-Vorschau, wird zuletzt angewendet. Kann Rauschen verstärken. Nur in der Vorschau. |
 | **Vignettierung**| Kontrollkästchen + Stärke 0–100 | Aus / 0 | Alle | Manuelle Restentfernungs-Vignettierung (hellt Ecken auf), die über die „Smart Vignette“-Schätzung des Arrays gelegt wird.**Radiometrisch – wirkt sich auf die Live-Ansicht UND Exporte aus**, im Gegensatz zu Rauschunterdrückung/Schärfe. |
-| **Farbprofil** | Raw / Linear / Natürlich / Verbessert / Benutzerdefinierte Temperatur | Natürlich | Nur RGB
-
-| Siehe unten. |
-| **Farbtemperatur** | 2000–10000 K, Schritt 100 | 5500 K | Nur RGB
-
-, benutzerdefiniertes Temperaturprofil | Legt den Weißabgleich auf eine feste korrelierte Farbtemperatur fest (DLS-Eingabe wird ignoriert). Der zuletzt gewählte Kelvin-Wert wird bei Profilwechseln beibehalten. |
-| **Lichter** | −100 bis 0, Schrittweite 1 | 0 (aus) | Nur RGB
-
-| Neu in 1.3.0. Verdunkelt die hellsten, weißesten Bereiche des Bildes (0 = unverändert, −100 = am stärksten). Gilt für die Live-Vorschau **sowie für Aufnahmen auf Anzeigeebene (Vorschau)**, die die Einstellung speichern (`Chloros:DisplayHighlights`); Strahlungs- und Reflexionswerte werden niemals beeinflusst. Es können keine abgeschnittenen Sensordaten wiederhergestellt werden – verringern Sie hierfür die Belichtung. Die Zebra-Einblendung passt sich dem abgedunkelten Bild an. Deaktiviert mit dem Raw-Farbprofil („Wird beim RAW-Farbprofil nicht angewendet.“). |
-| **Sättigung** | 0–200 (100 = neutral) | 100 | Nur RGB
-
-| HSV-Sättigung in der Live-Vorschau. |
-| **Kontrast** | 0–200 (100 = neutral) | 100 | Nur RGB
-
-| Linearer Kontrast um Mittelgrau in der Live-Vorschau. |
+| **Farbprofil** | Raw / Linear / Natürlich / Verbessert / Benutzerdefinierte Temperatur | Natürlich | Nur RGB | Siehe unten. |
+| **Farbtemperatur** | 2000–10000 K, Schritt 100 | 5500 K | Nur RGB, benutzerdefiniertes Temperaturprofil | Legt den Weißabgleich auf eine feste korrelierte Farbtemperatur fest (DLS-Eingabe wird ignoriert). Der zuletzt gewählte Kelvin-Wert wird bei Profilwechseln beibehalten. |
+| **Lichter** | −100 bis 0, Schrittweite 1 | 0 (aus) | Nur RGB | Neu in 1.3.0. Verdunkelt die hellsten, weißesten Bereiche des Bildes (0 = unverändert, −100 = am stärksten). Gilt für die Live-Vorschau **sowie für Aufnahmen auf Anzeigeebene (Vorschau)**, die die Einstellung speichern (`Chloros:DisplayHighlights`); Strahlungs- und Reflexionswerte werden niemals beeinflusst. Es können keine abgeschnittenen Sensordaten wiederhergestellt werden – verringern Sie hierfür die Belichtung. Die Zebra-Einblendung passt sich dem abgedunkelten Bild an. Deaktiviert mit dem Raw-Farbprofil („Wird beim RAW-Farbprofil nicht angewendet.“). |
+| **Sättigung** | 0–200 (100 = neutral) | 100 | Nur RGB | HSV-Sättigung in der Live-Vorschau. |
+| **Kontrast** | 0–200 (100 = neutral) | 100 | Nur RGB | Linearer Kontrast um Mittelgrau in der Live-Vorschau. |
 | **Horizontal spiegeln / Vertikal spiegeln** | Kontrollkästchen | Aus | Alle | Die Vorschau horizontal/vertikal spiegeln. |
-| **Drehung**| 0° / 90° / 180° / 270° | 0° | Alle | Die Vorschau drehen. Die Ausrichtung wird am Ende der Backend-Vorschau-Kette angewendet.**Gespeicherte Aufnahmen (1.3.0):**Die Produkte „Vorschau“, „Radiance“, „Reflexion“ und „Index“ einer eigenständigen Kamera werden durch Spiegeln/Drehen gedreht, während**„Raw“ und „Debayered“ in der kameraneigenen Ausrichtung**; jede Aufnahme-Datei speichert die Einstellung in ihrem XMP, sodass bei der späteren Verarbeitung einer RAW-Datei diese auf dieselbe Weise angewendet wird.**Dateien von Array-Elementen bleiben in ihrer nativen Ausrichtung** (die Einstellung wird gespeichert, aber nicht angewendet), und zusammengesetzte Ansichten des Arrays ignorieren sie. |**Semantik der Farbprofile** (RGB
-
--Kameras):
+| **Drehung**| 0° / 90° / 180° / 270° | 0° | Alle | Die Vorschau drehen. Die Ausrichtung wird am Ende der Backend-Vorschau-Kette angewendet.**Gespeicherte Aufnahmen (1.3.0):**Die Produkte „Vorschau“, „Radiance“, „Reflexion“ und „Index“ einer eigenständigen Kamera werden durch Spiegeln/Drehen gedreht, während**„Raw“ und „Debayered“ in der kameraneigenen Ausrichtung**; jede Aufnahme-Datei speichert die Einstellung in ihrem XMP, sodass bei der späteren Verarbeitung einer RAW-Datei diese auf dieselbe Weise angewendet wird.**Dateien von Array-Elementen bleiben in ihrer nativen Ausrichtung** (die Einstellung wird gespeichert, aber nicht angewendet), und zusammengesetzte Ansichten des Arrays ignorieren sie. |**Semantik der Farbprofile** (RGB-Kameras):
 
 * **Raw** — die Verarbeitungskette wird vollständig umgangen.
 * **Linear** — Dunkelsignal + Flat-Field + Weißabgleich; keine Farbmatrix, kein Gamma.
@@ -325,20 +223,12 @@ Diese sind nur im Frontend verfügbar – sie werden über das Video gelegt, ohn
 | **Raster** | Aus / 3 × 3 / 9 × 9 | Aus | Kompositionsraster. |
 | **Histogramm** | Kontrollkästchen + Breite 0,10–0,90 des Bildes | Aus / 0,25 | Ein Histogrammstreifen im Live-Feed. |
 | **Fokus-Peak** | Kontrollkästchen + Schwellenwert 20–200 + Farbfeld | Aus / 80 / `#ff5722` | Sobel-Kantenhervorhebung zur Fokussierung. |
-| **Kanalaufteilung** | „Aufteilung anzeigen (Red
-
-/ Green
-
-/ NIR
-
-)“ / Schaltfläche „Aufteilungen ausblenden“ | Ausgeblendet | Fügt neben dem zusammengesetzten Bild drei unabhängige Graustufen-Kacheln pro Kanal hinzu (die Beschriftung der Schaltfläche richtet sich nach den Filterkanälen der Kamera). Jede Kachel lässt sich verschieben und hat die Rahmenfarbe der Kamera. Nicht verfügbar bei Monochrom-Kameras. Wird mit dem Projekt gespeichert. |
+| **Kanalaufteilung** | „Aufteilung anzeigen (Red / Green / NIR)“ / Schaltfläche „Aufteilungen ausblenden“ | Ausgeblendet | Fügt neben dem zusammengesetzten Bild drei unabhängige Graustufen-Kacheln pro Kanal hinzu (die Beschriftung der Schaltfläche richtet sich nach den Filterkanälen der Kamera). Jede Kachel lässt sich verschieben und hat die Rahmenfarbe der Kamera. Nicht verfügbar bei Monochrom-Kameras. Wird mit dem Projekt gespeichert. |
 
 ### Spot-Belichtungsmesser
 
 * Kontrollkästchen **„Zum Abtasten klicken“**: Klicken Sie auf das Live-Bild, um ein einzelnes Pixel abzutasten (ein Fadenkreuz markiert es), oder klicken und ziehen Sie einen Bereich, um einen Pixeldurchschnitt zu ermitteln.**„Löschen“**entfernt die Abtastung und das Fadenkreuz. Schließt den**„Aim“**-Modus von AE-ROI aus.
-* **Dropdown-Menü**Anzeigen**:**Raw (Bittiefe)**– native digitale Werte in der Bittiefe des Sensors (z. B. 12 Bit → 0..4095) – oder**Anzeige (8 Bit)** (Standard). Wenn ein Live-Index aktiv ist, zeigt „Display“ stattdessen den berechneten Indexwert (z. B. NDVI
-
-) an.
+* **Dropdown-Menü**Anzeigen**:**Raw (Bittiefe)**– native digitale Werte in der Bittiefe des Sensors (z. B. 12 Bit → 0..4095) – oder**Anzeige (8 Bit)** (Standard). Wenn ein Live-Index aktiv ist, zeigt „Display“ stattdessen den berechneten Indexwert (z. B. NDVI) an.
 * Das Auslesefenster listet Pixelkoordinaten, Bildgröße, Pixelformat, Bittiefe und eine Kanaltabelle (Chan / Wert / %) mit Bandbezeichnungen und Wellenlängen auf; Bayer-Grünpaare werden gemittelt; Bereichswerte zeigen „N px avg“ an.
 
 Der Status des Spotmessers gilt nur für die aktuelle Sitzung.
@@ -360,20 +250,12 @@ Dieser Abschnitt wird nur angezeigt, wenn **mindestens ein DAQ-Lichtsensor anges
 | **Szenenreflexionsgrad**| Schaltfläche**ρ neu kalibrieren** | — | Schätzt den vom Solver verwendeten Szenenreflexionsgrad neu. |
 
 {% hint style="info" %}
-**„Array connect“ deaktiviert standardmäßig die prädiktive Belichtungsautomatik** — bei Array-Konfigurationen übernehmen „Chloros
-
-‘ Smart AE“ sowie die kameraseitige Belichtungsautomatik die Belichtung (mit Sättigungsschutz), und die Schätzung der Reflexion einer einzelnen Szene durch die prädiktive BelichtungsautomatikReflexionsschätzung der prädiktiven Belichtungsautomatik ist bei gemischten Szenen nicht zuverlässig. Sie können sie hier pro Kamera wieder aktivieren, wenn Sie ausdrücklich eine DLS-gesteuerte radiometrische Belichtung wünschen.
+**„Array connect“ deaktiviert standardmäßig die prädiktive Belichtungsautomatik** — bei Array-Konfigurationen übernehmen „Chloros ‘ Smart AE“ sowie die kameraseitige Belichtungsautomatik die Belichtung (mit Sättigungsschutz), und die Schätzung der Reflexion einer einzelnen Szene durch die prädiktive BelichtungsautomatikReflexionsschätzung der prädiktiven Belichtungsautomatik ist bei gemischten Szenen nicht zuverlässig. Sie können sie hier pro Kamera wieder aktivieren, wenn Sie ausdrücklich eine DLS-gesteuerte radiometrische Belichtung wünschen.
 {% endhint %}
 
-**DAQ-gesteuerte Belichtungsobergrenze und auf den einfallenden Lichtstrahl fixierte Belichtungsautomatik.** Unabhängig vom obigen Kontrollkästchen berechnet Chloros
+**DAQ-gesteuerte Belichtungsobergrenze und auf den einfallenden Lichtstrahl fixierte Belichtungsautomatik.** Unabhängig vom obigen Kontrollkästchen berechnet Chloros – wenn ein DAQ-Lichtsensor einer RGB-Kamera zugewiesen ist – anhand der gemessenen absoluten nach unten gerichteten Bestrahlungsstärke die maximale Belichtung × Verstärkung, bei der eine Oberfläche mit 100 % Reflexionsgrad unterhalb der Clipping-Grenze bleibt, und wendet diese als **Obergrenze**für die automatische Belichtung an. Seit Version 1.3.0 gilt die Obergrenze nur, solange sich ein Kalibrierungsziel im Sichtfeld dieser Kamera befindet (innerhalb der letzten 10 Sekunden im Bildausschnitt erfasst); ist kein Ziel im Blickfeld, greift stattdessen die normale automatische Belichtung der Kamera mit ihrem eigenen Schutz vor Überbelichtung, sodass der Rest der Szene nicht dunkler gehalten wird, als es notwendig ist. Während die Obergrenze aktiv ist, arbeitet die Kamera**auffalllichtgesteuert**: Sie arbeitet im offenen Regelkreis bei der auf das einfallende Licht gemessenen Belichtung mit einer Verstärkung von 0 dB – die Belichtung richtet sich nach dem gemessenen Licht, nicht nach dem Bildinhalt. Da der Oberwert die Belichtungszeit nur verkürzen kann, kann er selbst kein Clipping verursachen. Seit Version 1.3.0 wird die Obergrenze anhand der kameraspezifischen Belichtungskonstante aus dem Kalibrierungspaket berechnet (ein Flottendurchschnittswert nur dann, wenn das Paket keinen eigenen Wert enthält). Die Obergrenze wird automatisch deaktiviert – und die normale Szenen-AE wird wieder aufgenommen –, sobald kein Kalibrierungsziel im Blickfeld ist, der DAQ-Messwert fehlt, veraltet (>30 s) oder dunkel ist oder wenn ≥15 % des Bildes bei der festgelegten Belichtung übersteuert werden (was bedeutet, dass Sensor und Kamera unterschiedliche Beleuchtungsstärken wahrnehmen). Es gibt keinen Schalter in der Benutzeroberfläche; dies ist das Standardverhalten, sobald eine RGB-Kamera mit einem DAQ verbunden ist.
 
-– wenn ein DAQ-Lichtsensor einer RGB
-
--Kamera zugewiesen ist – anhand der gemessenen absoluten nach unten gerichteten Bestrahlungsstärke die maximale Belichtung × Verstärkung, bei der eine Oberfläche mit 100 % Reflexionsgrad unterhalb der Clipping-Grenze bleibt, und wendet diese als **Obergrenze**für die automatische Belichtung an. Seit Version 1.3.0 gilt die Obergrenze nur, solange sich ein Kalibrierungsziel im Sichtfeld dieser Kamera befindet (innerhalb der letzten 10 Sekunden im Bildausschnitt erfasst); ist kein Ziel im Blickfeld, greift stattdessen die normale automatische Belichtung der Kamera mit ihrem eigenen Schutz vor Überbelichtung, sodass der Rest der Szene nicht dunkler gehalten wird, als es notwendig ist. Während die Obergrenze aktiv ist, arbeitet die Kamera**auffalllichtgesteuert**: Sie arbeitet im offenen Regelkreis bei der auf das einfallende Licht gemessenen Belichtung mit einer Verstärkung von 0 dB – die Belichtung richtet sich nach dem gemessenen Licht, nicht nach dem Bildinhalt. Da der Oberwert die Belichtungszeit nur verkürzen kann, kann er selbst kein Clipping verursachen. Seit Version 1.3.0 wird die Obergrenze anhand der kameraspezifischen Belichtungskonstante aus dem Kalibrierungspaket berechnet (ein Flottendurchschnittswert nur dann, wenn das Paket keinen eigenen Wert enthält). Die Obergrenze wird automatisch deaktiviert – und die normale Szenen-AE wird wieder aufgenommen –, sobald kein Kalibrierungsziel im Blickfeld ist, der DAQ-Messwert fehlt, veraltet (&gt;30 s) oder dunkel ist oder wenn ≥15 % des Bildes bei der festgelegten Belichtung übersteuert werden (was bedeutet, dass Sensor und Kamera unterschiedliche Beleuchtungsstärken wahrnehmen). Es gibt keinen Schalter in der Benutzeroberfläche; dies ist das Standardverhalten, sobald eine RGB
-
--Kamera mit einem DAQ verbunden ist.
-
-### Erfassung &amp; Trigger
+### Erfassung & Trigger
 
 <!-- SCREENSHOT-NEEDED: Acquisition & Trigger section on a standalone camera — Trigger Mode, Trigger Source, and the Frame Rate row in Auto mode showing live fps; ideally a second capture on an array member showing the read-only Role/Sync Line/Peers rows. -->
 
@@ -421,11 +303,7 @@ Wird sowohl für kombinierte als auch für separate Arrays angezeigt:
 
 Eine eigene Gruppe direkt nach dem Umgebungslichtsensor, sowohl für kombinierte als auch für separate Arrays:
 
-* Kontrollkästchen **Aktivieren** — „MAPIR
-
--ArUco-Ziel erkennen und NDVI
-
--LUT gegenüber der Panel-Reflexions-LUT validieren“; steuert die Zielüberlagerung und die Validierungstabellen der kombinierten Kachel. Bei einem **separaten** Array aktiviert es die eigene [Kalibrierungsziel-Tabelle](#the-calibration-target-table) (eine pro Kamerareihe in der Listenansicht).
+* Kontrollkästchen **Aktivieren** — „MAPIR-ArUco-Ziel erkennen und NDVI-LUT gegenüber der Panel-Reflexions-LUT validieren“; steuert die Zielüberlagerung und die Validierungstabellen der kombinierten Kachel. Bei einem **separaten** Array aktiviert es die eigene [Kalibrierungsziel-Tabelle](#the-calibration-target-table) (eine pro Kamerareihe in der Listenansicht).
 
 ### Aufnahme – einheitliche Sensoreinstellungen
 
@@ -535,4 +413,4 @@ Der Status der Registerkarte „Kamera“ wird **mit dem Projekt** gespeichert, 
 * Beim erneuten Öffnen des Projekts wird die Hardware wieder verbunden und alle Einstellungen erneut angewendet.
 * **Kein Projekt geöffnet = nur sitzungsbezogen**: Ohne Projekt gehen beim Schließen von Chloros alle Einstellungen verloren.
 * Nur sitzungsbezogen, unabhängig vom Projekt: Pausenzustand, Spotmess-Proben, das Kontrollkästchen „Kalibrierungsziel“ pro Kamera (ist standardmäßig deaktiviert) und das Array-Ausrichtungsprofil (wird konzeptionell pro Sitzung neu berechnet).
-* Eine Ausnahme: Die Exportauswahlen unter **Aufnahmeeinstellungen** und der Aufnahmemodus bleiben pro Projekt im lokalen App-Speicher erhalten und nicht in `cameras.json` – siehe [Aufnahmeeinstellungen &amp; Modi](capture.md).</array></camera></serial>
+* Eine Ausnahme: Die Exportauswahlen unter **Aufnahmeeinstellungen** und der Aufnahmemodus bleiben pro Projekt im lokalen App-Speicher erhalten und nicht in `cameras.json` – siehe [Aufnahmeeinstellungen & Modi](capture.md).</array></camera></serial>

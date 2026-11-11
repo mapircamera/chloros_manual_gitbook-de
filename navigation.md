@@ -22,19 +22,7 @@ Von links nach rechts enthält die obere Kopfzeile:
 * **Mit Lichtsensor verbinden** — Wechselt zur [Registerkarte „Lichtsensoren“](daq/), um einen DAQ-Lichtsensor anzuschließen. Funktioniert auch ohne geöffnetes Projekt.
 
 {% hint style="info" %}
-**Nur Windows**: Die Chloros
-
--Desktop-GUI ist unter Windows
-
-verfügbar. Linux
-
--Benutzer sollten die Dokumentation zur [CLI
-
-](CLI.md) und zum [Python
-
--SDK
-
-](api-python-sdk.md) für die Headless-Verarbeitung konsultieren.
+**Nur Windows**: Die Chloros-Desktop-GUI ist unter Windows verfügbar. Linux-Benutzer sollten die Dokumentation zur [CLI](CLI.md) und zum [Python-SDK](api-python-sdk.md) für die Headless-Verarbeitung konsultieren.
 {% endhint %}
 
 ### <img src=".gitbook/assets/image (2) (1) (1).png" alt="" data-size="line">
@@ -49,15 +37,9 @@ Fortschrittsbalken <img src=".gitbook/assets/image (5).png" alt="" data-size="li
 
 
 
-Im kostenlosen Chloros
+Im kostenlosen Chloros-Modus, in dem alle Dateien nacheinander verarbeitet werden, zeigt der Fortschrittsbalken zwei Phasen an: Zielerkennung und Verarbeitung.
 
--Modus, in dem alle Dateien nacheinander verarbeitet werden, zeigt der Fortschrittsbalken zwei Phasen an: Zielerkennung und Verarbeitung.
-
-Im kostenpflichtigen Chloros
-
-+-Modus, in dem alle Dateien gleichzeitig verarbeitet werden, zeigt der Fortschrittsbalken vier Phasen an: Erkennen, Analysieren, Kalibrieren, Exportieren. Wenn Sie den Mauszeiger über den Chloros
-
-+-Fortschrittsbalken bewegen, wird das erweiterte 4-teilige Fortschrittsbalken-Panel angezeigt, sodass Sie den Fortschritt verfolgen können. Durch Klicken auf den oberen Fortschrittsbalken wird das Dropdown-Panel fixiert, durch erneutes Klicken wird die Fixierung aufgehoben.
+Im kostenpflichtigen Chloros+-Modus, in dem alle Dateien gleichzeitig verarbeitet werden, zeigt der Fortschrittsbalken vier Phasen an: Erkennen, Analysieren, Kalibrieren, Exportieren. Wenn Sie den Mauszeiger über den Chloros+-Fortschrittsbalken bewegen, wird das erweiterte 4-teilige Fortschrittsbalken-Panel angezeigt, sodass Sie den Fortschritt verfolgen können. Durch Klicken auf den oberen Fortschrittsbalken wird das Dropdown-Panel fixiert, durch erneutes Klicken wird die Fixierung aufgehoben.
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 

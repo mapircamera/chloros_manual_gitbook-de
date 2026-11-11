@@ -27,15 +27,9 @@ Ja. Chloros 1.3.0 unterstützt die LATTICE-Kameramodule M3C und M3M durchgängig
 
 <summary>Kann ich meine Bilder ohne Kalibrierungsziel auf Reflektanz kalibrieren?</summary>
 
-**Survey3
+**Survey3:** Nein. Ohne ein Bild des Kalibrierungsziels, das etwa zur gleichen Zeit wie die Nicht-Ziel-Bilder aufgenommen wurde, können Sie die Pixelwerte des Bildes nicht mit einem bekannten Reflexionsgrad in Prozent in Beziehung setzen. Wenn Sie zudem kein Protokoll eines MAPIR-Lichtsensors beifügen, wird das Umgebungslichtspektrum nicht gemessen, und die Reflexionsergebnisse sind nicht genau.
 
-:** Nein. Ohne ein Bild des Kalibrierungsziels, das etwa zur gleichen Zeit wie die Nicht-Ziel-Bilder aufgenommen wurde, können Sie die Pixelwerte des Bildes nicht mit einem bekannten Reflexionsgrad in Prozent in Beziehung setzen. Wenn Sie zudem kein Protokoll eines MAPIR
-
--Lichtsensors beifügen, wird das Umgebungslichtspektrum nicht gemessen, und die Reflexionsergebnisse sind nicht genau.
-
-**LATTICE:** Ja. Die Reflexion kann auf die von einem DAQ-Lichtsensor gemessene nach unten gerichtete Bestrahlungsstärke anstelle eines Panels bezogen werden (ρ = π·L/E). Wenn ein QA-konformes Zielobjekt im Bild *vorhanden* ist, wird es standardmäßig zur absoluten Referenz (`--reflectance-source auto`), es sei denn, es wird mit einem Flag als konform markiert; in diesem Fall konkurrieren das Zielobjekt und die DAQ-Ketten um den gemessenen Wert. Eine Ausnahme: „Die Reflektanz von F988 wird mithilfe eines Reflektanzpanels in der Szene kalibriert: Da das Band außerhalb des kalibrierten Bereichs des DAQ-Lichtsensors liegt, wendet Chloros
-
-Ihre letzte Panel-Erfassung an und behält diese zwischen den Panel-Messungen bei.“ Siehe [Kalibrierungsziele](calibration-targets.md).
+**LATTICE:** Ja. Die Reflexion kann auf die von einem DAQ-Lichtsensor gemessene nach unten gerichtete Bestrahlungsstärke anstelle eines Panels bezogen werden (ρ = π·L/E). Wenn ein QA-konformes Zielobjekt im Bild *vorhanden* ist, wird es standardmäßig zur absoluten Referenz (`--reflectance-source auto`), es sei denn, es wird mit einem Flag als konform markiert; in diesem Fall konkurrieren das Zielobjekt und die DAQ-Ketten um den gemessenen Wert. Eine Ausnahme: „Die Reflektanz von F988 wird mithilfe eines Reflektanzpanels in der Szene kalibriert: Da das Band außerhalb des kalibrierten Bereichs des DAQ-Lichtsensors liegt, wendet Chloros Ihre letzte Panel-Erfassung an und behält diese zwischen den Panel-Messungen bei.“ Siehe [Kalibrierungsziele](calibration-targets.md).
 
 </details>
 
@@ -43,9 +37,7 @@ Ihre letzte Panel-Erfassung an und behält diese zwischen den Panel-Messungen be
 
 <summary>Benötige ich einen DAQ-Lichtsensor?</summary>
 
-Nicht für die Strahlungsintensität: LATTICE-Strahlungsintensitäts-Exporte basieren auf der werkseitigen radiometrischen Kalibrierung jeder Kamera und erfordern weder einen DAQ-Sensor noch ein Ziel. Für die **Reflexion**benötigen Sie eine Referenz für das Umgebungslicht – entweder die Messung der nach unten gerichteten Strahlung eines DAQ-Lichtsensors oder ein Kalibrierungsziel innerhalb des Bildausschnitts. Mit einem DAQ-Sensor können Sie kalibrierte Reflexionswerte ermitteln,**ohne dass Sie Panels in der Szene platzieren müssen**. Aufgezeichnete `.daq`-Dateien werden automatisch anhand des Zeitstempels Ihren Bilddaten zugeordnet. Siehe [Kalibrierungsziele](calibration-targets.md) und die [CLI
-
--Referenz](reference/cli-reference.md).
+Nicht für die Strahlungsintensität: LATTICE-Strahlungsintensitäts-Exporte basieren auf der werkseitigen radiometrischen Kalibrierung jeder Kamera und erfordern weder einen DAQ-Sensor noch ein Ziel. Für die **Reflexion**benötigen Sie eine Referenz für das Umgebungslicht – entweder die Messung der nach unten gerichteten Strahlung eines DAQ-Lichtsensors oder ein Kalibrierungsziel innerhalb des Bildausschnitts. Mit einem DAQ-Sensor können Sie kalibrierte Reflexionswerte ermitteln,**ohne dass Sie Panels in der Szene platzieren müssen**. Aufgezeichnete `.daq`-Dateien werden automatisch anhand des Zeitstempels Ihren Bilddaten zugeordnet. Siehe [Kalibrierungsziele](calibration-targets.md) und die [CLI-Referenz](reference/cli-reference.md).
 
 </details>
 
@@ -143,9 +135,7 @@ Wenn Sie in der Tabelle des Dateibrowsers die Zielbilder in der rechten Spalte v
 
 <summary>Wenn ich meine Bilder in <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">die MAPIR-Cloud</a> hochladen möchte, sollte ich sie dann vor dem Hochladen in Chloros bearbeiten?</summary>
 
-Wenn Sie vorhaben, Ihre Bilder auf unsere Online-Verarbeitungsplattform [MAPIR
-
--Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription) hochzuladen, bearbeiten Sie die Bilder bitte nicht vor dem Hochladen. Die Cloud führt dieselben Verarbeitungsschritte und noch weitere durch.
+Wenn Sie vorhaben, Ihre Bilder auf unsere Online-Verarbeitungsplattform [MAPIR-Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription) hochzuladen, bearbeiten Sie die Bilder bitte nicht vor dem Hochladen. Die Cloud führt dieselben Verarbeitungsschritte und noch weitere durch.
 
 </details>
 
@@ -185,9 +175,7 @@ Ja! Chloros verfügt über [Dynamic Compute Adaptation](processing-architecture/
 
 <summary>Was ist die 4-Thread-Verarbeitungspipeline?</summary>
 
-Chloros
-nutzt für Chloros
-+-Nutzer eine 4-Thread-Pipeline-Architektur: Thread 1 (Erkennung) lädt Bilder und erkennt Kalibrierungsziele, Thread 2 (Kalibrierung) berechnet die Reflexionskalibrierung, Thread 3 (Verarbeitung) führt GPU-beschleunigtes Debayering und die Indexberechnung durch und Thread 4 (Export) schreibt Ausgabedateien. Für maximalen Durchsatz können mehrere Bilder gleichzeitig in verschiedenen Threads verarbeitet werden. Weitere Informationen finden Sie unter [Verarbeitungspipeline](processing-architecture/processing-pipeline.md).
+Chloros nutzt für Chloros+-Nutzer eine 4-Thread-Pipeline-Architektur: Thread 1 (Erkennung) lädt Bilder und erkennt Kalibrierungsziele, Thread 2 (Kalibrierung) berechnet die Reflexionskalibrierung, Thread 3 (Verarbeitung) führt GPU-beschleunigtes Debayering und die Indexberechnung durch und Thread 4 (Export) schreibt Ausgabedateien. Für maximalen Durchsatz können mehrere Bilder gleichzeitig in verschiedenen Threads verarbeitet werden. Weitere Informationen finden Sie unter [Verarbeitungspipeline](processing-architecture/processing-pipeline.md).
 
 </details>
 

@@ -145,14 +145,14 @@ Wenn der Indexwert eines Pixels außerhalb des Min/Max-Fensters liegt, bestimmt 
 
 | Dropdown-Bezeichnung                  | Gespeicherter Wert      | Pixel außerhalb des Bereichs werden gezeichnet als                                                                                                |
 | ------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| **Minimum &amp; Maximum** (Standard) | `clip`            | Die nächstgelegene Endfarbe des Farbverlaufs – Werte unterhalb des Minimums erhalten die erste Farbe, Werte oberhalb des Maximums die letzte |
+| **Minimum & Maximum** (Standard) | `clip`            | Die nächstgelegene Endfarbe des Farbverlaufs – Werte unterhalb des Minimums erhalten die erste Farbe, Werte oberhalb des Maximums die letzte |
 | **Transparenter Hintergrund**      | `transparent`     | Vollständig transparent (echtes Alpha)                                                                                                  |
 | **Index-Hintergrund**| `indexColor`      | Graustufen, gestreckt über den**gesamten** Indexbereich des Bildes, sodass Strukturen außerhalb des Bereichs weiterhin in Grau sichtbar sind                |
 | **Originalhintergrund**         | `backgroundColor` | Das zugrunde liegende Bild selbst, sodass die Farbüberlagerung über der tatsächlichen Szene liegt                                                |
 
 | Modus                       | Am besten geeignet für                               | Aussehen                                      |
 | -------------------------- | -------------------------------------- | ----------------------------------------- |
-| **Minimum &amp; Maximum**      | Vollständige Datenanzeige, wissenschaftliche Analyse | Jedes Pixel ist eingefärbt                      |
+| **Minimum & Maximum**      | Vollständige Datenanzeige, wissenschaftliche Analyse | Jedes Pixel ist eingefärbt                      |
 | **Transparenter Hintergrund** | GIS-Überlagerungen, Isolierung eines Wertebereichs   | Farbe innerhalb des Fensters, nichts außerhalb |
 | **Index-Hintergrund**       | Hervorhebung unter Beibehaltung des Datenkontexts    | Farbe im Inneren, grau außerhalb               |
 | **Original-Hintergrund**    | Berichte und Präsentationen              | Farbe im Inneren, Foto außerhalb         |

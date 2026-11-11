@@ -2,25 +2,19 @@
 
 <figure><img src="../.gitbook/assets/image (37).png" alt=""><figcaption><p>Die Registerkarte „Kameras“, bevor etwas angeschlossen ist</p></figcaption></figure>
 
-Chloros
-erkennt LATTICE-Kameras automatisch über die Verbindung – über die Registerkarte „Kameras“ der Benutzeroberfläche, über `chloros-cli lattice` oder über das Python
--SDK
-. Die Modellbezeichnung der Kamera bestimmt alle nachfolgenden Schritte: Chloros
-ermittelt das Sensorprofil, die Bandanordnung und die Werkskalibrierung anhand der `DeviceUserID`- und `DeviceSerialNumber`-Daten der Kamera, sodass **pro Kamera keine Konfiguration erforderlich ist**.
+Chloros erkennt LATTICE-Kameras automatisch über die Verbindung – über die Registerkarte „Kameras“ der Benutzeroberfläche, über `chloros-cli lattice` oder über das Python-SDK. Die Modellbezeichnung der Kamera bestimmt alle nachfolgenden Schritte: Chloros ermittelt das Sensorprofil, die Bandanordnung und die Werkskalibrierung anhand der `DeviceUserID`- und `DeviceSerialNumber`-Daten der Kamera, sodass **pro Kamera keine Konfiguration erforderlich ist**.
 
 Stellen Sie vor dem Anschluss sicher, dass das Host-Netzwerk eingerichtet ist – Link-Local-Adressierung, Jumbo-Frames und, bei Arrays, die Einstellungen für den Empfangspuffer der Netzwerkkarte. Dies ist die hardwareseitige Einrichtung und ist im LATTICE-Handbuch beschrieben: [**Netzwerkeinrichtung**](https://mapir.gitbook.io/lattice-camera/setup/network-setup).
 
 ## Verbindung über die GUI herstellen
 
-Öffnen Sie die Registerkarte **Kameras** in der Chloros
--Seitenleiste (die Hardware-Registerkarten werden angezeigt, sobald der Start des Backends abgeschlossen ist) oder verwenden Sie das Hauptmenü → **Mit Kamera verbinden**. Beides öffnet das Dialogfeld**Kamera(s) verbinden**.
+Öffnen Sie die Registerkarte **Kameras** in der Chloros-Seitenleiste (die Hardware-Registerkarten werden angezeigt, sobald der Start des Backends abgeschlossen ist) oder verwenden Sie das Hauptmenü → **Mit Kamera verbinden**. Beides öffnet das Dialogfeld**Kamera(s) verbinden**.
 
 ### Der Dialog „Kamera(s) verbinden“
 
 Der Dialog scannt das Netzwerk unmittelbar nach dem Öffnen („Netzwerk wird gescannt...“) und listet alle gefundenen Kameras auf. Jede Zeile zeigt das **Modell**der Kamera (z. B. `LATT-M3M-L41-F550`), die**Seriennummer**und die**IP-Adresse** an.
 
-* **Klicken Sie auf eine Zeile, um sie auszuwählen**(grüne Markierung). Sie können**mehrere Kameras** auswählen und sie auf einmal verbinden – Chloros
-verbindet sie nacheinander.
+* **Klicken Sie auf eine Zeile, um sie auszuwählen**(grüne Markierung). Sie können**mehrere Kameras** auswählen und sie auf einmal verbinden – Chloros verbindet sie nacheinander.
 * Zeilen mit der Kennzeichnung **„Verbunden“** sind bereits verbunden und können nicht erneut ausgewählt werden.
 * Zeilen mit der Kennzeichnung **„Im Array“** gehören zu einem derzeit verbundenen Kamera-Array. Trennen Sie zunächst die Verbindung zum Array, um diese Kamera eigenständig zu verwenden.
 * **Verbinden** – verbindet die ausgewählte(n) Kamera(s); die Schaltfläche zeigt eine Anzahl an, z. B. „Verbinden (3)“, wenn mehr als eine Kamera ausgewählt ist.
@@ -32,8 +26,7 @@ verbindet sie nacheinander.
 
 ### Erste Verbindung: Herunterladen des Kalibrierungspakets
 
-Wenn eine bestimmte Kamera zum **ersten Mal** an einen Rechner angeschlossen wird, ruft Chloros
-das werkseitige Kalibrierungspaket der Kamera (~3,8 MB) über GigE direkt von der Kamera selbst ab. Währenddessen zeigt der Dialog ein grünes Feld mit der Meldung **„Kalibrierungsdaten von der Kamera herunterladen“**und einem seriennummernspezifischen Fortschrittsbalken an – rechnen Sie mit etwa**70 Sekunden** pro Kamera. Bei mehr als sechs Kameras scrollen die Fortschrittszeilen innerhalb des Feldes. Das Paket wird auf dem Host zwischengespeichert, sodass bei späteren Verbindungen derselben Kamera der Download vollständig übersprungen wird (und das Feld nie angezeigt wird).
+Wenn eine bestimmte Kamera zum **ersten Mal** an einen Rechner angeschlossen wird, ruft Chloros das werkseitige Kalibrierungspaket der Kamera (~3,8 MB) über GigE direkt von der Kamera selbst ab. Währenddessen zeigt der Dialog ein grünes Feld mit der Meldung **„Kalibrierungsdaten von der Kamera herunterladen“**und einem seriennummernspezifischen Fortschrittsbalken an – rechnen Sie mit etwa**70 Sekunden** pro Kamera. Bei mehr als sechs Kameras scrollen die Fortschrittszeilen innerhalb des Feldes. Das Paket wird auf dem Host zwischengespeichert, sodass bei späteren Verbindungen derselben Kamera der Download vollständig übersprungen wird (und das Feld nie angezeigt wird).
 
 ### System analysieren
 
@@ -49,19 +42,12 @@ Führen Sie das Tool aus, wann immer die Erkennung oder das Streaming unerwartet
 
 ### Ein Array verbinden
 
-Um zwei oder mehr Kameras als **synchronisiertes Array**zu verbinden, verwenden Sie stattdessen den Array-Verbindungsassistenten (**Kamera-Array verbinden**): Er führt Sie durch die Master/Slave-Auswahl (vorausgefüllt durch eine Synchronisationskabel-Prüfung – jede verkabelte Kamera kann Master sein, und die RGB
--Kamera `-FRGB` ist bei Anschluss per Kabel bereits vorausgewählt), die Auswahl des Anzeigemodus (separate vs. kombinierte Kacheln) sowie eine Szene mit Array-Einstellungen, in der vor der Bestätigung die erreichbaren fps und die Leitungsbandbreite in einer Live-Projektion angezeigt werden. Der Assistent und die Array-Workflows werden im Abschnitt „Multi-Kamera-Arrays“ dieses Handbuchs behandelt; das CLI
--Äquivalent ist der „LATTICE Camera First-Connect Workflow“ in der [CLI
--Referenz](../reference/cli-reference.md).
+Um zwei oder mehr Kameras als **synchronisiertes Array**zu verbinden, verwenden Sie stattdessen den Array-Verbindungsassistenten (**Kamera-Array verbinden**): Er führt Sie durch die Master/Slave-Auswahl (vorausgefüllt durch eine Synchronisationskabel-Prüfung – jede verkabelte Kamera kann Master sein, und die RGB-Kamera `-FRGB` ist bei Anschluss per Kabel bereits vorausgewählt), die Auswahl des Anzeigemodus (separate vs. kombinierte Kacheln) sowie eine Szene mit Array-Einstellungen, in der vor der Bestätigung die erreichbaren fps und die Leitungsbandbreite in einer Live-Projektion angezeigt werden. Der Assistent und die Array-Workflows werden im Abschnitt „Multi-Kamera-Arrays“ dieses Handbuchs behandelt; das CLI-Äquivalent ist der „LATTICE Camera First-Connect Workflow“ in der [CLI-Referenz](../reference/cli-reference.md).
 
-## Verbindung über die CLI
-und das SDK
+## Verbindung über die CLI und das SDK
 Für den Zugriff über die
 
-CLI
-und das SDK
-ist ein kostenpflichtiges Chloros
-+-Abo sowie eine Anmeldung erforderlich; dies wird serverseitig erzwungen (`401 AUTH_REQUIRED` bei nicht angemeldeten Benutzern, `403 PLAN_UPGRADE_REQUIRED` im kostenlosen Tarif).
+CLI und das SDK ist ein kostenpflichtiges Chloros+-Abo sowie eine Anmeldung erforderlich; dies wird serverseitig erzwungen (`401 AUTH_REQUIRED` bei nicht angemeldeten Benutzern, `403 PLAN_UPGRADE_REQUIRED` im kostenlosen Tarif).
 
 ```bash
 # List cameras on the network (vendor, model, serial, IP, MAC)
@@ -86,21 +72,15 @@ with chloros_sdk.connect_array(["213800234", "214000533"]) as array:
     ...
 ```
 
-Vollständige Signaturen, Optionen und Erfassungsworkflows: [CLI
--Referenz](../reference/cli-reference.md) § `chloros-cli lattice`, [SDK
--Referenz](../reference/sdk-reference.md) § `connect_camera()` / `connect_array()`.
+Vollständige Signaturen, Optionen und Erfassungsworkflows: [CLI-Referenz](../reference/cli-reference.md) § `chloros-cli lattice`, [SDK-Referenz](../reference/sdk-reference.md) § `connect_camera()` / `connect_array()`.
 
 ## Wie die Kalibrierung bei der Verbindung erfolgt
 
-Jede LATTICE-Kamera verfügt **auf der Kamera** über ihr werkseitiges Kalibrierungspaket, und Chloros
-überprüft zudem die MAPIR
--Cloud, sobald die Kamera eine Verbindung herstellt:
+Jede LATTICE-Kamera verfügt **auf der Kamera** über ihr werkseitiges Kalibrierungspaket, und Chloros überprüft zudem die MAPIR-Cloud, sobald die Kamera eine Verbindung herstellt:
 
-| Situation   | Was Chloros
-verwendet                                                                                                                                                                                                          |
+| Situation   | Was Chloros verwendet                                                                                                                                                                                                          |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Online**| Die**neueste für diese Seriennummer veröffentlichte Kalibrierung** – die Cloud-Kopie hat Vorrang vor der Kopie auf der Kamera. Eine Kamera, die von MAPIR
-neu kalibriert oder aktualisiert wurde, aktualisiert sich daher automatisch; es ist kein Eingreifen des Benutzers erforderlich. |
+| **Online**| Die**neueste für diese Seriennummer veröffentlichte Kalibrierung** – die Cloud-Kopie hat Vorrang vor der Kopie auf der Kamera. Eine Kamera, die von MAPIR neu kalibriert oder aktualisiert wurde, aktualisiert sich daher automatisch; es ist kein Eingreifen des Benutzers erforderlich. |
 | **Offline**| Das**Kamera-Paket**, unverändert. Vollständig offline ablaufende Arbeitsabläufe funktionieren weiterhin; sie übernehmen lediglich keine neueren Kalibrierungen, bis die Kamera einmal online ist (oder auf die Werkseinstellungen zurückgesetzt wurde).                                                  |
 
 Zum Zeitpunkt der Aufnahme werden die tatsächlich angewendeten Koeffizienten **in den XMP-Metadaten jedes Bildes festgeschrieben**. Eine spätere Kalibrierungsaktualisierung verändert niemals stillschweigend bereits aufgenommene Bilder – bei der Neuverarbeitung einer alten Aufnahme werden die in deren XMP-Daten festgehaltenen Koeffizienten verwendet, nicht die aktuell neuesten.

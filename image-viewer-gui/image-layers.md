@@ -4,11 +4,7 @@
 
 ## Was sind Bildebenen?
 
-Eine „Ebene“ in Chloros
-
-ist eine **Produktdatei**, die einem Quellbild zugeordnet ist. Beim Import erhalten Sie die Quelldateien; bei der Verarbeitung wird für jedes vom Lauf erstellte Produkt eine Ebene hinzugefügt. Exportierte Dateien behalten den Quelldateinamen bei – es ist der**Ordner**, der das Produkt identifiziert, und der Ebenenname ist die Bezeichnung, die Chloros
-
-diesem Ordner zuweist.
+Eine „Ebene“ in Chloros ist eine **Produktdatei**, die einem Quellbild zugeordnet ist. Beim Import erhalten Sie die Quelldateien; bei der Verarbeitung wird für jedes vom Lauf erstellte Produkt eine Ebene hinzugefügt. Exportierte Dateien behalten den Quelldateinamen bei – es ist der**Ordner**, der das Produkt identifiziert, und der Ebenenname ist die Bezeichnung, die Chloros diesem Ordner zuweist.
 
 <!-- SCREENSHOT-NEEDED: Image Viewer full screen with the layer dropdown open on a processed LATTICE multispectral image, showing the full list: TIFF base, RAW (Original), RAW (Debayered), RAW (Preview), RAW (Radiance), RAW (Reflectance), and one RAW (NDVI Index) entry. -->
 
@@ -20,24 +16,12 @@ diesem Ordner zuweist.
 
 | Ebene | Was ist das? |
 | --- | --- |
-| **JPG**(oder**PNG
-
-**/**TIFF
-
-**) | Die Basisdatei, die mit der Aufnahme eingespielt wurde. Survey3
-
-importiert neben jedem `.RAW` eine `.JPG`-Datei; LATTICE-Aufnahmen liefern eine PNG
-
-- oder TIFF
-
--Vorschau. Beschriftet entsprechend dem, was tatsächlich importiert wurde |
+| **JPG**(oder**PNG**/**TIFF**) | Die Basisdatei, die mit der Aufnahme eingespielt wurde. Survey3 importiert neben jedem `.RAW` eine `.JPG`-Datei; LATTICE-Aufnahmen liefern eine PNG- oder TIFF-Vorschau. Beschriftet entsprechend dem, was tatsächlich importiert wurde |
 | **RAW (Original)** | Das ursprüngliche RAW-Bild, für die Anzeige debayert, ohne dass Korrekturen angewendet wurden. Verfügbar ab dem Zeitpunkt des Imports – es bedarf keiner weiteren Verarbeitung |
 
 Eine LATTICE-Aufnahme, deren Basisdatei **der** Rohbildrahmen ist, hat keinen separaten Basiseintrag: `RAW (Original)` deckt dies bereits ab.
 
-### Survey3
-
--Verarbeitungsprodukte
+### Survey3-Verarbeitungsprodukte
 
 | Ebene | Geschrieben in | Vorhanden, wenn |
 | --- | --- | --- |
@@ -57,31 +41,19 @@ LATTICE erfasst die Aufteilung in diese Ebenen in einem einzigen Verarbeitungsdu
 
 | Ebene | Wird geschrieben in | Gilt für |
 | --- | --- | --- |
-| **RAW (Debayered)** | `Debayered_Images/` | RGB
-
-und multispektral |
+| **RAW (Debayered)** | `Debayered_Images/` | RGB und multispektral |
 | **RAW (Vorschau)** | `Preview_Images/` | Multispektral (Falschfarben-Streckung) |
-| **Weißabgleich** | `Preview_Images/` | RGB
-
--Masterkameras – die RGB
-
--Vorschau wird unter diesem Namen registriert, damit sie mit der gleichnamigen Survey3
-
--Ebene übereinstimmt |
+| **Weißabgleich** | `Preview_Images/` | RGB-Masterkameras – die RGB-Vorschau wird unter diesem Namen registriert, damit sie mit der gleichnamigen Survey3-Ebene übereinstimmt |
 | **RAW (Strahlungsintensität)** | `Radiance_Images/` | Nur multispektral |
 | **RAW (Reflexionsgrad)** | `Reflectance_Calibrated_Images/` | Nur multispektral und nur, wenn ein passender `.daq`-Downwelling-Datensatz oder ein QA-konformes In-Frame-Ziel das Bild abdeckt |
 
-RGB
-
--Masterkameras verfügen über keine bandweise Radiometrie, daher werden Strahlungsintensität und Reflektanz bei ihnen als **nicht anwendbar** übersprungen – dies wird im Protokoll vermerkt, anstatt dass der Vorgang stillschweigend fehlschlägt.
+RGB-Masterkameras verfügen über keine bandweise Radiometrie, daher werden Strahlungsintensität und Reflektanz bei ihnen als **nicht anwendbar** übersprungen – dies wird im Protokoll vermerkt, anstatt dass der Vorgang stillschweigend fehlschlägt.
 
 {% hint style="info" %}
 **Roh- und debayerte Ebenen sind auf die Produkte abgestimmt (neu in 1.3.0).**LATTICE-Roh- und debayerte Dateien werden in der nativen Ausrichtung des Sensors gespeichert und zeichnen die ihnen zugehörige Ausrichtung in XMP auf; die anderen Produkte werden bereits mit dieser Ausrichtung gespeichert. Der Viewer und das Bildraster richten**RAW (Original)**und**RAW (Debayered)** anhand dieses Eintrags für die Anzeige aus, sodass sich das Bild nicht mehr spiegelt, wenn Sie zwischen einer Produkt-Ebene und einer Raw-Ebene wechseln. Dies betrifft nur die Anzeige – die Dateien werden niemals überschrieben. Dateien ohne Ausrichtungsangabe (die vor Version 1.3.0 aufgenommen oder von anderer Software geschrieben wurden) werden so angezeigt, wie sie gespeichert sind. Siehe [Ausgabe-Bildformate](../output-image-formats.md#orientation).
 {% endhint %}
 
-Clamp-Masken (`*_clampmask.tif` in einem `clamp_masks/`-Ordner) sind keine Ebenen: Chloros
-
-überspringt sie beim Import. Siehe [Ausgabe-Bildformate](../output-image-formats.md#clamp-masks).
+Clamp-Masken (`*_clampmask.tif` in einem `clamp_masks/`-Ordner) sind keine Ebenen: Chloros überspringt sie beim Import. Siehe [Ausgabe-Bildformate](../output-image-formats.md#clamp-masks).
 
 ### Index-, LUT- und Sandbox-Ebenen
 
@@ -124,87 +96,41 @@ Das [Fenster „Cursorwerte“](opening-an-image-full-screen.md#cursor-values) z
 
 | Ebene | Angezeigte Einheit | Anmerkungen |
 | --- | --- | --- |
-| Basis (JPG-/PNG
-
--/TIFF
-
--Vorschau) | DN, 0–255 | Anzeigewerte, gamma-korrigiert für RGB
-
-. Nur zur visuellen Überprüfung |
+| Basis (JPG-/PNG-/TIFF-Vorschau) | DN, 0–255 | Anzeigewerte, gamma-korrigiert für RGB. Nur zur visuellen Überprüfung |
 | RAW (Original) | DN | Digitale Rohwerte des Sensors. Die Histogrammachse gibt die Bittiefe an: 255 (8 Bit), 4095 (12 Bit) oder 65535 (16 Bit) |
 | RAW (Debayered) | DN | Linear, keine Bildstreckung |
 | RAW (Vorschau) / Weißabgleich | DN | Anzeigewert – gestreckt oder gammakorrigiert. Nicht zur Messung geeignet |
 | RAW (Strahlungsintensität) | **W/m²/sr/nm** | Physikalische Strahlungsintensität als Float32. Keine DN-Spalte |
 | RAW (Reflexionsgrad) | DN **und %** | Prozentwert, berechnet anhand der dateispezifischen Skalierung – siehe unten |
-| Index / LUT / Sandbox-Exporte | Indexwert oder RGB
-
--Komponenten | Eine einkanalige Indexdatei gibt den Indexwert an; eine farbabgebildete LUT-Datei gibt die Komponenten Red
-
-/Green
-
-/Blue
-
-an |
+| Index / LUT / Sandbox-Exporte | Indexwert oder RGB-Komponenten | Eine einkanalige Indexdatei gibt den Indexwert an; eine farbabgebildete LUT-Datei gibt die Komponenten Red /Green /Blue an |
 
 ### Reflektanz: Die Skalierung ist dateispezifisch
 
 {% hint style="warning" %}
-**„Durch 65.535 teilen“ ist nur für Survey3
-
-korrekt.** Die LATTICE-Reflexionswerte werden in einem anderen Maßstab gespeichert, und die Vermischung der beiden Divisoren ist der häufigste Grund dafür, dass Reflexionswerte genau halb so groß ausfallen, wie sie eigentlich sein sollten.
+**„Durch 65.535 teilen“ ist nur für Survey3 korrekt.** Die LATTICE-Reflexionswerte werden in einem anderen Maßstab gespeichert, und die Vermischung der beiden Divisoren ist der häufigste Grund dafür, dass Reflexionswerte genau halb so groß ausfallen, wie sie eigentlich sein sollten.
 {% endhint %}
 
 | Quelle | DN, der der Reflexion 1,0 entspricht | Identifiziert durch |
 | --- | --- | --- |
 | **LATTICE**(M3C / M3M) |**32768** | Das XMP-Tag `Chloros:PixelScale=32768`, das in jeden LATTICE-Reflexionsgrad-Export eingefügt wird. Der 2-fache Spielraum bedeutet, dass ρ über 1,0 darstellbar ist und nicht abgeschnitten wird |
-| **Survey3**| **65535** | Kein Chloros
+| **Survey3**| **65535** | Kein Chloros-XMP-Skalierungs-Tag – die Survey3-Kalibrierung schreibt ρ × dtype-max und schneidet bei 1,0 ab |
 
--XMP-Skalierungs-Tag – die Survey3
-
--Kalibrierung schreibt ρ × dtype-max und schneidet bei 1,0 ab |
-
-Für GIS und Skripte: Lesen Sie `Chloros:PixelScale` aus der Datei aus und dividieren Sie durch diesen Wert. Fehlt das Tag, handelt es sich um eine Datei im Survey3
-
--Maßstab (65535). Der Viewer, die Index-/LUT-Sandbox und der Index-Export ermitteln den Maßstab alle auf dieselbe Weise, sodass der am Cursor angezeigte Wert dem Wert entspricht, der bei der Indexberechnung verwendet wurde.
+Für GIS und Skripte: Lesen Sie `Chloros:PixelScale` aus der Datei aus und dividieren Sie durch diesen Wert. Fehlt das Tag, handelt es sich um eine Datei im Survey3-Maßstab (65535). Der Viewer, die Index-/LUT-Sandbox und der Index-Export ermitteln den Maßstab alle auf dieselbe Weise, sodass der am Cursor angezeigte Wert dem Wert entspricht, der bei der Indexberechnung verwendet wurde.
 
 Formatspezifische Speicherung zusätzlich zu diesem Maßstab:
 
-* **TIFF
-
-(32-Bit, Prozent)** speichert DN / 65535 als Float
-* **PNG
-
-(8-Bit)**und**JPG (8-Bit)** speichern DN × 255 / 65535
+* **TIFF (32-Bit, Prozent)** speichert DN / 65535 als Float
+* **PNG (8-Bit)**und**JPG (8-Bit)** speichern DN × 255 / 65535
 * Ein **8-Bit-DN-Produkt einer 8-Bit-Erfassung** oder eine vor Version 1.3.0 geschriebene Reflexionsdatei wird auf 0–255 begrenzt und enthält kein Skalierungs-Tag. Das Fenster zeigt für diese Dateien nur den DN an, ohne Prozent-Spalte
 
 ### Wertebereiche der Indizes
 
 | Indexfamilie | Typischer Bereich | Messwert |
 | --- | --- | --- |
-| Normalisierte Differenz (NDVI
-
-, GNDVI
-
-, NDRE
-
-, ENDVI…) | −1 bis +1 | Gesunde Vegetation üblicherweise 0,4–0,9; nackter Boden nahe 0; Wasser negativ |
-| Bodenbereinigt (SAVI
-
-, OSAVI
-
-, MSAVI2…) | etwa −1 bis +1,5 | Ähnlicher Messwert wie NDVI
-
-, wobei der Bodenhintergrund unterdrückt wird |
-| Verhältnis (GRVI
-
-, GCI
-
-, MSR, CIRE…) | unbegrenzt nach oben | Die Verhältnisse steigen unbegrenzt an, wenn das Nennerband gegen Null geht |
-| EVI
-
-/ LAI
-
-| 0 bis ~1, 0 bis ~3,5 | Wolken und andere gesättigte Pixel bringen beide Werte außerhalb des Messbereichs – maskieren Sie diese daher zunächst |
+| Normalisierte Differenz (NDVI, GNDVI, NDRE, ENDVI…) | −1 bis +1 | Gesunde Vegetation üblicherweise 0,4–0,9; nackter Boden nahe 0; Wasser negativ |
+| Bodenbereinigt (SAVI, OSAVI, MSAVI2…) | etwa −1 bis +1,5 | Ähnlicher Messwert wie NDVI, wobei der Bodenhintergrund unterdrückt wird |
+| Verhältnis (GRVI, GCI, MSR, CIRE…) | unbegrenzt nach oben | Die Verhältnisse steigen unbegrenzt an, wenn das Nennerband gegen Null geht |
+| EVI / LAI | 0 bis ~1, 0 bis ~3,5 | Wolken und andere gesättigte Pixel bringen beide Werte außerhalb des Messbereichs – maskieren Sie diese daher zunächst |
 
 Die genauen Formeln hinter jeder Voreinstellung finden Sie unter [Formeln für multispektrale Indizes](../project-settings/multispectral-index-formulas.md).
 
@@ -236,9 +162,7 @@ Die genauen Formeln hinter jeder Voreinstellung finden Sie unter [Formeln für m
 1. Wählen Sie **RAW (Reflexion)**
 
 2. Lesen Sie die Spalte**%** im Fenster „Cursor-Werte“ ab – sie ist für diese Datei bereits korrekt skaliert
-3. Führen Sie eine Plausibilitätsprüfung anhand bekannter Materialien im Bild durch: Gesunde Vegetation weist hohe Werte im NIR
-
--Bereich und niedrige Werte im Rotbereich auf; ein Kalibrierungsziel sollte Werte nahe seiner veröffentlichten Reflexionswerte aufweisen
+3. Führen Sie eine Plausibilitätsprüfung anhand bekannter Materialien im Bild durch: Gesunde Vegetation weist hohe Werte im NIR-Bereich und niedrige Werte im Rotbereich auf; ein Kalibrierungsziel sollte Werte nahe seiner veröffentlichten Reflexionswerte aufweisen
 
 ***
 
@@ -250,25 +174,19 @@ Die genauen Formeln hinter jeder Voreinstellung finden Sie unter [Formeln für m
 
 * Das Bild wurde nie verarbeitet – es existieren nur die Basisebene und „`RAW (Original)`“
 * Der Export-Schalter für das Produkt ist in den Projekteinstellungen deaktiviert
-* Das Produkt ist für diese Kamera nicht geeignet (Radiance und Reflektanz bei einem RGB
-
--Master; beliebige Indizes bei einer einbandigen M3M-Mono-Kamera)
+* Das Produkt ist für diese Kamera nicht geeignet (Radiance und Reflektanz bei einem RGB-Master; beliebige Indizes bei einer einbandigen M3M-Mono-Kamera)
 * Für die Reflektanzkalibrierung standen keine Daten zur Verfügung – keine `.daq`-Abdeckung in Abwärtsrichtung und kein QA-konformes Zielobjekt im Bild –, sodass das Bild auf „Vignette Corrected“ oder „Sensor Response“ zurückfiel
 
 **Vorgehensweise**
 
-1. Überprüfen Sie das Protokoll des Laufs: Chloros
-
-gibt an, wann ein angefordertes Exportprodukt nicht möglich war und warum
+1. Überprüfen Sie das Protokoll des Laufs: Chloros gibt an, wann ein angefordertes Exportprodukt nicht möglich war und warum
 2. Überprüfen Sie die Export-Schaltflächen für die einzelnen Produkte in den [Projekteinstellungen](../project-settings/project-settings.md)
 3. Vergewissern Sie sich, dass der Produktordner im Ausgabebaum des Projekts vorhanden ist
 4. Führen Sie die Verarbeitung erneut durch, wobei das Produkt aktiviert ist
 
 ### Die Ebenenliste scheint veraltet zu sein
 
-Chloros
-
-scannt die Produktordner des Projekts während eines laufenden Durchlaufs erneut und gleicht fehlende Ebenenregistrierungen anhand der tatsächlich auf der Festplatte vorhandenen Daten aus. Daher erscheint eine Ebene, deren Export normal abgeschlossen wurde, von selbst in einer Abfrage. Das Wechseln weg vom Bild und zurück erzwingt eine neue Auflösung.
+Chloros scannt die Produktordner des Projekts während eines laufenden Durchlaufs erneut und gleicht fehlende Ebenenregistrierungen anhand der tatsächlich auf der Festplatte vorhandenen Daten aus. Daher erscheint eine Ebene, deren Export normal abgeschlossen wurde, von selbst in einer Abfrage. Das Wechseln weg vom Bild und zurück erzwingt eine neue Auflösung.
 
 ### Die Reflexionswerte scheinen nur halb so hoch zu sein, wie sie sein sollten
 

@@ -160,7 +160,7 @@ Wenn „Chloros“ Ihre Ziele nicht korrekt erkennt, passen Sie diese Einstellun
 **Mögliche Ursachen:**
 
 * Zielbilder sind im Dateibrowser nicht markiert
-* Ziel im Bildausschnitt zu klein (&lt; 30 % des Bildes)
+* Ziel im Bildausschnitt zu klein (< 30 % des Bildes)
 * Schlechte Lichtverhältnisse (Schatten, Blendeffekte)
 * Zu strenge Einstellungen für die Zielerkennung
 

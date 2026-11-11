@@ -10,17 +10,11 @@
 <!-- SCREENSHOT-UPDATE: banner shows CLI 1.1.0; reshoot the CLI welcome/banner output on the 1.3.0 build so the version line reads "Chloros CLI 1.3.0" -->
 
 
-## Was ist die CLI
-?
+## Was ist die CLI?
 
-`chloros-cli` ist das Befehlszeilen-Frontend für dieselbe Verarbeitungs-Engine, die auch die Chloros
--Desktop-App nutzt. Es handelt sich um einen schlanken HTTP
--Client, der auf das Chloros
--Backend (ein lokaler Server auf `127.0.0.1:5000`) zugreift – die meisten Befehle starten das Backend automatisch, sodass ein einziger `chloros-cli process …`-Aufruf für ein Skript ausreicht. Das Backend bleibt dann für den nächsten Befehl aktiv: Es wird bei `chloros-cli logout` beendet (es sei denn, die App ist geöffnet oder ein Lauf bzw. ein Build ist im Gange), bei `chloros-cli backend stop` oder von selbst nach 30 Minuten ohne Client, Lauf oder verbundenes Gerät. `chloros-cli backend status` zeigt dies an.
+`chloros-cli` ist das Befehlszeilen-Frontend für dieselbe Verarbeitungs-Engine, die auch die Chloros-Desktop-App nutzt. Es handelt sich um einen schlanken HTTP-Client, der auf das Chloros-Backend (ein lokaler Server auf `127.0.0.1:5000`) zugreift – die meisten Befehle starten das Backend automatisch, sodass ein einziger `chloros-cli process …`-Aufruf für ein Skript ausreicht. Das Backend bleibt dann für den nächsten Befehl aktiv: Es wird bei `chloros-cli logout` beendet (es sei denn, die App ist geöffnet oder ein Lauf bzw. ein Build ist im Gange), bei `chloros-cli backend stop` oder von selbst nach 30 Minuten ohne Client, Lauf oder verbundenes Gerät. `chloros-cli backend status` zeigt dies an.
 
-Es läuft unter **Windows
-10/11 (x64)**und**Linux
-(x86_64 sowie NVIDIA Jetson arm64 auf JetPack 6)**, in jedem Terminal und ohne dass eine grafische Benutzeroberfläche erforderlich ist. Überprüfen Sie Ihre Installation mit:
+Es läuft unter **Windows 10/11 (x64)**und**Linux (x86_64 sowie NVIDIA Jetson arm64 auf JetPack 6)**, in jedem Terminal und ohne dass eine grafische Benutzeroberfläche erforderlich ist. Überprüfen Sie Ihre Installation mit:
 
 ```bash
 chloros-cli --version    # prints "Chloros CLI 1.3.0"
@@ -28,45 +22,34 @@ chloros-cli --version    # prints "Chloros CLI 1.3.0"
 
 Die Befehlsgruppen im Überblick:
 
-* **Verarbeitung &amp; Konto** — `process`, `login`, `logout`, `status`, `export-status`, `language` (38 Sprachen – siehe [Unterstützte Sprachen](supported-languages.md)), `set-project-folder` / `get-project-folder` / `reset-project-folder`, `selftest`, `update` (nur Linux
-/Jetson)
+* **Verarbeitung & Konto** — `process`, `login`, `logout`, `status`, `export-status`, `language` (38 Sprachen – siehe [Unterstützte Sprachen](supported-languages.md)), `set-project-folder` / `get-project-folder` / `reset-project-folder`, `selftest`, `update` (nur Linux/Jetson)
 * **Live-Hardware** — `lattice` (LATTICE-Kamerasteuerung, über 45 Unterbefehle), `daq pool-*` (DAQ-Lichtsensoren), `time-sync` (PTP)
-* **Automatisierung** — `project` (Ausführung eines gespeicherten Chloros
--Projekts im Headless-Modus, einschließlich YAML-Erfassungsrezepten)
+* **Automatisierung** — `project` (Ausführung eines gespeicherten Chloros-Projekts im Headless-Modus, einschließlich YAML-Erfassungsrezepten)
 
-Wichtige globale Optionen: `--port N` (Backend-Port, Standard: `5000`), `-v/--verbose`, `--restart` (Backend zwangsweise neu starten), `--backend-exe PATH`. Eine vollständige Liste finden Sie in der [CLI
--Referenz](reference/cli-reference.md).
+Wichtige globale Optionen: `--port N` (Backend-Port, Standard: `5000`), `-v/--verbose`, `--restart` (Backend zwangsweise neu starten), `--backend-exe PATH`. Eine vollständige Liste finden Sie in der [CLI-Referenz](reference/cli-reference.md).
 
 ***
 
 ## Installation
 
-Die CLI
-**ist auf jeder Plattform im Chloros
--Installationsprogramm enthalten** – es gibt keinen separaten CLI
--Download. Laden Sie das Installationsprogramm von der [Download](download.md)-Seite herunter.
+Die CLI **ist auf jeder Plattform im Chloros-Installationsprogramm enthalten** – es gibt keinen separaten CLI-Download. Laden Sie das Installationsprogramm von der [Download](download.md)-Seite herunter.
 
 ### Windows
 
 
-Das Installationsprogramm installiert die CLI
-unter:
+Das Installationsprogramm installiert die CLI unter:
 
 ```
 
 C:\Program Files\Chloros\cli\chloros-cli.exe
 ```
 
-und fügt diesen Ordner einmalig zu Ihrem System `PATH` hinzu (ein Upgrade entfernt auch doppelte Einträge, die von früheren Installationsprogrammen hinterlassen wurden) – **öffnen Sie nach der Installation ein neues Terminal**, damit das aktualisierte `PATH` erkannt wird. Der Installer legt außerdem Startskripte (`Chloros_CLI.bat` / `Chloros_CLI.ps1`) im Installationsstammverzeichnis sowie eine**Chloros
--CLI
-** Verknüpfung im Startmenü ab, die jeweils ein Terminal mit dem einsatzbereiten `chloros-cli` öffnen.
+und fügt diesen Ordner einmalig zu Ihrem System `PATH` hinzu (ein Upgrade entfernt auch doppelte Einträge, die von früheren Installationsprogrammen hinterlassen wurden) – **öffnen Sie nach der Installation ein neues Terminal**, damit das aktualisierte `PATH` erkannt wird. Der Installer legt außerdem Startskripte (`Chloros_CLI.bat` / `Chloros_CLI.ps1`) im Installationsstammverzeichnis sowie eine**Chloros-CLI** Verknüpfung im Startmenü ab, die jeweils ein Terminal mit dem einsatzbereiten `chloros-cli` öffnen.
 
 ### Linux
 
 
-Installieren Sie die für Ihre Architektur geeignete Version von `.deb` mit `apt` (nicht `dpkg -i`, da dieses die empfohlenen Anforderungen des Python
--SDK
-überspringt):
+Installieren Sie die für Ihre Architektur geeignete Version von `.deb` mit `apt` (nicht `dpkg -i`, da dieses die empfohlenen Anforderungen des Python-SDK überspringt):
 
 ```bash
 # Linux x86_64
@@ -76,12 +59,7 @@ sudo apt install ./chloros_1.3.0_amd64.deb
 sudo apt install ./chloros_1.3.0_arm64_jp6.deb
 ```
 
-Dadurch wird `chloros-cli` bis `/usr/bin/chloros-cli` (bereits in `PATH` enthalten), das Backend und die CLI
--Programme, die in `/usr/lib/chloros/backend/` und `/usr/lib/chloros/cli/` entpackt sind (`/usr/lib/chloros/chloros-backend` ist ein Launcher, der das Backend startet), die Arena-SDK
--Laufzeitumgebung, die das Backend für LATTICE-Kameras benötigt, sowie das Python
--SDK
-für das System `python3`. Weitere Informationen finden Sie unter [Linux
--Installation](linux/linux-installation.md).
+Dadurch wird `chloros-cli` bis `/usr/bin/chloros-cli` (bereits in `PATH` enthalten), das Backend und die CLI-Programme, die in `/usr/lib/chloros/backend/` und `/usr/lib/chloros/cli/` entpackt sind (`/usr/lib/chloros/chloros-backend` ist ein Launcher, der das Backend startet), die Arena-SDK-Laufzeitumgebung, die das Backend für LATTICE-Kameras benötigt, sowie das Python-SDK für das System `python3`. Weitere Informationen finden Sie unter [Linux-Installation](linux/linux-installation.md).
 
 ### Überprüfen
 
@@ -93,16 +71,9 @@ chloros-cli status       # license tier + logged-in user
 
 ***
 
-## Anmeldung &amp; Lizenzierung
+## Anmeldung & Lizenzierung
 
-Der Zugriff über die CLI
-(und das Python
--SDK
-) erfordert einen **kostenpflichtigen Chloros
-+-Tarif**– dieser ist in allen kostenpflichtigen Tarifen enthalten, im kostenlosen Tarif jedoch nicht. Die Beschränkung wird**serverseitig** durch das Backend durchgesetzt, nicht durch die CLI
--Binärdatei: Ein Aufruf ohne Anmeldung wird mit `401 AUTH_REQUIRED` abgelehnt, und ein Aufruf im angemeldeten Zustand in der kostenlosen Stufe mit dem Fehlercode `403 PLAN_UPGRADE_REQUIRED`, unabhängig davon, ob er von `chloros-cli`, dem SDK
-oder einem selbst entwickelten HTTP
--Client stammt. Führen Sie ein Upgrade unter [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) durch.
+Der Zugriff über die CLI (und das Python-SDK) erfordert einen **kostenpflichtigen Chloros+-Tarif**– dieser ist in allen kostenpflichtigen Tarifen enthalten, im kostenlosen Tarif jedoch nicht. Die Beschränkung wird**serverseitig** durch das Backend durchgesetzt, nicht durch die CLI-Binärdatei: Ein Aufruf ohne Anmeldung wird mit `401 AUTH_REQUIRED` abgelehnt, und ein Aufruf im angemeldeten Zustand in der kostenlosen Stufe mit dem Fehlercode `403 PLAN_UPGRADE_REQUIRED`, unabhängig davon, ob er von `chloros-cli`, dem SDK oder einem selbst entwickelten HTTP-Client stammt. Führen Sie ein Upgrade unter [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) durch.
 
 Melden Sie sich **einmal pro Rechner** an:
 
@@ -116,8 +87,7 @@ chloros-cli status
 
 
 {% hint style="warning" %}
-**Passwörter mit Sonderzeichen**(`$`, `!`, spaces): wrap the password in**single quotes**, as shown above. In PowerShell double quotes, `$$` wird von der Shell verfälscht (die CLI
-erkennt dies anhand eines 401-Fehlers und versucht es automatisch erneut, aber einfache Anführungszeichen vermeiden das Problem vollständig).
+**Passwörter mit Sonderzeichen**(`$`, `!`, spaces): wrap the password in**single quotes**, as shown above. In PowerShell double quotes, `$$` wird von der Shell verfälscht (die CLI erkennt dies anhand eines 401-Fehlers und versucht es automatisch erneut, aber einfache Anführungszeichen vermeiden das Problem vollständig).
 {% endhint %}
 
 Die Sitzung wird unter `~/.chloros/user_session.json` zwischengespeichert und funktioniert während der Nachfrist des Tarifs weiterhin offline (30 Tage bei monatlichen Tarifen, bis zum Ablauf bei jährlichen Tarifen). `chloros-cli status` funktioniert auch ohne kostenpflichtigen Tarif, sodass der Grund für eine Ablehnung immer sichtbar ist.
@@ -130,8 +100,7 @@ Die Sitzung wird unter `~/.chloros/user_session.json` zwischengespeichert und fu
 
 ## Ihr erster Verarbeitungslauf
 
-Richten Sie `process` auf einen Ordner mit Erfassungen – es erkennt automatisch Survey3
-(`.raw` + `.jpg`), LATTICE (`.tif`/`.tiff`), `.dng` oder eine Mischung daraus:
+Richten Sie `process` auf einen Ordner mit Erfassungen – es erkennt automatisch Survey3 (`.raw` + `.jpg`), LATTICE (`.tif`/`.tiff`), `.dng` oder eine Mischung daraus:
 
 ```bash
 chloros-cli process "C:\Images\flight_001"          # Windows
@@ -143,9 +112,7 @@ Der Fortschritt wird live pro Pipeline-Thread (Erkennen, Analysieren, Verarbeite
 <!-- SCREENSHOT-NEEDED: terminal capture of a `chloros-cli process` run on a LATTICE captures folder completing successfully — per-thread progress lines visible and the final "Image products written: N (plus M clamp masks)" summary line -->
 
 
-Wenn bereits ein Chloros
--Backend läuft (z. B. das der Desktop-App), nutzt `process` dieses und öffnet sein Projekt darin. Solange die App ein von ihr geöffnetes Projekt geöffnet hat, lehnt es den Vorgang ab: Führen Sie den Vorgang über die App aus oder schließen Sie dieses Projekt. Wenn ein vorheriger Lauf noch nicht abgeschlossen ist, wartet es bis zu 15 Sekunden darauf, bevor es den Vorgang ablehnt. `--restart` erzwingt ein neues Backend. Unter Linux
-wird ein Backend, das als systemd-Dienst läuft, niemals neu gestartet: `process` nutzt es so, wie es ist, und wo es andernfalls neu gestartet würde (`--restart` oder ein Import, der nichts gefunden hat), gibt es `sudo systemctl restart <unit>` aus und beendet sich mit `1`.
+Wenn bereits ein Chloros-Backend läuft (z. B. das der Desktop-App), nutzt `process` dieses und öffnet sein Projekt darin. Solange die App ein von ihr geöffnetes Projekt geöffnet hat, lehnt es den Vorgang ab: Führen Sie den Vorgang über die App aus oder schließen Sie dieses Projekt. Wenn ein vorheriger Lauf noch nicht abgeschlossen ist, wartet es bis zu 15 Sekunden darauf, bevor es den Vorgang ablehnt. `--restart` erzwingt ein neues Backend. Unter Linux wird ein Backend, das als systemd-Dienst läuft, niemals neu gestartet: `process` nutzt es so, wie es ist, und wo es andernfalls neu gestartet würde (`--restart` oder ein Import, der nichts gefunden hat), gibt es `sudo systemctl restart <unit>` aus und beendet sich mit `1`.
 
 ### Wo die Ausgaben gespeichert werden
 
@@ -159,13 +126,7 @@ wird ein Backend, das als systemd-Dienst läuft, niemals neu gestartet: `process
 {% endhint %}
 
 {% hint style="warning" %}
-**Windows
-: Halten Sie den Projektordner kurz, es sei denn, lange Pfade sind aktiviert.** Wenn unter Windows
-lange Pfade deaktiviert sind (Windows
--Standard), darf kein Dateipfad länger als 260 Zeichen sein, und Produkte befinden sich bis zu etwa 130 Zeichen unterhalb des Projektordners. `process` prüft dies vor dem Start: Ein zu tief verschachtelter Projektordner wird mit der Meldung **„Der Projektordner ist für diesen Computer zu tief“** abgelehnt, der längste zulässige Projektordner wird angegeben und es wird erklärt, wie lange Pfade aktiviert werden können – es wird nichts weiter verarbeitet. Verwenden Sie eine kürzere Version von `-o` (oder `set-project-folder`) oder aktivieren Sie lange Windows
--Pfade (die Option **„Windows
--Langpfade aktivieren“** des Installationsprogramms, die standardmäßig aktiviert ist) und starten Sie Chloros
-neu.
+**Windows: Halten Sie den Projektordner kurz, es sei denn, lange Pfade sind aktiviert.** Wenn unter Windows lange Pfade deaktiviert sind (Windows-Standard), darf kein Dateipfad länger als 260 Zeichen sein, und Produkte befinden sich bis zu etwa 130 Zeichen unterhalb des Projektordners. `process` prüft dies vor dem Start: Ein zu tief verschachtelter Projektordner wird mit der Meldung **„Der Projektordner ist für diesen Computer zu tief“** abgelehnt, der längste zulässige Projektordner wird angegeben und es wird erklärt, wie lange Pfade aktiviert werden können – es wird nichts weiter verarbeitet. Verwenden Sie eine kürzere Version von `-o` (oder `set-project-folder`) oder aktivieren Sie lange Windows-Pfade (die Option **„Windows-Langpfade aktivieren“** des Installationsprogramms, die standardmäßig aktiviert ist) und starten Sie Chloros neu.
 {% endhint %}
 
 Innerhalb des Projekts werden die Produkte **nach Kamera und anschließend nach Dateiformat** gruppiert:
@@ -184,8 +145,7 @@ Innerhalb des Projekts werden die Produkte **nach Kamera und anschließend nach 
         └── Radiance_Images/             # float32 radiance always lands here
 ```
 
-Der Kameraordner lautet `LATT-<sensor>-<lens>-F<filter>` für LATTICE (entsprechend dem EXIF-Datumsformat der Aufnahme `Model`) und `<model>_<filter>` (z. B. `Survey3N_RGN`) für Survey3
-. Der Formatordner folgt auf `--format`: `tiff16`, `tiff8`, `png8`, `jpg8` oder `tiff32` für `TIFF (32-bit, Percent)`.
+Der Kameraordner lautet `LATT-<sensor>-<lens>-F<filter>` für LATTICE (entsprechend dem EXIF-Datumsformat der Aufnahme `Model`) und `<model>_<filter>` (z. B. `Survey3N_RGN`) für Survey3. Der Formatordner folgt auf `--format`: `tiff16`, `tiff8`, `png8`, `jpg8` oder `tiff32` für `TIFF (32-bit, Percent)`.
 
 Bei einer multispektralen M3C-Kamera kann neben den Produktordnern auch ein Ordner „`clamp_masks/`“ in einem Formatordner erscheinen (zum Beispiel „`tiff16/clamp_masks/Reflectance_Calibrated_Images/`“ und „`tiff32/clamp_masks/Radiance_Images/`“). Er enthält die pixelweisen Masken der Strahlungs- und Reflexionsprodukte, bei denen die Bandentmischung einen negativen Wert auf Null begrenzt hat – siehe [Begrenzungsmasken](output-image-formats.md#clamp-masks). Kein Produktordner enthält jemals eine Maske.
 
@@ -199,17 +159,14 @@ Bei einer multispektralen M3C-Kamera kann neben den Produktordnern auch ein Ordn
 | --- | --- | --- |
 | `-o, --output PATH` | Standard-Projektordner | Speicherort des Projektordners (siehe oben). |
 | `-n, --project-name NAME` | Zeitstempel | Projektname. |
-| `--format FMT` | `TIFF (16-bit)` | Eine der folgenden Optionen: `TIFF (16-bit)`, `TIFF (8-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)`. Chloros
-führt keine Hochskalierung durch: Bei reinen 8-Bit-Bildern wird ein tieferes Format als `TIFF (8-bit)` geschrieben, und dies wird einmal angegeben. |
+| `--format FMT` | `TIFF (16-bit)` | Eine der folgenden Optionen: `TIFF (16-bit)`, `TIFF (8-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)`. Chloros führt keine Hochskalierung durch: Bei reinen 8-Bit-Bildern wird ein tieferes Format als `TIFF (8-bit)` geschrieben, und dies wird einmal angegeben. |
 | `--indices NAME [NAME ...]` | keine | Zu exportierende Vegetationsindizes (siehe [Vegetationsindizes](#vegetation-indices)). |
-| `--debayer {standard,texture-aware}` | `standard` | `texture-aware` = neuronales Debayering, langsamer, höchste Qualität (Chloros
-+, benötigt eine CUDA-GPU: Ohne diese wird `standard` verwendet; wird für LATTICE-Aufnahmen abgelehnt, die immer `standard` erhalten). |
+| `--debayer {standard,texture-aware}` | `standard` | `texture-aware` = neuronales Debayering, langsamer, höchste Qualität (Chloros+, benötigt eine CUDA-GPU: Ohne diese wird `standard` verwendet; wird für LATTICE-Aufnahmen abgelehnt, die immer `standard` erhalten). |
 | `--vignette / --no-vignette` | ein | Vignettierungskorrektur. |
 | `--reflectance / --no-reflectance` | ein | Reflexionskalibrierung; bei LATTICE dient dies auch als Umschalter für das Reflexionsprodukt. |
 | `--input-level {auto,raw,debayered,processed}` | `auto` | Erzwingt den Pipeline-Einstiegspunkt für LATTICE-TIFFs. |
 
-Für alles andere – Feinabstimmung der Zielerkennung, PPK, Belichtungspins, Flags zur Array-Ausrichtung – siehe den [Abschnitt „`process`“ der CLI
--Referenz](reference/cli-reference.md).
+Für alles andere – Feinabstimmung der Zielerkennung, PPK, Belichtungspins, Flags zur Array-Ausrichtung – siehe den [Abschnitt „`process`“ der CLI-Referenz](reference/cli-reference.md).
 
 ***
 
@@ -224,9 +181,7 @@ Die LATTICE-Verarbeitung wird **in einem Durchgang auf alle anwendbaren Produkte
 | `--radiance` | float32 Strahlungsintensität, W/m²/sr/nm → `Radiance_Images/` (immer `tiff32/`) |
 | `--reflectance` | uint16 Reflexionsgrad, Pix4D-kompatibel → `Reflectance_Calibrated_Images/` |
 
-RGB
--Master-Kameras geben stets nur debayered + Vorschau aus – Radiance/Reflexionsgrad pro Band sind für einen Breitbandsensor nicht aussagekräftig, daher haben diese Umschaltoptionen für sie keine Auswirkung. Survey3
-`.raw` ignoriert die Umschaltoptionen und folgt dem Standardpfad für Reflexionsgrad/Ziel.
+RGB-Master-Kameras geben stets nur debayered + Vorschau aus – Radiance/Reflexionsgrad pro Band sind für einen Breitbandsensor nicht aussagekräftig, daher haben diese Umschaltoptionen für sie keine Auswirkung. Survey3 `.raw` ignoriert die Umschaltoptionen und folgt dem Standardpfad für Reflexionsgrad/Ziel.
 
 ```bash
 # Radiance only — no DAQ downwelling needed
@@ -236,13 +191,10 @@ chloros-cli process ~/captures/lattice_flight --no-debayered --no-preview --no-r
 **`--reflectance-source {auto,target,daq}`** (Standard: `auto`) wählt die Reflektanzreferenz aus: `auto` macht ein QA-konformes, im Bildfeld befindliches [Kalibrierungsziel](calibration-targets.md) zur absoluten Referenz und greift auf die DAQ-Lichtsensor-Abwärtsstrahlungsgrenze zurück (ρ = π·L/E) zurück, wenn kein Ziel vorhanden ist (ein Ziel, das die Qualitätssicherung mit einem Flag besteht, konkurriert mit dem DAQ hinsichtlich des gemessenen Werts); `target` ist streng (keine DAQ-Ersetzung); `daq` ist DAQ-maßgebend. Gemessene Zielscans pro Einheit können mit `--target-reflectance-dir` bereitgestellt werden.
 
 {% hint style="info" %}
-**Auslesen von Reflexionspixeln:**Der DN-Wert, der ρ = 1,0 bedeutet, gilt**pro Quelle** – LATTICE-Dateien fügen `Chloros:PixelScale=32768` in die XMP-Datei ein; Survey3
--Dateien verwenden 65535 und enthalten kein `Chloros:PixelScale`-Tag (sie enthalten jedoch andere `Chloros:*`-Verarbeitungs-Tags). Lesen Sie das Tag aus und dividieren Sie damit, anstatt von einer Konstante auszugehen. Details und der eine absichtliche Randfall ohne Skalierung finden Sie in der [CLI
--Referenz](reference/cli-reference.md).
+**Auslesen von Reflexionspixeln:**Der DN-Wert, der ρ = 1,0 bedeutet, gilt**pro Quelle** – LATTICE-Dateien fügen `Chloros:PixelScale=32768` in die XMP-Datei ein; Survey3-Dateien verwenden 65535 und enthalten kein `Chloros:PixelScale`-Tag (sie enthalten jedoch andere `Chloros:*`-Verarbeitungs-Tags). Lesen Sie das Tag aus und dividieren Sie damit, anstatt von einer Konstante auszugehen. Details und der eine absichtliche Randfall ohne Skalierung finden Sie in der [CLI-Referenz](reference/cli-reference.md).
 {% endhint %}
 
-**Die Verarbeitung beginnt immer bei `raw`.** Abgeleitete Produkte (Debayering-/Strahlungs-/Reflexions-Exporte) werden niemals wieder in die Pipeline zurückgeführt – ein erneuter Import und eine erneute Verarbeitung würden die Kalibrierungsberechnungen doppelt anwenden, daher überspringt Chloros
-sie und weist darauf hin. `--input-level` ist die bewusst eingebaute Notausstiegsmöglichkeit, wenn Sie wirklich einen Einstiegspunkt erzwingen müssen.
+**Die Verarbeitung beginnt immer bei `raw`.** Abgeleitete Produkte (Debayering-/Strahlungs-/Reflexions-Exporte) werden niemals wieder in die Pipeline zurückgeführt – ein erneuter Import und eine erneute Verarbeitung würden die Kalibrierungsberechnungen doppelt anwenden, daher überspringt Chloros sie und weist darauf hin. `--input-level` ist die bewusst eingebaute Notausstiegsmöglichkeit, wenn Sie wirklich einen Einstiegspunkt erzwingen müssen.
 
 ***
 
@@ -250,12 +202,10 @@ sie und weist darauf hin. `--input-level` ist die bewusst eingebaute Notausstieg
 
 Ab Version 1.2.0 meldet `process` einen deutlichen Fehler, anstatt scheinbar „erfolgreich“ zu sein, ohne dass etwas angezeigt wird:
 
-* Ein Lauf, der **Produkte angefordert, aber keine geschrieben hat**– nur `project.json` und `calibration_data.json` –, gibt `Processing finished but wrote no image products.` aus und**beendet den Lauf mit einem Wert ungleich Null**, sodass Skripte dies erkennen können. Die üblichen Ursachen: Der Eingabeordner wurde nicht als Aufzeichnung erkannt (überprüfen Sie das Layout und `--input-level`), oder jedes angeforderte Produkt war für diese Kameras nicht anwendbar (z. B. die Abfrage von Radianz/Reflexionsgrad bei reinen RGB
--Kameras).
+* Ein Lauf, der **Produkte angefordert, aber keine geschrieben hat**– nur `project.json` und `calibration_data.json` –, gibt `Processing finished but wrote no image products.` aus und**beendet den Lauf mit einem Wert ungleich Null**, sodass Skripte dies erkennen können. Die üblichen Ursachen: Der Eingabeordner wurde nicht als Aufzeichnung erkannt (überprüfen Sie das Layout und `--input-level`), oder jedes angeforderte Produkt war für diese Kameras nicht anwendbar (z. B. die Abfrage von Radianz/Reflexionsgrad bei reinen RGB-Kameras).
 * Ein **absichtlich nur auf Metadaten ausgerichteter Lauf** (alle Produkte deaktiviert, kein `--indices`) gilt weiterhin als erfolgreich – eine leere Bildausgabe ist in diesem Fall das korrekte Ergebnis.
 * Führen Sie den Lauf mit `--verbose` erneut durch und überprüfen Sie das Backend-Protokoll auf Zeilen mit den Codes `[LATTICE-EXPORT]` / `[EXPORT-CHECK]`, die die kameraspezifischen Übersprünge erklären.
-* Unter Windows
-, bei dem lange Pfade deaktiviert sind, wird ein Projektordner, der zu tief liegt und die Pfadlänge von 260 Zeichen überschreitet, **vor** Beginn der Verarbeitung abgelehnt; dabei wird der längste Projektordner verwendet, der noch passt (siehe [Wo die Ausgaben gespeichert werden](#where-the-outputs-land)).
+* Unter Windows, bei dem lange Pfade deaktiviert sind, wird ein Projektordner, der zu tief liegt und die Pfadlänge von 260 Zeichen überschreitet, **vor** Beginn der Verarbeitung abgelehnt; dabei wird der längste Projektordner verwendet, der noch passt (siehe [Wo die Ausgaben gespeichert werden](#where-the-outputs-land)).
 * Aufnahmebefehle (`lattice capture`, `lattice array-capture` und die anderen Aufnahmefamilien) listen alle Dateien auf, die sie nicht schreiben konnten, und beenden den Vorgang mit dem Code `1`; wiederholte Aufnahmen werden beendet, wenn das Laufwerk voll ist.
 
 Beendigungscodes: `0` Erfolg · `1` Allgemeiner Fehler · `2` Argumentfehler · `130` Durch Strg+C unterbrochen.
@@ -274,8 +224,7 @@ Die 22 voreingestellten Namen, die `process --indices` akzeptiert:
 
 `NDVI` `GNDVI` `NDRE` `OSAVI` `SAVI` `MSAVI2` `EVI` `MSR` `TDVI` `LAI` `GCI` `GRVI` `GSAVI` `GOSAVI` `NLI` `MNLI` `RDVI` `WDRVI` `CVI` `ENDVI` `GLI` `VARI`
 
-Ein Name, der noch nicht im Projekt aufgeführt ist, wird hinzugefügt. Ein Name, der keine Voreinstellung ist oder den die Kamerabänder nicht erzeugen können, wird übersprungen, wobei eine Warnung mit dem Namen ausgegeben wird. Wenn die CLI
--Schnittstelle die aktuelle Indexliste des Projekts nicht lesen kann, lässt sie die Liste unverändert und gibt eine Warnung aus, anstatt sie zu ersetzen.
+Ein Name, der noch nicht im Projekt aufgeführt ist, wird hinzugefügt. Ein Name, der keine Voreinstellung ist oder den die Kamerabänder nicht erzeugen können, wird übersprungen, wobei eine Warnung mit dem Namen ausgegeben wird. Wenn die CLI-Schnittstelle die aktuelle Indexliste des Projekts nicht lesen kann, lässt sie die Liste unverändert und gibt eine Warnung aus, anstatt sie zu ersetzen.
 
 {% hint style="warning" %}
 **Es gibt drei Indexlisten – verwechseln Sie diese nicht.**Das Dropdown-Menü „Projekteinstellungen“ der GUI enthält 27 Formeln (fügt `FCI1`, `FCI2`, `GARI`, `GEMI`, `LCI` – diese fünf sind nur in der GUI verfügbar und gelten**nicht** für `--indices`). Der Live-/Offline-Befehl `lattice index --preset` verwendet eine eigene, separate Liste mit 22 Voreinstellungen. Formeln und Bandberechnungen sind unter [Multispektrale Indexformeln](project-settings/multispectral-index-formulas.md) dokumentiert.
@@ -285,12 +234,7 @@ Ein Name, der noch nicht im Projekt aufgeführt ist, wird hinzugefügt. Ein Name
 
 ## DAQ-Lichtsensoren: Ein kurzer Überblick
 
-Die `daq pool-*`-Familie steuert MAPIR
--DAQ-Spektralsensoren (DAQ-U über USB, DAQ-M über BLE, DAQ-E über Ethernet) über den persistenten Pool des Backends an – GUI, CLI
-und SDK
-nutzen alle denselben Live-Handle. **`pool-*` ist der unterstützte DAQ-Pfad in der mitgelieferten CLI
-**; andere `daq`-Unterbefehle, auf die möglicherweise verwiesen wird, sind eine rein MAPIR
--interne Oberfläche und werden mit einem expliziten Fehler beendet, der Sie auf `pool-*` verweist.
+Die `daq pool-*`-Familie steuert MAPIR-DAQ-Spektralsensoren (DAQ-U über USB, DAQ-M über BLE, DAQ-E über Ethernet) über den persistenten Pool des Backends an – GUI, CLI und SDK nutzen alle denselben Live-Handle. **`pool-*` ist der unterstützte DAQ-Pfad in der mitgelieferten CLI**; andere `daq`-Unterbefehle, auf die möglicherweise verwiesen wird, sind eine rein MAPIR-interne Oberfläche und werden mit einem expliziten Fehler beendet, der Sie auf `pool-*` verweist.
 
 ```bash
 # 1. Open a pooled session (pick the line matching your sensor)
@@ -333,14 +277,11 @@ chloros-cli lattice array-connect --serials SN1,SN2,SN3,SN4       # persistent s
 chloros-cli lattice array-capture --processing reflectance -o out/
 ```
 
-Daneben: `chloros-cli time-sync` liefert Informationen über den PTP-Grandmaster, den der Chloros
--Host betreibt (LATTICE-Kameras und DAQ-E-Sensoren sind diesem als Slaves zugeordnet, um geräteübergreifende Zeitstempel zu erhalten), und `chloros-cli project` öffnet ein gespeichertes Chloros
--Projekt und steuert dessen Kameras, Arrays und Sensoren im Headless-Modus – einschließlich skriptgesteuerter YAML-Aufnahmerezepte.
+Daneben: `chloros-cli time-sync` liefert Informationen über den PTP-Grandmaster, den der Chloros-Host betreibt (LATTICE-Kameras und DAQ-E-Sensoren sind diesem als Slaves zugeordnet, um geräteübergreifende Zeitstempel zu erhalten), und `chloros-cli project` öffnet ein gespeichertes Chloros-Projekt und steuert dessen Kameras, Arrays und Sensoren im Headless-Modus – einschließlich skriptgesteuerter YAML-Aufnahmerezepte.
 
 Diese drei Familien (`lattice`, `project`, `daq pool-*`) sind zudem die einzigen, die `CHLOROS_BACKEND_URL` zur Steuerung eines **remoten** Backends unterstützen; die Kernbefehle zielen immer auf den lokalen Rechner ab.
 
-Ausführliche Anleitungen finden Sie in den LATTICE-Kapiteln dieses Handbuchs; alle Flags sind in der [CLI
--Referenz](reference/cli-reference.md) aufgeführt.
+Ausführliche Anleitungen finden Sie in den LATTICE-Kapiteln dieses Handbuchs; alle Flags sind in der [CLI-Referenz](reference/cli-reference.md) aufgeführt.
 
 ***
 
@@ -349,15 +290,10 @@ Ausführliche Anleitungen finden Sie in den LATTICE-Kapiteln dieses Handbuchs; a
 | Symptom | Lösung |
 | --- | --- |
 | `Login required` oder ein geplanter Job bleibt an einer `Email:`-Eingabeaufforderung hängen | Führen Sie `chloros-cli login EMAIL 'PASSWORD'` einmal auf diesem Rechner aus – Befehle ohne zwischengespeicherte Sitzung werden interaktiv ausgeführt, anstatt sofort fehlzuschlagen. |
-| `backend unreachable` | Starten Sie die Chloros
--Desktop-App oder starten Sie das Backend selbst: `"C:\Program Files\Chloros\backend\chloros-backend.exe"` unter Windows
-(im Ordner `backend` Ihres Installationsordners; dieser befindet sich nicht auf `PATH`), `chloros-backend` unter Linux
-. `chloros-cli backend status` zeigt an, ob eines läuft; `lattice`/`project`/`daq pool-*` starten niemals einen. Wenn Sie sie auf ein entferntes Backend verweisen, überprüfen Sie `CHLOROS_BACKEND_URL`. |
+| `backend unreachable` | Starten Sie die Chloros-Desktop-App oder starten Sie das Backend selbst: `"C:\Program Files\Chloros\backend\chloros-backend.exe"` unter Windows (im Ordner `backend` Ihres Installationsordners; dieser befindet sich nicht auf `PATH`), `chloros-backend` unter Linux. `chloros-cli backend status` zeigt an, ob eines läuft; `lattice`/`project`/`daq pool-*` starten niemals einen. Wenn Sie sie auf ein entferntes Backend verweisen, überprüfen Sie `CHLOROS_BACKEND_URL`. |
 | Array-Verbindung blockiert: `FRAMES WILL DROP` / `Reduce ROI to enable` | Empfangsring der Host-Netzwerkkarte auf Standardwerte zurückgesetzt – die häufigste Ursache dafür, dass ein zuvor funktionierendes System keine Verbindung mehr herstellt, typischerweise nach einer Aktualisierung des Netzwerkkartentreibers. Führen Sie `chloros-cli lattice network --fix` in einem **Terminal mit erhöhten Rechten** aus (oder setzen Sie `ReceiveBufferLen=256`, `PendingReceives=64`); siehe den Abschnitt *Einrichtung und Optimierung der Host-Netzwerkkarte* im Handbuch. |
-| Der `daq`-Unterbefehl bricht ab: „erfordert das vollständige DAQ-Paket…“ | Verwenden Sie die Befehle `daq pool-*`, die denselben Sensor über das Backend steuern: Verbindung herstellen, Streamen, Aufzeichnen, CAP-Auswahl sowie für ein DAQ-E dessen Netzwerkeinstellungen, einen Neustart und Firmware-Updates (oder `chloros_sdk.connect_daq_sensor()` aus Python
-). |
-| Jetson gibt vor großen Ordnern eine Swap-Warnung aus | Fügen Sie dateibasierten Swap hinzu – die CLI
-gibt die genauen auszuführenden Befehle `fallocate`/`swapon` aus. |
+| Der `daq`-Unterbefehl bricht ab: „erfordert das vollständige DAQ-Paket…“ | Verwenden Sie die Befehle `daq pool-*`, die denselben Sensor über das Backend steuern: Verbindung herstellen, Streamen, Aufzeichnen, CAP-Auswahl sowie für ein DAQ-E dessen Netzwerkeinstellungen, einen Neustart und Firmware-Updates (oder `chloros_sdk.connect_daq_sensor()` aus Python). |
+| Jetson gibt vor großen Ordnern eine Swap-Warnung aus | Fügen Sie dateibasierten Swap hinzu – die CLI gibt die genauen auszuführenden Befehle `fallocate`/`swapon` aus. |
 
 ***
 
@@ -370,11 +306,6 @@ chloros-cli lattice --help
 chloros-cli daq --help          # lists the pool-* subcommands
 ```
 
-* **Alle Flags, alle Unterbefehle:** [CLI
--Referenz](reference/cli-reference.md)
-* **Python
--Äquivalent:** [Python
-SDK
-](api-python-sdk.md) und die [SDK
--Referenz](reference/sdk-reference.md)
+* **Alle Flags, alle Unterbefehle:** [CLI-Referenz](reference/cli-reference.md)
+* **Python-Äquivalent:** [Python SDK](api-python-sdk.md) und die [SDK-Referenz](reference/sdk-reference.md)
 * **Support:** info@mapir.camera · [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)

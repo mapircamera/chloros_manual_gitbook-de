@@ -37,13 +37,13 @@ Chloros zeigt diese mit dem Präfix „`LATT-`“ an (zum Beispiel „`LATT-M3M-
 | --------- | -------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | Sensor    | `M3C` / `M3M`                                            | Bayer-Farbfilter / Monochrom                                                                          |
 | Objektiv      | `L41` / `L87`                                            | Die Zahl gibt das **horizontale Sichtfeld in Grad** an: L41 = schmal (41°), L87 = breit (87°)    |
-| Filter    | `FRGB` / `FRGN` / `FOCN` / `FNGB` (M3C) oder `F<nm>` (M3M) | Siehe [Filter &amp; Spektralbänder](https://mapir.gitbook.io/lattice-camera/hardware/filters-and-bands) |
+| Filter    | `FRGB` / `FRGN` / `FOCN` / `FNGB` (M3C) oder `F<nm>` (M3M) | Siehe [Filter & Spektralbänder](https://mapir.gitbook.io/lattice-camera/hardware/filters-and-bands) |
 
 Die Modellzeichenfolge steuert alle nachfolgenden Schritte: Chloros ermittelt das Sensorprofil, die Bandanordnung und die Werkskalibrierung aus `DeviceUserID` + `DeviceSerialNumber`. Pro Kamera muss nichts konfiguriert werden – siehe [Anschließen von Kameras](connecting.md).
 
 ## Filter und Spektralbänder
 
-Bandmitten, FWHM-Kanten und der vollständige M3M-Katalog mit 23 Artikelnummern sind Produktspezifikationen und daher im Hardware-Handbuch zu finden: [**Filter &amp; Spektralbänder**](https://mapir.gitbook.io/lattice-camera/hardware/filters-and-bands).
+Bandmitten, FWHM-Kanten und der vollständige M3M-Katalog mit 23 Artikelnummern sind Produktspezifikationen und daher im Hardware-Handbuch zu finden: [**Filter & Spektralbänder**](https://mapir.gitbook.io/lattice-camera/hardware/filters-and-bands).
 
 Was auf der Softwareseite zählt: Der Filtercode in der Modellzeichenfolge bestimmt, welche Produkte Chloros erstellen kann. RGB-Filterkameras (`FRGB`) liefern ausschließlich debayerte und Vorschau-Produkte – Radiance- und Reflektanzwerte pro Band sind für einen Breitbandsensor nicht aussagekräftig, daher lässt Chloros diese weg und weist darauf hin. Jeder andere Filter liefert die vollständige Kette von Radiance über Reflektanz bis hin zum Index.
 
@@ -59,6 +59,6 @@ Auf der Softwareseite ist entscheidend, dass Chloros die richtige Kalibrierung e
 * [Kameraeinstellungen](camera-settings.md) – alle Steuerelemente auf der Registerkarte „Kameras“: die Kameraliste, der Einstellungsbereich pro Kamera und der Bereich für Array-Einstellungen (einschließlich ROI-Editor und Ausrichtung).
 * [Aufnahmeeinstellungen und -modi](capture.md) – „Alles aufnehmen“, Einzel-/Serien-/Intervallaufnahme, Exportformate und die Struktur des Aufnahmeordners.
 * [Mehrkamera-Arrays](arrays.md) – der Array-Verbindungsassistent, die Synchronisationskabel-Prüfung, Bandbreite, PTP und die Live-Ansicht des Arrays.
-* [Mono-Kameras &amp; Vegetationsindizes](mono-indices.md) – M3M-Kameras und der Workflow „Ausrichten → Stapeln → Indexieren“.
+* [Mono-Kameras & Vegetationsindizes](mono-indices.md) – M3M-Kameras und der Workflow „Ausrichten → Stapeln → Indexieren“.
 
 Die vollständige Befehlsoberfläche finden Sie in der [CLI-Referenz](../reference/cli-reference.md) und der [SDK-Referenz](../reference/sdk-reference.md).

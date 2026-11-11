@@ -84,7 +84,7 @@ Jedes Bild mit GPS-Daten erhält eine Markierung an seinen Koordinaten.
 
 Wählen Sie den Kartenschichttyp mit den Schaltflächen (von links nach rechts) aus:
 
-![](&lt;../.gitbook/assets/image (14).png&gt;)
+![](<../.gitbook/assets/image (14).png>)
 
 | Typ                 | Zeigt                                                                |
 | -------------------- | -------------------------------------------------------------------- |

@@ -16,49 +16,23 @@ Nach der Anmeldung werden Ihre Kontodaten angezeigt:
 | Tarif | `plan_id` | Typ |
 | --- | --- | --- |
 | Iron | `0` | Kostenlos |
-| Copper | `1` | Kostenpflichtig (Chloros
-
-+) |
-| Bronze | `2` | Kostenpflichtig (Chloros
-
-+) |
-| Silver | `3` | Kostenpflichtig (Chloros
-
-+) |
-| Gold | `4` | Kostenpflichtig (Chloros
-
-+) |
+| Copper | `1` | Kostenpflichtig (Chloros+) |
+| Bronze | `2` | Kostenpflichtig (Chloros+) |
+| Silver | `3` | Kostenpflichtig (Chloros+) |
+| Gold | `4` | Kostenpflichtig (Chloros+) |
 
 Unter [Tarife und Preise](https://cloud.mapir.camera/pricing) erfahren Sie, was die einzelnen kostenpflichtigen Tarife beinhalten.
 
 ### Für den Zugriff auf CLI
 
-und SDK
+und SDK ist ein kostenpflichtiger Tarif erforderlich
 
-ist ein kostenpflichtiger Tarif erforderlich
+Der Zugriff auf CLI und das Python-SDK erfordert **eine beliebige kostenpflichtige Chloros+-Stufe (Copper oder höher)**. Dies wird**serverseitig** durchgesetzt – jede CLI-/SDK-Anfrage muss sowohl eine aktive Sitzung als auch einen kostenpflichtigen Tarif enthalten:
 
-Der Zugriff auf CLI
-
-und das Python
-
--SDK
-
-erfordert **eine beliebige kostenpflichtige Chloros
-
-+-Stufe (Copper oder höher)**. Dies wird**serverseitig** durchgesetzt – jede CLI
-
--/SDK
-
--Anfrage muss sowohl eine aktive Sitzung als auch einen kostenpflichtigen Tarif enthalten:
-
-| HTTP
-
--Status | `error_code` | Bedeutung | Behebung |
+| HTTP-Status | `error_code` | Bedeutung | Behebung |
 | --- | --- | --- | --- |
 | `401` | `AUTH_REQUIRED` | Auf diesem Rechner nicht angemeldet | `chloros-cli login <email> <password>` |
-| `403` | `PLAN_UPGRADE_REQUIRED` | Angemeldet, aber die Tarifstufe ist zu niedrig (kostenlose „Iron“-Stufe) | Auf einen beliebigen kostenpflichtigen „Chloros
-
-+“-Tarif upgraden |
+| `403` | `PLAN_UPGRADE_REQUIRED` | Angemeldet, aber die Tarifstufe ist zu niedrig (kostenlose „Iron“-Stufe) | Auf einen beliebigen kostenpflichtigen „Chloros+“-Tarif upgraden |
 
 `chloros-cli status` bleibt im kostenlosen Tarif erreichbar, sodass Sie jederzeit Ihren aktuellen Tarif einsehen und erfahren können, warum der Zugriff verweigert wird.
 
@@ -73,17 +47,9 @@ Jeder Tarif legt fest, wie viele LATTICE-Kameras und DAQ-Lichtsensoren gleichzei
 | Silver | 10 | 6 |
 | Gold | 20 | 12 |
 
-## CLI
+## CLI-Anmeldung
 
--Anmeldung
-
-Melden Sie sich mit Ihren Chloros
-
-+-Anmeldedaten an, um die CLI
-
--Verarbeitung zu aktivieren. Unter Linux
-
-(ohne GUI) ist dies die einzige Möglichkeit, Ihre Lizenz zu aktivieren.
+Melden Sie sich mit Ihren Chloros+-Anmeldedaten an, um die CLI-Verarbeitung zu aktivieren. Unter Linux (ohne GUI) ist dies die einzige Möglichkeit, Ihre Lizenz zu aktivieren.
 
 **Syntax:**
 
@@ -92,15 +58,7 @@ chloros-cli login <email> <password>
 ```
 
 {% hint style="info" %}
-**SDK
-
--Benutzer**: Das Python
-
--SDK
-
-bietet außerdem eine programmatische Methode `logout()` zum Löschen zwischengespeicherter Anmeldedaten. Weitere Informationen finden Sie in der [SDK
-
--Referenz](reference/sdk-reference.md).
+**SDK-Benutzer**: Das Python-SDK bietet außerdem eine programmatische Methode `logout()` zum Löschen zwischengespeicherter Anmeldedaten. Weitere Informationen finden Sie in der [SDK-Referenz](reference/sdk-reference.md).
 {% endhint %}
 
 **Beispiel:**
@@ -127,23 +85,13 @@ Zwischengespeicherte Anmeldedaten und Konfigurationen werden auf **allen Plattfo
 | **Windows** | `%USERPROFILE%\.chloros\` |
 | **Linux** | `~/.chloros/` |
 
-Wenn Sie eine neuere Version über eine bestehende installieren, bleiben Ihre Anmeldedaten unter Windows
-
-(im Installationsprogramm) und unter Linux
-
-(im Ordner „`.deb`“, einschließlich „`chloros-cli update`“) erhalten. Durch die Deinstallation von Chloros
-
-– oder das Entfernen des Linux
-
--Pakets – wird die zwischengespeicherte Anmeldung gelöscht, sodass Sie sich nach einer Neuinstallation erneut anmelden müssen.
+Wenn Sie eine neuere Version über eine bestehende installieren, bleiben Ihre Anmeldedaten unter Windows (im Installationsprogramm) und unter Linux (im Ordner „`.deb`“, einschließlich „`chloros-cli update`“) erhalten. Durch die Deinstallation von Chloros – oder das Entfernen des Linux-Pakets – wird die zwischengespeicherte Anmeldung gelöscht, sodass Sie sich nach einer Neuinstallation erneut anmelden müssen.
 
 ### Ablauf des Abonnements und Offline-Gnadenfrist
 
 Der in der Benutzeroberfläche angezeigte Ablauf des Abonnements gibt an, wann Ihre Lizenz ungültig wird. Bei monatlichen Abonnements erfolgt der Ablauf am Monatsende; bei Jahresabonnements ein Jahr nach Beginn des Abonnements.
 
-Chloros
-
-validiert Ihre Lizenz online, unterstützt jedoch die Offline-Nutzung innerhalb einer Übergangsfrist:
+Chloros validiert Ihre Lizenz online, unterstützt jedoch die Offline-Nutzung innerhalb einer Übergangsfrist:
 
 * Erfolgreiche Servervalidierungen werden **5 Minuten** lang zwischengespeichert, sodass bei normaler Nutzung nur sehr wenige Lizenzabfragen erforderlich sind.
 * Ein signierter, maschinengebundener Lizenz-Cache deckt längere Offline-Zeiträume ab: **30 Tage bei monatlichen Tarifen**und**bis zum Ablaufdatum Ihres Abonnements (maximal 365 Tage) bei jährlichen Tarifen**.
@@ -151,13 +99,7 @@ validiert Ihre Lizenz online, unterstützt jedoch die Offline-Nutzung innerhalb 
 
 ### Gerätebegrenzung
 
-Jeder Chloros
-
-+-Tarif bietet eine unterschiedliche Anzahl registrierter Geräte. Jedes Gerät, auf dem Sie sich mit einem Chloros
-
-+-Konto anmelden, wird auf Ihre Anzahl registrierter Geräte angerechnet. Sie können ein Gerät auf Ihrer MAPIR
-
--Cloud-Kontoseite umbenennen und entfernen.
+Jeder Chloros+-Tarif bietet eine unterschiedliche Anzahl registrierter Geräte. Jedes Gerät, auf dem Sie sich mit einem Chloros+-Konto anmelden, wird auf Ihre Anzahl registrierter Geräte angerechnet. Sie können ein Gerät auf Ihrer MAPIR-Cloud-Kontoseite umbenennen und entfernen.
 
 <table><thead><tr><th width="168.5999755859375" align="right">Chloros-+-Tarif</th><th align="center">COPPER</th><th align="center">BRONZE</th><th align="center">SILBER</th><th align="center">GOLD</th></tr></thead><tbody><tr><td align="right">Unterstützte Geräte</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>
 

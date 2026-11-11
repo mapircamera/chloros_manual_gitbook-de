@@ -86,8 +86,8 @@ Jeder Dateiname `.daq` enthält die Sensor-ID und einen Zeitstempel.
 
 * [**Die Registerkarte „DAQ“ in Chloros**](gui.md) – eine vollständige Anleitung zur Benutzeroberfläche: Anschließen der einzelnen Modelle, sensorbezogene Einstellungen, Spektraldiagramme, kolorimetrische Live-Daten, Reflexionsmessung mit zwei Sensoren und Aufzeichnung.
 * [**Schnellstart für die CLI (pool-\*)**](cli-quick-start.md) – Ansteuerung von DAQ-Sensoren über `chloros-cli daq pool-*`, den unterstützten Befehlszeilenpfad.
-* [**Cap-Profile &amp; kalibrierter Bereich**](caps-and-range.md) – welche Caps es pro Modell gibt, wie man sie deklariert und der kalibrierte Spektralbereich im Detail.
-* [**Aufzeichnung &amp; das .daq-Format**](recording.md) – das SQLite-Format von `.daq` und Aufzeichnungsabläufe.
-* [**DAQ-E-Vernetzung &amp; Zeitsynchronisation**](ethernet-ptp.md) – DAQ-E-Übertragungsmodi und PTP-Zeitsynchronisation.
+* [**Cap-Profile & kalibrierter Bereich**](caps-and-range.md) – welche Caps es pro Modell gibt, wie man sie deklariert und der kalibrierte Spektralbereich im Detail.
+* [**Aufzeichnung & das .daq-Format**](recording.md) – das SQLite-Format von `.daq` und Aufzeichnungsabläufe.
+* [**DAQ-E-Vernetzung & Zeitsynchronisation**](ethernet-ptp.md) – DAQ-E-Übertragungsmodi und PTP-Zeitsynchronisation.
 * [**Reflexions-Workflows**](reflectance.md) – Verwendung von DAQ-Downwelling-Daten zur Ermittlung der Reflexion.
 * Eine vollständige Dokumentation auf Flag-Ebene finden Sie in der [CLI-Referenz](../reference/cli-reference.md) (Abschnitt `chloros-cli daq`) und in der [SDK-Referenz](../reference/sdk-reference.md) (`chloros_sdk.connect_daq_sensor()`), die beide so verfasst sind, dass sie direkt von KI-Assistenten verarbeitet werden können.

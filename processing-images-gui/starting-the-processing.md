@@ -62,7 +62,7 @@ Chloros arbeitet je nach Ihrer Lizenz in zwei verschiedenen Verarbeitungsmodi:
 2. **Verarbeitung** – Anwenden der Kalibrierung und Exportieren der Bilder**Verarbeitungszeit:**
 
 * Deutlich langsamer als der Chloros+-Parallelmodus
-* Geeignet für kleine bis mittlere Datensätze (&lt; 200 Bilder)
+* Geeignet für kleine bis mittlere Datensätze (< 200 Bilder)
 
 ### Chloros+-Modus (parallele Verarbeitung)
 
@@ -305,7 +305,7 @@ Die vollständige Semantik finden Sie in der [CLI-Referenz](../reference/cli-ref
 **Lösungen:**
 
 1. Speichern Sie Projekte in einem Ordner mit kürzerem Pfad – ändern Sie das**Arbeitsverzeichnis** unter [Projekteinstellungen](../project-settings/project-settings.md) und erstellen Sie das Projekt erneut, oder
-2. Aktivieren Sie lange Pfade unter Windows und starten Sie Chloros neu: Führen Sie das Chloros-Installationsprogramm erneut aus, wobei die Option **„Lange Pfade unter Windows aktivieren“** aktiviert sein muss (sie ist standardmäßig aktiviert), oder verwenden Sie die Gruppenrichtlinie: *Computerkonfiguration &gt; Administrative Vorlagen &gt; System &gt; Dateisystem &gt; Lange Win32-Pfade aktivieren*.
+2. Aktivieren Sie lange Pfade unter Windows und starten Sie Chloros neu: Führen Sie das Chloros-Installationsprogramm erneut aus, wobei die Option **„Lange Pfade unter Windows aktivieren“** aktiviert sein muss (sie ist standardmäßig aktiviert), oder verwenden Sie die Gruppenrichtlinie: *Computerkonfiguration > Administrative Vorlagen > System > Dateisystem > Lange Win32-Pfade aktivieren*.
 
 ### Warnung „Keine Ziele erkannt“
 

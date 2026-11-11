@@ -1,7 +1,6 @@
 # Abschluss der Verarbeitung
 
-Sobald Chloros
-die Verarbeitung abgeschlossen hat, ist es an der Zeit, Ihre Ergebnisse zu überprüfen, die Ausgabequalität zu verifizieren und Ihre verarbeiteten Bilder für die Verwendung in Ihrem Workflow vorzubereiten. Diese Seite führt Sie durch die letzten Schritte und die nächsten Maßnahmen.
+Sobald Chloros die Verarbeitung abgeschlossen hat, ist es an der Zeit, Ihre Ergebnisse zu überprüfen, die Ausgabequalität zu verifizieren und Ihre verarbeiteten Bilder für die Verwendung in Ihrem Workflow vorzubereiten. Diese Seite führt Sie durch die letzten Schritte und die nächsten Maßnahmen.
 
 ## Anzeige „Verarbeitung abgeschlossen“
 
@@ -13,10 +12,7 @@ Wenn die Verarbeitung erfolgreich abgeschlossen ist, werden mehrere Anzeigen ein
 * ✅ **Ausgabedateien**: Alle verarbeiteten Bilder wurden im Ausgabeverzeichnis des Projekts (unten) gespeichert
 
 {% hint style="warning" %}
-**Ein Durchlauf, bei dem keine Bilder geschrieben werden, gilt als Fehler.** Wenn Sie Bildprodukte angefordert haben und der Durchlauf keine geschrieben hat, meldet Chloros
-dies als Fehler – der Log-Name „`[RUN-SUMMARY]`“ gibt einen Hinweis auf die wahrscheinliche Ursache (nichts importiert, kein Ziel erkannt oder jedes angeforderte Produkt als nicht anwendbar übersprungen). Das entsprechende CLI
--Programm beendet sich mit einem Wert ungleich Null. Ein absichtlich nur auf Metadaten ausgerichteter Lauf (alle Exportprodukte deaktiviert, keine Indizes) gilt weiterhin als erfolgreich. Siehe [die CLI
--Referenz](../reference/cli-reference.md#a-run-that-writes-no-images-fails).
+**Ein Durchlauf, bei dem keine Bilder geschrieben werden, gilt als Fehler.** Wenn Sie Bildprodukte angefordert haben und der Durchlauf keine geschrieben hat, meldet Chloros dies als Fehler – der Log-Name „`[RUN-SUMMARY]`“ gibt einen Hinweis auf die wahrscheinliche Ursache (nichts importiert, kein Ziel erkannt oder jedes angeforderte Produkt als nicht anwendbar übersprungen). Das entsprechende CLI-Programm beendet sich mit einem Wert ungleich Null. Ein absichtlich nur auf Metadaten ausgerichteter Lauf (alle Exportprodukte deaktiviert, keine Indizes) gilt weiterhin als erfolgreich. Siehe [die CLI-Referenz](../reference/cli-reference.md#a-run-that-writes-no-images-fails).
 {% endhint %}
 
 ***
@@ -48,10 +44,8 @@ Die Ergebnisse werden **im Projektordner gespeichert, gruppiert nach Kamera und 
         └── Radiance_Images/             # float32 radiance always lands here
 ```
 
-* **Kameraordner**: `LATT-<sensor>-<lens>-F<filter>` für LATTICE (entspricht dem EXIF-Datensatz der Aufnahme: `Model`), `<model>_<filter>` für Survey3
-(z. B. `Survey3N_RGN`). Zwei Kameras, die denselben Sensor und Filter verwenden, sich jedoch im Objektiv unterscheiden, bilden separate Verzeichnisstrukturen – Vignettierung, Sichtfeld und Verzeichnung unterscheiden sich.
-* **Formatordner**: richtet sich nach Ihrer Einstellung für das Exportformat – `tiff16`, `tiff8`, `png8`, `jpg8`, oder `tiff32` für TIFF
-(32-Bit, Prozent). Die Strahlungsintensität ist immer vom Typ „float32“ und wird immer unter `tiff32` abgelegt.
+* **Kameraordner**: `LATT-<sensor>-<lens>-F<filter>` für LATTICE (entspricht dem EXIF-Datensatz der Aufnahme: `Model`), `<model>_<filter>` für Survey3 (z. B. `Survey3N_RGN`). Zwei Kameras, die denselben Sensor und Filter verwenden, sich jedoch im Objektiv unterscheiden, bilden separate Verzeichnisstrukturen – Vignettierung, Sichtfeld und Verzeichnung unterscheiden sich.
+* **Formatordner**: richtet sich nach Ihrer Einstellung für das Exportformat – `tiff16`, `tiff8`, `png8`, `jpg8`, oder `tiff32` für TIFF (32-Bit, Prozent). Die Strahlungsintensität ist immer vom Typ „float32“ und wird immer unter `tiff32` abgelegt.
 * **Produktordner**:
   * `Reflectance_Calibrated_Images/` – kalibrierte Reflexion
   * `Debayered_Images/` – linear debayert (LATTICE): Dunkeloffset entfernt und demosaiziert, ohne Flatfield oder Unmix, in der nativen Ausrichtung des Sensors
@@ -70,8 +64,7 @@ Die Ergebnisse werden **im Projektordner gespeichert, gruppiert nach Kamera und 
 
 ### Wie viele Dateien sollte es geben?
 
-Zählen Sie nicht nach einer Formel – die Anzahl der Ausgabedateien hängt davon ab, welche Produkte aktiviert wurden und welche für die jeweilige Kamera gelten (z. B. erhalten RGB
--Kameras keine Strahlungs- oder Reflexionsdaten). Die verbindliche Anzahl finden Sie im Protokoll: Die letzte Zeile „`[RUN-SUMMARY]`“ gibt genau an, wie viele Dateien geschrieben wurden, und in den Erläuterungszeilen wird erklärt, was übersprungen wurde.
+Zählen Sie nicht nach einer Formel – die Anzahl der Ausgabedateien hängt davon ab, welche Produkte aktiviert wurden und welche für die jeweilige Kamera gelten (z. B. erhalten RGB-Kameras keine Strahlungs- oder Reflexionsdaten). Die verbindliche Anzahl finden Sie im Protokoll: Die letzte Zeile „`[RUN-SUMMARY]`“ gibt genau an, wie viele Dateien geschrieben wurden, und in den Erläuterungszeilen wird erklärt, was übersprungen wurde.
 
 ***
 
@@ -79,32 +72,24 @@ Zählen Sie nicht nach einer Formel – die Anzahl der Ausgabedateien hängt dav
 
 ### Schnellvorschau im Datei-Explorer
 
-**In Windows
-integrierte Vorschau:**
+**In Windows integrierte Vorschau:**
 
 1. Navigieren Sie in einen Produktordner (z. B. `tiff16/Reflectance_Calibrated_Images/`)
 2. Wählen Sie eine Bilddatei aus
-3. Die Vorschau wird im Vorschaufenster des Windows
--Explorers angezeigt
+3. Die Vorschau wird im Vorschaufenster des Windows-Explorers angezeigt
 4. Blättern Sie mit den Pfeiltasten durch die Bilder
 
 ### Vorschau in externen Bildbetrachtern
 
 **Empfohlene Bildbetrachter:*** **QGIS** – Kostenlose GIS-Software (am besten geeignet für georeferenzierte Multispektralanalysen)
-* **IrfanView** – Schneller, ressourcenschonender Bildbetrachter (unterstützt TIFF
-)
-* **Adobe Photoshop** – Professionelle Bildbearbeitung (TIFF
--Unterstützung)
+* **IrfanView** – Schneller, ressourcenschonender Bildbetrachter (unterstützt TIFF)
+* **Adobe Photoshop** – Professionelle Bildbearbeitung (TIFF-Unterstützung)
 * **GIMP** – Kostenlose Alternative zu Photoshop
-* **Windows
--Fotos** – Einfache Bildanzeige (unterstützt möglicherweise kein 16-Bit-TIFF
-)
+* **Windows-Fotos** – Einfache Bildanzeige (unterstützt möglicherweise kein 16-Bit-TIFF)
 
-### Vorschau im Chloros
--Bildbetrachter
+### Vorschau im Chloros-Bildbetrachter
 
-Verwenden Sie den in Chloros
-integrierten Bildbetrachter für erweiterte Visualisierung:
+Verwenden Sie den in Chloros integrierten Bildbetrachter für erweiterte Visualisierung:
 
 1. Klicken Sie im Dateibrowser auf eine Bildminiaturansicht
 2. Das Bild wird im Hauptvorschau-Bereich geöffnet
@@ -123,9 +108,7 @@ Die Reflektanz wird als ganzzahliger DN-Wert gespeichert, und **der DN-Wert, der
 | Quelle          | ρ = 1,0 ist | So lässt sich dies erkennen                                        |
 | --------------- | ---------- | -------------------------------------------------- |
 | LATTICE (M3C/M3M) | **32768** (Spielraum bis zu ρ 2,0) | Das XMP-Tag `Chloros:PixelScale=32768` ist in die Datei eingebettet |
-| Survey3
-         | **65535** (bei ρ 1,0 abgeschnitten)     | Kein `Chloros:PixelScale`-Tag – das Fehlen ist das Signal (Survey3
--Produkte enthalten zwar andere `Chloros:*`-Verarbeitungs-Tags) |
+| Survey3          | **65535** (bei ρ 1,0 abgeschnitten)     | Kein `Chloros:PixelScale`-Tag – das Fehlen ist das Signal (Survey3-Produkte enthalten zwar andere `Chloros:*`-Verarbeitungs-Tags) |
 
 **Lesen Sie das `Chloros:PixelScale`-Tag aus und dividieren Sie durch diesen Wert**, anstatt pauschal von 65535 auszugehen – die Division der LATTICE-Reflexionswerte durch 65535 halbiert stillschweigend jeden Wert. Eine Reflektanzdatei aus der Zeit vor Version 1.3.0, die als 8-Bit-Datei geschrieben wurde, wurde beschnitten, nicht neu skaliert und enthält kein Skalierungs-Tag: Exportieren Sie sie stattdessen mit 16 Bit oder 32 Bit neu, anstatt sie zu dividieren. Siehe [Ausgabebildformate](../output-image-formats.md) für die vollständige Erklärung.***
 
@@ -153,11 +136,9 @@ dieser Tags führt zu einer Beschädigung der LATTICE-Ausgabe), und `ExifImageWi
 da sie die ursprüngliche Aufnahme beschreiben – ein Export, dessen Größe angepasst wurde, würde andernfalls
 Abmessungen angeben, die im Widerspruch zu seinem eigenen Raster stehen.
 
-Chloros
-schreibt außerdem eigene `Chloros:*`-XMP-Tags, die beschreiben, welche Bearbeitungsschritte an jedem Produkt vorgenommen wurden
+Chloros schreibt außerdem eigene `Chloros:*`-XMP-Tags, die beschreiben, welche Bearbeitungsschritte an jedem Produkt vorgenommen wurden
 (zum Beispiel `Chloros:ProcessingLevel`, `Chloros:CalibrationApplied`,
-`Chloros:VignetteCorrected`). Ab Version 1.3.0 enthalten Survey3
--Produkte diese in jedem Verarbeitungsmodus
+`Chloros:VignetteCorrected`). Ab Version 1.3.0 enthalten Survey3-Produkte diese in jedem Verarbeitungsmodus
 Verarbeitungsmodus mit; Indexprodukte beschreiben den Index selbst (`Chloros:ProcessingLevel=index`, die
 Formel und ob diese aus Reflektanz oder Strahlungsintensität berechnet wurde), anstatt die
 Tags der Quell-Rohdaten zu wiederholen; und Produkte in Ordnern, deren Pfad länger als 260 Zeichen ist, behalten ihre Metadaten
@@ -174,23 +155,19 @@ ebenfalls bei. Siehe [Ausgabebildformate](../output-image-formats.md#index-produ
 2. Blättern Sie durch die Meldungen
 3. Suchen Sie nach gelben Warnungen oder roten Fehlern
 4. Lesen Sie die Zeilen `[RUN-SUMMARY]` und etwaige Hinweise
-5. Wenden Sie sich an den MAPIR
--Support, um Unterstützung zu erhalten
+5. Wenden Sie sich an den MAPIR-Support, um Unterstützung zu erhalten
 
 ### Speichern des Protokolls
 
-Um einen Nachweis über die Verarbeitung zu führen oder das Protokoll an den MAPIR
--Support zu senden:
+Um einen Nachweis über die Verarbeitung zu führen oder das Protokoll an den MAPIR-Support zu senden:
 
 1. Klicken Sie auf die Schaltfläche **„Kopieren“**oder**„Herunterladen“**
 
 2. Speichern Sie es als Textdatei im Projektordner
 3. Fügen Sie es der Projektdokumentation bei
-4. Senden Sie es bei auftretenden Problemen an den MAPIR
--Support
+4. Senden Sie es bei auftretenden Problemen an den MAPIR-Support
 
-Um ein Problem direkt an MAPIR
-zu melden, verwenden Sie das Fehler-Symbol (**Fehler melden**) oben auf der Registerkarte „Debug-Protokoll“ – siehe [Einen Fehler über die Registerkarte „Protokoll“ melden](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
+Um ein Problem direkt an MAPIR zu melden, verwenden Sie das Fehler-Symbol (**Fehler melden**) oben auf der Registerkarte „Debug-Protokoll“ – siehe [Einen Fehler über die Registerkarte „Protokoll“ melden](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
 
 ## Häufige Probleme bei der Ausgabe und deren Lösungen
 
@@ -198,8 +175,7 @@ zu melden, verwenden Sie das Fehler-Symbol (**Fehler melden**) oben auf der Regi
 
 **Mögliche Ursachen:**
 
-* Das Produkt ist für diese Kamera nicht geeignet (z. B. Radiance/Reflexion für RGB
--Kameras – dies wird im Protokoll angegeben)
+* Das Produkt ist für diese Kamera nicht geeignet (z. B. Radiance/Reflexion für RGB-Kameras – dies wird im Protokoll angegeben)
 * Eine erforderliche Referenz fehlte (z. B. Reflektanz ohne Ziel und ohne `.daq`-Downwelling)
 * Das Kontrollkästchen für den Export des Produkts war in den Projekteinstellungen deaktiviert
 * Der Speicherplatz auf der Festplatte reichte während des Exports nicht aus
@@ -216,16 +192,14 @@ zu melden, verwenden Sie das Fehler-Symbol (**Fehler melden**) oben auf der Regi
 **Mögliche Ursachen:**
 
 * Vignettierungskorrektur deaktiviert
-* Kamera/Objektiv nicht in der Chloros
--Profil-Datenbank enthalten
+* Kamera/Objektiv nicht in der Chloros-Profil-Datenbank enthalten
 * Extreme Vignettierung, die die Korrekturmöglichkeiten übersteigt
 
 **Lösungen:**
 
 1. Überprüfen Sie, ob die Vignettierungskorrektur in den Projekteinstellungen aktiviert war
 2. Überprüfen Sie, ob das Kameramodell korrekt erkannt wurde
-3. Wenden Sie sich an den MAPIR
--Support, wenn die Vignettierung weiterhin auftritt
+3. Wenden Sie sich an den MAPIR-Support, wenn die Vignettierung weiterhin auftritt
 
 ### Problem: Falsche Farben oder Werte
 
@@ -243,11 +217,9 @@ zu melden, verwenden Sie das Fehler-Symbol (**Fehler melden**) oben auf der Regi
 3. Überprüfen Sie die Qualität der Zielbilder
 4. Führen Sie die Verarbeitung erneut durch, nachdem Sie die richtigen Ziele markiert haben
 
-### Problem: Die NDVI
--Werte scheinen falsch zu sein
+### Problem: Die NDVI-Werte scheinen falsch zu sein
 
-**Erwartete NDVI
--Bereiche:*** **Wasser, Felsen, Boden**: -0,1 bis 0,2
+**Erwartete NDVI-Bereiche:*** **Wasser, Felsen, Boden**: -0,1 bis 0,2
 * **Spärliche/kranke Vegetation**: 0,2 bis 0,4
 * **Mäßige Vegetation**: 0,4 bis 0,6
 * **Gesunde, dichte Vegetation**: 0,6 bis 0,9**Wenn die Werte außerhalb dieser Bereiche liegen:**
@@ -274,10 +246,8 @@ zu melden, verwenden Sie das Fehler-Symbol (**Fehler melden**) oben auf der Regi
    * WebODM
 2. **EXIF-Metadaten beibehalten**: Stellen Sie sicher, dass die GPS-Daten für die Geotagging-Funktion erhalten bleiben
 3. **Kalibrierte Arbeitsabläufe**: Verwenden Sie Reflexionsbilder für wissenschaftliche Genauigkeit – LATTICE-Reflexionsbilder enthalten die XMP-Kalibrierungs-Tags, die Pix4D liest
-4. **Indexmosaike verarbeiten**: Erstellen Sie NDVI
--Orthomosaike aus einzelnen Indexbildern
-5. **GeoTIFF
-mit Georeferenzierung exportieren**: Zur Verwendung in GIS-Anwendungen
+4. **Indexmosaike verarbeiten**: Erstellen Sie NDVI-Orthomosaike aus einzelnen Indexbildern
+5. **GeoTIFF mit Georeferenzierung exportieren**: Zur Verwendung in GIS-Anwendungen
 
 ### Für die GIS-Analyse
 
@@ -285,11 +255,8 @@ mit Georeferenzierung exportieren**: Zur Verwendung in GIS-Anwendungen
 
 1.**In QGIS, ArcGIS oder ähnliche Programme laden**
 
-2.**Verwenden Sie 16-Bit-TIFF
--Reflexionsbilder** für die Multiband-Analyse (durch den Wert „`Chloros:PixelScale`“ der Datei dividieren)
-3. **Verwenden Sie Indexbilder** (NDVI
-, NDRE
-) als gebrauchsfertige Vegetationsebenen
+2.**Verwenden Sie 16-Bit-TIFF-Reflexionsbilder** für die Multiband-Analyse (durch den Wert „`Chloros:PixelScale`“ der Datei dividieren)
+3. **Verwenden Sie Indexbilder** (NDVI, NDRE) als gebrauchsfertige Vegetationsebenen
 4. **Rasterkalkulator**: Bänder für benutzerdefinierte Analysen kombinieren
 5. **Exportieren**: Klassifizierungskarten, Änderungserkennung und Karten zum Vegetationszustand erstellen
 
@@ -298,8 +265,7 @@ mit Georeferenzierung exportieren**: Zur Verwendung in GIS-Anwendungen
 **Empfohlener Arbeitsablauf:**
 
 1.**Indexbilder mit LUT-Farben verwenden** für visuelle Berichte
-2. **Statistiken extrahieren**: Mittlerer NDVI
--Wert pro Feld/Parzelle
+2. **Statistiken extrahieren**: Mittlerer NDVI-Wert pro Feld/Parzelle
 3. **Zeitreihen**: Indizes über mehrere Erfassungszeiträume hinweg vergleichen
 4. **Berichte erstellen**: Karten, Statistiken und Visualisierungen einbinden***
 
@@ -336,27 +302,17 @@ Bei mehreren Sitzungen/Datensätzen:**Option 1: GUI – Mehrere Projekte**
 * Verwenden Sie einheitliche Vorlageneinstellungen
 * Verarbeiten Sie jeweils ein Projekt nach dem anderen
 
-**Option 2: Chloros
--CLI
-(nur Chloros
-+)**
+**Option 2: Chloros-CLI (nur Chloros+)**
 
 * Stapelverarbeitung automatisieren
 * Mehrere Ordner mit Skripten verarbeiten
-* Siehe [CLI
--Dokumentation](../CLI.md) und die [CLI
--Referenz](../reference/cli-reference.md)
+* Siehe [CLI-Dokumentation](../CLI.md) und die [CLI-Referenz](../reference/cli-reference.md)
 
-**Option 3: Python
--SDK
-(nur Chloros
-+)**
+**Option 3: Python-SDK (nur Chloros+)**
 
 * Programmgesteuerte Steuerung
 * Integration in Analyse-Pipelines
-* Siehe [API
--Dokumentation](../api-python-sdk.md) und die [SDK
--Referenz](../reference/sdk-reference.md)
+* Siehe [API-Dokumentation](../api-python-sdk.md) und die [SDK-Referenz](../reference/sdk-reference.md)
 
 ***
 
@@ -387,15 +343,13 @@ Falls Probleme auftreten:
 * 📧 **E-Mail**: info@mapir.camera (bitte Debug-Protokoll beifügen)
 * 🌐 **Support**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **FAQ**: [Häufig gestellte Fragen](../faq.md)
-* 📖 **Dokumentation**: [Chloros
--Handbuch](../)
+* 📖 **Dokumentation**: [Chloros-Handbuch](../)
 
 ***
 
 ## Zusammenfassung: Vollständiger Arbeitsablauf
 
-Sie haben nun den gesamten Chloros
--Verarbeitungsablauf abgeschlossen:
+Sie haben nun den gesamten Chloros-Verarbeitungsablauf abgeschlossen:
 
 1. ✅ **Projekt erstellt** – Siehe [Projekte](../projects.md)
 2. ✅ **Dateien hinzugefügt** – Siehe [Dateien hinzufügen](adding-files-to-a-project.md)
@@ -415,17 +369,13 @@ Sie haben nun den gesamten Chloros
 * [**Index-/LUT-Sandbox**](../image-viewer-gui/index-lut-sandbox.md) – Testen benutzerdefinierter Indizes
 * [**Multispektrale Indexformeln**](../project-settings/multispectral-index-formulas.md) – Vollständige Index-Referenz
 
-### Automatisierung &amp; Integration
+### Automatisierung & Integration
 
-* [**CLI
--Dokumentation**](../CLI.md) – Stapelverarbeitung über die Befehlszeile
-* [**Python
--SDK
-**](../api-python-sdk.md) – Programmatische Automatisierung
-* [**Funktionen von Chloros
-+**](../#chloros) – Erweiterte Verarbeitungsmöglichkeiten
+* [**CLI-Dokumentation**](../CLI.md) – Stapelverarbeitung über die Befehlszeile
+* [**Python-SDK**](../api-python-sdk.md) – Programmatische Automatisierung
+* [**Funktionen von Chloros+**](../#chloros) – Erweiterte Verarbeitungsmöglichkeiten
 
-### Support &amp; Schulungen
+### Support & Schulungen
 
 * [**FAQ**](../faq.md) – Antworten auf häufig gestellte Fragen
 * [**Kalibrierungsziele**](../calibration-targets.md) – Grundlagen der Reflexionskalibrierung

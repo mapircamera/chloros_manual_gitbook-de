@@ -205,7 +205,7 @@ $$
 
 Bewaldete Gebiete weisen aufgrund der geringeren Reflektanz von Bäumen und der Schattenbildung innerhalb des Baumkronendachs niedrigere FCI1-Werte auf.
 
-_Quelle: Becker, Sarah J., Craig S.T. Daughtry und Andrew L. Russ. „Robust forest cover indices for multispectral images.“ Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505–512._
+_Quelle: Becker, Sarah J., Craig S.T. Daughtry und Andrew L. Russ. „Robust forest cover indices for multispectral images.“ Photogrammetric Engineering & Remote Sensing 84.8 (2018): 505–512._
 
 ***
 
@@ -221,7 +221,7 @@ $$
 
 Bewaldete Gebiete weisen aufgrund der geringeren Reflektanz von Bäumen und des Vorhandenseins von Schatten innerhalb des Baumkronendachs niedrigere FCI2-Werte auf.
 
-_Quelle: Becker, Sarah J., Craig S.T. Daughtry und Andrew L. Russ. „Robust forest cover indices for multispectral images.“ Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505–512._
+_Quelle: Becker, Sarah J., Craig S.T. Daughtry und Andrew L. Russ. „Robust forest cover indices for multispectral images.“ Photogrammetric Engineering & Remote Sensing 84.8 (2018): 505–512._
 
 ***
 
@@ -487,7 +487,7 @@ $$
 TDVI = 1.5 * {(NIR- Red) \over \sqrt{NIR^{2} + Red + 0.5}  }
 $$
 
-_Quelle: Bannari, A., H. Asalhi und P. Teillet. „Transformed Difference Vegetation Index (TDVI) for Vegetation Cover Mapping“ In: Proceedings of the Geoscience and Remote Sensing Symposium, IGARSS &#x27;02, IEEE International, Band 5 (2002)._
+_Quelle: Bannari, A., H. Asalhi und P. Teillet. „Transformed Difference Vegetation Index (TDVI) for Vegetation Cover Mapping“ In: Proceedings of the Geoscience and Remote Sensing Symposium, IGARSS '02, IEEE International, Band 5 (2002)._
 
 ***
 
