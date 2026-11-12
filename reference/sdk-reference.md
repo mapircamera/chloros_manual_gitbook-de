@@ -685,7 +685,7 @@ False         # export in native sensor geometry / skip the common-overlap crop
 
 #### Radiometrische Ausgabe (LATTICE-Multispektral-Pipeline)
 
-Die LATTICE-Multispektral-Exportebene (M3C/M3M) der `process`-Pipeline – `reflectance` (Standard), `radiance`, `sensor-response` oder `all` (jeder anwendbare Modus pro Bild) – legt die **„Export-Strahlungsintensität“**und**„Export-Reflexionsgrad“**** fest: `radiance` exportiert nur Radiance, `reflectance` nur Reflectance, `sensor-response` keines von beiden (nur die debayered- und Vorschau-Produkte), `all` beide. Die Debayering- und Vorschau-Produkte können auf dieser Ebene nicht geändert werden. `configure()` verfügt über ein eigenes Schlüsselwort dafür:
+Die LATTICE-Multispektral-Exportebene (M3C/M3M) der `process`-Pipeline – `reflectance` (Standard), `radiance`, `sensor-response` oder `all` (jeder anwendbare Modus pro Bild) – legt die **„Export-Strahlungsintensität“** und **„Export-Reflexionsgrad“** fest: `radiance` exportiert nur Radiance, `reflectance` nur Reflectance, `sensor-response` keines von beiden (nur die debayered- und Vorschau-Produkte), `all` beide. Die Debayering- und Vorschau-Produkte können auf dieser Ebene nicht geändert werden. `configure()` verfügt über ein eigenes Schlüsselwort dafür:
 
 ```python
 with chloros_sdk.ChlorosLocal() as cl:
