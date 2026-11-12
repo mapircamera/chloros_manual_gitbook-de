@@ -45,7 +45,11 @@ Ein CPU-gebundener Berechnungs-Thread. Bei einem Survey3- oder gemischten Durchl
 
 ### Thread 3: Verarbeitung (GPU)
 
-**Zweck**: Korrekturen anwenden und Vegetationsindizes berechnen.**Dies ist der rechenintensivste Thread.*** **Debayering**: Konvertiert RAW-Bayer-Daten in Mehrkanalbilder
+**Zweck**: Korrekturen anwenden und Vegetationsindizes berechnen.
+
+**Dies ist der rechenintensivste Thread.**
+
+* **Debayering**: Konvertiert RAW-Bayer-Daten in Mehrkanalbilder
   * Standard (schnell, mittlere Qualität) – Standard, `--debayer standard`
   * Texturorientiert (langsam, höchste Qualität) – nur „Chloros+“, `--debayer texture-aware`, verwendet ein KI/ML-Rauschunterdrückungsmodell
   * LATTICE-Mono-Aufnahmen (M3M) sind einkanalig: Die Schritte zur Demosaikierung und zum Weißabgleich werden bei ihnen übersprungen (mit einer einzeiligen Protokollmeldung), während alle M3C-/Bayer-Bilder im selben Durchlauf diese Schritte weiterhin durchlaufen

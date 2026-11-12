@@ -253,10 +253,15 @@ Chloros sucht nach Updates, meldet, wenn eine neue Version verfügbar ist, und v
 
 **Veröffentlichungsdatum: 10. Februar 2026**
 
-**Neue Funktionen*** **Textur-bewusste Debayer-Methode \[Nur Chloros+] –** „Texture Aware“ verwendet einen hochwertigen, kantensensitiven Debayer in Kombination mit einem KI/ML-Rauschunterdrückungsmodell, das nahezu das gesamte Debayering-Rauschen entfernt.
-* **Unterstützung für T4P-Kalibrierungsziele*** **Schnellere Chloros+ GPU-Verarbeitung, besseres Speichermanagement**
+**Neue Funktionen**
 
-**Fehlerbehebungen*** Völlig neues Frontend (GUI), sollte nun auf allen Windows-Computern funktionieren.
+* **Textur-bewusste Debayer-Methode \[Nur Chloros+] –** „Texture Aware“ verwendet einen hochwertigen, kantensensitiven Debayer in Kombination mit einem KI/ML-Rauschunterdrückungsmodell, das nahezu das gesamte Debayering-Rauschen entfernt.
+* **Unterstützung für T4P-Kalibrierungsziele**
+* **Schnellere Chloros+ GPU-Verarbeitung, besseres Speichermanagement**
+
+**Fehlerbehebungen**
+
+* Völlig neues Frontend (GUI), sollte nun auf allen Windows-Computern funktionieren.
 
 </details>
 
@@ -266,14 +271,18 @@ Chloros sucht nach Updates, meldet, wenn eine neue Version verfügbar ist, und v
 
 **Veröffentlichungsdatum: 5. Januar 2026**
 
-**Neue Funktionen*** **Umschaltfunktion für Bilder/Metadaten**: Im Dateibrowser wurde eine Umschaltfunktion hinzugefügt, um die Metadaten des ausgewählten Bildes in einer Tabelle anstelle des Bildrasters anzuzeigen
+**Neue Funktionen**
+
+* **Umschaltfunktion für Bilder/Metadaten**: Im Dateibrowser wurde eine Umschaltfunktion hinzugefügt, um die Metadaten des ausgewählten Bildes in einer Tabelle anstelle des Bildrasters anzuzeigen
 * **Zoom-Schieberegler für das Bildraster**: Neuer UI-Schieberegler zum Anpassen der Miniaturbildgröße (unterstützt auch STRG + Mausrad)
 * **Exportschaltflächen für das Bildraster**: Schaltflächen in der obersten Zeile zum Umschalten der Miniaturansichten von JPG auf verarbeitete Exporte (Targets, Reflectance, Index, LUT)
 * **Registerkarte „Karte“**: Neue interaktive 2D-Karte mit GPS-Standortmarkierungen für Bilder
   * Unterstützt Google Maps und ESRI-Kartenkacheln (wählt automatisch den besten Kacheldienst basierend auf der Verfügbarkeit der Zoomstufen aus)
   * Vorschau der Miniaturansichten bei Mauszeiger-Überfahrt über Kartenmarkierungen
 
-**Fehlerbehebungen*** Verbesserte Unterstützung für die Installation von Chloros auf Computern mit nicht-englischer Sprache
+**Fehlerbehebungen**
+
+* Verbesserte Unterstützung für die Installation von Chloros auf Computern mit nicht-englischer Sprache
 
 </details>
 
@@ -283,13 +292,21 @@ Chloros sucht nach Updates, meldet, wenn eine neue Version verfügbar ist, und v
 
 **Veröffentlichungsdatum: 20. Dezember 2025**
 
-**Neue Funktionen*** Erstveröffentlichung
+**Neue Funktionen**
 
-**Verbesserungen*** Erstveröffentlichung
+* Erstveröffentlichung
 
-**Fehlerbehebungen*** Erstveröffentlichung
+**Verbesserungen**
 
-**Bekannte Probleme*** Erstveröffentlichung
+* Erstveröffentlichung
+
+**Fehlerbehebungen**
+
+* Erstveröffentlichung
+
+**Bekannte Probleme**
+
+* Erstveröffentlichung
 
 </details>
 

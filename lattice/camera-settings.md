@@ -206,7 +206,7 @@ Alle Einstellungen in diesem Abschnitt wirken sich **nur auf die Anzeige**aus �
 * **Linear** — Dunkelsignal + Flat-Field + Weißabgleich; keine Farbmatrix, kein Gamma.
 * **Natürlich** *(Standard)* — linear plus die gemessene Farbkorrekturmatrix und eine an die Szene angepasste Tonwertkurve.
 * **Verbessert**— „Natürlich“ plus Lebendigkeit und lokaler CLAHE-Kontrast. Der zusätzliche Aufwand gilt**nur für die Live-Vorschau** — gespeicherte Aufnahmen erhalten unabhängig vom Profil immer die vollständige Nachbearbeitung.
-* ****Benutzerdefinierte Temperatur** — „Natürlich“ mit einem auf den von Ihnen gewählten Kelvin-Wert festgelegten Weißabgleich.
+* **Benutzerdefinierte Temperatur** — „Natürlich“ mit einem auf den von Ihnen gewählten Kelvin-Wert festgelegten Weißabgleich.
 
 {% hint style="warning" %}
 Bei „Natürlich“, „Verbessert“ und „Benutzerdefinierte Temperatur“ zeigt der Bereich einen Hinweis zur Tonwertkurve an: Die Bilder werden entsprechend ihrer jeweiligen Szene aufgehellt, sodass gespeicherte *Anzeigebilder* nicht Bild für Bild vergleichbar sind. **Exportieren Sie die Strahlungsintensität oder Reflektanz für Messungen.**
@@ -354,7 +354,7 @@ Chloros richtet jedes Array nach dem Verbinden automatisch aus, und zwar in beid
 ### Intelligente Vignettierung
 
 * Kontrollkästchen **„Korrektur aktivieren“**– wendet die kameraspezifische Vignettierungsschätzung auf die radiometrische Kette an (Live-Anzeige**und** Exporte).
-* ****Aus aktueller Ansicht kalibrieren**– richten Sie das Array zunächst auf ein einheitliches Ziel (Flachbildschirm, Wand oder Himmel); jede Kamera wird einzeln abgeflacht, und der Status meldet „n/N Kameras · −x,x %“ Abflachungsgewinn. Mit**Löschen** wird die Schätzung entfernt.
+* **Aus aktueller Ansicht kalibrieren** – richten Sie das Array zunächst auf ein einheitliches Ziel (Flachbildschirm, Wand oder Himmel); jede Kamera wird einzeln abgeflacht, und der Status meldet „n/N Kameras · −x,x %“ Abflachungsgewinn. Mit**Löschen** wird die Schätzung entfernt.
 * Status: „Kalibriert“, „Nicht kalibriert“ oder „Teilweise kalibriert – erneut ausführen“, wenn nur die Schätzungen einiger Kameras bei ihrem aktuellen Bildausschnitt noch gelten (beispielsweise nachdem eine „Neukalibrierung“ das Ausschnittfenster einer Kamera verschoben hat) – führen Sie die Kalibrierung erneut durch.
 * Führen Sie eine Feinabstimmung pro Kamera mit dem kameraspezifischen **Vignette**-Schieberegler in der [Live-Vorschau](#live-preview) durch.
 
@@ -377,7 +377,7 @@ Ein schreibgeschütztes Fenster, das alle 5 s aktualisiert wird:
 
 * **Stufenbezeichnung**: „Simultane Aufnahme“ (grün) · „Simultane Aufnahme (FTD-versetzte Emission)“ (grün) · „Versetzte Aufnahme (100 ms Drift)“ (gelb) · „Konfiguration zu groß“ (rot).
 * **Frame-Zustand**: „x,xx % unvollständig“ – grün unter 1 %, gelb unter 5 %, rot ab 5 %.
-* ****Verbindungszeile**: „NIC {mbps} Mbit/s – nachhaltig {MB/s} MB/s“.
+* **Verbindungszeile**: „NIC {mbps} Mbit/s – nachhaltig {MB/s} MB/s“.
 
 Dies ist das Live-Bandbreitenbudget des Arrays. Informationen zum zugrunde liegenden fps- und Netzwerkmodell – sowie dazu, was zu ändern ist, wenn die Stufe gelb oder rot wird – finden Sie unter [Multi-Kamera-Arrays](arrays.md) und in der [CLI-Referenz](../reference/cli-reference.md).
 
@@ -403,7 +403,7 @@ Kurzanleitung dazu, was sich wo befindet, wenn eine Kamera Teil eines Arrays ist
 Sonstiges übergreifendes Verhalten:
 
 * **Kombinierte vs. separate Anzeige** wird beim Verbinden des Arrays ausgewählt: kombiniert = eine ausgerichtete zusammengesetzte Kachel (Mitglieder-Feeds nur über „Split View“); separat = jedes Mitglied rendert seine eigene synchronisierte Kachel. Eine Kamera zeigt niemals sowohl einen eigenständigen Feed als auch eine Array-Kachel an.
-* ****Automatische Wiederverbindung**: Beim Öffnen eines gespeicherten Projekts werden dessen Kameras und Arrays wiederhergestellt und alle gespeicherten Einstellungen erneut auf das Backend angewendet, bevor die Streams fortgesetzt werden.
+* **Automatische Wiederverbindung**: Beim Öffnen eines gespeicherten Projekts werden dessen Kameras und Arrays wiederhergestellt und alle gespeicherten Einstellungen erneut auf das Backend angewendet, bevor die Streams fortgesetzt werden.
 * **Aufnahme-Gating**: Ausgeblendete oder pausierte Kameras werden von „Capture All“ ausgeschlossen; ein Array wird nur dann vollständig blockiert, wenn ALLE Mitglieder ausgeblendet/pausiert sind. Siehe [Aufnahmeeinstellungen und -modi](capture.md).
 
 ## Wie Einstellungen beibehalten werden

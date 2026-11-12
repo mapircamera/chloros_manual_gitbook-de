@@ -32,7 +32,9 @@ Wenn **keine** Bilder markiert sind, greift „Chloros“ auf den Standardmodus 
 
 Sehen Sie sich Ihre importierten Bilder im Dateibrowser an und stellen Sie fest, welche Bilder Kalibrierungsziele enthalten.
 
-**Häufige Szenarien:*** **Ziel vor der Aufnahme**: Vor Beginn der Sitzung aufgenommen
+**Häufige Szenarien:**
+
+* **Ziel vor der Aufnahme**: Vor Beginn der Sitzung aufgenommen
 * **Ziel nach der Aufnahme**: Nach Abschluss der Sitzung aufgenommen
 * **Ziele im Aufnahmebereich**: Ziele, die innerhalb des Aufnahmebereichs platziert wurden
 * **Mehrere Ziele**: 2–3 Zielbilder pro Sitzung (empfohlen)
@@ -141,9 +143,17 @@ Verwenden Sie diese Spalte, um zu überprüfen, ob Sie für jeden Kameratyp in I
 
 ### Anpassen der Erkennungsempfindlichkeit
 
-Wenn „Chloros“ Ihre Ziele nicht korrekt erkennt, passen Sie diese Einstellungen in den [Projekteinstellungen](adjusting-project-settings.md) an:**Mindestfläche für Kalibrierungsbeispiele (px):*** **Standard**: 25 Pixel
+Wenn „Chloros“ Ihre Ziele nicht korrekt erkennt, passen Sie diese Einstellungen in den [Projekteinstellungen](adjusting-project-settings.md) an:
+
+**Mindestfläche für Kalibrierungsbeispiele (px):**
+
+* **Standard**: 25 Pixel
 * **Erhöhen**, wenn bei kleinen Artefakten Fehlerkennungen auftreten
-* **Verringern**, wenn Ziele nicht erkannt werden**Minimale Zielbündelung (0–100):*** **Standard**: 60
+* **Verringern**, wenn Ziele nicht erkannt werden
+
+**Minimale Zielbündelung (0–100):**
+
+* **Standard**: 60
 * **Erhöhen** Sie diesen Wert, wenn Ziele in mehrere Erkennungen aufgeteilt werden
 * **Verringern** Sie diesen Wert, wenn Ziele mit Farbabweichungen nicht vollständig erkannt werden
 

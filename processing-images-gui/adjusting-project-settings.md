@@ -44,7 +44,9 @@ Der Bereich „Projekteinstellungen“ ist in die unten aufgeführten Abschnitte
 
 Steuert, wie Chloros-Kalibrierungsziele in Ihren Bildern identifiziert.
 
-**Wichtige Einstellungen:*** **Mindestfläche für Kalibrierungsproben (px)**: Größenschwelle für die Zielerkennung (Standard:**25**, Bereich 0–10000)
+**Wichtige Einstellungen:**
+
+* **Mindestfläche für Kalibrierungsproben (px)**: Größenschwelle für die Zielerkennung (Standard:**25**, Bereich 0–10000)
 * **Mindestwert für Zielclusterbildung (0–100)**: Ähnlichkeitsschwellenwert für die Gruppierung von Zielbereichen (Standard:**60**)**Wann anpassen:**
 
 * Erhöhen Sie die Probenfläche, wenn es zu Fehlerkennungen kommt
@@ -59,7 +61,9 @@ Diese Einstellungen sind ausgegraut, wenn **Reflexionskalibrierung / Weißabglei
 
 Wichtige Optionen zur Bildverarbeitung und Kalibrierung.
 
-**Wichtige Einstellungen:*** **Vignettierungskorrektur**: Gleicht die Randverdunkelung des Objektivs aus ✅ Empfohlen
+**Wichtige Einstellungen:**
+
+* **Vignettierungskorrektur**: Gleicht die Randverdunkelung des Objektivs aus ✅ Empfohlen
 * **Reflexionskalibrierung / Weißabgleich**: Kalibriert Bilder anhand erkannter Zielmarken (Survey3) und/oder Daten des DAQ-Lichtsensors (LATTICE) ✅ Empfohlen
 * **Debayer-Methode**: Algorithmus zur Konvertierung von RAW in 3-Kanal-Multispektralbilder
 * **Mindestintervall für die Neukalibrierung**: Mindestzeit in Sekunden zwischen der Verwendung von Kalibrierungszielen (Standard:**0** = alle verwenden, Bereich 0–3600)**Nicht kalibrierte Fallback-Produkte:**Wenn ein Bild nicht reflektanzkalibriert werden kann (kein Ziel verfügbar oder Kalibrierung deaktiviert), wird es als eines von zwei Fallback-Produkten exportiert –**pro Durchlauf existiert genau eines der beiden**, ausgewählt durch den Schalter „Vignettenkorrektur“:
@@ -76,7 +80,11 @@ Das Kontrollkästchen, das nicht verwendet wird, ist ausgegraut. Wird das aktive
 * **Strahlungsintensität exportieren**: spektrale Strahlungsintensität als float32 (`Radiance_Images`, W/m²/sr/nm). Nur für multispektrale Module – gilt nicht für RGB-Master.
 * **Reflexionsgrad exportieren**: uint16-Reflexionsgrad (`Reflectance_Calibrated_Images`, DN 32768 = ρ 1,0), wenn ein `.daq`-Downwelling-Messwert oder ein Zielobjekt im Bild den Bildausschnitt abdeckt. Nur für Multispektralmodule.
 
-Alle vier sind **standardmäßig aktiviert**– ein importiertes LATTICE-Rohbild wird in einem einzigen Verarbeitungsdurchlauf auf alle aktivierten und anwendbaren Produkte verteilt. Das Kontrollkästchen**Reflexionsgrad exportieren** ist ausgegraut, wenn die Reflexionsgradkalibrierung deaktiviert ist. Einstellungen, die durch einen übergeordneten Schalter deaktiviert werden, sind immer ausgegraut und mit einem Tooltip versehen, der den zu ändernden Schalter nennt.**Erweiterte Einstellungen:*** **Zeitzonen-Offset des Lichtsensors**: Stunden ab UTC für die Zeitabgleichung des Lichtsensors (Standard: 0, Bereich −12 bis +12)
+Alle vier sind **standardmäßig aktiviert**– ein importiertes LATTICE-Rohbild wird in einem einzigen Verarbeitungsdurchlauf auf alle aktivierten und anwendbaren Produkte verteilt. Das Kontrollkästchen**Reflexionsgrad exportieren** ist ausgegraut, wenn die Reflexionsgradkalibrierung deaktiviert ist. Einstellungen, die durch einen übergeordneten Schalter deaktiviert werden, sind immer ausgegraut und mit einem Tooltip versehen, der den zu ändernden Schalter nennt.
+
+**Erweiterte Einstellungen:**
+
+* **Zeitzonen-Offset des Lichtsensors**: Stunden ab UTC für die Zeitabgleichung des Lichtsensors (Standard: 0, Bereich −12 bis +12)
 * **PPK-Korrekturen anwenden**: Verwendet GPS-/Belichtungs-Pin-Daten aus `.daq`-Dateien (Standard: deaktiviert)
 * **Belichtungs-Pin 1/2**: Weist Kameras den Belichtungs-Pins für Dual-Kamera-Konfigurationen zu
 
@@ -110,7 +118,9 @@ Konfigurieren Sie, welche Vegetationsindizes berechnet und exportiert werden sol
 3. Konfigurieren Sie die Visualisierungseinstellungen (LUT-Farben, Wertebereiche)
 4. Fügen Sie bei Bedarf mehrere Indizes hinzu
 
-**Gängige Indizes:*** **NDVI**: Allgemeiner Vegetationszustand (am häufigsten verwendet)
+**Gängige Indizes:**
+
+* **NDVI**: Allgemeiner Vegetationszustand (am häufigsten verwendet)
 * **NDRE**: Früherkennung von Stress mit RedEdge
 * **GNDVI**: Empfindlich gegenüber der Chlorophyllkonzentration
 * **OSAVI**: Eignet sich gut für sichtbaren Boden
@@ -221,7 +231,11 @@ Bei Verwendung von MAPIR-DAQ-Rekordern mit GPS zur präzisen Geolokalisierung:
 3. Stellen Sie bei Bedarf den**„Zeitzonen-Offset des Lichtsensors“** ein (Standard: 0 für UTC)
 4. Weisen Sie den Belichtungspins Kameras zu:
    * **Einzelkamera**: Wird automatisch Pin 1 zugewiesen
-   * **Zwei Kameras**: Weisen Sie jede Kamera manuell dem richtigen Pin zu**Zuordnung der Belichtungs-Pins:*** **Belichtungs-Pin 1**: Wählen Sie das Kameramodell aus der Dropdown-Liste aus
+   * **Zwei Kameras**: Weisen Sie jede Kamera manuell dem richtigen Pin zu
+
+**Zuordnung der Belichtungs-Pins:**
+
+* **Belichtungs-Pin 1**: Wählen Sie das Kameramodell aus der Dropdown-Liste aus
 * **Belichtungs-Pin 2**: Wählen Sie die zweite Kamera oder „Nicht verwenden“
 * Ein und dieselbe Kamera kann nicht beiden Pins zugewiesen werden
 

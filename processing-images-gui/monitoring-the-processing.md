@@ -28,7 +28,11 @@ Für Nutzer mit einer Chloros+-Lizenz:
 1.**Erkennen** – Kalibrierungsziele finden
 2. **Analysieren** – Bilder untersuchen und Pipeline vorbereiten
 3. **Kalibrierung** – Anwenden von Vignettierungs- und Reflexionskorrekturen
-4. **Export** – Speichern der verarbeiteten Dateien**Interaktive Funktionen:*** **Bewegen Sie den Mauszeiger über** den Fortschrittsbalken, um das erweiterte 4-Stufen-Fenster anzuzeigen
+4. **Export** – Speichern der verarbeiteten Dateien
+
+**Interaktive Funktionen:**
+
+* **Bewegen Sie den Mauszeiger über** den Fortschrittsbalken, um das erweiterte 4-Stufen-Fenster anzuzeigen
 * **Klicken Sie** auf den Fortschrittsbalken, um das erweiterte Fenster einzufrieren/anzuheften
 * **Klicken Sie erneut**, um die Fixierung aufzuheben; das Fenster wird automatisch ausgeblendet, wenn Sie den Mauszeiger entfernen
 * Jede Phase zeigt den individuellen Fortschritt an (0–100 %)
@@ -92,7 +96,9 @@ Für Nutzer mit einer Chloros+-Lizenz:
 
 ### Phase 3: Kalibrierung
 
-**Was passiert:*** **Debayering**: Umwandlung des RAW-Bayer-Musters in 3 Kanäle (wird bei LATTICE-Mono-Modulen übersprungen, mit einem Hinweis)
+**Was passiert:**
+
+* **Debayering**: Umwandlung des RAW-Bayer-Musters in 3 Kanäle (wird bei LATTICE-Mono-Modulen übersprungen, mit einem Hinweis)
 * **Vignettierungskorrektur**: Beseitigung der Randverdunkelung durch das Objektiv
 * **Reflexionskalibrierung**: Normalisierung anhand von Zielwerten und/oder DAQ-Downwelling
 * **Indexberechnung**: Berechnung multispektraler Indizes
@@ -104,7 +110,9 @@ Für Nutzer mit einer Chloros+-Lizenz:
 * Aktuelles Bild wird verarbeitet
 * Fertige Bilder / Gesamtzahl der Bilder
 
-**Verarbeitungsverhalten:*** **Freier Modus**: Verarbeitet jeweils ein Bild nacheinander
+**Verarbeitungsverhalten:**
+
+* **Freier Modus**: Verarbeitet jeweils ein Bild nacheinander
 * **„Chloros+“-Modus**: Lässt einen hardwareadaptiven Worker-Pool laufen – 1–4 parallele Worker auf GPU-Systemen (abhängig vom VRAM), einen Worker pro physikalischem Kern (minus eins) auf reinen CPU-Systemen. Siehe [Dynamische Rechenanpassung](../processing-architecture/dynamic-compute-adaptation.md)
 * **GPU-Beschleunigung**: Beschleunigt diese Phase erheblich**Was zu beachten ist:**
 

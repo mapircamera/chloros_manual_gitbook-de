@@ -78,7 +78,11 @@ Chloros arbeitet je nach Ihrer Lizenz in zwei verschiedenen Verarbeitungsmodi:
 1. **Erkennung** (Thread 1) – Kalibrierungsziele finden
 2. **Analyse** (Thread 2) – Untersuchung der Bildmetadaten und Berechnung der Kalibrierung
 3. **Kalibrierung** (Thread 3) – Debayering, Vignettierungskorrektur, Kalibrierung, Indexberechnung
-4. **Export** (Thread 4) – Speichern der verarbeiteten Bilder und Indizes**Interaktion mit dem Fortschrittsbalken:*** **Bewegen Sie den Mauszeiger** über den Balken, um das detaillierte Dropdown-Fenster mit den 4 Phasen anzuzeigen
+4. **Export** (Thread 4) – Speichern der verarbeiteten Bilder und Indizes
+
+**Interaktion mit dem Fortschrittsbalken:**
+
+* **Bewegen Sie den Mauszeiger** über den Balken, um das detaillierte Dropdown-Fenster mit den 4 Phasen anzuzeigen
 * **Klicken Sie** auf den Fortschrittsbalken, um das Dropdown-Fenster an Ort und Stelle zu fixieren
 * **Klicken Sie erneut**, um die Fixierung aufzuheben und das Fenster auszublenden**Verarbeitungszeit:**
 
@@ -116,7 +120,9 @@ Chloros arbeitet je nach Ihrer Lizenz in zwei verschiedenen Verarbeitungsmodi:
 
 ### Stufe 3: Kalibrierung
 
-**Was Chloros tut:*** **Vignettierungskorrektur**: Beseitigt die Randverdunkelung durch das Objektiv
+**Was Chloros tut:**
+
+* **Vignettierungskorrektur**: Beseitigt die Randverdunkelung durch das Objektiv
 * **Reflexionskalibrierung**: Normalisiert anhand von Zielreflexionswerten und/oder DAQ-Downwelling-Daten
 * Wendet Korrekturen auf alle Bänder/Kanäle an
 * Verwendet für jedes Bild die passende Kalibrierungsreferenz basierend auf dem Zeitstempel

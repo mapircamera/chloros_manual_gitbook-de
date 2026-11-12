@@ -21,7 +21,7 @@ Die LATTICE-Reihe ist ein modulares Multispektralkamerasystem, das auf dem Globa
 
 ```
 <sensor>-<lens>-F<filter>        e.g.  M3C-L41-FRGN,  M3M-L87-F550
-```.
+```
 
 Chloros zeigt diese mit dem Präfix `LATT-` an (zum Beispiel `LATT-M3M-L41-F550`), und die Modellzeichenfolge steuert alle nachgelagerten Prozesse – Sensorprofil, Bandanordnung und Kalibrierung werden automatisch ermittelt; es muss pro Kamera nichts konfiguriert werden. Die Objektivnummer entspricht dem **horizontalen Sichtfeld in Grad**: `L41` = schmal 41°, `L87` = weit 87°.
 

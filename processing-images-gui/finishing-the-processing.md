@@ -81,7 +81,9 @@ Zählen Sie nicht nach einer Formel – die Anzahl der Ausgabedateien hängt dav
 
 ### Vorschau in externen Bildbetrachtern
 
-**Empfohlene Bildbetrachter:*** **QGIS** – Kostenlose GIS-Software (am besten geeignet für georeferenzierte Multispektralanalysen)
+**Empfohlene Bildbetrachter:**
+
+* **QGIS** – Kostenlose GIS-Software (am besten geeignet für georeferenzierte Multispektralanalysen)
 * **IrfanView** – Schneller, ressourcenschonender Bildbetrachter (unterstützt TIFF)
 * **Adobe Photoshop** – Professionelle Bildbearbeitung (TIFF-Unterstützung)
 * **GIMP** – Kostenlose Alternative zu Photoshop
@@ -223,7 +225,9 @@ Um ein Problem direkt an MAPIR zu melden, verwenden Sie das Fehler-Symbol (**Feh
 
 ### Problem: Die NDVI-Werte scheinen falsch zu sein
 
-**Erwartete NDVI-Bereiche:*** **Wasser, Felsen, Boden**: -0,1 bis 0,2
+**Erwartete NDVI-Bereiche:**
+
+* **Wasser, Felsen, Boden**: -0,1 bis 0,2
 * **Spärliche/kranke Vegetation**: 0,2 bis 0,4
 * **Mäßige Vegetation**: 0,4 bis 0,6
 * **Gesunde, dichte Vegetation**: 0,6 bis 0,9**Wenn die Werte außerhalb dieser Bereiche liegen:**
@@ -277,12 +281,18 @@ Um ein Problem direkt an MAPIR zu melden, verwenden Sie das Fehler-Symbol (**Feh
 
 ### Empfohlene Sicherungsstrategie
 
-**Was gespeichert werden sollte:*** ✅ **Original-RAW-/JPG-Bilder oder LATTICE-Rohaufnahmen** – Auf einem separaten Laufwerk/in der Cloud archivieren; die Rohdaten sind die Quelle der Pipeline, und alles andere kann daraus neu generiert werden
+**Was gespeichert werden sollte:**
+
+* ✅ **Original-RAW-/JPG-Bilder oder LATTICE-Rohaufnahmen** – Auf einem separaten Laufwerk/in der Cloud archivieren; die Rohdaten sind die Quelle der Pipeline, und alles andere kann daraus neu generiert werden
 * ✅ **`.daq` / `.csv`-Lichtsensordateien** – werden benötigt, um die Reflektanz später erneut abzuleiten
 * ✅ **Verarbeitete Ergebnisse** – kalibrierte Bilder und Indizes aufbewahren
 * ✅ **Projektordner** (`project.json` und zugehörige Dateien) – Enthält alle Einstellungen für eine eventuelle erneute Verarbeitung
 * ✅ **Debug-Protokoll** – Dokumentiert Details der Verarbeitung
-* ✅ **Kalibrierungszielbilder** – Zur Überprüfung und erneuten Verarbeitung**Empfehlungen zur Speicherung:*** **Sofortige Sicherung**: Externe Festplatte
+* ✅ **Kalibrierungszielbilder** – Zur Überprüfung und erneuten Verarbeitung
+
+**Empfehlungen zur Speicherung:**
+
+* **Sofortige Sicherung**: Externe Festplatte
 * **Langzeitarchiv**: Cloud-Speicher (Google Drive, Dropbox usw.)
 * **Kritische Daten**: 2–3 Kopien an verschiedenen Orten aufbewahren***
 
