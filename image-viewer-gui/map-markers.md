@@ -78,7 +78,9 @@ Jedes Bild mit GPS-Daten erhält eine Markierung an seinen Koordinaten.
 | Anbieter        | Anmerkungen                                                                                                                                                             |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Google Maps** | Weltweite Abdeckung; unterstützt alle vier Kacheltypen                                                                                                            |
-| **Esri ArcGIS**| Oft höher aufgelöste Luftbilder in bestimmten Regionen. Der Kacheltyp**Terrain** wird für Esri nicht angeboten und die entsprechende Schaltfläche ist deaktiviert, solange Esri ausgewählt ist |***
+| **Esri ArcGIS**| Oft höher aufgelöste Luftbilder in bestimmten Regionen. Der Kacheltyp**Terrain** wird für Esri nicht angeboten und die entsprechende Schaltfläche ist deaktiviert, solange Esri ausgewählt ist |
+
+***
 
 ## Kartenkachel-Typen
 
@@ -93,7 +95,9 @@ Wählen Sie den Kartenschichttyp mit den Schaltflächen (von links nach rechts) 
 | **Satellit**        | Detaillierte Satellitenbilder, keine Beschriftungen – die Option mit der höchsten Bandbreite |
 | **Hybrid** (Standard) | Satellitenbilder mit darüber eingeblendeten Straßen und Beschriftungen                |
 
-Die Registerkarte „Karte“ wird auf **Hybrid** geöffnet. Ihre Auswahl wirkt sich auf den Anbieterwechsel aus, sofern der Anbieter dies unterstützt.***
+Die Registerkarte „Karte“ wird auf **Hybrid** geöffnet. Ihre Auswahl wirkt sich auf den Anbieterwechsel aus, sofern der Anbieter dies unterstützt.
+
+***
 
 ## Kartennavigation
 
@@ -141,7 +145,9 @@ Die Registerkarte „Karte“ wird auf **Hybrid** geöffnet. Ihre Auswahl wirkt 
 
 ### Die Karte ist leer oder das Laden der Kacheln bricht ab
 
-Die Kachelanbieter sind Online-Dienste. Wenn keine Kacheln mehr eintreffen, überprüfen Sie die Netzwerkverbindung des Geräts und versuchen Sie anschließend, den Anbieter zu wechseln. Wenn Sie stark gezoomt hatten, drücken Sie die **×**-Taste zum Zurücksetzen, um zur normalen Zoomstufe zurückzukehren, und lassen Sie die Karte die Kacheln erneut anfordern.***
+Die Kachelanbieter sind Online-Dienste. Wenn keine Kacheln mehr eintreffen, überprüfen Sie die Netzwerkverbindung des Geräts und versuchen Sie anschließend, den Anbieter zu wechseln. Wenn Sie stark gezoomt hatten, drücken Sie die **×**-Taste zum Zurücksetzen, um zur normalen Zoomstufe zurückzukehren, und lassen Sie die Karte die Kacheln erneut anfordern.
+
+***
 
 ## Verwandte Seiten
 

@@ -104,4 +104,4 @@ Details für Anwender, die eine strenge Synchronisation benötigen:
 | Broadcast-Domäne | Host und Sensor befinden sich im selben L2-Segment; mDNS wird nicht weitergeleitet |
 | Firewall | Windows: Die Regel **„Chloros Backend (UDP-In)“** des Installationsprogramms lässt den DAQ-E-Stream (UDP 5002), mDNS (5353) und PTP (319/320) durch; eine Firewall eines Drittanbieters muss dies ebenfalls zulassen. Linux: `.deb` öffnet diese Ports in `ufw` / `firewalld` nur, wenn die Firewall zum Zeitpunkt der Installation aktiv war – lassen Sie sie selbst zu, wenn die Firewall später aktiviert wird |
 | Host mit mehreren Netzwerkkarten | Die Erkennung durchsucht mDNS mit einem ARP-Fallback; `--eth-host <ip-or-hostname>` überspringt die Erkennung und stellt direkt eine Verbindung her |
-| Erneuter Scan über die GUI | Die Erkennung läuft nur, solange der Verbindungsdialog geöffnet ist; verwenden Sie „Aktualisieren“ |</version>
+| Erneuter Scan über die GUI | Die Erkennung läuft nur, solange der Verbindungsdialog geöffnet ist; verwenden Sie „Aktualisieren“ |

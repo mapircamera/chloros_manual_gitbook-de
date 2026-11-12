@@ -10,7 +10,8 @@ Chloros 1.3.0 bietet native Linux-Unterstützung für die **CLI**und das**Python
 
 ## Plattform-Unterstützungsmatrix
 
-| Funktion | Windows (GUI) | Windows (CLI/SDK) | Linux amd64 (CLI/SDK) | Linux arm64 / Jetson (CLI/ --- | --- | --- | --- |
+| Funktion | Windows (GUI) | Windows (CLI/SDK) | Linux amd64 (CLI/SDK) | Linux arm64 / Jetson (CLI/SDK) |
+| --- | --- | --- | --- | --- |
 | **Desktop-GUI** | Ja | k. A. | Nein | Nein |
 | **CLI** (`chloros-cli`) | Ja | Ja | Ja | Ja |
 | **Python-SDK** (`chloros-sdk`) | Ja | Ja | Ja | Ja |
@@ -22,7 +23,9 @@ Chloros 1.3.0 bietet native Linux-Unterstützung für die **CLI**und das**Python
 | **Textur-bewusster Debayer** (erfordert eine CUDA-GPU) | Ja (Chloros+) | Ja (Chloros+) | Ja (Chloros+) | Ja (Chloros+) |
 | **Dynamische Rechenanpassung** | Ja | Ja | Ja | Ja |
 | **Backend als Systemdienst** (`chloros-backend@<user>.service`) | Nein | Nein | Ja (Opt-in) | Ja (Opt-in) |
-| **In-Place-Updater** (`chloros-cli update`) | Nein (Installationsprogramm ausführen) | Nein (Installationsprogramm ausführen) | Ja | Ja |***
+| **In-Place-Updater** (`chloros-cli update`) | Nein (Installationsprogramm ausführen) | Nein (Installationsprogramm ausführen) | Ja | Ja |
+
+***
 
 ## Unterstützte Architekturen
 
@@ -35,7 +38,9 @@ Chloros 1.3.0 bietet native Linux-Unterstützung für die **CLI**und das**Python
 
 * **Ubuntu 22.04 LTS oder neuer** (amd64)
 * **Debian 12 oder neuer** (amd64)
-* **NVIDIA JetPack 6** (arm64 – Jetson Orin-Plattformen)***
+* **NVIDIA JetPack 6** (arm64 – Jetson Orin-Plattformen)
+
+***
 
 ## Was Linux-Benutzer erhalten
 
@@ -54,7 +59,9 @@ Chloros 1.3.0 bietet native Linux-Unterstützung für die **CLI**und das**Python
 
 * **Desktop-GUI** — keine grafische Benutzeroberfläche; die gesamte Interaktion erfolgt über die CLI oder das Python-SDK
 * **Bildbetrachter** — kein interaktiver Bildbetrachter, keine Rasteransicht und keine Kartenmarkierungen
-* **Visuelles Projektmanagement** — Projekte werden über CLI-Befehle und SDK-Aufrufe erstellt und gesteuert (die Hardware selbst – Kameras, Sensoren, Erfassung – bleibt vom Terminal aus vollständig steuerbar)***
+* **Visuelles Projektmanagement** — Projekte werden über CLI-Befehle und SDK-Aufrufe erstellt und gesteuert (die Hardware selbst – Kameras, Sensoren, Erfassung – bleibt vom Terminal aus vollständig steuerbar)
+
+***
 
 ## Lizenzanforderungen
 

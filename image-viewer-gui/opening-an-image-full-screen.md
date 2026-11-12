@@ -57,7 +57,9 @@ Die „effektive“ Vergrößerung berücksichtigt die GSD-Blockgröße: Bei ein
 | **←**                           | Vollbild | Vorheriges Bild                      |
 | **Strg + R**                    | Vollbild | Index/LUT-Sandbox zurücksetzen         |
 | **Strg + `+`**/**Strg + `=`** | Raster        | Größere Miniaturansichten (4 px pro Tastendruck)  |
-| **Strg + `−`**                  | Raster        | Kleinere Miniaturansichten (4 px pro Tastendruck) |***
+| **Strg + `−`**                  | Raster        | Kleinere Miniaturansichten (4 px pro Tastendruck) |
+
+***
 
 ## Cursorwerte
 
@@ -100,7 +102,9 @@ Der Viewer, die Index-/LUT-Sandbox und der Indexexport ermitteln die Skalierung 
 Zwei wissenswerte Konsequenzen:
 
 * Ein **32-Bit-Prozentwert**(TIFF) speichert DN/65535 als Gleitkommazahl, und ein**8-Bit-** PNG/JPG-Export speichert DN × 255/65535 – der Viewer rechnet beide Werte vor der Anzeige eines Prozentwerts wieder zurück.
-* Ein Fall lässt sich nicht beheben: Ein **8-Bit-TIFF-Export einer Aufnahme aus einer 8-Bit-Quelle** wird auf 0–255 beschnitten statt neu skaliert und enthält bewusst kein Skalierungs-Tag. Bei diesen Dateien zeigt das Bedienfeld nur den DN an, ohne Prozent-Spalte. Dies ist die ehrliche Antwort, kein Fehler.***
+* Ein Fall lässt sich nicht beheben: Ein **8-Bit-TIFF-Export einer Aufnahme aus einer 8-Bit-Quelle** wird auf 0–255 beschnitten statt neu skaliert und enthält bewusst kein Skalierungs-Tag. Bei diesen Dateien zeigt das Bedienfeld nur den DN an, ohne Prozent-Spalte. Dies ist die ehrliche Antwort, kein Fehler.
+
+***
 
 ## Das Ebenenhistogramm
 
@@ -126,7 +130,9 @@ Wenn die Achse auf DN eingestellt ist und auf einem dieser drei Höchstwerte lie
 | **INDEX**| Ein      | Wird nur angezeigt, solange ein Index aktiv ist. Schaltet das Histogramm von den Quellbändern auf die**Indexwertverteilung** um, wobei die beiden Clip-Schwellenwerte als orangefarbene gestrichelte Linien und der Indexwert des Cursors als weiße Linie dargestellt werden                                                          |
 | **RGB**| Aus     | Schaltet von der kombinierten Kurve zu kanalspezifischen Kurven um. Bei einem Mono-Sensor lautet die Beschriftung dieser Schaltfläche**MONO** und sie ist deaktiviert – es gibt nur einen Kanal zur Anzeige                                                                                                                                  |
 
-Das Histogramm wird anhand der **sichtbaren Blöcke** berechnet, nicht anhand der dahinter liegenden Quellpixel: Wenn Sie die GSD-Blockgröße ändern, wird die Verteilung neu berechnet, sodass das Histogramm, die Cursormarkierung und das angezeigte Bild stets übereinstimmen.***
+Das Histogramm wird anhand der **sichtbaren Blöcke** berechnet, nicht anhand der dahinter liegenden Quellpixel: Wenn Sie die GSD-Blockgröße ändern, wird die Verteilung neu berechnet, sodass das Histogramm, die Cursormarkierung und das angezeigte Bild stets übereinstimmen.
+
+***
 
 ## GSD-Blockgröße
 
@@ -185,7 +191,9 @@ Wenden Sie multispektrale Indizes und Farb-Look-Up-Tabellen über die Seitenleis
 
 3. Wählen Sie den Filter Ihrer Kamera und eine Indexformel aus und ziehen Sie dann die Kanalkreise auf die Felder der Formel
 4. Fügen Sie eine LUT hinzu und wählen Sie einen Farbverlauf, Schwellenwerte und einen Clipping-Modus aus
-5. Lesen Sie die Werte am Cursor ab und speichern Sie das Ergebnis mit **Exportieren/Bild(er) speichern**Die vollständige Anleitung finden Sie unter [Index/LUT-Sandbox](index-lut-sandbox.md) für die vollständige Anleitung.***
+5. Lesen Sie die Werte am Cursor ab und speichern Sie das Ergebnis mit **Exportieren/Bild(er) speichern**Die vollständige Anleitung finden Sie unter [Index/LUT-Sandbox](index-lut-sandbox.md) für die vollständige Anleitung.
+
+***
 
 ## Fehlerbehebung
 

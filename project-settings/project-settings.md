@@ -30,7 +30,9 @@ So rufen Sie die Projekteinstellungen auf:
 * **Optionen**: `Default (512 px)`, `1024 px`, `2048 px`, `Full resolution`
 * **Standard**: Standard (512 px)
 * **Beschreibung**: Auflösung (längste Kante, in Pixeln), mit der die Miniaturansichten im Bildraster dargestellt werden. Höhere Werte wirken beim Vergrößern schärfer, werden jedoch langsamer geladen und beanspruchen mehr Speicherplatz. Die volle Auflösung entspricht der Originalbildgröße.
-* **Hinweis**: Nur zur Anzeige – dies hat keinerlei Auswirkungen auf die Verarbeitung oder exportierte Dateien.***
+* **Hinweis**: Nur zur Anzeige – dies hat keinerlei Auswirkungen auf die Verarbeitung oder exportierte Dateien.
+
+***
 
 ## Zielerkennung
 
@@ -182,7 +184,9 @@ Der gespeicherte Wert wird ohne Berücksichtigung der Groß-/Kleinschreibung abg
   * Eine Kamera + ein Pin: Pin 2 wird automatisch auf „Nicht verwenden“ gesetzt
   * Eine Kamera + zwei Pins: Pin 2 wird automatisch auf „Nicht verwenden“ gesetzt
   * Mehrere Kameras: Manuelle Auswahl erforderlich
-* **Hinweis**: Dieselbe Kamera kann nicht gleichzeitig sowohl Pin 1 als auch Pin 2 zugewiesen werden.***
+* **Hinweis**: Dieselbe Kamera kann nicht gleichzeitig sowohl Pin 1 als auch Pin 2 zugewiesen werden.
+
+***
 
 ## DAQ-Lichtsensor
 
@@ -203,7 +207,9 @@ Jede Zeile zeigt die Datei, das Sensormodell und die für diese Datei tatsächli
 * **Beschreibung**: `Auto` verwendet die in jeder Datei aufgezeichnete Kappe (wird nichts aufgezeichnet, wird die Sunshine-Kappe angenommen; DAQ-U, DAQ-M und DAQ-E werden jedoch ohne Kappe ausgeliefert, und Chloros kann nicht erkennen, welche Kappe montiert ist, daher gibt die Verarbeitung eine Warnung bezüglich einer angenommenen Kappe aus: Wählen Sie die tatsächlich montierte Kappe aus). Die Auswahl einer bestimmten Kappe überschreibt **alle** Downwelling-Dateien im Projekt mit Ausnahme derjenigen eines DAQ-E-S, dessen Diffusor Teil seiner Kalibrierung ist; ein Projekt, das ausschließlich aus DAQ-E-S-Dateien besteht, zeigt kein Dropdown-Menü an: Rohaufzeichnungen werden mit dieser Korrektur korrigiert, und Aufnahmen, die bereits eine Kappe enthalten, werden neu referenziert (die aufgezeichnete Korrektur wird rückgängig gemacht und die ausgewählte angewendet).
 * **Wichtig**: Die ausgewählte Kappe muss mit der Kappe übereinstimmen, die während der Aufnahme physisch angebracht war. Weder der Sensor noch die Software können die physische Kappe erkennen – eine nicht übereinstimmende Kappen-ID führt zu einer fehlerhaften Korrektur der Spektren.
 
-Es gibt bewusst **nur eine** projektweite Steuerung anstelle von Dropdown-Menüs pro Datei: Die Einstellung wirkt sich auf jede nach unten strahlende Quelle im Projekt aus.***
+Es gibt bewusst **nur eine** projektweite Steuerung anstelle von Dropdown-Menüs pro Datei: Die Einstellung wirkt sich auf jede nach unten strahlende Quelle im Projekt aus.
+
+***
 
 ## Array-Ausrichtung
 
@@ -274,7 +280,9 @@ Jeder Index, den Sie hinzufügen, stellt seine Formel als mathematischen Ausdruc
   * Operatoren: `+`, `-`, `*`, `/`, `^` und `()` zum Gruppieren
   * Funktionen: `sqrt()`, `log()`, `ln()`, `abs()`, `sign()`, `log1p()`, `log2()`
 * **Warum Symbole statt Bandnamen**: Eine als `(y-x)/(y+x)` geschriebene Formel funktioniert auf jeder Kamera, da die Drag-and-Drop-Zuordnung entscheidet, ob `y` das 850-nm-NIR eines RGN-Filters oder das 808-nm-NIR eines OCN-Filters ist. Die integrierten Voreinstellungen werden auf dieselbe Weise gespeichert – siehe [Multispektralindex-Formeln](multispectral-index-formulas.md) für die genaue Symbolform aller 27.
-* **Wo sie funktionieren**: Benutzerdefinierte Formeln werden mit den Projekteinstellungen gespeichert und können sowohl in der [Index/LUT-Sandbox](../image-viewer-gui/index-lut-sandbox.md) als auch bei der Bildverarbeitung verwendet werden. Sie werden von der CLI-/SDK-Namensliste `--indices` **nicht** akzeptiert, die lediglich die 22 Namen der integrierten Voreinstellungen auflistet.***
+* **Wo sie funktionieren**: Benutzerdefinierte Formeln werden mit den Projekteinstellungen gespeichert und können sowohl in der [Index/LUT-Sandbox](../image-viewer-gui/index-lut-sandbox.md) als auch bei der Bildverarbeitung verwendet werden. Sie werden von der CLI-/SDK-Namensliste `--indices` **nicht** akzeptiert, die lediglich die 22 Namen der integrierten Voreinstellungen auflistet.
+
+***
 
 ## Export
 

@@ -136,7 +136,9 @@ Zwei Regeln bestimmen die Zahlen:
 * Ein Thread, der der **einzige** aktive ist, erhält die maximale Zuweisung seines Profils.
 * Wenn mehr als eine *ressourcenintensive* GPU-Aufgabe aktiv ist, wird die Basiszuweisung jeder ressourcenintensiven Aufgabe auf diese aufgeteilt (niemals unter das konfigurierte Minimum).
 
-Der tatsächlich zur Laufzeit verwendete Wert ist der **niedrigere** Wert aus der Zuweisung des Plattformprofils und der aktuellen Empfehlung des GPU-Speichermonitors, sodass eine ausgelastete Karte immer Vorrang vor einem optimistischen Profil hat.***
+Der tatsächlich zur Laufzeit verwendete Wert ist der **niedrigere** Wert aus der Zuweisung des Plattformprofils und der aktuellen Empfehlung des GPU-Speichermonitors, sodass eine ausgelastete Karte immer Vorrang vor einem optimistischen Profil hat.
+
+***
 
 ## Textur-bewusste Verarbeitung
 

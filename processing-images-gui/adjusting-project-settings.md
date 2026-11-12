@@ -159,7 +159,9 @@ Dieser Abschnitt wird **nur** angezeigt, wenn mindestens ein Bild im Projekt die
 
 * **Array-Ausrichtung anwenden** (Standard: aktiviert): Jedes verarbeitete Produkt (Debayering / Vorschau / Radiance / Reflektanz / Index) wird in die gemeinsame Referenzgeometrie des Arrays transformiert. Deaktiviert = Export in nativer Sensor-Geometrie.
 * **Auf gemeinsame Überlappung zuschneiden** (Standard: aktiviert): Schneidet ausgerichtete Exporte auf den Bereich zu, den alle Module gemeinsam haben, sodass jedes Band denselben Bildausschnitt hat. Deaktiviert bleibt die volle Sensorfläche erhalten (schwarze Füllung außerhalb der Quelle).
-* **Neuberechnung**:**Bilinear (glatt, Standard)**,**Nearest (exakte Werte beibehalten)**– keine Vermischung zwischen Pixeln, für strenge radiometrische Analysen – oder**Cubic (schärfste)**.***
+* **Neuberechnung**:**Bilinear (glatt, Standard)**,**Nearest (exakte Werte beibehalten)**– keine Vermischung zwischen Pixeln, für strenge radiometrische Analysen – oder**Cubic (schärfste)**.
+
+***
 
 ## Einstellungen speichern und laden
 

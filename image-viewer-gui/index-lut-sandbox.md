@@ -71,7 +71,9 @@ Die vollständige Formelübersicht – alle drei voreingestellten Listen und wel
 
 ### Mit aktivierter Option „Index“, aber ohne LUT
 
-Das Bild wird in **Graustufen** dargestellt und zwischen den beiden Schwellenwerten gestreckt. Dies ist beabsichtigt: Das Indexbild besteht aus Skalardaten, und Graustufen sind die originalgetreue Darstellung dieser Daten. Fügen Sie eine LUT hinzu, wenn Sie Farbe wünschen.***
+Das Bild wird in **Graustufen** dargestellt und zwischen den beiden Schwellenwerten gestreckt. Dies ist beabsichtigt: Das Indexbild besteht aus Skalardaten, und Graustufen sind die originalgetreue Darstellung dieser Daten. Fügen Sie eine LUT hinzu, wenn Sie Farbe wünschen.
+
+***
 
 ## Arbeiten mit LUTs (Look-Up-Tabellen)
 
@@ -137,7 +139,9 @@ Beispiel für NDVI-Fenster:
 | Nur gesunde Vegetation                 | 0,5  | 0,9 |
 | Stress hervorheben                        | 0,2  | 0,5 |
 
-Durch die Verengung des Fensters wird der Kontrast innerhalb Ihres Untersuchungsbereichs erhöht und alles andere wird aus dem Bereich verdrängt – wobei der **Clipping-Modus** entscheidet, was damit geschieht.***
+Durch die Verengung des Fensters wird der Kontrast innerhalb Ihres Untersuchungsbereichs erhöht und alles andere wird aus dem Bereich verdrängt – wobei der **Clipping-Modus** entscheidet, was damit geschieht.
+
+***
 
 ## Clipping-Modi
 

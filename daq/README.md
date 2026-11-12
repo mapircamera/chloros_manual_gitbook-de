@@ -17,7 +17,9 @@ MAPIR messen das Umgebungslicht als radiometrisch kalibrierte Spektren. In Chlor
 | --- | --- | --- |
 | **DAQ-U** | USB (seriell) | Scan über serielle Schnittstelle |
 | **DAQ-M** | Bluetooth Low Energy | BLE-Scan nach Namen |
-| **DAQ-E** | Ethernet (IPv4, PoE-gespeist) | mDNS `_daq-e._tcp` (Hostname `daq-e-<id>.local`) |**DAQ-E-S (neu in 1.3.0).** Ein DAQ-E mit festem Diffusor und Neigungssensor. Chloros listet ihn als `DAQ-E-S` auf und betreibt ihn genau wie einen DAQ-E, mit der Ausnahme, dass er keine Kappenkorrektur vornimmt und jeder Messwert die Neigung, Roll- und Nickwinkel des Geräts enthält. Siehe [DAQ-E-S: fester Diffusor und Neigung](caps-and-range.md#daq-e-s-fixed-diffuser-and-tilt).
+| **DAQ-E** | Ethernet (IPv4, PoE-gespeist) | mDNS `_daq-e._tcp` (Hostname `daq-e-<id>.local`) |
+
+**DAQ-E-S (neu in 1.3.0).** Ein DAQ-E mit festem Diffusor und Neigungssensor. Chloros listet ihn als `DAQ-E-S` auf und betreibt ihn genau wie einen DAQ-E, mit der Ausnahme, dass er keine Kappenkorrektur vornimmt und jeder Messwert die Neigung, Roll- und Nickwinkel des Geräts enthält. Siehe [DAQ-E-S: fester Diffusor und Neigung](caps-and-range.md#daq-e-s-fixed-diffuser-and-tilt).
 
 Alle drei verwenden dasselbe Kommunikationsprotokoll und liefern identische Daten:
 

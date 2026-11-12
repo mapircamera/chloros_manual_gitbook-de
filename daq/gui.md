@@ -200,7 +200,9 @@ Für quantitative Bestrahlungsstärkewerte sollten Daten von mindestens 15 Sekun
 
 * Kombinieren Sie mehrere Sensoren in einem Diagramm (gemeinsame Achsen), behalten Sie separate Diagramme bei (automatisches Rasterlayout), verschieben Sie Sensoren zwischen Diagrammen, ordnen Sie Zeilen/Kacheln per Ziehen neu an und blenden Sie einzelne Sensoren mit dem Augensymbol aus.
 * Pro Projekt speichert Chloros folgende Daten: Gerätenamen, Diagrammfarben, Diagrammgröße, Ansichtsmodus sowie die Einstellungen jedes Sensors (Integrationszeit, Bildmittelung, AE-Status, Kapselauswahl).
-* **Beim erneuten Öffnen eines Projekts werden die Sensoren automatisch wieder verbunden** – über die Adresse: COM-Port für DAQ-U, BLE-Gerät für DAQ-M, mDNS-Hostname für DAQ-E (wird auch dann aufgelöst, wenn sich die IP-Adresse des Geräts geändert hat) – und wendet das gespeicherte Cap-Profil, die Bildmittelung, den AE-Status und die manuelle Integrationszeit jedes Sensors erneut an.***
+* **Beim erneuten Öffnen eines Projekts werden die Sensoren automatisch wieder verbunden** – über die Adresse: COM-Port für DAQ-U, BLE-Gerät für DAQ-M, mDNS-Hostname für DAQ-E (wird auch dann aufgelöst, wenn sich die IP-Adresse des Geräts geändert hat) – und wendet das gespeicherte Cap-Profil, die Bildmittelung, den AE-Status und die manuelle Integrationszeit jedes Sensors erneut an.
+
+***
 
 ## Kamera-Kopplung (DLS)
 

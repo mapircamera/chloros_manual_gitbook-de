@@ -15,7 +15,9 @@ Images In → [Thread 1: Detection] → [Thread 2: Calibration] → [Thread 3: P
 
 Jedes Bild durchläuft nacheinander alle vier Threads. Bei der Multithread-Verarbeitung vChloros+ belegen mehrere Bilder gleichzeitig verschiedene Threads – während Thread 3 ein Bild verarbeitet, kann Thread 1 bereits das nächste erkennen, Thread 2 ein weiteres kalibrieren und Thread 4 ein fertiges Bild auf die Festplatte schreiben.
 
-Der Fortschritt wird pro Thread gemeldet und über „Server-Sent Events“ übertragen (das Backend veröffentlicht diese auf `/api/events`). In der Live-Fortschrittsanzeige der CLI werden die vier Phasen mit **Erkennung, Analyse, Verarbeitung, Export** bezeichnet.***
+Der Fortschritt wird pro Thread gemeldet und über „Server-Sent Events“ übertragen (das Backend veröffentlicht diese auf `/api/events`). In der Live-Fortschrittsanzeige der CLI werden die vier Phasen mit **Erkennung, Analyse, Verarbeitung, Export** bezeichnet.
+
+***
 
 ## Thread-Details
 

@@ -170,7 +170,9 @@ chloros-cli daq pool-reboot --sensor-id daq-e-def330
 chloros-cli daq pool-update-firmware --sensor-id daq-e-def330
 ```
 
-`pool-info` zeigt die Firmware des Sensors an (sowie, ob diese Chloros-Version eine neuere enthält), seine Adresse und wie er diese erhalten hat, die gespeicherte Netzwerkeinstellung, sofern sie von der aktuellen abweicht, sowie Power-On-Streaming und PTP. `pool-set-network` startet den Sensor neu, um die Änderung zu übernehmen, und verbindet ihn erneut mit den zuvor geltenden Einstellungen; `--no-reboot` speichert die Einstellungen lediglich. Eine statische Adresse muss im Netzwerk dieses Computers vorhanden sein, andernfalls lehnt Chloros sie ab; `--force` setzt dies außer Kraft, jedoch nur für einen Computer, der neu adressiert oder dorthin weitergeleitet wird. Neustarts werden abgelehnt<version\>,</version\> solange der Sensor Daten aufzeichnet. `pool-update-firmware` entspricht <version\>der Befehlszeilenversion von</version\> **„Update to \<version\>“** </version\>in der GUI <version\>und dient zur Aktualisierung eines DAQ-E unter Linux, wo keine GUI verfügbar ist. Neu in 1.3.0.***
+`pool-info` zeigt die Firmware des Sensors an (sowie, ob diese Chloros-Version eine neuere enthält), seine Adresse und wie er diese erhalten hat, die gespeicherte Netzwerkeinstellung, sofern sie von der aktuellen abweicht, sowie Power-On-Streaming und PTP. `pool-set-network` startet den Sensor neu, um die Änderung zu übernehmen, und verbindet ihn erneut mit den zuvor geltenden Einstellungen; `--no-reboot` speichert die Einstellungen lediglich. Eine statische Adresse muss im Netzwerk dieses Computers vorhanden sein, andernfalls lehnt Chloros sie ab; `--force` setzt dies außer Kraft, jedoch nur für einen Computer, der neu adressiert oder dorthin weitergeleitet wird. Neustarts werden abgelehnt<version\>,</version\> solange der Sensor Daten aufzeichnet. `pool-update-firmware` entspricht <version\>der Befehlszeilenversion von</version\> **„Update to \<version\>“** </version\>in der GUI <version\>und dient zur Aktualisierung eines DAQ-E unter Linux, wo keine GUI verfügbar ist. Neu in 1.3.0.
+
+***
 
 ## Befehlsübersicht
 

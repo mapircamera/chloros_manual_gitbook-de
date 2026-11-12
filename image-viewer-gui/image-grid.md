@@ -10,7 +10,9 @@ Verwenden Sie den Zoom-Schieberegler oben rechts, um die Größe der Bild-Miniat
 * **Strg + `+`**/**Strg + `=`**und**Strg + `−`** ändern die Größe schrittweise um 4 px pro Tastendruck. Der Tastaturbefehlsbereich endet am unteren Ende bei 64 px und am oberen Ende bei der Größe, bei der genau zwei Miniaturansichten pro Zeile im aktuellen Fenster Platz finden.
 * Die von Ihnen gewählte Größe wird mit dem Projekt gespeichert (`UI → Grid thumbnail size` in `project.json`, Standard `160`), sodass sie beim erneuten Öffnen des Projekts wiederhergestellt wird.
 
-<figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>Die *Auflösung* der Miniaturansichten ist eine von der *Größe* der Miniaturansichten unabhängige Einstellung: siehe **Anzeige → Auflösung der Bildminiaturansichten** in den [Projekteinstellungen](../project-settings/project-settings.md) (Standardwert 512 px an der langen Seite). Die Größe gibt an, wie groß die Kachel gezeichnet wird; die Auflösung gibt an, wie viele Details zum Ausfüllen der Kachel abgerufen werden.***
+<figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>Die *Auflösung* der Miniaturansichten ist eine von der *Größe* der Miniaturansichten unabhängige Einstellung: siehe **Anzeige → Auflösung der Bildminiaturansichten** in den [Projekteinstellungen](../project-settings/project-settings.md) (Standardwert 512 px an der langen Seite). Die Größe gibt an, wie groß die Kachel gezeichnet wird; die Auflösung gibt an, wie viele Details zum Ausfüllen der Kachel abgerufen werden.
+
+***
 
 ## Die Raster-Symbolleiste
 

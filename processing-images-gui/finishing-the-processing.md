@@ -110,7 +110,9 @@ Die Reflektanz wird als ganzzahliger DN-Wert gespeichert, und **der DN-Wert, der
 | LATTICE (M3C/M3M) | **32768** (Spielraum bis zu ρ 2,0) | Das XMP-Tag `Chloros:PixelScale=32768` ist in die Datei eingebettet |
 | Survey3          | **65535** (bei ρ 1,0 abgeschnitten)     | Kein `Chloros:PixelScale`-Tag – das Fehlen ist das Signal (Survey3-Produkte enthalten zwar andere `Chloros:*`-Verarbeitungs-Tags) |
 
-**Lesen Sie das `Chloros:PixelScale`-Tag aus und dividieren Sie durch diesen Wert**, anstatt pauschal von 65535 auszugehen – die Division der LATTICE-Reflexionswerte durch 65535 halbiert stillschweigend jeden Wert. Eine Reflektanzdatei aus der Zeit vor Version 1.3.0, die als 8-Bit-Datei geschrieben wurde, wurde beschnitten, nicht neu skaliert und enthält kein Skalierungs-Tag: Exportieren Sie sie stattdessen mit 16 Bit oder 32 Bit neu, anstatt sie zu dividieren. Siehe [Ausgabebildformate](../output-image-formats.md) für die vollständige Erklärung.***
+**Lesen Sie das `Chloros:PixelScale`-Tag aus und dividieren Sie durch diesen Wert**, anstatt pauschal von 65535 auszugehen – die Division der LATTICE-Reflexionswerte durch 65535 halbiert stillschweigend jeden Wert. Eine Reflektanzdatei aus der Zeit vor Version 1.3.0, die als 8-Bit-Datei geschrieben wurde, wurde beschnitten, nicht neu skaliert und enthält kein Skalierungs-Tag: Exportieren Sie sie stattdessen mit 16 Bit oder 32 Bit neu, anstatt sie zu dividieren. Siehe [Ausgabebildformate](../output-image-formats.md) für die vollständige Erklärung.
+
+***
 
 ## In die Exporte übernommene Metadaten
 
@@ -167,7 +169,9 @@ Um einen Nachweis über die Verarbeitung zu führen oder das Protokoll an den MA
 3. Fügen Sie es der Projektdokumentation bei
 4. Senden Sie es bei auftretenden Problemen an den MAPIR-Support
 
-Um ein Problem direkt an MAPIR zu melden, verwenden Sie das Fehler-Symbol (**Fehler melden**) oben auf der Registerkarte „Debug-Protokoll“ – siehe [Einen Fehler über die Registerkarte „Protokoll“ melden](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
+Um ein Problem direkt an MAPIR zu melden, verwenden Sie das Fehler-Symbol (**Fehler melden**) oben auf der Registerkarte „Debug-Protokoll“ – siehe [Einen Fehler über die Registerkarte „Protokoll“ melden](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).
+
+***
 
 ## Häufige Probleme bei der Ausgabe und deren Lösungen
 

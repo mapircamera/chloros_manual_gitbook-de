@@ -198,7 +198,9 @@ Alle Einstellungen in diesem Abschnitt wirken sich **nur auf die Anzeige**aus �
 | **Sättigung** | 0–200 (100 = neutral) | 100 | Nur RGB | HSV-Sättigung in der Live-Vorschau. |
 | **Kontrast** | 0–200 (100 = neutral) | 100 | Nur RGB | Linearer Kontrast um Mittelgrau in der Live-Vorschau. |
 | **Horizontal spiegeln / Vertikal spiegeln** | Kontrollkästchen | Aus | Alle | Die Vorschau horizontal/vertikal spiegeln. |
-| **Drehung**| 0° / 90° / 180° / 270° | 0° | Alle | Die Vorschau drehen. Die Ausrichtung wird am Ende der Backend-Vorschau-Kette angewendet.**Gespeicherte Aufnahmen (1.3.0):**Die Produkte „Vorschau“, „Radiance“, „Reflexion“ und „Index“ einer eigenständigen Kamera werden durch Spiegeln/Drehen gedreht, während**„Raw“ und „Debayered“ in der kameraneigenen Ausrichtung**; jede Aufnahme-Datei speichert die Einstellung in ihrem XMP, sodass bei der späteren Verarbeitung einer RAW-Datei diese auf dieselbe Weise angewendet wird.**Dateien von Array-Elementen bleiben in ihrer nativen Ausrichtung** (die Einstellung wird gespeichert, aber nicht angewendet), und zusammengesetzte Ansichten des Arrays ignorieren sie. |**Semantik der Farbprofile** (RGB-Kameras):
+| **Drehung**| 0° / 90° / 180° / 270° | 0° | Alle | Die Vorschau drehen. Die Ausrichtung wird am Ende der Backend-Vorschau-Kette angewendet.**Gespeicherte Aufnahmen (1.3.0):**Die Produkte „Vorschau“, „Radiance“, „Reflexion“ und „Index“ einer eigenständigen Kamera werden durch Spiegeln/Drehen gedreht, während**„Raw“ und „Debayered“ in der kameraneigenen Ausrichtung**; jede Aufnahme-Datei speichert die Einstellung in ihrem XMP, sodass bei der späteren Verarbeitung einer RAW-Datei diese auf dieselbe Weise angewendet wird.**Dateien von Array-Elementen bleiben in ihrer nativen Ausrichtung** (die Einstellung wird gespeichert, aber nicht angewendet), und zusammengesetzte Ansichten des Arrays ignorieren sie. |
+
+**Semantik der Farbprofile** (RGB-Kameras):
 
 * **Raw** — die Verarbeitungskette wird vollständig umgangen.
 * **Linear** — Dunkelsignal + Flat-Field + Weißabgleich; keine Farbmatrix, kein Gamma.

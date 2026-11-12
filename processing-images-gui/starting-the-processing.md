@@ -180,7 +180,9 @@ Nach dem Start läuft die gesamte Pipeline automatisch ab:
 * Ein gestoppter Lauf gibt ehrlich an, was abgeschlossen wurde (siehe die Zeilen `[RUN-SUMMARY]` im Protokoll)
 * Ein neuer Durchlauf startet die Pipeline von Anfang an
 
-**Planungstipp:** Bei sehr großen Projekten sollten Sie eine Verarbeitung in Stapeln oder die Verwendung der Befehlszeilenschnittstelle (CLI) in Betracht ziehen, um eine bessere Kontrolle zu erhalten.***
+**Planungstipp:** Bei sehr großen Projekten sollten Sie eine Verarbeitung in Stapeln oder die Verwendung der Befehlszeilenschnittstelle (CLI) in Betracht ziehen, um eine bessere Kontrolle zu erhalten.
+
+***
 
 ## Überwachung Ihrer Verarbeitung
 
